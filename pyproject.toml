@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "titresim"
+version = "1.0.0"
+description = "Evrensel Ses, Kutsal Kelâm, Osmanlı Darüşşifa Makamları ve Frekans Terapisi Laboratuvarı"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Bahattin Yunus Çetin", email = "bahattinyunuscetin@hotmail.com"}
+]
+keywords = [
+    "titresim", "ses-terapisi", "chladni", "cymatics",
+    "makamlar", "solfeggio", "binaural-beats", "schumann-resonance"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Sound/Audio :: Sound Synthesis",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.scripts]
+titresim = "titresim.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["titresim*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json"]

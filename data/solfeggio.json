@@ -1,0 +1,74 @@
+[
+  {
+    "frequency": 174,
+    "name": "Temel / Doğal Anestezi",
+    "note": "F",
+    "chakra": "Kök (Alt Seviye)",
+    "description": "Fiziksel bedendeki ağrı ve gerginliği hafifletmeye yardımcı olur. Güvenlik, topraklanma ve organlara rahatlama hissi aşılar.",
+    "intention": "Ağrının dindirilmesi, güven hissi, hücresel dinginlik"
+  },
+  {
+    "frequency": 285,
+    "name": "Hücresel Yenilenme & Morfogenetik Alan",
+    "note": "C#",
+    "chakra": "Kök Çakra",
+    "description": "Hasar görmüş dokuların ve hücrelerin yeniden yapılanmasını destekler. Enerji alanını temizler ve bedeni orijinal canlılık koduna döndürür.",
+    "intention": "Doku iyileşmesi, canlılık, bağışıklık desteği"
+  },
+  {
+    "frequency": 396,
+    "name": "Ut - Korku ve Suçluluktan Özgürleşme",
+    "note": "G",
+    "chakra": "Kök Çakra (Muladhara)",
+    "description": "Bilinçaltındaki derin korku, suçluluk ve keder blokajlarını çözer. Ruhsal ağırlıkları toprağa aktararak hafifleme sağlar.",
+    "intention": "Korkulardan arınma, kederi dağıtma, hedeflere odaklanma"
+  },
+  {
+    "frequency": 417,
+    "name": "Re - Travmaların Çözülmesi & Değişim",
+    "note": "G#",
+    "chakra": "Sakral Çakra (Svadhisthana)",
+    "description": "Geçmiş travmaların, tıkanmış duygusal enerjilerin ve olumsuz alışkanlıkların salıverilmesini sağlar. Yaşamda taze başlangıçlar açar.",
+    "intention": "Dönüşüm, travma şifası, yeni kapıların aralanması"
+  },
+  {
+    "frequency": 528,
+    "name": "Mi - Aşk Frekansı, Mucizeler & DNA Onarımı",
+    "note": "C",
+    "chakra": "Solar Pleksus (Manipura)",
+    "description": "Doğanın ve biyolojinin temel rezonans tonlarından biridir. Hücrelerde su moleküllerini altıgen simetriye dizer, yaşam gücünü (Prana/Ki) arttırır.",
+    "intention": "DNA dengesi, sevgi, kalp açıklığı, mucizeler"
+  },
+  {
+    "frequency": 639,
+    "name": "Fa - Bağ Kurma & Kalp Rezonansı",
+    "note": "D#",
+    "chakra": "Kalp Çakra (Anahata)",
+    "description": "İlişkilerde şefkat, empati, uyum ve hoşgörüyü pekiştirir. Kutuplaşmaları yumuşatır, toplumsal ve ailevi bağları güçlendirir.",
+    "intention": "Empati, sevgi dolu ilişkiler, affedicilik"
+  },
+  {
+    "frequency": 741,
+    "name": "Sol - Sezgi, Arınma & Toksin Giderimi",
+    "note": "F#",
+    "chakra": "Boğaz Çakra (Vishuddha)",
+    "description": "Beden ve zihni elektromanyetik ve ruhsal kirlilikten arındırır. İfade gücünü, içsel dürüstlüğü ve yüksek sezgileri harekete geçirir.",
+    "intention": "Detoks, sezgisel uyanış, hakikati ifade etme"
+  },
+  {
+    "frequency": 852,
+    "name": "La - Ruhsal Düzen & Üçüncü Göz Uyanışı",
+    "note": "G#",
+    "chakra": "Üçüncü Göz (Ajna)",
+    "description": "İllüzyon perdelerini kaldırır, derin içgörü ve manevi algıyı keskinleştirir. Hücreleri yüksek titreşimli kozmik düzene uyumlar.",
+    "intention": "İçgörü, basiret, ruhsal uyanış"
+  },
+  {
+    "frequency": 963,
+    "name": "Si - İlahi Birlik & Taç Çakra Rezonansı",
+    "note": "B",
+    "chakra": "Taç Çakra (Sahasrara)",
+    "description": "Evrensel bilinç ve Mutlak Varlık ile birlik hissi oluşturur. Epifiz bezini (Pineal Gland) uyararak aşkın tefekkür halleri doğurur.",
+    "intention": "Birlik bilinci, ilahi temas, saf tefekkür"
+  }
+]

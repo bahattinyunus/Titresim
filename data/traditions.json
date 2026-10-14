@@ -1,0 +1,83 @@
+[
+  {
+    "id": "islam_qiraat",
+    "tradition": "İslam Tasavvuf ve Tecvid Geleneği",
+    "practice": "Kur'an-ı Kerim Kıraati ve Zikir Rezonansı",
+    "fundamental_frequencies": ["Makam bazlı (Rast, Saba, Hicaz, Segah)", "110 - 220 Hz göğüs ve boğaz rezonansı"],
+    "acoustic_principles": [
+      "Tecvid kuralları (Med, Gunne, İhfa, Kalkale) ses yolunda belirli mikro-harmonikler ve akustik duraklamalar üretir.",
+      "Gunne (geniz sesi): Burun boşluğundaki sinüsleri titreştirerek nitrik oksit (NO) salınımını 15 kata kadar arttırır.",
+      "Kalkale (patlamalı harfler): Beden meridyenlerinde ve beyinde ani mikro-şok dalgaları oluşturarak odaklanmayı uyarır.",
+      "Uzatma (Medd-i Muttasıl/Munfasıl): Akciğer kapasitesini ve parasempatik vagal tonusu optimize eder."
+    ],
+    "neurobiological_effects": [
+      "EEG ölçümlerinde frontal lobda belirgin Alfa (8-12 Hz) ve Teta (4-7 Hz) dalgası artışı.",
+      "Kortizol ve stres hormonlarında dramatik düşüş, endorfin ve huzur artışı.",
+      "Kalp hızı değişkenliğinde (HRV) belirgin koherans."
+    ],
+    "historical_sources": "İbn-i Sina (El-Kanun fi't-Tıbb), İmam Gazali (İhyau Ulumid-Din), Erzurumlu İbrahim Hakkı (Marifetname)."
+  },
+  {
+    "id": "vedic_mantra",
+    "tradition": "Vedik ve Hint Geleneği",
+    "practice": "Pranava Mantra (Om / Aum) & Gayatri Mantra",
+    "fundamental_frequencies": ["136.1 Hz (Dünya Yılı / Ciss frekansı)", "432 Hz harmonik akordu"],
+    "acoustic_principles": [
+      "A-U-M hecelerinin telaffuzu karnın altından (A), göğüs boşluğundan (U) başın tepesine (M) kadar dikey bir titreşim sütunu oluşturur.",
+      "Sanskritçe fonetik yapı, dilin damağa ve dişlere dokunmasıyla 84 meridyen noktasını uyarır.",
+      "Devamlı mırıldanma (Chanting) vagus sinirinin kulak ve gırtlak dallarını doğrudan stimüle eder."
+    ],
+    "neurobiological_effects": [
+      "Limbik sistemdeki amigdala aşırı uyarımını yatıştırır.",
+      "Zihinsel gevezeliği (Default Mode Network - DMN) susturarak derin tefekkür hali (Dhyana) üretir."
+    ],
+    "historical_sources": "Mandukya Upanishad, Rigveda, Patanjali Yoga Sutraları."
+  },
+  {
+    "id": "gregorian_chant",
+    "tradition": "Batı Hristiyan Manastır Geleneği",
+    "practice": "Gregoryen İlahileri (Gregorian Chants / Solfeggio)",
+    "fundamental_frequencies": ["Monofonik modlar (Dorian, Phrygian, Lydian, Mixolydian)", "Solfeggio serisi (396 - 963 Hz)"],
+    "acoustic_principles": [
+      "Tek sesli, ritmik olarak serbest ve kelime vurgusuna dayalı akustik yapı.",
+      "Gotik ve Romanesk katedral akustiğinde 4-8 saniyelik yankılanma (reverberation) süresiyle birleşerek beden dışı bir ses kubbesi kurar.",
+      "Yüksek armonik zenginlik ve saf entonasyon (Just Intonation)."
+    ],
+    "neurobiological_effects": [
+      "Dr. Alfred Tomatis'in keşfine göre, keşişlerin günde saatlerce ilahi söylemesi kulak salyangozunu şarj eder ve korteksi uyanık tutar.",
+      "Solunum hızını dakikada 6 nefese düşürerek kan basıncını dengeler."
+    ],
+    "historical_sources": "Papa I. Gregory, Guido d'Arezzo (Ut-Re-Mi notasyonu, 1025)."
+  },
+  {
+    "id": "tibet_singing_bowls",
+    "tradition": "Tibet Budizmi ve Himalaya Şamanizmi",
+    "practice": "Tibet Ses Çanakları (Singing Bowls) ve Gong Terapisi",
+    "fundamental_frequencies": ["Çok katmanlı mikrotonal vuruşlar (Binaural Beats doğal oluşumu)", "108 Hz, 216 Hz, 432 Hz"],
+    "acoustic_principles": [
+      "7 farklı metalin (altın, gümüş, cıva, bakır, demir, kalay, kurşun) alaşımından yapılan çanakların tokmağıyla ovulması.",
+      "Aynı anda çıkan temel ton ve 3-4 farklı üst armonik birbirleriyle çarpışarak doğal 'akustik vuru' (beating) yaratır.",
+      "Beden dokularında doğrudan mikromasaj etkisi yapar."
+    ],
+    "neurobiological_effects": [
+      "Bilişsel stres ve kaygıda %60'ın üzerinde anlık azalma.",
+      "Zihni saniyeler içinde Beta durumundan derin Alfa ve Teta durumuna taşır."
+    ],
+    "historical_sources": "Bön Şamanizmi, Tibet Budist Tantra metinleri."
+  },
+  {
+    "id": "shamanic_drumming",
+    "tradition": "Şamanik ve Yerli Gelenekler",
+    "practice": "Şaman Davulu ve Ritmik Trans (Entrainment)",
+    "fundamental_frequencies": ["4 - 7 Hz vuruş ritmi (Dakikada 240-300 vuruş - Teta aralığı)"],
+    "acoustic_principles": [
+      "Deri kasnağın bas frekanslı vuruşları kanda ve kemiklerde piezolektrik etki oluşturur.",
+      "Monoton ve değişmeyen tempo beynin işitsel korteksini ritimle kilitler (Rhythmic Entrainment)."
+    ],
+    "neurobiological_effects": [
+      "Şamanik seyahat (Shamanic Trance) ve vizyoner bilinç durumları.",
+      "Teta beyin dalgası senkronizasyonu; rüya hali ile uyanıklığın birleşmesi."
+    ],
+    "historical_sources": "Sibirya, Altay, Kuzey Amerika yerlileri gelenekleri."
+  }
+]

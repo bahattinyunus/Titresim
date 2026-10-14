@@ -1,0 +1,42 @@
+[
+  {
+    "band": "Delta",
+    "range_hz": [0.5, 4.0],
+    "center_hz": 2.5,
+    "state": "Derin rüyasız uyku, bedensel onarım, büyüme hormonu (HGH) salınımı",
+    "carrier_recommendation": 100,
+    "effects": "Bağışıklık sisteminin tazelenmesi, derin bilinçdışı dinlenme, hücresel rekonstrüksiyon."
+  },
+  {
+    "band": "Theta (Teta)",
+    "range_hz": [4.0, 8.0],
+    "center_hz": 6.0,
+    "state": "Derin meditasyon, REM rüyaları, sezgisel kavrayış, hipnogojik durum",
+    "carrier_recommendation": 150,
+    "effects": "Yaratıcılık patlamaları, bilinçaltı travma çözümü, derin şamanik veya tasavvufi tefekkür halleri."
+  },
+  {
+    "band": "Alpha (Alfa)",
+    "range_hz": [8.0, 13.0],
+    "center_hz": 10.0,
+    "state": "Sakin uyanıklık, hafif meditasyon, zihinsel dinginlik ve odaklanmış rahatlama",
+    "carrier_recommendation": 200,
+    "effects": "Stres ve kortizolün düşürülmesi, öğrenme hızının artması, sakin ve berrak zihin."
+  },
+  {
+    "band": "Beta",
+    "range_hz": [13.0, 30.0],
+    "center_hz": 18.0,
+    "state": "Aktif düşünme, problem çözme, dış dünyaya odaklanma, analitik zihin",
+    "carrier_recommendation": 250,
+    "effects": "Dikkat toplama, mantıksal hesaplama, enerjik uyanıklık (aşırısı stres ve anksiyete doğurabilir)."
+  },
+  {
+    "band": "Gamma (Gama)",
+    "range_hz": [30.0, 50.0],
+    "center_hz": 40.0,
+    "state": "Aşkın algı, eşzamanlı veri işleme, aydınlanma / 'Aha!' anları, yüksek şefkat halleri",
+    "carrier_recommendation": 300,
+    "effects": "Farklı beyin loblarının anlık senkronizasyonu, yüksek bellek kapasitesi, Budist keşişlerin şefkat meditasyonu sırasında kaydedilen en baskın dalga."
+  }
+]

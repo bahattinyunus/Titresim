@@ -1,0 +1,194 @@
+[
+  {
+    "id": "rast",
+    "name": "Rast Makamı",
+    "root_tone": "G (Sol - Rast)",
+    "time": "Gece sonu ile seher vakti arası, güneş doğarken",
+    "element": "Ateş (Kuru ve Sıcak)",
+    "zodiac": "Koç (Hamal)",
+    "organ": "Baş, beyin, gözler ve kemikler",
+    "therapeutic_effects": [
+      "İnsana sefa, neşe, iç huzuru ve canlılık verir.",
+      "Felç (inme), kas seğirmeleri ve sara illetine şifadır.",
+      "Zihni berraklaştırır, tembellik ve melankoliyi dağıtır."
+    ],
+    "scholar_notes": "Farabi: 'Rast makamı insana sefa (huzur ve neşe) bağışlar.' Şuuri: 'Güneş doğarken dinlemek aklı takviye eder.'",
+    "scale_ratios": [1.0, 1.125, 1.25, 1.333, 1.5, 1.687, 1.875, 2.0]
+  },
+  {
+    "id": "rehavi",
+    "name": "Rehavi Makamı",
+    "root_tone": "G (Sol)",
+    "time": "Seher vakti (fecir vakti)",
+    "element": "Su (Soğuk ve Nemli)",
+    "zodiac": "Balık (Hut)",
+    "organ": "Burun, boğaz, göğüs ve mide",
+    "therapeutic_effects": [
+      "İnsana sonsuzluk, azamet ve derin bir tefekkür hissi verir.",
+      "Şiddetli baş ağrısı (yarım baş / migren), burun kanaması ve göğüs sıkışmalarına devadır.",
+      "Ağlayan çocukları sakinleştirmede ve uyutulmasında etkilidir."
+    ],
+    "scholar_notes": "Farabi: 'Rehavi makamı insana beka (sonsuzluk) fikri telkin eder.'",
+    "scale_ratios": [1.0, 1.066, 1.25, 1.333, 1.5, 1.6, 1.875, 2.0]
+  },
+  {
+    "id": "nihavend",
+    "name": "Nihavend Makamı",
+    "root_tone": "G (Sol) / C (Do)",
+    "time": "Öğle vakti ile ikindi arası",
+    "element": "Toprak (Kuru ve Soğuk)",
+    "zodiac": "Oğlak (Cedi)",
+    "organ": "Kalp, kan dolaşımı, tansiyon dengesi",
+    "therapeutic_effects": [
+      "Huzur, dinginlik, akıl dengesi ve derin sevgi duyguları uyandırır.",
+      "Yüksek tansiyonu düşürmede, kan basıncını dengelemede ve kalbi sakinleştirmede birebirdir.",
+      "Böbrek sancılarını ve bel ağrılarını dindirmede tesirlidir."
+    ],
+    "scholar_notes": "Darüşşifalarda nabzı hızlı ve heyecanlı olan hastalara dinletilerek kalp atışı yatıştırılırdı.",
+    "scale_ratios": [1.0, 1.125, 1.2, 1.333, 1.5, 1.6, 1.875, 2.0]
+  },
+  {
+    "id": "hicaz",
+    "name": "Hicaz Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "Yatsı vakti ile gece yarısı",
+    "element": "Ateş (Sıcak ve Kuru)",
+    "zodiac": "Yay (Kavs)",
+    "organ": "Karaciğer, idrar yolları, böbrekler",
+    "therapeutic_effects": [
+      "İnsana tevazu, alçakgönüllülük ve derin manevi duyarlılık verir.",
+      "İdrar tutukluğunu giderir, böbrek taşlarının dökülmesine ve sancıların dinmesine yardım eder.",
+      "Cinsel aşırılıkları dengeler, ateşi düşürür."
+    ],
+    "scholar_notes": "Farabi: 'Hicaz makamı dinleyene tevazu ve huşu telkin eder.'",
+    "scale_ratios": [1.0, 1.053, 1.265, 1.333, 1.5, 1.58, 1.875, 2.0]
+  },
+  {
+    "id": "buselik",
+    "name": "Buselik Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "Kuşluk vakti (öğleden önce)",
+    "element": "Hava (Sıcak ve Nemli)",
+    "zodiac": "İkizler (Cevza)",
+    "organ": "Kalp, göğüs, mide, boyun ve kaslar",
+    "therapeutic_effects": [
+      "Kuvvet, cesaret, irade ve dirayet hissi aşılar.",
+      "Kulunç, boyun ve kas tutulmalarını çözer, kan dolaşımını canlandırır.",
+      "Zihinsel yorgunluğu ve dalgınlığı giderir, hafızayı keskinleştirir."
+    ],
+    "scholar_notes": "Farabi: 'Buselik insana kuvvet ve dirayet hissi kazandırır.'",
+    "scale_ratios": [1.0, 1.125, 1.2, 1.333, 1.5, 1.6, 1.777, 2.0]
+  },
+  {
+    "id": "huseyni",
+    "name": "Hüseyni Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "Sabah vakti ve gün batımı (gurup)",
+    "element": "Toprak (Soğuk ve Kuru)",
+    "zodiac": "Boğa (Sevr)",
+    "organ": "Karaciğer, safra kesesi, mide ve kalp",
+    "therapeutic_effects": [
+      "Sükunet, ferahlık ve içsel emniyet telkin eder.",
+      "Karaciğer hararetini ve mide yanmasını yatıştırır, sıtma ve humma nöbetlerini hafifletir.",
+      "Öfke patlamalarını ve taşkınlıkları dindirir."
+    ],
+    "scholar_notes": "Farabi: 'Hüseyni makamı insana sükun ve vakar bahşeder.'",
+    "scale_ratios": [1.0, 1.125, 1.22, 1.333, 1.5, 1.6, 1.777, 2.0]
+  },
+  {
+    "id": "ussak",
+    "name": "Uşşak Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "Öğle vakti ve ikindi sonu",
+    "element": "Ateş (Sıcak ve Nemli)",
+    "zodiac": "Yay / Terazi",
+    "organ": "Ayaklar, mafsallar, gut ve romatizma",
+    "therapeutic_effects": [
+      "Gülme, sevinç, aşk ve hafiflik duyguları doğurur.",
+      "Ayak ağrılarına, gut hastalığına ve eklem romatizmasına iyi gelir.",
+      "Derin uyku isteği uyandırır, uykusuzluk çeken hastaları dinlendirir."
+    ],
+    "scholar_notes": "Farabi: 'Uşşak makamı insana gülme (neşelenme) hali aşılar.'",
+    "scale_ratios": [1.0, 1.11, 1.23, 1.333, 1.5, 1.62, 1.777, 2.0]
+  },
+  {
+    "id": "neva",
+    "name": "Neva Makamı",
+    "root_tone": "D (Re - Neva)",
+    "time": "Akşam vakti",
+    "element": "Hava (Sıcak ve Nemli)",
+    "zodiac": "Kova (Delv)",
+    "organ": "Kalça, uyluklar ve omurilik",
+    "therapeutic_effects": [
+      "Cesaret, lezzet, zevk ve ferahlık hissi verir.",
+      "Kalça ve siyatik ağrılarını hafifletir, akıl hastalıklarında taşkın halleri dindirir.",
+      "Ruhsal gerilimi boşaltır, iç ferahlığı sağlar."
+    ],
+    "scholar_notes": "Evliya Çelebi, Edirne Darüşşifası'nda akıl hastalarına Neva makamı icra edildiğinde delilik nöbetlerinin yatıştığını kaydeder.",
+    "scale_ratios": [1.0, 1.125, 1.25, 1.333, 1.5, 1.687, 1.777, 2.0]
+  },
+  {
+    "id": "isfahan",
+    "name": "Isfahan Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "İkindi ile gün batımı arası",
+    "element": "Hava / Su",
+    "zodiac": "Yengeç (Seretan)",
+    "organ": "Ense, omuzlar ve zihin",
+    "therapeutic_effects": [
+      "Hafızayı keskinleştirir, zekayı açar, güven ve kararlılık hissi uyandırır.",
+      "Soğuk algınlığı, titreme ve yüksek ateşi dengeler.",
+      "Korkaklığı giderir, ruha emniyet verir."
+    ],
+    "scholar_notes": "Şuuri Hasan Efendi: 'Isfahan zihni keskinleştirir, fehmi (anlayışı) ziyadeleştirir.'",
+    "scale_ratios": [1.0, 1.125, 1.2, 1.333, 1.5, 1.62, 1.8, 2.0]
+  },
+  {
+    "id": "zengule",
+    "name": "Zengüle Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "Güneş tepeye vardıktan sonra (öğleden gün batımına)",
+    "element": "Toprak (Kuru ve Soğuk)",
+    "zodiac": "Başak (Sünbüle)",
+    "organ": "Mide, bağırsaklar ve beyin",
+    "therapeutic_effects": [
+      "Uykuyu celbeder, kalpteki vehim ve vesveseleri defeder.",
+      "Mide spazmlarını, gaz sancılarını ve hazımsızlığı yatıştırır.",
+      "Beyin yorgunluğuna şifadır."
+    ],
+    "scholar_notes": "Farabi: 'Zengüle makamı insana uyku hali verir.'",
+    "scale_ratios": [1.0, 1.053, 1.265, 1.333, 1.5, 1.58, 1.875, 2.0]
+  },
+  {
+    "id": "segah",
+    "name": "Segah Makamı",
+    "root_tone": "B koma bemol (Segah)",
+    "time": "Kuşluktan ikindi vaktine kadar",
+    "element": "Hava (Ilık ve Hafif)",
+    "zodiac": "Terazi (Mizan)",
+    "organ": "Akciğerler, göğüs kafesi, kalp",
+    "therapeutic_effects": [
+      "Ruhu dinlendirir, melankoliyi ve iç daralmasını ferahlatır.",
+      "Göğüs ağrılarına, nefes darlıklarına ve uykusuzluğa devadır.",
+      "Kutsal metinlerin ve ezanın en yaygın icra makamlarındandır, mistik teslimiyet aşılar."
+    ],
+    "scholar_notes": "Türk-İslam tasavvuf musikisinde Itri'nin Segah Salat-ı Ümmiye'si gibi başyapıtlar bu frekansta inşa edilmiştir.",
+    "scale_ratios": [1.0, 1.12, 1.25, 1.35, 1.5, 1.65, 1.875, 2.0]
+  },
+  {
+    "id": "saba",
+    "name": "Saba Makamı",
+    "root_tone": "A (La - Dügah)",
+    "time": "Seher vakti, fecir doğuşu",
+    "element": "Hava / Toprak",
+    "zodiac": "Akrep (Akreb)",
+    "organ": "Ruh, kalp, gözyaşı kanalları",
+    "therapeutic_effects": [
+      "Hüzün, nedamet, tevbe ve arınma hissi uyandırır.",
+      "Kalpteki katılığı yumuşatır, ruhsal katarsisi (arınmayı) hızlandırır.",
+      "Seher vaktinin serin rüzgarı gibi zihni saflaştırır."
+    ],
+    "scholar_notes": "Sabah ezanlarının ve seher niyazlarının makamıdır; insanın acziyetini ve ilahi rahmete muhtaçlığını hatırlatır.",
+    "scale_ratios": [1.0, 1.08, 1.18, 1.333, 1.48, 1.6, 1.777, 2.0]
+  }
+]

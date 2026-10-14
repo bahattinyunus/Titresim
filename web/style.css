@@ -1,0 +1,731 @@
+/* ==========================================================================
+   TİTREŞİM: Evrensel Ses & Rezonans Laboratuvarı Stilleri
+   ========================================================================== */
+
+:root {
+  --bg-deep: #080c14;
+  --bg-surface: rgba(15, 23, 42, 0.75);
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-card-hover: rgba(51, 65, 85, 0.7);
+  --border-color: rgba(148, 163, 184, 0.15);
+  --border-glow: rgba(245, 158, 11, 0.3);
+
+  --accent-gold: #f59e0b;
+  --accent-gold-light: #fbbf24;
+  --accent-cyan: #38bdf8;
+  --accent-violet: #a855f7;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-accent: #fde68a;
+
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-glow: 0 10px 30px -10px rgba(245, 158, 11, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Arka Plan Parıltıları */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+.glow-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #f59e0b 0%, #b45309 60%, transparent 80%);
+  top: -150px;
+  left: -150px;
+}
+
+.glow-2 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #38bdf8 0%, #1d4ed8 60%, transparent 80%);
+  bottom: -200px;
+  right: -200px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(8, 12, 20, 0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-symbol {
+  font-size: 28px;
+  letter-spacing: 4px;
+  filter: drop-shadow(0 0 12px var(--accent-gold));
+}
+
+.logo-text h1 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Card Genel */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-glow);
+}
+
+/* Giriş Bölümü */
+.intro-quote {
+  margin: 28px 0;
+  text-align: center;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.intro-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: #fde68a;
+  margin-bottom: 10px;
+}
+
+.intro-quote cite {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: normal;
+  margin-top: 4px;
+}
+
+.intro-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 850px;
+  margin: 12px auto 0;
+}
+
+/* Studio Layout (2 Sütun) */
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablar */
+.tabs-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tab-btn.active {
+  color: #fff;
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: #fef3c7;
+  margin-bottom: 4px;
+}
+
+.section-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Solfeggio Grid */
+.solfeggio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.solf-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.solf-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-gold);
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+.solf-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 158, 11, 0.5);
+  background: var(--bg-card-hover);
+}
+
+.solf-card.playing {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.3);
+}
+
+.solf-card.playing::before {
+  opacity: 1;
+}
+
+.solf-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.solf-freq {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-gold-light);
+}
+
+.solf-note {
+  font-size: 12px;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.solf-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.solf-chakra {
+  font-size: 12px;
+  color: var(--text-accent);
+  margin-bottom: 8px;
+}
+
+.solf-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Quick Freq Row */
+.custom-freq-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.quick-freq-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.quick-freq-btn:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--accent-gold);
+}
+
+/* Makam Stilleri */
+.makam-selector-wrap label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.form-select {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form-select option {
+  background: #0f172a;
+  color: #fff;
+}
+
+.makam-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.makam-tag {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.makam-tag strong {
+  color: var(--accent-gold-light);
+}
+
+.makam-effects-list {
+  margin: 12px 0 16px 18px;
+  font-size: 13.5px;
+  color: #cbd5e1;
+}
+
+.makam-notes-quote {
+  font-style: italic;
+  font-size: 13px;
+  color: #94a3b8;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* Binaural Stilleri */
+.wave-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wave-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: #cbd5e1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wave-btn:hover {
+  background: var(--bg-card-hover);
+  color: #fff;
+}
+
+.wave-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-cyan);
+  color: #fff;
+  font-weight: 600;
+}
+
+.slider-group {
+  margin-bottom: 14px;
+}
+
+.slider-group label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent-gold);
+}
+
+/* Nefes Çemberi Animasyonu */
+.breathing-card {
+  text-align: center;
+}
+
+.breathing-circle-container {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.breathing-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(168, 85, 247, 0.1) 70%);
+  border: 2px solid var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+  transition: transform 5.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.breathing-circle.inhale {
+  transform: scale(1.6);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 45px rgba(245, 158, 11, 0.4);
+}
+
+.breathing-circle.exhale {
+  transform: scale(1.0);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* Gelenekler Listesi */
+.tradition-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.tradition-card h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--accent-gold-light);
+  margin-bottom: 4px;
+}
+
+.tradition-practice {
+  font-size: 13px;
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+}
+
+.tradition-list {
+  margin-left: 20px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+}
+
+/* SAĞ PANEL: Cymatics Box */
+.cymatics-box {
+  position: sticky;
+  top: 96px;
+}
+
+.cymatics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.cymatics-header h2 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: #fef3c7;
+}
+
+.cymatics-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.mode-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+.freq-badge {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-gold);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-weight: 700;
+}
+
+/* Canvas Wrapper */
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #060911;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 158, 11, 0.1);
+}
+
+#cymaticsCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+/* Kontroller */
+.cymatics-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-row label {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 90px;
+}
+
+.control-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent-gold);
+}
+
+.control-row .btn {
+  flex: 1;
+}
+
+/* Butonlar */
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0b0f19;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  color: #fff;
+  border-color: #94a3b8;
+}
+
+/* Osiloskop */
+.oscilloscope-box {
+  background: #05080e;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+
+.scope-header {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+#scopeCanvas {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  padding: 30px 0;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 14px; }
+.mt-4 { margin-top: 22px; }

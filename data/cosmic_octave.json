@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Schumann Rezonansı (Temel)",
+    "frequency": 7.83,
+    "source": "İyonosfer ile Dünya yüzeyi arasındaki elektromanyetik boşluk rezonansı",
+    "description": "Dünya'nın kalp atışı olarak bilinir. İnsan beyninin Alfa-Teta sınırındaki doğal biyolojik ritmiyle kusursuz örtüşür."
+  },
+  {
+    "name": "Schumann 2. Harmonik",
+    "frequency": 14.3,
+    "source": "İyonosfer boşluğu 2. mod",
+    "description": "Hafif Beta/Alfa uyanıklık ve dengeli dikkat frekansı."
+  },
+  {
+    "name": "Schumann 3. Harmonik",
+    "frequency": 20.8,
+    "source": "İyonosfer boşluğu 3. mod",
+    "description": "Bilişsel canlılık ve dinamizm."
+  },
+  {
+    "name": "Dünya Günü (Siderik) / Sol",
+    "frequency": 194.18,
+    "source": "Dünya'nın kendi ekseni etrafında 24 saatlik dönüşünün 24. oktavı",
+    "description": "Dinamik enerji, uyanıklık, yaşamsal canlılık ve topraklanma."
+  },
+  {
+    "name": "Dünya Yılı (Om / Ciss)",
+    "frequency": 136.10,
+    "source": "Dünya'nın Güneş etrafındaki 365 günlük turunun 32. oktavı",
+    "description": "Kadim Hindistan'da 'Om' tonu ve kalp çakrasının kozmik frekansı olarak kabul edilir. Derin rahatlama ve evrenle ahenk."
+  },
+  {
+    "name": "Platonik Yıl / Ekinoks Presesyonu",
+    "frequency": 172.06,
+    "source": "25.920 yıllık devir periyodunun 47. oktavı",
+    "description": "Bilinç netliği, ruhsal aydınlanma ve evrensel kozmik intizam."
+  },
+  {
+    "name": "Güneş Frekansı",
+    "frequency": 126.22,
+    "source": "Güneşin salınım frekansı oktavı",
+    "description": "Özgüven, yaşam sevinci, merkezlenme ve ışık."
+  },
+  {
+    "name": "Sinodik Ay (Yeni Ay / Dolunay)",
+    "frequency": 210.42,
+    "source": "29.53 günlük ay döngüsünün 29. oktavı",
+    "description": "Duygusal denge, sezgisel berraklık, dişil enerji ve su elementinin harmonisi."
+  },
+  {
+    "name": "Matematiksel Akort (Verdi Akordu)",
+    "frequency": 432.0,
+    "source": "A = 432 Hz altın oran ve doğal Pisagor/akustik akordu",
+    "description": "Evrensel orantı (Phi) ile uyumlu, dinleyiciyi yormayan, organik ve kalbe huzur veren doğal frekans standardı."
+  }
+]

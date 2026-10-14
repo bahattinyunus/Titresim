@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Laboratuvarı</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Arka Plan Görsel Parıltı -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-symbol">〰️ ⚛ 🕊️</span>
+        <div class="logo-text">
+          <h1>TİTREŞİM</h1>
+          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <span id="audioStatusBadge" class="status-badge ready">Ses Motoru: Hazır</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- Giriş ve Bilgelik Sözü -->
+    <section class="intro-quote card">
+      <blockquote>
+        "Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün."
+        <cite>— Nikola Tesla</cite>
+      </blockquote>
+      <p class="intro-desc">
+        Bu laboratuvar; ses dalgalarının maddeyi şekillendiren kurucu gücünü (Cymatics), Osmanlı darüşşifalarının şifa makamlarını, 
+        kutsal kelâm ve kıraat rezonansını ve Solfeggio / Binaural frekanslarını interaktif olarak keşfetmeniz için tasarlanmıştır.
+      </p>
+    </section>
+
+    <!-- Ana Panel: 2 Sütunlu Grid (Sol: Ses Kontrolleri, Sağ: Canlı Chladni Cymatics Görselleştirici) -->
+    <div class="studio-grid">
+      <!-- SOL: Frekans Jeneratörleri & Akustik Araçlar -->
+      <div class="left-panel">
+        
+        <!-- Tab Butonları -->
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="solfeggioTab">🎵 Solfeggio Frekansları</button>
+          <button class="tab-btn" data-tab="makamTab">🕌 Osmanlı Makam Terapisi</button>
+          <button class="tab-btn" data-tab="binauralTab">🧠 Binaural & Beyin Dalgaları</button>
+          <button class="tab-btn" data-tab="traditionsTab">📜 Kutsal Kelâm & Gelenekler</button>
+        </div>
+
+        <!-- TAB 1: Solfeggio Frekansları -->
+        <div id="solfeggioTab" class="tab-content active">
+          <div class="section-header">
+            <h2>Kutsal Solfeggio Tonları</h2>
+            <p>Kadim manastır ilahilerinden ve kutsal harmonilerden türetilen rezonans tonları.</p>
+          </div>
+          <div class="solfeggio-grid" id="solfeggioGrid">
+            <!-- JS ile doldurulacak -->
+          </div>
+
+          <div class="custom-freq-card card mt-4">
+            <h3>Özel Frekans & Kozmik Oktav</h3>
+            <div class="custom-freq-row">
+              <button class="quick-freq-btn" data-freq="7.83" data-name="Schumann Rezonansı">🌍 7.83 Hz Schumann</button>
+              <button class="quick-freq-btn" data-freq="136.1" data-name="Om / Dünya Yılı">🕉️ 136.1 Hz Om</button>
+              <button class="quick-freq-btn" data-freq="432" data-name="Verdi Doğal Akort">✨ 432 Hz Altın Oran</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: Osmanlı Makam Terapisi -->
+        <div id="makamTab" class="tab-content">
+          <div class="section-header">
+            <h2>Osmanlı Darüşşifaları Makam Terapisi</h2>
+            <p>Farabi, İbn-i Sina ve Şuuri Hasan Efendi'nin tıp risalelerindeki 12 şifa makamı.</p>
+          </div>
+
+          <div class="makam-selector-wrap">
+            <label for="makamSelect">İncelenecek Makamı Seçin:</label>
+            <select id="makamSelect" class="form-select"></select>
+          </div>
+
+          <div id="makamDetailCard" class="card mt-3 makam-card">
+            <!-- JS dinamik içerik -->
+          </div>
+        </div>
+
+        <!-- TAB 3: Binaural Beats & Beyin Dalgaları -->
+        <div id="binauralTab" class="tab-content">
+          <div class="section-header">
+            <h2>Binaural Beats & Zihin Dalgaları</h2>
+            <p>Kulaklık gerektirir. Sağ ve sol kulağa verilen frekans farkıyla beyin dalgalarını hedefler.</p>
+          </div>
+
+          <div class="binaural-controls card">
+            <div class="wave-buttons">
+              <button class="wave-btn active" data-band="Alpha" data-beat="10.0" data-carrier="200">Alfa (10 Hz) • Sakin Dinginlik</button>
+              <button class="wave-btn" data-band="Theta" data-beat="6.0" data-carrier="150">Teta (6 Hz) • Meditasyon & Sezgi</button>
+              <button class="wave-btn" data-band="Delta" data-beat="2.5" data-carrier="100">Delta (2.5 Hz) • Derin Uyku & Şifa</button>
+              <button class="wave-btn" data-band="Beta" data-beat="18.0" data-carrier="250">Beta (18 Hz) • Odak & Mantık</button>
+              <button class="wave-btn" data-band="Gamma" data-beat="40.0" data-carrier="300">Gama (40 Hz) • Aşkın Algı</button>
+            </div>
+
+            <div class="sliders-wrap mt-3">
+              <div class="slider-group">
+                <label>Taşıyıcı Frekans: <span id="carrierVal">200</span> Hz</label>
+                <input type="range" id="carrierSlider" min="80" max="440" value="200" step="1">
+              </div>
+              <div class="slider-group">
+                <label>Hedef Beyin Dalgası Farkı: <span id="beatVal">10.0</span> Hz</label>
+                <input type="range" id="beatSlider" min="0.5" max="45" value="10.0" step="0.1">
+              </div>
+            </div>
+
+            <div class="binaural-actions mt-3">
+              <button id="toggleBinauralBtn" class="btn btn-primary">🎧 Binaural Sesi Başlat</button>
+            </div>
+          </div>
+
+          <!-- Kalp Koheransı / Vagus Nefes Rehberi -->
+          <div class="card mt-4 breathing-card">
+            <h3>🫁 Vagus Siniri & Kalp Koheransı Nefesi (0.1 Hz)</h3>
+            <p>5.5 saniye nefes al, 5.5 saniye nefes ver. Kalp hızı değişkenliğini ve parasempatik sistemi dengeler.</p>
+            <div class="breathing-circle-container">
+              <div class="breathing-circle" id="breathingCircle">
+                <span id="breathText">Hazır</span>
+              </div>
+            </div>
+            <button id="toggleBreathBtn" class="btn btn-secondary mt-2">Nefes Rehberini Başlat</button>
+          </div>
+        </div>
+
+        <!-- TAB 4: Kutsal Kelâm & Kadim Gelenekler -->
+        <div id="traditionsTab" class="tab-content">
+          <div class="section-header">
+            <h2>Kutsal Seslerin Akustik ve Nörolojik Boyutu</h2>
+            <p>Farklı kadim öğretilerin ses ve nefes disiplinlerinin bilimsel karşılaştırması.</p>
+          </div>
+
+          <div class="traditions-list" id="traditionsList">
+            <!-- JS ile doldurulacak -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SAĞ: Canlı Sematik (Cymatics) & Chladni Simülatörü -->
+      <div class="right-panel">
+        <div class="card cymatics-box">
+          <div class="cymatics-header">
+            <div>
+              <h2>🔮 Canlı Sematik Simülatörü (Cymatics)</h2>
+              <p class="cymatics-subtitle">Ses dalgalarının maddede oluşturduğu Chladni mandalaları</p>
+            </div>
+            <div class="mode-badges">
+              <span class="badge" id="modeBadge">Mod: n=3, m=5</span>
+              <span class="badge freq-badge" id="currentFreqBadge">432.0 Hz</span>
+            </div>
+          </div>
+
+          <!-- Canvas Alanı -->
+          <div class="canvas-wrapper">
+            <canvas id="cymaticsCanvas" width="500" height="500"></canvas>
+            <div class="canvas-overlay" id="canvasOverlay">
+              <span>Ses çaldığınızda parçacıklar rezonans çizgilerine toplanır</span>
+            </div>
+          </div>
+
+          <!-- Chladni Kontrolleri -->
+          <div class="cymatics-controls mt-3">
+            <div class="control-row">
+              <label for="chladniN">Modal n: <span id="nVal">3</span></label>
+              <input type="range" id="chladniN" min="1" max="8" value="3" step="1">
+            </div>
+            <div class="control-row">
+              <label for="chladniM">Modal m: <span id="mVal">5</span></label>
+              <input type="range" id="chladniM" min="1" max="10" value="5" step="1">
+            </div>
+            <div class="control-row">
+              <button id="scatterParticlesBtn" class="btn btn-outline">Kum Tanelerini Saç</button>
+              <button id="toggleAudioBtn" class="btn btn-primary">Tonu Başlat / Durdur</button>
+            </div>
+          </div>
+
+          <!-- Frekans Spektrumu / Osiloskop -->
+          <div class="oscilloscope-box mt-3">
+            <div class="scope-header">Ses Dalgası Analizörü</div>
+            <canvas id="scopeCanvas" width="460" height="70"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi</strong></p>
+      <p>Açık Kaynak Kodlu • MIT Lisansı • Kadim Bilgelik ve Modern Akustiğin Birleşimi</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

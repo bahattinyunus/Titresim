@@ -33,6 +33,21 @@ class TestFrequencies(unittest.TestCase):
         self.assertTrue(any("Schumann" in n for n in names))
         self.assertTrue(any("Om" in n or "Dünya" in n for n in names))
 
+    def test_planetary_frequencies(self):
+        from titresim.core.frequencies import PlanetaryFrequencies
+        planets = PlanetaryFrequencies.get_all()
+        self.assertGreaterEqual(len(planets), 10)
+        sun = PlanetaryFrequencies.find_by_id("sun")
+        self.assertIsNotNone(sun)
+        self.assertAlmostEqual(sun.frequency, 126.22, places=1)
+
+    def test_fibonacci_tuning(self):
+        from titresim.core.frequencies import fibonacci_tuning
+        series = fibonacci_tuning(8.0, 5)
+        # [8*1, 8*2, 8*3, 8*5, 8*8] = [8, 16, 24, 40, 64]
+        self.assertEqual(series, [8.0, 16.0, 24.0, 40.0, 64.0])
+
 
 if __name__ == "__main__":
     unittest.main()
+

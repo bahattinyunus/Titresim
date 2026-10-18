@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "titresim"
-version = "1.0.0"
+version = "1.2.0"
 description = "Evrensel Ses, Kutsal Kelâm, Osmanlı Darüşşifa Makamları ve Frekans Terapisi Laboratuvarı"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -14,7 +14,8 @@ authors = [
 ]
 keywords = [
     "titresim", "ses-terapisi", "chladni", "cymatics",
-    "makamlar", "solfeggio", "binaural-beats", "schumann-resonance"
+    "makamlar", "solfeggio", "binaural-beats", "isochronic-tones",
+    "pink-noise", "schumann-resonance", "planetary-frequencies", "53-tet"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",

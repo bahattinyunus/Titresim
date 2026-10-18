@@ -1,5 +1,5 @@
 /**
- * Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Laboratuvarı
+ * Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Laboratuvarı v1.2
  * Web Audio API & Canlı Chladni Cymatics Simülasyon Motoru
  */
 
@@ -100,78 +100,113 @@ const MAKAM_DATA = [
     id: "neva",
     name: "Neva Makamı",
     root: "D (Re - Neva)",
-    time: "Akşam vakti",
-    element: "Hava / Kova",
-    organ: "Kalça, omurilik ve zihin",
-    effects: ["Cesaret ve ferahlık hissi verir.", "Siyatik ağrılarını dindirir, taşkın delilik hallerini yatıştırır.", "Ruhsal gerilimi boşaltır."],
-    quote: "Evliya Çelebi: 'Edirne Darüşşifası'nda akıl hastaları bu makamla sükuna ererdi.'",
-    ratios: [1.0, 1.125, 1.25, 1.333, 1.5, 1.687, 1.777, 2.0]
+    time: "Akşam ile yatsı arası",
+    element: "Su (Soğuk & Nemli) / Kova",
+    organ: "Omurga, bel, kalça ve böbrekler",
+    effects: ["Cesaret, ferahlık ve ulvi hisler uyandırır.", "Akıl hastalıklarında kötü düşünceleri kovar.", "Omurga ağrılarını hafifletir."],
+    quote: "Farabi: 'Neva makamı insana lezzet ve ferahlık verir.'",
+    ratios: [1.0, 1.125, 1.2, 1.333, 1.5, 1.687, 1.8, 2.0]
   }
+];
+
+const PLANETARY_DATA = [
+  { id: "sun", name: "Güneş (Sun)", freq: 126.22, note: "B", chakra: "Solar Pleksus", cycle: "Güneş rotasyonu (32. oktav)", desc: "Yaşam enerjisi, canlılık ve benlik farkındalığı aşılar.", color: "#f59e0b" },
+  { id: "mercury", name: "Merkür (Mercury)", freq: 141.27, note: "C#", chakra: "Boğaz", cycle: "Yörünge periyodu (30. oktav)", desc: "İletişim, mantıksal zeka ve zihinsel akıcılık sağlar.", color: "#94a3b8" },
+  { id: "venus", name: "Venüs (Venus)", freq: 221.23, note: "A", chakra: "Kalp / Üçüncü Göz", cycle: "Yörünge periyodu (32. oktav)", desc: "Aşk, estetik, uyum ve şefkat rezonansı doğurur.", color: "#ec4899" },
+  { id: "earth_day", name: "Dünya Günü", freq: 194.18, note: "G", chakra: "Kök Çakra", cycle: "24 saat eksenel dönüş (24. oktav)", desc: "Topraklanma, fiziksel dinamizm ve canlılık.", color: "#10b981" },
+  { id: "om_year", name: "Dünya Yılı (Om)", freq: 136.10, note: "C#", chakra: "Kalp (Anahata)", cycle: "365.25 günlük döngü (32. oktav)", desc: "Evrensel denge, derin meditatif sükunet.", color: "#6366f1" },
+  { id: "moon_synodic", name: "Sinodik Ay", freq: 210.42, note: "G#", chakra: "Sakral Çakra", cycle: "29.53 gün ay fazı (29. oktav)", desc: "Duygusal akışkanlık, sezgi ve lenfatik denge.", color: "#38bdf8" },
+  { id: "mars", name: "Mars", freq: 144.72, note: "D", chakra: "Kök / Göbek", cycle: "Mars döngüsü (33. oktav)", desc: "Cesaret, motivasyon ve odaklanmış eylem kudreti.", color: "#ef4444" },
+  { id: "jupiter", name: "Jüpiter", freq: 183.58, note: "F#", chakra: "Üçüncü Göz", cycle: "11.86 yıllık yörünge (36. oktav)", desc: "Genişleme, bilgelik ve yüksek idrak bereketi.", color: "#f97316" },
+  { id: "saturn", name: "Satürn", freq: 147.85, note: "D", chakra: "Kök Çakra", cycle: "29.46 yıllık yörünge (37. oktav)", desc: "Disiplin, konsantrasyon ve kemik/yapı sağlığı.", color: "#64748b" },
+  { id: "platonic_year", name: "Platonik Büyük Yıl", freq: 172.06, note: "F", chakra: "Taç Çakra", cycle: "25.920 yıllık presesyon (48. oktav)", desc: "Ruhsal neşe, aydınlanma ve evrensel kozmik bilinç.", color: "#8b5cf6" }
 ];
 
 const TRADITIONS_DATA = [
   {
-    tradition: "İslam Kıraat ve Zikir Geleneği",
-    practice: "Kur'an Tecvidi, Gunne & Esma Zikri",
+    tradition: "İslam Tasavvuf ve Tecvid Geleneği",
+    practice: "Kur'an-ı Kerim Kıraati ve Zikir Rezonansı",
     principles: [
-      "Gunne (geniz sesi) burun sinüslerinde rezonans oluşturarak nitrik oksit (NO) salınımını 15 kata kadar arttırır.",
-      "Kalkale (patlamalı harfler) beyinde mikro-akustik uyanış şokları üretir.",
-      "Medd (sesi uzatma) parasempatik vagal tonusu optimize ederek solunumu 0.1 Hz ritmine kilitler."
+      "Tecvid kuralları (Med, Gunne, Kalkale, İhfa) ses yolunda mikro-harmonikler üretir.",
+      "Gunne (geniz titreşimi): Sinüsleri uyararak nitrik oksit (NO) salınımını 15 kata kadar arttırır.",
+      "Uzatma (Medd): Akciğer kapasitesini ve parasempatik vagal tonusu optimize eder."
     ],
-    effects: "Frontal EEG'de belirgin Alfa (8-12 Hz) ve Teta (4-7 Hz) yükselişi; kortizol düşüşü ve kalp koheransı."
+    effects: "Frontal EEG'de belirgin Alfa/Teta artışı, kortizolde sert düşüş, kalp hızı değişkenliği (HRV) koheransı."
   },
   {
     tradition: "Vedik ve Hint Geleneği",
-    practice: "Pranava Mantra (Om / Aum)",
+    practice: "Pranava Mantra (Om / Aum) & Nada Yoga",
     principles: [
-      "A-U-M heceleri karnın altından başın tepesine kadar dikey bir titreşim sütunu kurar.",
-      "136.1 Hz frekansı Dünya Yılı döngüsünün 32. oktavıdır.",
-      "Vagus sinirini uyararak limbik sistemdeki amigdala alarmını kapatır."
+      "A-U-M heceleri karından tepeye kadar dikey bir titreşim sütunu oluşturur.",
+      "Sanskrit fonetik dil yapısı damağa temas ederek 84 meridyen noktasını uyarır.",
+      "136.1 Hz (Dünya Yılı / Ciss) temel frekansı ile evrensel uyum."
     ],
-    effects: "Default Mode Network (DMN) gevezeliğini susturur; derin meditatif sükunet (Dhyana)."
+    effects: "Amigdala uyarımını yatıştırır, Default Mode Network (gevezelik) aktivitesini durdurur."
   },
   {
-    tradition: "Batı Manastır Geleneği",
-    practice: "Gregoryen İlahileri (Gregorian Chants)",
+    tradition: "Batı Gregoryen Manastır Geleneği",
+    practice: "Gregoryen İlahileri (Gregorian Chants / Solfeggio)",
     principles: [
-      "Monofonik (tek sesli) yapı ve Gotik katedrallerin 5-7 saniyelik yankılanma kubbesi.",
-      "Solfeggio serisindeki kutsal oranlar ve saf akort (Just Intonation)."
+      "Monofonik saf entonasyon ve 4-8 saniyelik katedral rezonansı.",
+      "Dr. Alfred Tomatis'in bulgularına göre koklea salyangozunu şarj eder ve korteksi uyanık tutar."
     ],
-    effects: "Dr. Alfred Tomatis'e göre kulak salyangozunu doğrudan şarj ederek korteksi uyanık tutar."
+    effects: "Nefes ritmini dakikada 6 nefese düşürür, tansiyonu regüle eder."
   },
   {
-    tradition: "Tibet & Şamanik Gelenek",
-    practice: "Tibet Çanakları & Ritmik Şaman Davulu",
+    tradition: "Tibet ve Himalaya Şamanizmi",
+    practice: "Tibet Ses Çanakları (Singing Bowls) & Çanlar",
     principles: [
-      "Alaşım çanakların mikrotonal vuruşları doğal binaural beat dalgaları oluşturur.",
-      "Şaman davulunun 4-7 Hz (dakikada 240-300 vuruş) ritmi beyni Teta bandına sürükler."
+      "7 kutsal metal alaşımından yayılan çok katmanlı mikrotonal çarpışmalar (Doğal Binaural vuruş).",
+      "Beden dokularında ve hücreler arası sıvıda piezoelektrik titreşim masajı."
     ],
-    effects: "Anlık bilişsel stres çözülmesi, vizyoner rüya bilinci ve derin hücresel masaj."
+    effects: "Anksiyete ve zihinsel stresi saniyeler içinde kırarak derin gevşeme sağlar."
   }
 ];
 
 // ==========================================
-// 2. SES MOTORU (WEB AUDIO API)
+// 2. GELİŞMİŞ SES MOTORU (WEB AUDIO API)
 // ==========================================
 class AudioEngine {
   constructor() {
     this.ctx = null;
     this.masterGain = null;
     this.analyser = null;
+    this.destNode = null; // Kayıt için
 
-    // Tekli ton osilatörü
+    // Tekli ton
     this.singleOsc = null;
     this.singleGain = null;
     this.isPlayingSingle = false;
 
-    // Binaural osilatörleri
+    // Binaural
     this.leftOsc = null;
     this.rightOsc = null;
     this.binauralGain = null;
     this.isPlayingBinaural = false;
 
-    // Makam sekans durumu
+    // İzokronik
+    this.isoCarrierOsc = null;
+    this.isoGain = null;
+    this.isoInterval = null;
+    this.isPlayingIso = false;
+
+    // Gürültü
+    this.noiseNode = null;
+    this.noiseGain = null;
+    this.isPlayingNoise = false;
+
+    // Dem / Tanpura Drone
+    this.droneOscs = [];
+    this.droneGain = null;
+    this.isPlayingDrone = false;
+
+    // Makam
     this.makamTimeouts = [];
+
+    // Kayıt Cihazı
+    this.mediaRecorder = null;
+    this.recordedChunks = [];
+    this.isRecording = false;
   }
 
   init() {
@@ -185,8 +220,11 @@ class AudioEngine {
       this.analyser = this.ctx.createAnalyser();
       this.analyser.fftSize = 512;
 
+      this.destNode = this.ctx.createMediaStreamDestination();
+
       this.masterGain.connect(this.analyser);
       this.analyser.connect(this.ctx.destination);
+      this.analyser.connect(this.destNode);
     }
     if (this.ctx.state === "suspended") {
       this.ctx.resume();
@@ -197,6 +235,7 @@ class AudioEngine {
     this.init();
     this.stopTone();
     this.stopBinaural();
+    this.stopIsochronic();
 
     this.singleOsc = this.ctx.createOscillator();
     this.singleGain = this.ctx.createGain();
@@ -204,7 +243,6 @@ class AudioEngine {
     this.singleOsc.type = type;
     this.singleOsc.frequency.setValueAtTime(freq, this.ctx.currentTime);
 
-    // Zarf (Fade in)
     this.singleGain.gain.setValueAtTime(0, this.ctx.currentTime);
     this.singleGain.gain.linearRampToValueAtTime(0.4, this.ctx.currentTime + 0.1);
 
@@ -221,14 +259,14 @@ class AudioEngine {
     if (this.singleOsc) {
       try {
         const now = this.ctx.currentTime;
-        this.singleGain.gain.linearRampToValueAtTime(0.001, now + 0.1);
+        this.singleGain.gain.linearRampToValueAtTime(0.001, now + 0.08);
         setTimeout(() => {
           if (this.singleOsc) {
             this.singleOsc.stop();
             this.singleOsc.disconnect();
             this.singleOsc = null;
           }
-        }, 110);
+        }, 90);
       } catch (e) {
         this.singleOsc = null;
       }
@@ -242,52 +280,45 @@ class AudioEngine {
     this.init();
     this.stopTone();
     this.stopBinaural();
+    this.stopIsochronic();
 
     const leftFreq = carrier - (beat / 2);
     const rightFreq = carrier + (beat / 2);
 
     this.leftOsc = this.ctx.createOscillator();
     this.rightOsc = this.ctx.createOscillator();
-    this.binauralGain = this.ctx.createGain();
 
     this.leftOsc.frequency.setValueAtTime(leftFreq, this.ctx.currentTime);
     this.rightOsc.frequency.setValueAtTime(rightFreq, this.ctx.currentTime);
 
-    // Stereo Kanal Birleştirici
     const merger = this.ctx.createChannelMerger(2);
-    this.leftOsc.connect(merger, 0, 0); // Sol kanal
+    this.binauralGain = this.ctx.createGain();
+
+    this.leftOsc.connect(merger, 0, 0);  // Sol kanal
     this.rightOsc.connect(merger, 0, 1); // Sağ kanal
 
-    this.binauralGain.gain.setValueAtTime(0, this.ctx.currentTime);
-    this.binauralGain.gain.linearRampToValueAtTime(0.35, this.ctx.currentTime + 0.3);
-
     merger.connect(this.binauralGain);
+    this.binauralGain.gain.setValueAtTime(0, this.ctx.currentTime);
+    this.binauralGain.gain.linearRampToValueAtTime(0.35, this.ctx.currentTime + 0.2);
+
     this.binauralGain.connect(this.masterGain);
 
     this.leftOsc.start();
     this.rightOsc.start();
     this.isPlayingBinaural = true;
 
-    updateAudioStatus(true, `Binaural: ${beat.toFixed(1)} Hz (Taşıyıcı: ${carrier} Hz)`);
+    updateAudioStatus(true, `Binaural (${carrier} Hz / Beat: ${beat.toFixed(1)} Hz)`);
   }
 
   stopBinaural() {
     if (this.leftOsc && this.rightOsc) {
       try {
         const now = this.ctx.currentTime;
-        this.binauralGain.gain.linearRampToValueAtTime(0.001, now + 0.15);
+        this.binauralGain.gain.linearRampToValueAtTime(0.001, now + 0.1);
         setTimeout(() => {
-          if (this.leftOsc) {
-            this.leftOsc.stop();
-            this.leftOsc.disconnect();
-            this.leftOsc = null;
-          }
-          if (this.rightOsc) {
-            this.rightOsc.stop();
-            this.rightOsc.disconnect();
-            this.rightOsc = null;
-          }
-        }, 160);
+          if (this.leftOsc) { this.leftOsc.stop(); this.leftOsc = null; }
+          if (this.rightOsc) { this.rightOsc.stop(); this.rightOsc = null; }
+        }, 110);
       } catch (e) {
         this.leftOsc = null;
         this.rightOsc = null;
@@ -297,45 +328,242 @@ class AudioEngine {
     updateAudioStatus(false);
   }
 
-  playMakamScale(makam, baseFreq = 220) {
+  playIsochronic(carrierFreq, pulseRate) {
     this.init();
     this.stopTone();
     this.stopBinaural();
-    this.stopMakamScale();
+    this.stopIsochronic();
 
-    const freqs = makam.ratios.map(r => baseFreq * r);
-    const noteDuration = 0.8; // saniye
+    this.isoCarrierOsc = this.ctx.createOscillator();
+    this.isoCarrierOsc.type = "sine";
+    this.isoCarrierOsc.frequency.setValueAtTime(carrierFreq, this.ctx.currentTime);
 
-    freqs.forEach((freq, idx) => {
-      const timeoutId = setTimeout(() => {
-        this.playPluckNote(freq, noteDuration * 0.95);
-        // Cymatics simülatörünü güncelle
-        cymaticsSim.setFrequency(freq);
-      }, idx * noteDuration * 1000);
-      this.makamTimeouts.push(timeoutId);
-    });
+    this.isoGain = this.ctx.createGain();
+    this.isoGain.gain.setValueAtTime(0.0, this.ctx.currentTime);
 
-    // Bitişte durumu sıfırla
-    const finalTimeout = setTimeout(() => {
-      updateAudioStatus(false);
-    }, freqs.length * noteDuration * 1000);
-    this.makamTimeouts.push(finalTimeout);
+    this.isoCarrierOsc.connect(this.isoGain);
+    this.isoGain.connect(this.masterGain);
 
-    updateAudioStatus(true, `${makam.name} İcra Ediliyor...`);
+    this.isoCarrierOsc.start();
+    this.isPlayingIso = true;
+
+    // Ritmik darbe modülasyonu
+    const periodMs = 1000.0 / pulseRate;
+    const onDuration = periodMs * 0.5;
+
+    let isOn = false;
+    this.isoInterval = setInterval(() => {
+      if (!this.isPlayingIso || !this.ctx) return;
+      isOn = !isOn;
+      const now = this.ctx.currentTime;
+      if (isOn) {
+        this.isoGain.gain.cancelScheduledValues(now);
+        this.isoGain.gain.linearRampToValueAtTime(0.4, now + 0.02);
+      } else {
+        this.isoGain.gain.cancelScheduledValues(now);
+        this.isoGain.gain.linearRampToValueAtTime(0.001, now + 0.02);
+      }
+    }, onDuration);
+
+    updateAudioStatus(true, `İzokronik: ${carrierFreq} Hz / Nabız: ${pulseRate.toFixed(1)} Hz`);
   }
 
-  playPluckNote(freq, duration) {
+  stopIsochronic() {
+    if (this.isoInterval) {
+      clearInterval(this.isoInterval);
+      this.isoInterval = null;
+    }
+    if (this.isoCarrierOsc) {
+      try {
+        this.isoCarrierOsc.stop();
+        this.isoCarrierOsc.disconnect();
+      } catch (e) {}
+      this.isoCarrierOsc = null;
+    }
+    this.isPlayingIso = false;
+    updateAudioStatus(false);
+  }
+
+  playNoise(type = "pink", volume = 0.3) {
+    this.init();
+    this.stopNoise();
+
+    const bufferSize = this.ctx.sampleRate * 3; // 3 saniyelik döngü
+    const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const output = buffer.getChannelData(0);
+
+    if (type === "white") {
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+    } else if (type === "pink") {
+      let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        b0 = 0.99886 * b0 + white * 0.0555179;
+        b1 = 0.99332 * b1 + white * 0.0750759;
+        b2 = 0.96900 * b2 + white * 0.1538520;
+        b3 = 0.86650 * b3 + white * 0.3104856;
+        b4 = 0.55000 * b4 + white * 0.5329522;
+        b5 = -0.7616 * b5 - white * 0.0168980;
+        output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
+        b6 = white * 0.115926;
+      }
+    } else if (type === "brown") {
+      let lastOut = 0.0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        output[i] = (lastOut + (0.02 * white)) / 1.02;
+        lastOut = output[i];
+        output[i] *= 3.5; // Güçlendir
+      }
+    }
+
+    this.noiseNode = this.ctx.createBufferSource();
+    this.noiseNode.buffer = buffer;
+    this.noiseNode.loop = true;
+
+    this.noiseGain = this.ctx.createGain();
+    this.noiseGain.gain.setValueAtTime(volume, this.ctx.currentTime);
+
+    this.noiseNode.connect(this.noiseGain);
+    this.noiseGain.connect(this.masterGain);
+
+    this.noiseNode.start();
+    this.isPlayingNoise = true;
+  }
+
+  stopNoise() {
+    if (this.noiseNode) {
+      try {
+        this.noiseNode.stop();
+        this.noiseNode.disconnect();
+      } catch (e) {}
+      this.noiseNode = null;
+    }
+    this.isPlayingNoise = false;
+  }
+
+  toggleDrone(rootFreq = 136.1) {
+    if (this.isPlayingDrone) {
+      this.stopDrone();
+      return false;
+    } else {
+      this.startDrone(rootFreq);
+      return true;
+    }
+  }
+
+  startDrone(rootFreq = 136.1) {
+    this.init();
+    this.stopDrone();
+
+    this.droneGain = this.ctx.createGain();
+    this.droneGain.gain.setValueAtTime(0, this.ctx.currentTime);
+    this.droneGain.gain.linearRampToValueAtTime(0.25, this.ctx.currentTime + 1.5);
+
+    // Düşük geçiren filtre (yumuşak mistik hava)
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(600, this.ctx.currentTime);
+
+    const layers = [
+      { freq: rootFreq, gain: 0.5 },
+      { freq: rootFreq * 1.002, gain: 0.3 }, // Koro detuning
+      { freq: rootFreq * 1.5, gain: 0.2 },   // 5'li
+      { freq: rootFreq * 2.0, gain: 0.1 }    // Oktav
+    ];
+
+    layers.forEach(l => {
+      const osc = this.ctx.createOscillator();
+      const g = this.ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(l.freq, this.ctx.currentTime);
+      g.gain.setValueAtTime(l.gain, this.ctx.currentTime);
+
+      osc.connect(g);
+      g.connect(filter);
+      osc.start();
+      this.droneOscs.push(osc);
+    });
+
+    filter.connect(this.droneGain);
+    this.droneGain.connect(this.masterGain);
+    this.isPlayingDrone = true;
+  }
+
+  stopDrone() {
+    if (this.droneOscs.length > 0) {
+      try {
+        const now = this.ctx.currentTime;
+        this.droneGain.gain.linearRampToValueAtTime(0.001, now + 1.0);
+        setTimeout(() => {
+          this.droneOscs.forEach(o => { try { o.stop(); o.disconnect(); } catch (e) {} });
+          this.droneOscs = [];
+        }, 1050);
+      } catch (e) {
+        this.droneOscs = [];
+      }
+    }
+    this.isPlayingDrone = false;
+  }
+
+  playTibetanBowl(freq = 528.0) {
+    this.init();
+    const now = this.ctx.currentTime;
+
+    const harmonics = [1.0, 2.0, 3.01, 4.2];
+    const decays = [4.5, 3.0, 2.0, 1.2];
+
+    harmonics.forEach((h, idx) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq * h, now);
+
+      gain.gain.setValueAtTime(0.2 / (idx + 1), now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + decays[idx]);
+
+      osc.connect(gain);
+      gain.connect(this.masterGain);
+
+      osc.start(now);
+      osc.stop(now + decays[idx]);
+    });
+  }
+
+  playMakamScale(makam, baseFreq = 220.0) {
+    this.init();
+    this.stopTone();
+    this.stopMakamScale();
+
+    const noteDuration = 0.9;
+    makam.ratios.forEach((ratio, index) => {
+      const freq = baseFreq * ratio;
+      const tid = setTimeout(() => {
+        this.playMakamNote(freq, noteDuration);
+        if (cymaticsSim) {
+          cymaticsSim.setFrequency(freq);
+        }
+      }, index * noteDuration * 1000);
+      this.makamTimeouts.push(tid);
+    });
+
+    updateAudioStatus(true, `${makam.name} Arpeji Çalıyor`);
+  }
+
+  playMakamNote(freq, duration) {
+    const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
     osc.type = "sine";
-    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+    osc.frequency.setValueAtTime(freq, now);
 
-    // Ney / tambur benzeri yumuşak zarf
-    const now = this.ctx.currentTime;
     gain.gain.setValueAtTime(0, now);
-    gain.gain.linearRampToValueAtTime(0.4, now + 0.05);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+    gain.gain.linearRampToValueAtTime(0.35, now + 0.08);
+    gain.gain.setValueAtTime(0.3, now + duration - 0.15);
+    gain.gain.linearRampToValueAtTime(0.001, now + duration);
 
     osc.connect(gain);
     gain.connect(this.masterGain);
@@ -347,6 +575,40 @@ class AudioEngine {
   stopMakamScale() {
     this.makamTimeouts.forEach(id => clearTimeout(id));
     this.makamTimeouts = [];
+  }
+
+  startRecording() {
+    this.init();
+    this.recordedChunks = [];
+    const stream = this.destNode.stream;
+    this.mediaRecorder = new MediaRecorder(stream);
+
+    this.mediaRecorder.ondataavailable = (e) => {
+      if (e.data.size > 0) {
+        this.recordedChunks.push(e.data);
+      }
+    };
+
+    this.mediaRecorder.onstop = () => {
+      const blob = new Blob(this.recordedChunks, { type: "audio/webm" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `titresim_seans_${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.webm`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    };
+
+    this.mediaRecorder.start();
+    this.isRecording = true;
+  }
+
+  stopRecording() {
+    if (this.mediaRecorder && this.isRecording) {
+      this.mediaRecorder.stop();
+      this.isRecording = false;
+    }
   }
 }
 
@@ -362,6 +624,7 @@ class CymaticsSimulation {
     this.numParticles = 2800;
     this.particles = [];
 
+    this.plateType = "square"; // "square" veya "circular"
     this.n = 3;
     this.m = 5;
     this.a = 1.0;
@@ -375,16 +638,14 @@ class CymaticsSimulation {
 
   initParticles() {
     this.particles = [];
-    const w = this.canvas.width;
-    const h = this.canvas.height;
     for (let i = 0; i < this.numParticles; i++) {
       this.particles.push({
-        x: (Math.random() - 0.5) * 0.96, // [-0.48, 0.48]
-        y: (Math.random() - 0.5) * 0.96,
+        x: (Math.random() - 0.5) * 0.94,
+        y: (Math.random() - 0.5) * 0.94,
         vx: (Math.random() - 0.5) * 0.002,
         vy: (Math.random() - 0.5) * 0.002,
         size: Math.random() < 0.2 ? 1.8 : 1.2,
-        colorHue: Math.random() < 0.15 ? 195 : 42 // Altın & Turkuaz
+        colorHue: Math.random() < 0.15 ? 195 : 42
       });
     }
   }
@@ -401,7 +662,6 @@ class CymaticsSimulation {
     this.currentFreq = freq;
     document.getElementById("currentFreqBadge").innerText = `${freq.toFixed(1)} Hz`;
 
-    // Frekansa göre dinamik modal harmonikler hesapla
     let newN = 3, newM = 5;
     if (freq < 150) { newN = 1; newM = 2; }
     else if (freq < 250) { newN = 2; newM = 3; }
@@ -419,9 +679,23 @@ class CymaticsSimulation {
   // Chladni modal genlik fonksiyonu w(x, y)
   evaluateW(x, y) {
     const pi = Math.PI;
-    const term1 = Math.cos(this.n * pi * x) * Math.cos(this.m * pi * y);
-    const term2 = Math.cos(this.m * pi * x) * Math.cos(this.n * pi * y);
-    return this.a * term1 - this.b * term2;
+    if (this.plateType === "circular") {
+      // Dairesel plaka / Su çanağı modu: J_m(k * r) * cos(m * theta)
+      const r = Math.sqrt(x * x + y * y);
+      if (r > 0.48) return 5.0; // Sınır dışı
+      const theta = Math.atan2(y, x);
+      const normR = r / 0.48;
+      const k = pi * (this.n + (this.m / 2.0) - 0.25);
+      const arg = k * normR;
+      // Bessel J_m(arg) yaklaşımı
+      const radial = Math.cos(arg - (this.m * pi / 2) - (pi / 4)) * Math.sqrt(2 / (pi * (arg + 0.1)));
+      return radial * Math.cos(this.m * theta);
+    } else {
+      // Standart Kare Chladni Plakası
+      const term1 = Math.cos(this.n * pi * x) * Math.cos(this.m * pi * y);
+      const term2 = Math.cos(this.m * pi * x) * Math.cos(this.n * pi * y);
+      return this.a * term1 - this.b * term2;
+    }
   }
 
   animate() {
@@ -431,57 +705,67 @@ class CymaticsSimulation {
     const halfW = w / 2;
     const halfH = h / 2;
 
-    // Arka planı hafif silme (Motion blur efekti)
     ctx.fillStyle = "rgba(6, 9, 17, 0.25)";
     ctx.fillRect(0, 0, w, h);
 
-    const isAudioActive = audio.isPlayingSingle || audio.isPlayingBinaural || audio.makamTimeouts.length > 0;
+    // Dairesel plaka çeperi çizimi
+    if (this.plateType === "circular") {
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(halfW, halfH, (w - 20) * 0.48, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    const isAudioActive = audio.isPlayingSingle || audio.isPlayingBinaural || audio.isPlayingIso || audio.isPlayingDrone || audio.makamTimeouts.length > 0;
     const agitation = isAudioActive ? 0.0035 : 0.001;
     const forceFactor = isAudioActive ? 0.0006 : 0.0002;
 
-    // Parçacıkları güncelle ve çiz
     for (let i = 0; i < this.particles.length; i++) {
       const p = this.particles[i];
 
-      // Genlik ve gradyan hesapla
       const val = this.evaluateW(p.x, p.y);
       const absVal = Math.abs(val);
 
-      // Sayısal türevle gradyan bul
       const eps = 0.01;
       const gradX = (Math.abs(this.evaluateW(p.x + eps, p.y)) - absVal) / eps;
       const gradY = (Math.abs(this.evaluateW(p.x, p.y + eps)) - absVal) / eps;
 
-      // Parçacıklar genliğin sıfır olduğu (düğüm) çizgilere doğru itilir
       p.vx -= gradX * forceFactor;
       p.vy -= gradY * forceFactor;
 
-      // Rastgele akustik titreşim (termal Brownian hareketi)
       p.vx += (Math.random() - 0.5) * agitation * absVal;
       p.vy += (Math.random() - 0.5) * agitation * absVal;
 
-      // Sürtünme
       p.vx *= 0.94;
       p.vy *= 0.94;
 
       p.x += p.vx;
       p.y += p.vy;
 
-      // Sınırlar
-      if (p.x < -0.48) { p.x = -0.48; p.vx *= -0.5; }
-      if (p.x > 0.48) { p.x = 0.48; p.vx *= -0.5; }
-      if (p.y < -0.48) { p.y = -0.48; p.vy *= -0.5; }
-      if (p.y > 0.48) { p.y = 0.48; p.vy *= -0.5; }
+      if (this.plateType === "circular") {
+        const r = Math.sqrt(p.x * p.x + p.y * p.y);
+        if (r > 0.47) {
+          const angle = Math.atan2(p.y, p.x);
+          p.x = Math.cos(angle) * 0.46;
+          p.y = Math.sin(angle) * 0.46;
+          p.vx *= -0.4;
+          p.vy *= -0.4;
+        }
+      } else {
+        if (p.x < -0.48) { p.x = -0.48; p.vx *= -0.5; }
+        if (p.x > 0.48) { p.x = 0.48; p.vx *= -0.5; }
+        if (p.y < -0.48) { p.y = -0.48; p.vy *= -0.5; }
+        if (p.y > 0.48) { p.y = 0.48; p.vy *= -0.5; }
+      }
 
-      // Ekrana yansıt
       const scrX = halfW + p.x * (w - 20);
       const scrY = halfH + p.y * (h - 20);
 
-      // Renk ve parlaklık: Düğüm çizgisine yaklaştıkça parlar
       ctx.beginPath();
       ctx.arc(scrX, scrY, p.size, 0, Math.PI * 2);
-      if (absVal < 0.15) {
-        ctx.fillStyle = p.colorHue === 42 ? "#fbbf24" : "#38bdf8"; // Tam rezonans
+      if (absVal < 0.16) {
+        ctx.fillStyle = p.colorHue === 42 ? "#fbbf24" : "#38bdf8";
       } else {
         ctx.fillStyle = "rgba(148, 163, 184, 0.4)";
       }
@@ -509,7 +793,9 @@ function startOscilloscope() {
     ctx.fillStyle = "#05080e";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if (audio.analyser && (audio.isPlayingSingle || audio.isPlayingBinaural || audio.makamTimeouts.length > 0)) {
+    const isActive = audio.analyser && (audio.isPlayingSingle || audio.isPlayingBinaural || audio.isPlayingIso || audio.isPlayingDrone || audio.isPlayingNoise || audio.makamTimeouts.length > 0);
+
+    if (isActive) {
       audio.analyser.getByteTimeDomainData(dataArray);
 
       ctx.lineWidth = 2;
@@ -530,11 +816,12 @@ function startOscilloscope() {
         }
         x += sliceWidth;
       }
+      ctx.lineTo(canvas.width, canvas.height / 2);
       ctx.stroke();
     } else {
-      // Düz çizgi (hazırda bekleme)
-      ctx.strokeStyle = "rgba(148, 163, 184, 0.25)";
+      // Düz çizgi
       ctx.lineWidth = 1;
+      ctx.strokeStyle = "rgba(148, 163, 184, 0.25)";
       ctx.beginPath();
       ctx.moveTo(0, canvas.height / 2);
       ctx.lineTo(canvas.width, canvas.height / 2);
@@ -545,60 +832,80 @@ function startOscilloscope() {
   drawScope();
 }
 
-// ==========================================
-// 5. ARAYÜZ (UI) BAĞLANTILARI
-// ==========================================
-function updateAudioStatus(isPlaying, text = "Ton Çalıyor") {
+// Durum Rozeti Güncelleyici
+function updateAudioStatus(isPlaying, text = "Hazır") {
   const badge = document.getElementById("audioStatusBadge");
-  const toggleBtn = document.getElementById("toggleAudioBtn");
+  const overlay = document.getElementById("canvasOverlay");
 
   if (isPlaying) {
-    badge.className = "status-badge active";
+    badge.className = "status-badge playing";
     badge.innerText = `● ${text}`;
-    toggleBtn.innerText = "Sesi Durdur";
-    toggleBtn.classList.replace("btn-primary", "btn-secondary");
+    if (overlay) overlay.style.opacity = "0";
   } else {
     badge.className = "status-badge ready";
     badge.innerText = "Ses Motoru: Hazır";
-    toggleBtn.innerText = "Tonu Başlat / Durdur";
-    toggleBtn.classList.replace("btn-secondary", "btn-primary");
+    if (overlay) overlay.style.opacity = "1";
   }
 }
 
-// Solfeggio Kartlarını Render Et
+// ==========================================
+// 5. ARAYÜZ GÖRSEL BİLEŞENLERİ (UI RENDERING)
+// ==========================================
 function renderSolfeggio() {
   const grid = document.getElementById("solfeggioGrid");
   grid.innerHTML = "";
 
-  SOLFEGGIO_DATA.forEach(item => {
+  SOLFEGGIO_DATA.forEach(t => {
     const card = document.createElement("div");
     card.className = "solf-card";
     card.innerHTML = `
-      <div class="solf-card-top">
-        <span class="solf-freq">${item.freq} Hz</span>
-        <span class="solf-note">${item.note}</span>
-      </div>
-      <div class="solf-name">${item.name}</div>
-      <div class="solf-chakra">🔹 ${item.chakra}</div>
-      <div class="solf-desc">${item.desc}</div>
+      <div class="solf-freq">${t.freq} Hz</div>
+      <div class="solf-name">${t.name}</div>
+      <div class="solf-chakra">Çakra: <span>${t.chakra}</span> (Nota: ${t.note})</div>
+      <div class="solf-desc">${t.desc}</div>
+      <button class="btn btn-sm btn-outline mt-2 play-solf-btn">Titreşimi Dinle</button>
     `;
 
-    card.addEventListener("click", () => {
+    card.querySelector(".play-solf-btn").addEventListener("click", () => {
       document.querySelectorAll(".solf-card").forEach(c => c.classList.remove("playing"));
-      if (audio.isPlayingSingle && cymaticsSim.currentFreq === item.freq) {
-        audio.stopTone();
-      } else {
-        card.classList.add("playing");
-        audio.playTone(item.freq);
-        cymaticsSim.setFrequency(item.freq);
-      }
+      card.classList.add("playing");
+      audio.playTone(t.freq);
+      cymaticsSim.setFrequency(t.freq);
     });
 
     grid.appendChild(card);
   });
 }
 
-// Makamları Render Et
+function renderPlanetary() {
+  const grid = document.getElementById("planetaryGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  PLANETARY_DATA.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "planet-card";
+    card.innerHTML = `
+      <div class="planet-name">
+        <span>${p.name}</span>
+        <span class="planet-freq">${p.freq} Hz</span>
+      </div>
+      <div class="planet-cycle">🪐 ${p.cycle} (Nota: ${p.note} | ${p.chakra})</div>
+      <p class="planet-effects">${p.desc}</p>
+      <button class="btn btn-sm btn-outline mt-2 play-planet-btn">Kozmik Frekansı Çal</button>
+    `;
+
+    card.querySelector(".play-planet-btn").addEventListener("click", () => {
+      document.querySelectorAll(".planet-card").forEach(c => c.classList.remove("playing"));
+      card.classList.add("playing");
+      audio.playTone(p.freq);
+      cymaticsSim.setFrequency(p.freq);
+    });
+
+    grid.appendChild(card);
+  });
+}
+
 function renderMakamlar() {
   const select = document.getElementById("makamSelect");
   select.innerHTML = "";
@@ -642,7 +949,6 @@ function renderMakamlar() {
   updateMakamDetail(MAKAM_DATA[0].id);
 }
 
-// Kutsal Gelenekleri Render Et
 function renderTraditions() {
   const list = document.getElementById("traditionsList");
   list.innerHTML = "";
@@ -662,7 +968,7 @@ function renderTraditions() {
   });
 }
 
-// Nefes Rehberi Mantığı (0.1 Hz / Coherent Breathing)
+// Kalp Koheransı Nefes Rehberi (0.1 Hz)
 let breathInterval = null;
 let isBreathingActive = false;
 
@@ -700,11 +1006,64 @@ function setupBreathing() {
   });
 }
 
+// Seans Zamanlayıcısı
+let sessionTimer = null;
+let timerSecondsLeft = 0;
+
+function setupSessionTimer() {
+  const display = document.getElementById("timerCountdown");
+  const cancelBtn = document.getElementById("cancelTimerBtn");
+
+  document.querySelectorAll(".timer-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const minutes = parseInt(btn.getAttribute("data-minutes"), 10);
+      startTimer(minutes * 60);
+    });
+  });
+
+  cancelBtn.addEventListener("click", () => {
+    stopTimer();
+  });
+
+  function startTimer(seconds) {
+    stopTimer();
+    timerSecondsLeft = seconds;
+    cancelBtn.classList.remove("hidden");
+    updateDisplay();
+
+    sessionTimer = setInterval(() => {
+      timerSecondsLeft--;
+      if (timerSecondsLeft <= 0) {
+        stopTimer();
+        // Seans Tamamlandı - Tibet Çanağı Zili Çal
+        audio.playTibetanBowl(528.0);
+        alert("🧘 Meditasyon seansınız tamamlandı. Şifa olsun!");
+      } else {
+        updateDisplay();
+      }
+    }, 1000);
+  }
+
+  function stopTimer() {
+    if (sessionTimer) {
+      clearInterval(sessionTimer);
+      sessionTimer = null;
+    }
+    cancelBtn.classList.add("hidden");
+    display.innerText = "Sayaç: Kapalı";
+  }
+
+  function updateDisplay() {
+    const mins = Math.floor(timerSecondsLeft / 60);
+    const secs = timerSecondsLeft % 60;
+    display.innerText = `Kalan: ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+}
+
 // ==========================================
 // 6. BAŞLATICI (INITIALIZATION)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Canvas ve Simülatör Kurulumu
   const canvas = document.getElementById("cymaticsCanvas");
   cymaticsSim = new CymaticsSimulation(canvas);
   startOscilloscope();
@@ -717,11 +1076,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       btn.classList.add("active");
       const targetId = btn.getAttribute("data-tab");
-      document.getElementById(targetId).classList.add("active");
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
     });
   });
 
-  // Hızlı Frekans Butonları (Schumann, Om, 432 Hz)
+  // Hızlı Frekans Butonları
   document.querySelectorAll(".quick-freq-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const freq = parseFloat(btn.getAttribute("data-freq"));
@@ -730,16 +1092,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Plaka Türü Değişimi (Kare vs Dairesel)
+  const squareBtn = document.getElementById("squarePlateBtn");
+  const circularBtn = document.getElementById("circularPlateBtn");
+  const plateBadge = document.getElementById("plateTypeBadge");
+
+  squareBtn.addEventListener("click", () => {
+    squareBtn.classList.add("active");
+    circularBtn.classList.remove("active");
+    cymaticsSim.plateType = "square";
+    plateBadge.innerText = "Kare Plaka";
+    cymaticsSim.initParticles();
+  });
+
+  circularBtn.addEventListener("click", () => {
+    circularBtn.classList.add("active");
+    squareBtn.classList.remove("active");
+    cymaticsSim.plateType = "circular";
+    plateBadge.innerText = "Dairesel Çanak";
+    cymaticsSim.initParticles();
+  });
+
   // Chladni Slider Dinleyicileri
   const nSlider = document.getElementById("chladniN");
   const mSlider = document.getElementById("chladniM");
 
   nSlider.addEventListener("input", (e) => {
-    cymaticsSim.setModes(parseInt(e.target.value), parseInt(mSlider.value));
+    cymaticsSim.setModes(parseInt(e.target.value, 10), parseInt(mSlider.value, 10));
   });
 
   mSlider.addEventListener("input", (e) => {
-    cymaticsSim.setModes(parseInt(nSlider.value), parseInt(e.target.value));
+    cymaticsSim.setModes(parseInt(nSlider.value, 10), parseInt(e.target.value, 10));
   });
 
   // Parçacıkları Saç
@@ -749,10 +1132,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Ses Aç / Kapa
   document.getElementById("toggleAudioBtn").addEventListener("click", () => {
-    if (audio.isPlayingSingle || audio.isPlayingBinaural || audio.makamTimeouts.length > 0) {
+    if (audio.isPlayingSingle || audio.isPlayingBinaural || audio.isPlayingIso || audio.makamTimeouts.length > 0) {
       audio.stopTone();
+      audio.stopBinaural();
+      audio.stopIsochronic();
     } else {
       audio.playTone(cymaticsSim.currentFreq);
+    }
+  });
+
+  // Dem / Tanpura Drone Butonu
+  const toggleDroneBtn = document.getElementById("toggleDroneBtn");
+  toggleDroneBtn.addEventListener("click", () => {
+    const isNowPlaying = audio.toggleDrone(136.1);
+    if (isNowPlaying) {
+      toggleDroneBtn.innerText = "🕉️ Dem Tonu: Açık";
+      toggleDroneBtn.classList.add("active");
+    } else {
+      toggleDroneBtn.innerText = "🕉️ Dem Tonu: Kapalı";
+      toggleDroneBtn.classList.remove("active");
+    }
+  });
+
+  // Canlı Ses Kayıt Butonu
+  const recordBtn = document.getElementById("recordAudioBtn");
+  recordBtn.addEventListener("click", () => {
+    if (!audio.isRecording) {
+      audio.startRecording();
+      recordBtn.innerText = "⏹️ Kaydı Bitir & İndir";
+      recordBtn.classList.add("recording");
+    } else {
+      audio.stopRecording();
+      recordBtn.innerText = "⏺️ Seansı Kaydet";
+      recordBtn.classList.remove("recording");
     }
   });
 
@@ -809,9 +1221,83 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // İzokronik Kontrolleri
+  const isoCarrierSlider = document.getElementById("isoCarrierSlider");
+  const isoPulseSlider = document.getElementById("isoPulseSlider");
+  const isoCarrierVal = document.getElementById("isoCarrierVal");
+  const isoPulseVal = document.getElementById("isoPulseVal");
+  const isoBandName = document.getElementById("isoBandName");
+  const toggleIsoBtn = document.getElementById("toggleIsoBtn");
+
+  function getBandName(hz) {
+    if (hz <= 4) return "Delta";
+    if (hz <= 8) return "Teta";
+    if (hz <= 13) return "Alfa";
+    if (hz <= 30) return "Beta";
+    return "Gama";
+  }
+
+  isoCarrierSlider.addEventListener("input", (e) => {
+    isoCarrierVal.innerText = e.target.value;
+    if (audio.isPlayingIso) {
+      audio.playIsochronic(parseFloat(isoCarrierSlider.value), parseFloat(isoPulseSlider.value));
+    }
+  });
+
+  isoPulseSlider.addEventListener("input", (e) => {
+    const val = parseFloat(e.target.value);
+    isoPulseVal.innerText = val.toFixed(1);
+    isoBandName.innerText = getBandName(val);
+    if (audio.isPlayingIso) {
+      audio.playIsochronic(parseFloat(isoCarrierSlider.value), val);
+    }
+  });
+
+  toggleIsoBtn.addEventListener("click", () => {
+    if (audio.isPlayingIso) {
+      audio.stopIsochronic();
+      toggleIsoBtn.innerText = "⚡ İzokronik Nabzı Başlat";
+    } else {
+      const c = parseFloat(isoCarrierSlider.value);
+      const p = parseFloat(isoPulseSlider.value);
+      audio.playIsochronic(c, p);
+      cymaticsSim.setFrequency(c);
+      toggleIsoBtn.innerText = "⏹️ İzokronik Nabzı Durdur";
+    }
+  });
+
+  // Akustik Gürültü Kontrolleri
+  const noiseVolSlider = document.getElementById("noiseVolSlider");
+  const noiseVolVal = document.getElementById("noiseVolVal");
+  const stopNoiseBtn = document.getElementById("stopNoiseBtn");
+
+  noiseVolSlider.addEventListener("input", (e) => {
+    noiseVolVal.innerText = e.target.value;
+    if (audio.noiseGain) {
+      audio.noiseGain.gain.setValueAtTime(e.target.value / 100.0, audio.ctx.currentTime);
+    }
+  });
+
+  document.querySelectorAll(".noise-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".noise-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const type = btn.getAttribute("data-noise");
+      const vol = parseFloat(noiseVolSlider.value) / 100.0;
+      audio.playNoise(type, vol);
+    });
+  });
+
+  stopNoiseBtn.addEventListener("click", () => {
+    document.querySelectorAll(".noise-btn").forEach(b => b.classList.remove("active"));
+    audio.stopNoise();
+  });
+
   // Verileri ve Alt Bileşenleri Başlat
   renderSolfeggio();
+  renderPlanetary();
   renderMakamlar();
   renderTraditions();
   setupBreathing();
+  setupSessionTimer();
 });

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "sun",
+    "name": "Güneş (Sun)",
+    "frequency": 126.22,
+    "note": "B (Si)",
+    "chakra": "Solar Pleksus",
+    "cycle": "Güneşin dönme periyodu (32. oktav)",
+    "effects": "Yaşam enerjisi, canlılık, benlik farkındalığı ve irade gücü aşılar.",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "mercury",
+    "name": "Merkür (Mercury)",
+    "frequency": 141.27,
+    "note": "C# (Do Diyez)",
+    "chakra": "Boğaz Çakrası",
+    "cycle": "Güneş etrafındaki yörünge periyodu (30. oktav)",
+    "effects": "İletişim, mantıksal zeka, analiz yeteneği ve zihinsel akıcılık sağlar.",
+    "color": "#94a3b8"
+  },
+  {
+    "id": "venus",
+    "name": "Venüs (Venus)",
+    "frequency": 221.23,
+    "note": "A (La)",
+    "chakra": "Üçüncü Göz / Kalp",
+    "cycle": "Güneş etrafındaki yörünge periyodu (32. oktav)",
+    "effects": "Estetik, aşk, uyum, şefkat ve duygusal rezonans doğurur.",
+    "color": "#ec4899"
+  },
+  {
+    "id": "earth_day",
+    "name": "Dünya Günü (Earth Day)",
+    "frequency": 194.18,
+    "note": "G (Sol)",
+    "chakra": "Kök Çakra",
+    "cycle": "24 saatlik eksenel dönüş (24. oktav)",
+    "effects": "Topraklanma, fiziksel bedenle bütünleşme, dinamizm ve tazelik.",
+    "color": "#10b981"
+  },
+  {
+    "id": "om_year",
+    "name": "Dünya Yılı / Om (Earth Year)",
+    "frequency": 136.10,
+    "note": "C# (Do Diyez)",
+    "chakra": "Kalp Çakrası (Anahata)",
+    "cycle": "Dünyanın 365.25 günlük yılı (32. oktav - Hint Sadja tonu)",
+    "effects": "Evrensel denge, derin gevşeme, zihinsel sessizlik ve sükunet.",
+    "color": "#6366f1"
+  },
+  {
+    "id": "platonic_year",
+    "name": "Platonik Büyük Yıl (Precession)",
+    "frequency": 172.06,
+    "note": "F (Fa)",
+    "chakra": "Taç Çakra",
+    "cycle": "25.920 yıllık ekinoks presesyon döngüsü (48. oktav)",
+    "effects": "Ruhsal neşe, berraklık, aydınlanma ve evrensel kozmik bilinç.",
+    "color": "#8b5cf6"
+  },
+  {
+    "id": "moon_synodic",
+    "name": "Sinodik Ay (Synodic Moon)",
+    "frequency": 210.42,
+    "note": "G# (Sol Diyez)",
+    "chakra": "Sakral Çakra",
+    "cycle": "29.53 günlük ay fazı döngüsü (29. oktav)",
+    "effects": "Cinsel enerji dengesi, sezgi, akışkanlık ve lenfatik arınma.",
+    "color": "#38bdf8"
+  },
+  {
+    "id": "mars",
+    "name": "Mars",
+    "frequency": 144.72,
+    "note": "D (Re)",
+    "chakra": "Kök / Göbek",
+    "cycle": "Mars yörünge döngüsü (33. oktav)",
+    "effects": "Cesaret, motivasyon, odaklanmış güç ve eyleme geçme kudreti.",
+    "color": "#ef4444"
+  },
+  {
+    "id": "jupiter",
+    "name": "Jüpiter (Jupiter)",
+    "frequency": 183.58,
+    "note": "F# (Fa Diyez)",
+    "chakra": "Solar Pleksus / Üçüncü Göz",
+    "cycle": "11.86 yıllık Jüpiter yörüngesi (36. oktav)",
+    "effects": "Genişleme, bilgelik, cömertlik, yüksek idrak ve manevi bereket.",
+    "color": "#f97316"
+  },
+  {
+    "id": "saturn",
+    "name": "Satürn (Saturn)",
+    "frequency": 147.85,
+    "note": "D (Re)",
+    "chakra": "Kök Çakra",
+    "cycle": "29.46 yıllık Satürn yörüngesi (37. oktav)",
+    "effects": "Disiplin, sınır belirleme, konsantrasyon ve kemik yapısı sağlığı.",
+    "color": "#64748b"
+  },
+  {
+    "id": "uranus",
+    "name": "Uranüs (Uranus)",
+    "frequency": 207.36,
+    "note": "G# (Sol Diyez)",
+    "chakra": "Boğaz / Taç",
+    "cycle": "84 yıllık yörünge (39. oktav)",
+    "effects": "Yenilikçilik, ani ilham, özgürleşme ve kalıpları kırma enerjisi.",
+    "color": "#06b6d4"
+  },
+  {
+    "id": "neptune",
+    "name": "Neptün (Neptune)",
+    "frequency": 211.44,
+    "note": "G# (Sol Diyez)",
+    "chakra": "Taç / Üçüncü Göz",
+    "cycle": "164.8 yıllık yörünge (40. oktav)",
+    "effects": "Rüyalar, mistik deneyimler, derin sezgi ve ilahi teslimiyet.",
+    "color": "#3b82f6"
+  },
+  {
+    "id": "pluto",
+    "name": "Plüton (Pluto)",
+    "frequency": 140.25,
+    "note": "C# (Do Diyez)",
+    "chakra": "Kök Çakra",
+    "cycle": "248 yıllık yörünge (40. oktav)",
+    "effects": "Derin dönüşüm, gölge yanların şifası, yeniden doğuş ve metamorfoz.",
+    "color": "#475569"
+  }
+]

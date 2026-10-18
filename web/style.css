@@ -729,3 +729,183 @@ body {
 .mt-2 { margin-top: 8px; }
 .mt-3 { margin-top: 14px; }
 .mt-4 { margin-top: 22px; }
+
+/* Header Aksiyonları & Yeni Butonlar */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-outline-gold {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fde68a;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-gold:hover, .btn-outline-gold.active {
+  background: rgba(245, 158, 11, 0.3);
+  border-color: #f59e0b;
+}
+
+.btn-outline-cyan {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #bae6fd;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-cyan:hover, .btn-outline-cyan.recording {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+/* Seans Zamanlayıcı Çubuğu */
+.session-timer-bar {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.timer-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-accent);
+}
+
+.timer-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.timer-btn:hover {
+  border-color: var(--accent-gold);
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.timer-display {
+  font-size: 13px;
+  font-family: monospace;
+  color: var(--accent-cyan);
+  margin-left: 6px;
+}
+
+.timer-cancel-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Gezegen Grid */
+.planetary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.planet-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.planet-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.planet-card.playing {
+  border-color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.planet-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planet-freq {
+  font-family: monospace;
+  color: var(--accent-gold);
+  font-size: 13px;
+}
+
+.planet-cycle {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 4px 0;
+}
+
+.planet-effects {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Plaka Türü Seçici */
+.plate-type-switch {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.plate-btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.plate-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-cyan);
+  color: #fff;
+  font-weight: 600;
+}
+

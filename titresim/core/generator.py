@@ -1,13 +1,15 @@
 """
 Akustik Ton Sentezleyici & WAV Üretim Modülü.
 Saf Python (math, wave, struct) ile harici bağımlılık gerektirmeden 16-bit PCM WAV dosyaları üretir.
+Harmonik seriler, zarf (ADSR) modülasyonu ve meditatif Dem (Drone) sentezi içerir.
 """
 
 from dataclasses import dataclass
-from typing import List, Tuple, Callable
+from typing import List, Tuple, Optional
 import math
 import struct
 import wave
+from .noise import NoiseGenerator
 
 
 @dataclass
@@ -49,8 +51,8 @@ class ToneGenerator:
         frequency: float,
         duration: float,
         volume: float = 0.5,
-        adsr: ADSR = None,
-        harmonics: List[Tuple[int, float]] = None,
+        adsr: Optional[ADSR] = None,
+        harmonics: Optional[List[Tuple[int, float]]] = None,
     ) -> List[float]:
         """
         Saf sinüs dalgası veya harmonik katmanlı dalga dizisi üretir.
@@ -106,6 +108,63 @@ class ToneGenerator:
 
         return all_samples
 
+    def generate_drone(
+        self,
+        root_frequency: float,
+        duration: float = 15.0,
+        volume: float = 0.5,
+        include_fifth: bool = True,
+        include_octave: bool = True,
+        detune_cents: float = 2.0,
+    ) -> List[float]:
+        """
+        Geleneksel Doğu Tanpura veya Tasavvuf Ney Dem tonu benzeri sürekli meditasyon drone'u.
+        Hafif mikrotonal detuning (koro/chorus) ve rezonant armoni içerir.
+        """
+        total_samples = int(self.sample_rate * duration)
+        samples = []
+        two_pi = 2.0 * math.pi
+
+        # Frekans katmanları: Temel, Hafif detune edilmiş temel, 5'li (3/2 oranı) ve Oktav (2/1)
+        layers = [(root_frequency, 0.45)]
+        detune_factor = 2.0 ** (detune_cents / 1200.0)
+        layers.append((root_frequency * detune_factor, 0.25))
+
+        if include_fifth:
+            layers.append((root_frequency * 1.5, 0.20))
+        if include_octave:
+            layers.append((root_frequency * 2.0, 0.10))
+
+        adsr = ADSR(attack=2.0, decay=0.0, sustain_level=1.0, release=2.5)
+
+        for i in range(total_samples):
+            t = i / self.sample_rate
+            env = adsr.get_amplitude(t, duration)
+
+            val = 0.0
+            for freq, weight in layers:
+                val += weight * math.sin((two_pi * freq / self.sample_rate) * i)
+
+            samples.append(val * volume * env)
+
+        return samples
+
+    def generate_noise(
+        self,
+        noise_type: str = "pink",
+        duration: float = 10.0,
+        volume: float = 0.5,
+    ) -> List[float]:
+        """Beyaz, Pembe veya Kahverengi gürültü üretimi için kısayol metodu."""
+        gen = NoiseGenerator(sample_rate=self.sample_rate)
+        ntype = noise_type.lower()
+        if ntype in ("pink", "pembe"):
+            return gen.generate_pink_noise(duration, volume)
+        elif ntype in ("brown", "red", "kahverengi"):
+            return gen.generate_brown_noise(duration, volume)
+        else:
+            return gen.generate_white_noise(duration, volume)
+
     def save_wav(self, filepath: str, samples: List[float]) -> None:
         """Mono örnekleri 16-bit PCM WAV olarak kaydeder."""
         with wave.open(filepath, "w") as wav_file:
@@ -116,7 +175,6 @@ class ToneGenerator:
 
             wav_file.setparams((n_channels, sampwidth, framerate, n_frames, "NONE", "not compressed"))
 
-            # Sıkıştırılmış ikili veri paketleme
             packed_frames = bytearray()
             for s in samples:
                 # Kırpma (Clamping) [-1.0, 1.0]

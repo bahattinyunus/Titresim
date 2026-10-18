@@ -141,3 +141,59 @@ class CosmicOctave:
             CosmicTone("Dünya Yılı (Om)", 136.1, "Yıllık döngü 32. oktav", "Meditatif kalp uyumu"),
             CosmicTone("Verdi Akordu", 432.0, "Doğal akustik standart", "Organik Pisagor akordu"),
         ]
+
+
+@dataclass
+class PlanetaryTone:
+    id: str
+    name: str
+    frequency: float
+    note: str
+    chakra: str
+    cycle: str
+    effects: str
+    color: str
+
+
+class PlanetaryFrequencies:
+    """Hans Cousto Gezegen Tonları (Planetary Tones) yöneticisi."""
+
+    @classmethod
+    def get_all(cls) -> List[PlanetaryTone]:
+        json_path = DATA_DIR / "planetary.json"
+        if json_path.exists():
+            with open(json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return [
+                    PlanetaryTone(
+                        id=item["id"],
+                        name=item["name"],
+                        frequency=float(item["frequency"]),
+                        note=item["note"],
+                        chakra=item["chakra"],
+                        cycle=item["cycle"],
+                        effects=item["effects"],
+                        color=item.get("color", "#f59e0b"),
+                    )
+                    for item in data
+                ]
+        return []
+
+    @classmethod
+    def find_by_id(cls, planet_id: str) -> Optional[PlanetaryTone]:
+        planet_id = planet_id.strip().lower()
+        for p in cls.get_all():
+            if p.id.lower() == planet_id or planet_id in p.name.lower():
+                return p
+        return None
+
+
+def fibonacci_tuning(base_freq: float = 8.0, count: int = 8) -> List[float]:
+    """
+    Kutsal Altın Oran (Phi) ve Fibonacci dizisi oranlarına göre frekans serisi üretir.
+    [1, 1, 2, 3, 5, 8, 13, 21, 34, 55...]
+    """
+    fibs = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+    selected = fibs[:count]
+    return [round(base_freq * f, 2) for f in selected]
+

@@ -20,10 +20,18 @@
         <span class="logo-symbol">〰️ ⚛ 🕊️</span>
         <div class="logo-text">
           <h1>TİTREŞİM</h1>
-          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı</p>
+          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v1.2</p>
         </div>
       </div>
-      <div class="header-status">
+      <div class="header-actions">
+        <!-- Dem / Drone Butonu -->
+        <button id="toggleDroneBtn" class="btn btn-sm btn-outline-gold" title="Sürekli Rezonant Ney / Tanpura Dem Tonu">
+          🕉️ Dem Tonu: Kapalı
+        </button>
+        <!-- Kayıt Butonu -->
+        <button id="recordAudioBtn" class="btn btn-sm btn-outline-cyan" title="Seansı WAV formatında canlı kaydet ve indir">
+          ⏺️ Seansı Kaydet
+        </button>
         <span id="audioStatusBadge" class="status-badge ready">Ses Motoru: Hazır</span>
       </div>
     </div>
@@ -38,8 +46,18 @@
       </blockquote>
       <p class="intro-desc">
         Bu laboratuvar; ses dalgalarının maddeyi şekillendiren kurucu gücünü (Cymatics), Osmanlı darüşşifalarının şifa makamlarını, 
-        kutsal kelâm ve kıraat rezonansını ve Solfeggio / Binaural frekanslarını interaktif olarak keşfetmeniz için tasarlanmıştır.
+        kutsal kelâm ve kıraat rezonansını, Solfeggio / Binaural frekanslarını, Hans Cousto gezegen tonlarını ve izokronik vuruşları interaktif olarak keşfetmeniz için tasarlanmıştır.
       </p>
+      
+      <!-- Hızlı Seans Zamanlayıcı Çubuğu -->
+      <div class="session-timer-bar">
+        <span class="timer-title">🧘 Seans Zamanlayıcısı:</span>
+        <button class="timer-btn" data-minutes="5">5 Dk</button>
+        <button class="timer-btn" data-minutes="10">10 Dk</button>
+        <button class="timer-btn" data-minutes="20">20 Dk</button>
+        <span id="timerCountdown" class="timer-display">Sayaç: Kapalı</span>
+        <button id="cancelTimerBtn" class="timer-cancel-btn hidden">Durdur</button>
+      </div>
     </section>
 
     <!-- Ana Panel: 2 Sütunlu Grid (Sol: Ses Kontrolleri, Sağ: Canlı Chladni Cymatics Görselleştirici) -->
@@ -49,10 +67,12 @@
         
         <!-- Tab Butonları -->
         <div class="tabs-nav">
-          <button class="tab-btn active" data-tab="solfeggioTab">🎵 Solfeggio Frekansları</button>
-          <button class="tab-btn" data-tab="makamTab">🕌 Osmanlı Makam Terapisi</button>
-          <button class="tab-btn" data-tab="binauralTab">🧠 Binaural & Beyin Dalgaları</button>
-          <button class="tab-btn" data-tab="traditionsTab">📜 Kutsal Kelâm & Gelenekler</button>
+          <button class="tab-btn active" data-tab="solfeggioTab">🎵 Solfeggio</button>
+          <button class="tab-btn" data-tab="makamTab">🕌 Makam Terapisi</button>
+          <button class="tab-btn" data-tab="binauralTab">🧠 Binaural Beats</button>
+          <button class="tab-btn" data-tab="isochronicTab">⚡ İzokronik & Gürültü</button>
+          <button class="tab-btn" data-tab="planetaryTab">🪐 Gezegen Tonları</button>
+          <button class="tab-btn" data-tab="traditionsTab">📜 Kutsal Gelenekler</button>
         </div>
 
         <!-- TAB 1: Solfeggio Frekansları -->
@@ -71,6 +91,7 @@
               <button class="quick-freq-btn" data-freq="7.83" data-name="Schumann Rezonansı">🌍 7.83 Hz Schumann</button>
               <button class="quick-freq-btn" data-freq="136.1" data-name="Om / Dünya Yılı">🕉️ 136.1 Hz Om</button>
               <button class="quick-freq-btn" data-freq="432" data-name="Verdi Doğal Akort">✨ 432 Hz Altın Oran</button>
+              <button class="quick-freq-btn" data-freq="528" data-name="DNA & Dönüşüm">🧬 528 Hz Mucize</button>
             </div>
           </div>
         </div>
@@ -137,7 +158,59 @@
           </div>
         </div>
 
-        <!-- TAB 4: Kutsal Kelâm & Kadim Gelenekler -->
+        <!-- TAB 4: İzokronik Vuruşlar & Gürültü Terapisi -->
+        <div id="isochronicTab" class="tab-content">
+          <div class="section-header">
+            <h2>İzokronik Tonlar & Akustik Gürültü Laboratuvarı</h2>
+            <p>Kulaklık gerektirmeden hoparlör üzerinden ritmik beyin dalgası senkronizasyonu ve doğal zemin gürültüleri.</p>
+          </div>
+
+          <div class="card">
+            <h3>⚡ İzokronik Nabız Sentezleyici</h3>
+            <p class="text-muted">Düzenli mikro-nabız vuruşlarıyla kulaklıksız beyin dalgası uyarımı sağlar.</p>
+            
+            <div class="sliders-wrap mt-2">
+              <div class="slider-group">
+                <label>Taşıyıcı Frekans: <span id="isoCarrierVal">432</span> Hz</label>
+                <input type="range" id="isoCarrierSlider" min="100" max="852" value="432" step="1">
+              </div>
+              <div class="slider-group">
+                <label>Nabız Hızı: <span id="isoPulseVal">10.0</span> Hz (<span id="isoBandName">Alfa</span>)</label>
+                <input type="range" id="isoPulseSlider" min="1.0" max="40.0" value="10.0" step="0.5">
+              </div>
+            </div>
+
+            <button id="toggleIsoBtn" class="btn btn-primary mt-3">⚡ İzokronik Nabzı Başlat</button>
+          </div>
+
+          <div class="card mt-3">
+            <h3>🌊 Akustik Gürültü & Ses Maskeleme</h3>
+            <p class="text-muted">Tinnitus, derin uyku ve zihinsel aşırı uyarılmayı sakinleştiren spektral filtreleme.</p>
+            <div class="custom-freq-row">
+              <button class="btn btn-outline noise-btn" data-noise="pink">🌸 Pembe Gürültü (1/f)</button>
+              <button class="btn btn-outline noise-btn" data-noise="brown">☕ Kahverengi Gürültü (1/f²)</button>
+              <button class="btn btn-outline noise-btn" data-noise="white">❄️ Beyaz Gürültü</button>
+            </div>
+            <div class="slider-group mt-3">
+              <label>Gürültü Seviyesi: <span id="noiseVolVal">30</span>%</label>
+              <input type="range" id="noiseVolSlider" min="0" max="100" value="30" step="1">
+            </div>
+            <button id="stopNoiseBtn" class="btn btn-secondary btn-sm mt-2">Gürültüyü Kapat</button>
+          </div>
+        </div>
+
+        <!-- TAB 5: Hans Cousto Gezegen Tonları -->
+        <div id="planetaryTab" class="tab-content">
+          <div class="section-header">
+            <h2>Hans Cousto Kozmik Oktav & Gezegen Tonları</h2>
+            <p>Gezegenlerin astronomik yörünge ve rotasyon sürelerinin işitilebilir frekans oktavlarına yansıması.</p>
+          </div>
+          <div class="planetary-grid" id="planetaryGrid">
+            <!-- JS ile doldurulacak -->
+          </div>
+        </div>
+
+        <!-- TAB 6: Kutsal Kelâm & Kadim Gelenekler -->
         <div id="traditionsTab" class="tab-content">
           <div class="section-header">
             <h2>Kutsal Seslerin Akustik ve Nörolojik Boyutu</h2>
@@ -160,9 +233,16 @@
               <p class="cymatics-subtitle">Ses dalgalarının maddede oluşturduğu Chladni mandalaları</p>
             </div>
             <div class="mode-badges">
+              <span class="badge" id="plateTypeBadge">Kare Plaka</span>
               <span class="badge" id="modeBadge">Mod: n=3, m=5</span>
               <span class="badge freq-badge" id="currentFreqBadge">432.0 Hz</span>
             </div>
+          </div>
+
+          <!-- Plaka Türü Seçici -->
+          <div class="plate-type-switch mt-2">
+            <button class="plate-btn active" id="squarePlateBtn">🔲 Kare Chladni Plakası</button>
+            <button class="plate-btn" id="circularPlateBtn">🔘 Dairesel Su / Çanak</button>
           </div>
 
           <!-- Canvas Alanı -->
@@ -191,7 +271,7 @@
 
           <!-- Frekans Spektrumu / Osiloskop -->
           <div class="oscilloscope-box mt-3">
-            <div class="scope-header">Ses Dalgası Analizörü</div>
+            <div class="scope-header">Ses Dalgası Analizörü & Spektrum</div>
             <canvas id="scopeCanvas" width="460" height="70"></canvas>
           </div>
         </div>
@@ -201,7 +281,7 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi</strong></p>
+      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v1.2</strong></p>
       <p>Açık Kaynak Kodlu • MIT Lisansı • Kadim Bilgelik ve Modern Akustiğin Birleşimi</p>
     </div>
   </footer>

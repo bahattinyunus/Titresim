@@ -1,18 +1,20 @@
 """
 Stereo Binaural Beat & Beyin Dalgası Sentezleyici Modülü.
 Sol ve sağ kulaklık kanallarına farklı frekanslar göndererek beyinde aradaki fark kadar
-ritmik dalga (Delta, Teta, Alfa, vb.) algısı oluşturur.
+ritmik dalga (Delta, Teta, Alfa, Gama) algısı oluşturur.
+Pembe gürültü (Pink Noise) zemin desteği ve frekans takibi yeteneklerine sahiptir.
 """
 
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 import math
 import struct
 import wave
 from .generator import ADSR
+from .noise import NoiseGenerator
 
 
 class BinauralBeatGenerator:
-    """Stereo 2-kanal binaural dalga üreteci."""
+    """Stereo 2-kanal binaural dalga ve nöroakustik üreteç."""
 
     def __init__(self, sample_rate: int = 44100):
         self.sample_rate = sample_rate
@@ -31,6 +33,7 @@ class BinauralBeatGenerator:
         beat_freq: Hedef beyin dalgası (örn. 7.83 Hz Schumann)
         Sol: carrier - beat/2
         Sağ: carrier + beat/2
+        pink_noise_level: Arkaya yumuşakça harmanlanan pembe gürültü genlik katsayısı
         """
         left_freq = carrier_freq - (beat_freq / 2.0)
         right_freq = carrier_freq + (beat_freq / 2.0)
@@ -46,12 +49,23 @@ class BinauralBeatGenerator:
         # Yumuşak giriş ve çıkış
         adsr = ADSR(attack=1.0, decay=0.0, sustain_level=1.0, release=1.5)
 
+        # Pembe gürültü üretimi
+        pink_samples: Optional[List[float]] = None
+        if pink_noise_level > 0.001:
+            noise_gen = NoiseGenerator(sample_rate=self.sample_rate)
+            pink_samples = noise_gen.generate_pink_noise(duration=duration, volume=pink_noise_level)
+
         for i in range(total_samples):
             t = i / self.sample_rate
             env = adsr.get_amplitude(t, duration)
 
             s_left = math.sin(left_step * i) * volume * env
             s_right = math.sin(right_step * i) * volume * env
+
+            if pink_samples and i < len(pink_samples):
+                p_noise = pink_samples[i] * env
+                s_left += p_noise
+                s_right += p_noise
 
             left_samples.append(s_left)
             right_samples.append(s_right)

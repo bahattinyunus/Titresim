@@ -58,6 +58,27 @@
         <span id="timerCountdown" class="timer-display">Sayaç: Kapalı</span>
         <button id="cancelTimerBtn" class="timer-cancel-btn hidden">Durdur</button>
       </div>
+
+      <!-- Canlı Bilgelik ve Alıntı Bandı -->
+      <div class="wisdom-banner mt-3">
+        <div class="wisdom-banner-header">
+          <span class="wisdom-badge">✨ Günün Bilgelik Alıntısı</span>
+          <div class="wisdom-banner-actions">
+            <button id="nextWisdomBtn" class="btn btn-sm btn-outline">🔄 Yeni Alıntı</button>
+            <button id="playWisdomFreqBtn" class="btn btn-sm btn-outline-gold">🎵 Alıntının Frekansını Çal (<span id="wisdomFreqVal">432</span> Hz)</button>
+          </div>
+        </div>
+        <blockquote id="wisdomBannerQuote" class="wisdom-quote-text">
+          "Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün."
+        </blockquote>
+        <div class="wisdom-banner-footer">
+          <div>
+            <cite id="wisdomBannerAuthor">— Nikola Tesla</cite>
+            <span id="wisdomBannerWork" class="wisdom-work">(Kişisel Notlar ve Röportajlar)</span>
+          </div>
+          <div id="wisdomBannerReflection" class="wisdom-reflection">💡 Madde sandığımız katılık, belirli frekanslarda kilitlenmiş yoğun enerjiden ibarettir.</div>
+        </div>
+      </div>
     </section>
 
     <!-- Ana Panel: 2 Sütunlu Grid (Sol: Ses Kontrolleri, Sağ: Canlı Chladni Cymatics Görselleştirici) -->
@@ -72,7 +93,8 @@
           <button class="tab-btn" data-tab="binauralTab">🧠 Binaural Beats</button>
           <button class="tab-btn" data-tab="isochronicTab">⚡ İzokronik & Gürültü</button>
           <button class="tab-btn" data-tab="planetaryTab">🪐 Gezegen Tonları</button>
-          <button class="tab-btn" data-tab="traditionsTab">📜 Kutsal Gelenekler</button>
+          <button class="tab-btn" data-tab="traditionsTab">🕊️ Kutsal Gelenekler</button>
+          <button class="tab-btn" data-tab="quotesTab">📜 Bilgelik & Alıntılar</button>
         </div>
 
         <!-- TAB 1: Solfeggio Frekansları -->
@@ -218,6 +240,34 @@
           </div>
 
           <div class="traditions-list" id="traditionsList">
+            <!-- JS ile doldurulacak -->
+          </div>
+        </div>
+
+        <!-- TAB 7: Kadim Bilgelik, Alıntılar ve Sözler Kütüphanesi -->
+        <div id="quotesTab" class="tab-content">
+          <div class="section-header">
+            <h2>Kadim Bilgelik ve Ses Felsefesi Külliyatı</h2>
+            <p>Tesla, Mevlânâ, İbn-i Sînâ, Pisagor, Fârâbî ve bilim insanlarının ses, titreşim ve şifa üzerine vecizeleri.</p>
+          </div>
+
+          <!-- Kategori Filtre Butonları -->
+          <div class="quote-categories-nav mt-2">
+            <button class="quote-cat-btn active" data-cat="all">Hepsi</button>
+            <button class="quote-cat-btn" data-cat="tasavvuf">Tasavvuf & İrfan</button>
+            <button class="quote-cat-btn" data-cat="islam_tibbi">İslam Müzikterapisi</button>
+            <button class="quote-cat-btn" data-cat="bilim_ve_fizik">Fizik & Akustik</button>
+            <button class="quote-cat-btn" data-cat="antik_felsefe">Antik Felsefe</button>
+            <button class="quote-cat-btn" data-cat="mistik_akustik">Mistik Biyorezonans</button>
+          </div>
+
+          <!-- Arama Kutusu -->
+          <div class="quote-search-wrap mt-3">
+            <input type="text" id="quoteSearchInput" class="form-input" placeholder="🔍 Düşünür adı, kitap veya kelime ara (örn: Tesla, ney, frekans, kalp)...">
+          </div>
+
+          <!-- Alıntılar Listesi -->
+          <div class="quotes-cards-list mt-3" id="quotesCardsList">
             <!-- JS ile doldurulacak -->
           </div>
         </div>

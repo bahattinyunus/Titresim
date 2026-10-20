@@ -27,6 +27,7 @@ from .core.noise import NoiseGenerator
 from .core.isochronic import IsochronicToneGenerator
 from .core.traditions import SacredTraditions
 from .core.tuning import TuningSystem
+from .core.wisdom import WisdomArchive
 
 
 def handle_info(args):
@@ -109,8 +110,67 @@ def handle_info(args):
             for e in tr.neurobiological_effects:
                 print(f"     ✓ {e}")
             print(f"   Kaynaklar: {tr.historical_sources}\n")
+
+    elif target in ("wisdom", "quotes", "sozler", "alintilar"):
+        print("\n" + "=" * 68)
+        print("     KADİM BİLGELİK, FREKANS VE REZONANS ALINTILARI ARŞİVİ")
+        print("=" * 68)
+        for q in WisdomArchive.get_all():
+            print(f"\n« {q.author} » ({q.era}) - [{q.work}]")
+            print(f"  “{q.quote_tr}”")
+            if q.reflection:
+                print(f"  💡 Tefekkür: {q.reflection}")
+            print(f"  🎵 Frekans: {q.recommended_freq} Hz")
+        print()
     else:
-        print(f"Bilinmeyen bilgi hedefi: {args.target}. Seçenekler: solfeggio, makam, brain, cosmic, planetary, traditions")
+        print(f"Bilinmeyen bilgi hedefi: {args.target}. Seçenekler: solfeggio, makam, brain, cosmic, planetary, traditions, wisdom")
+
+
+def handle_quote(args):
+    if args.id:
+        q = WisdomArchive.find_by_id(args.id)
+        if q:
+            print("\n" + WisdomArchive.format_quote_card(q) + "\n")
+        else:
+            print(f"❌ '{args.id}' kimlikli alıntı bulunamadı.")
+    elif args.search:
+        results = WisdomArchive.search(args.search)
+        if not results:
+            print(f"🔍 '{args.search}' terimiyle eşleşen alıntı bulunamadı.")
+            return
+        print(f"\n🔍 '{args.search}' ile eşleşen {len(results)} bilgelik alıntısı:\n")
+        for q in results:
+            print(WisdomArchive.format_quote_card(q))
+            print()
+    elif args.category:
+        results = WisdomArchive.get_by_category(args.category)
+        if not results:
+            print(f"❌ '{args.category}' kategorisi bulunamadı. Seçenekler: {', '.join(WisdomArchive.CATEGORIES.keys())}")
+            return
+        print(f"\n📚 {WisdomArchive.CATEGORIES.get(args.category, args.category)} Kategorisindeki Alıntılar ({len(results)} adet):\n")
+        for q in results:
+            print(WisdomArchive.format_quote_card(q))
+            print()
+    elif args.author:
+        results = WisdomArchive.get_by_author(args.author)
+        if not results:
+            print(f"🔍 '{args.author}' ile eşleşen müellif bulunamadı.")
+            return
+        print(f"\n✒️ {args.author.title()} Alıntıları ({len(results)} adet):\n")
+        for q in results:
+            print(WisdomArchive.format_quote_card(q))
+            print()
+    elif args.all:
+        quotes = WisdomArchive.get_all()
+        print(f"\n🏛️ KADİM BİLGELİK & SES FELSEFESİ KÜLLİYATI ({len(quotes)} Alıntı)\n")
+        for q in quotes:
+            print(WisdomArchive.format_quote_card(q))
+            print()
+    else:
+        # Varsayılan: Rastgele ilham verici bir bilgelik sözü
+        q = WisdomArchive.get_random()
+        if q:
+            print("\n" + WisdomArchive.format_quote_card(q) + "\n")
 
 
 def handle_generate(args):
@@ -344,6 +404,15 @@ def main():
     p_srv.add_argument("--port", "-p", type=int, default=8000, help="Port numarası")
     p_srv.add_argument("--no-browser", action="store_true", help="Tarayıcıyı otomatik açma")
 
+    # quote
+    p_quo = subparsers.add_parser("quote", help="Kadim bilgelik, rezonans ve ses felsefesi alıntılarını getirir")
+    p_quo.add_argument("--random", "-r", action="store_true", help="Rastgele bir bilgelik sözü getirir (varsayılan)")
+    p_quo.add_argument("--category", "-c", choices=list(WisdomArchive.CATEGORIES.keys()), help="Kategoriye göre filtrele (tasavvuf, islam_tibbi, antik_felsefe, bilim_ve_fizik, mistik_akustik)")
+    p_quo.add_argument("--author", "-a", help="Yazara göre ara (örn: tesla, mevlana, ibn sina, pisagor)")
+    p_quo.add_argument("--search", "-s", help="Alıntı metinlerinde anahtar kelime ara")
+    p_quo.add_argument("--id", help="Belirli bir alıntı ID'si")
+    p_quo.add_argument("--all", action="store_true", help="Tüm bilgelik külliyatını listele")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -352,6 +421,8 @@ def main():
 
     if args.command == "info":
         handle_info(args)
+    elif args.command == "quote":
+        handle_quote(args)
     elif args.command == "generate":
         handle_generate(args)
     elif args.command == "binaural":

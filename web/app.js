@@ -163,6 +163,249 @@ const TRADITIONS_DATA = [
   }
 ];
 
+const QUOTES_DATA = [
+  {
+    id: "tesla_energy_vibration",
+    author: "Nikola Tesla",
+    era: "1856 - 1943",
+    work: "Kişisel Notlar ve Röportajlar",
+    quote: "Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün.",
+    category: "bilim_ve_fizik",
+    freq: 432.0,
+    reflection: "Madde sandığımız katılık, belirli frekanslarda kilitlenmiş yoğun enerjiden ibarettir."
+  },
+  {
+    id: "tesla_369",
+    author: "Nikola Tesla",
+    era: "1856 - 1943",
+    work: "Elektromanyetik Araştırmalar",
+    quote: "3, 6 ve 9 sayılarının ihtişamını bilseydiniz, evrenin anahtarına sahip olurdunuz.",
+    category: "bilim_ve_fizik",
+    freq: 396.0,
+    reflection: "Solfeggio frekanslarının tümü rakam kökü toplamında 3, 6 veya 9'a indirgenir."
+  },
+  {
+    id: "einstein_future_medicine",
+    author: "Albert Einstein",
+    era: "1879 - 1955",
+    work: "Bilimsel Aforizmalar",
+    quote: "Geleceğin tıbbı, frekanslar tıbbı olacaktır.",
+    category: "bilim_ve_fizik",
+    freq: 528.0,
+    reflection: "Biyokimyasal moleküller yerine dokuların doğal rezonans frekanslarıyla etkileşim kuran akustik şifa."
+  },
+  {
+    id: "einstein_energy_match",
+    author: "Albert Einstein",
+    era: "1879 - 1955",
+    work: "Görelilik ve Kuantum Mektupları",
+    quote: "Her şey enerjidir ve her şey sadece bundan ibarettir. Sahip olmak istediğiniz gerçekliğin frekansına uyum sağladığınızda, artık o gerçeğe sahip olursunuz.",
+    category: "bilim_ve_fizik",
+    freq: 136.1,
+    reflection: "İçsel durumunuzun frekansı, yaşamınızın rezonans alanını belirler."
+  },
+  {
+    id: "mevlana_ney_dinle",
+    author: "Mevlânâ Celâleddîn-i Rûmî",
+    era: "1207 - 1273",
+    work: "Mesnevî-i Mânevî (1. Beyit)",
+    quote: "Dinle neyden kim hikâyet etmededir; ayrılıklardan şikâyet etmededir. Kamışlıktan kesildim kesile, feryadımdan kadın-erkek herkes inledi.",
+    category: "tasavvuf",
+    freq: 220.0,
+    reflection: "Ney, içi boşaltılmış ve ilahi nefese ayna olmuş kamil insanın asıl vatanına duyduğu iştiyaktır."
+  },
+  {
+    id: "mevlana_ney_dost",
+    author: "Mevlânâ Celâleddîn-i Rûmî",
+    era: "1207 - 1273",
+    work: "Dîvân-ı Kebîr",
+    quote: "Biz birer ney gibiyiz; bizdeki nağmeler Senden gelir ey Dost! Biz bir dağ gibiyiz; bizdeki seda Senin sesinin yankısıdır.",
+    category: "tasavvuf",
+    freq: 136.1,
+    reflection: "Varlık, Hakk'ın nefesinin kozmik kamışta çıkardığı kesintisiz bir nağmeden ibarettir."
+  },
+  {
+    id: "mevlana_sama",
+    author: "Mevlânâ Celâleddîn-i Rûmî",
+    era: "1207 - 1273",
+    work: "Fîhi Mâ Fîh",
+    quote: "Semâ, âşıkların gıdasıdır; zira onda cananın hayali ve vuslatın kokusu vardır. Ruhun perdesini aralayan ses, insanı ötelerle buluşturur.",
+    category: "tasavvuf",
+    freq: 432.0,
+    reflection: "Ritmik dönüş ve musiki, zihni susturarak kalbi merkeze oturtan akustik bir ibadettir."
+  },
+  {
+    id: "ibn_sina_musiki_sifasi",
+    author: "İbn-i Sînâ (Avicenna)",
+    era: "980 - 1037",
+    work: "El-Kânûn fi't-Tıbb & Şifâ",
+    quote: "Tedavinin en iyi ve en tesirli yollarından biri; hastanın aklî ve ruhî kuvvetlerini artırmak, ona güzel kokular ve hoşuna giden musiki ile şifa vermektir.",
+    category: "islam_tibbi",
+    freq: 220.0,
+    reflection: "Hekim sadece bedeni değil, ruhun mizacını nağmelerle mizanına getiren kişidir."
+  },
+  {
+    id: "ibn_sina_nabiz",
+    author: "İbn-i Sînâ (Avicenna)",
+    era: "980 - 1037",
+    work: "Risâle fi'n-Nabz",
+    quote: "Nabzın vuruşları ile musiki perdeleri arasında tam bir tenasüp (oran) vardır. Hekim, nabızdaki aksaklığı müziğin makamı ile teşhis edip tedavi edebilir.",
+    category: "islam_tibbi",
+    freq: 293.33,
+    reflection: "Kalp atışı bir perküsyon, damarlar ise telli sazdır; makamlar nabzın bozulan veznini düzeltir."
+  },
+  {
+    id: "farabi_makamlar",
+    author: "Fârâbî (Alpharabius)",
+    era: "872 - 950",
+    work: "Kitâbü'l-Mûsîka'l-Kebîr",
+    quote: "Rast makamı insana sefa (huzur ve neşe), Rehavi sonsuzluk hissi, Buselik kuvvet, Isfahan zeka ve güven verir.",
+    category: "islam_tibbi",
+    freq: 220.0,
+    reflection: "Farabi, makamların insan psikolojisi ve hormonları üzerindeki tesirlerini ilk kez sistemleştirmiştir."
+  },
+  {
+    id: "pythagoras_spheres",
+    author: "Pisagor (Pythagoras)",
+    era: "M.Ö. 570 - 495",
+    work: "Kürelerin Müziği (Musica Universalis)",
+    quote: "Gözler için gök kubbe ve yıldızlar ne ise, kulaklar için de ses ve armoni odur. Gezegenlerin her biri dönerken ilahi bir ses çıkarır.",
+    category: "antik_felsefe",
+    freq: 216.0,
+    reflection: "Evren sayılardan örülmüştür; müzik ise sayıların işitilebilir suretidir."
+  },
+  {
+    id: "pythagoras_geometry",
+    author: "Pisagor (Pythagoras)",
+    era: "M.Ö. 570 - 495",
+    work: "Pisagoryen Fragmanlar",
+    quote: "Geometri maddenin mekândaki nizamıdır; musiki ise zamanın nizamıdır.",
+    category: "antik_felsefe",
+    freq: 432.0,
+    reflection: "Zaman içinde salınan her form müziktir, mekânda donan her müzik mimaridir."
+  },
+  {
+    id: "plato_music",
+    author: "Platon (Eflatun)",
+    era: "M.Ö. 427 - 347",
+    work: "Devlet (Respublica)",
+    quote: "Müzik ruha kanat verir, zihne uçuş gücü aşılar, hayal gücünü tutuşturur, hüzün perdesini yırtar ve tüm varoluşa neşe ve hayat bahşeder.",
+    category: "antik_felsefe",
+    freq: 528.0,
+    reflection: "Müzik eğitimi alan bir ruh, evrendeki uyumsuzlukları sezgisel olarak hemen hisseder."
+  },
+  {
+    id: "confucius_music",
+    author: "Konfüçyüs (Kongzi)",
+    era: "M.Ö. 551 - 479",
+    work: "Li Ji (Yue Ji - Müzik Kitabı)",
+    quote: "Bir toplumun ahlakını ve ruhunu dönüştürmek, nizamını tesis etmek istiyorsanız; işe onların müziğini tanzim etmekle başlayın.",
+    category: "antik_felsefe",
+    freq: 136.1,
+    reflection: "Bir medeniyetin müziğindeki armoni ve vakar, onun ahlaki seviyesinin aynasıdır."
+  },
+  {
+    id: "hermes_vibration",
+    author: "Hermes Trismegistus",
+    era: "Antik İskenderiye Geleneği",
+    work: "Kybalion (Titreşim Prensibi)",
+    quote: "Hiçbir şey durmaz; her şey hareket eder; her şey titreşir. Saf Ruhtan en kaba maddeye kadar her varoluş hali, farklı titreşim dereceleridir.",
+    category: "antik_felsefe",
+    freq: 7.83,
+    reflection: "Titreşim frekansını değiştiren simyacı, zihnin ve maddenin doğasını da dönüştürür."
+  },
+  {
+    id: "kuran_kun",
+    author: "Kur'ân-ı Kerîm",
+    era: "Vahiy Geleneği",
+    work: "Yâsîn Sûresi, 82. Âyet",
+    quote: "O'nun emri, bir şeyi dilediği vakit sadece ona 'Kün!' (Ol!) demektir; o şey de hemen oluverir.",
+    category: "tasavvuf",
+    freq: 528.0,
+    reflection: "Kozmik yaradılış ilahi kelâmın ve titreşimin tecelli etmesiyle başlamıştır."
+  },
+  {
+    id: "ibrahim_hakki",
+    author: "Erzurumlu İbrahim Hakkı",
+    era: "1703 - 1780",
+    work: "Mârifetnâme",
+    quote: "Ses ve nefes, can mülkünün cananıdır; doğru nağme dertlilere dermandır.",
+    category: "tasavvuf",
+    freq: 220.0,
+    reflection: "Marifetname, makamlar ile insan tabiatlarının dengelenmesini teferruatıyla açıklar."
+  },
+  {
+    id: "suuri_hasan",
+    author: "Şuûrî Hasan Efendi",
+    era: "17. Yüzyıl",
+    work: "Ta'dîl-i Emzice",
+    quote: "Günün vakitlerinde hastaların hıltları değişir. Hekim; fecirde Rast, kuşlukta Buselik, öğlede Uşşak dinleterek bedenin kimyasını sesle dengeye getirir.",
+    category: "islam_tibbi",
+    freq: 247.5,
+    reflection: "Osmanlı hekimleri, sirkadiyen biyolojik saati makamların frekanslarıyla senkronize etmiştir."
+  },
+  {
+    id: "evliya_celebi",
+    author: "Evliyâ Çelebi",
+    era: "1611 - 1682",
+    work: "Seyahatnâme (Edirne Darüşşifası)",
+    quote: "Edirne Darüşşifası'nda hanendeler saz meclisi kurup on makam ile meşk ederler; hastalar bu nağmelerle mest olup feryatları kesilir, şifa bulurlar.",
+    category: "islam_tibbi",
+    freq: 220.0,
+    reflection: "Avrupa'da akıl hastalarının zincire vurulduğu çağda, Osmanlı'da musikiyle terapi uygulanıyordu."
+  },
+  {
+    id: "kepler_music",
+    author: "Johannes Kepler",
+    era: "1571 - 1630",
+    work: "Harmonices Mundi (1619)",
+    quote: "Göklerdeki gezegenler semavi bir polifoni icra ederler. Gezegenlerin hız oranları, tam müzikal gam aralıklarına karşılık gelir.",
+    category: "bilim_ve_fizik",
+    freq: 183.58,
+    reflection: "Gezegenlerin hareket yasaları ile müzik harmonisi aynı ilahi geometrinin tezahürüdür."
+  },
+  {
+    id: "chladni_cymatics",
+    author: "Ernst Chladni",
+    era: "1756 - 1827",
+    work: "Entdeckungen über die Theorie des Klanges",
+    quote: "Levhaya yayı sürttüğümde kum taneleri görünmeyen bir iradenin emrindeymiş gibi kusursuz geometrik mandalalara toplandı. Ses, maddeyi biçimlendiren mimardır.",
+    category: "bilim_ve_fizik",
+    freq: 432.0,
+    reflection: "Sematik, ses dalgalarının görünmez gücünü gözle görülür somut maddeye dönüştürür."
+  },
+  {
+    id: "masaru_emoto",
+    author: "Dr. Masaru Emoto",
+    era: "1943 - 2014",
+    work: "Suyun Gizli Mesajı",
+    quote: "Su dinler ve hisseder. Sevgi ve ahenkli müzik dinletilen su kusursuz altıgen kristaller oluşturur. Bedenimizin %70'i su olduğuna göre, her ses bizi yeniden inşa eder.",
+    category: "mistik_akustik",
+    freq: 528.0,
+    reflection: "Beden suyu, zihnimizden ve çevremizden yayılan her frekansın canlı kütüphanesidir."
+  },
+  {
+    id: "inayat_khan",
+    author: "Hazrat Inayat Khan",
+    era: "1882 - 1927",
+    work: "The Mysticism of Sound and Music",
+    quote: "Ses tüm tezahürün başlangıcı ve sonudur. Bilen kişi için tüm evren tek bir ilahi senfonidir. Bedeniniz bir enstrüman, ruhunuz virtüözdür.",
+    category: "mistik_akustik",
+    freq: 432.0,
+    reflection: "Hastalık bedenin akordunun bozulması, şifa ise yeniden evrensel frekansa akortlanmasıdır."
+  },
+  {
+    id: "yunus_emre",
+    author: "Yûnus Emre",
+    era: "1238 - 1328",
+    work: "Dîvân-ı Yûnus Emre",
+    quote: "Söz ola kese savaşı / Söz ola kestire başı / Söz ola ağulu aşı / Bal ile yağ ede bir söz.",
+    category: "tasavvuf",
+    freq: 432.0,
+    reflection: "Ağızdan çıkan her harf bir titreşim yayar; şifalı kelâm zehirli halleri bala ve yağa dönüştürür."
+  }
+];
+
 // ==========================================
 // 2. GELİŞMİŞ SES MOTORU (WEB AUDIO API)
 // ==========================================
@@ -968,6 +1211,111 @@ function renderTraditions() {
   });
 }
 
+// Kadim Bilgelik ve Alıntılar Kütüphanesini Render Et
+let activeQuoteCategory = "all";
+let currentQuoteSearch = "";
+let currentBannerQuote = QUOTES_DATA[0];
+
+function renderQuotes(category = "all", search = "") {
+  const container = document.getElementById("quotesCardsList");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const normSearch = search.trim().toLowerCase();
+
+  const filtered = QUOTES_DATA.filter(q => {
+    const matchCat = category === "all" || q.category === category;
+    const matchSearch = !normSearch || 
+      q.author.toLowerCase().includes(normSearch) || 
+      q.quote.toLowerCase().includes(normSearch) || 
+      q.work.toLowerCase().includes(normSearch) || 
+      q.reflection.toLowerCase().includes(normSearch);
+    return matchCat && matchSearch;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<p class="text-muted" style="text-align:center; padding: 24px;">Aradığınız kriterlere uygun alıntı bulunamadı.</p>`;
+    return;
+  }
+
+  const catLabels = {
+    tasavvuf: "Tasavvuf & İrfan",
+    islam_tibbi: "İslam Müzikterapisi",
+    antik_felsefe: "Antik Felsefe",
+    bilim_ve_fizik: "Fizik & Akustik",
+    mistik_akustik: "Mistik Akustik"
+  };
+
+  filtered.forEach(q => {
+    const card = document.createElement("div");
+    card.className = "wisdom-card";
+    card.innerHTML = `
+      <div class="wisdom-card-top">
+        <div>
+          <span class="wisdom-card-author">« ${q.author} »</span>
+          <span class="wisdom-card-era">(${q.era})</span>
+        </div>
+        <span class="wisdom-card-cat-badge">${catLabels[q.category] || q.category}</span>
+      </div>
+      <div class="wisdom-card-work">Kaynak: <strong>${q.work}</strong></div>
+      <div class="wisdom-card-quote">“${q.quote}”</div>
+      <div class="wisdom-card-reflection">💡 <strong>Tefekkür:</strong> ${q.reflection}</div>
+      <div class="wisdom-card-actions">
+        <span class="wisdom-card-freq-tag">🎵 Uyumlu Ton: ${q.freq} Hz</span>
+        <button class="btn btn-sm btn-outline-gold play-quote-btn">Rezonans Frekansını Dinle</button>
+      </div>
+    `;
+
+    card.querySelector(".play-quote-btn").addEventListener("click", () => {
+      audio.playTone(q.freq);
+      if (cymaticsSim) {
+        cymaticsSim.setFrequency(q.freq);
+      }
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function setupWisdomBanner() {
+  const quoteEl = document.getElementById("wisdomBannerQuote");
+  const authorEl = document.getElementById("wisdomBannerAuthor");
+  const workEl = document.getElementById("wisdomBannerWork");
+  const reflEl = document.getElementById("wisdomBannerReflection");
+  const freqValEl = document.getElementById("wisdomFreqVal");
+  const nextBtn = document.getElementById("nextWisdomBtn");
+  const playFreqBtn = document.getElementById("playWisdomFreqBtn");
+
+  if (!quoteEl) return;
+
+  function setQuote(q) {
+    currentBannerQuote = q;
+    quoteEl.innerText = `“${q.quote}”`;
+    authorEl.innerText = `— ${q.author}`;
+    workEl.innerText = `(${q.work})`;
+    reflEl.innerText = `💡 ${q.reflection}`;
+    freqValEl.innerText = q.freq;
+  }
+
+  // İlk rastgele alıntı
+  setQuote(QUOTES_DATA[Math.floor(Math.random() * QUOTES_DATA.length)]);
+
+  nextBtn.addEventListener("click", () => {
+    let nextQ;
+    do {
+      nextQ = QUOTES_DATA[Math.floor(Math.random() * QUOTES_DATA.length)];
+    } while (nextQ.id === currentBannerQuote.id && QUOTES_DATA.length > 1);
+    setQuote(nextQ);
+  });
+
+  playFreqBtn.addEventListener("click", () => {
+    audio.playTone(currentBannerQuote.freq);
+    if (cymaticsSim) {
+      cymaticsSim.setFrequency(currentBannerQuote.freq);
+    }
+  });
+}
+
 // Kalp Koheransı Nefes Rehberi (0.1 Hz)
 let breathInterval = null;
 let isBreathingActive = false;
@@ -1293,11 +1641,31 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.stopNoise();
   });
 
+  // Alıntılar Sekmesi Filtreleme ve Arama Dinleyicileri
+  document.querySelectorAll(".quote-cat-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".quote-cat-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeQuoteCategory = btn.getAttribute("data-cat");
+      renderQuotes(activeQuoteCategory, currentQuoteSearch);
+    });
+  });
+
+  const quoteSearchInput = document.getElementById("quoteSearchInput");
+  if (quoteSearchInput) {
+    quoteSearchInput.addEventListener("input", (e) => {
+      currentQuoteSearch = e.target.value;
+      renderQuotes(activeQuoteCategory, currentQuoteSearch);
+    });
+  }
+
   // Verileri ve Alt Bileşenleri Başlat
   renderSolfeggio();
   renderPlanetary();
   renderMakamlar();
   renderTraditions();
+  renderQuotes("all", "");
   setupBreathing();
   setupSessionTimer();
+  setupWisdomBanner();
 });

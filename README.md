@@ -1,11 +1,11 @@
 # 〰️ Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.3.0-f59e0b?style=for-the-badge" alt="Version 1.3.0">
+  <img src="https://img.shields.io/badge/Version-2.0.0-f59e0b?style=for-the-badge" alt="Version 2.0.0">
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/License-MIT-amber?style=for-the-badge" alt="License MIT">
-  <img src="https://img.shields.io/badge/Web%20Audio-Interactive%20Studio%20v1.3-38bdf8?style=for-the-badge&logo=html5&logoColor=white" alt="Web Studio">
-  <img src="https://img.shields.io/badge/Tests-42%20Passed-10b981?style=for-the-badge" alt="Tests">
+  <img src="https://img.shields.io/badge/Web%20Audio-Interactive%20Studio%20v2.0-38bdf8?style=for-the-badge&logo=html5&logoColor=white" alt="Web Studio">
+  <img src="https://img.shields.io/badge/Tests-56%20Passed-10b981?style=for-the-badge" alt="Tests">
 </p>
 
 > *"Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün."* — **Nikola Tesla**
@@ -13,6 +13,8 @@
 > *"Başlangıçta Söz vardı. Söz Allah ile birlikteydi ve Söz Allah'ıydı."* — **Yuhanna 1:1**
 >
 > *"O, 'Ol!' (Kün!) dedi ve her şey titreşerek var oldu."* — **Kur'ân-ı Kerîm (Yâsîn 82)**
+>
+> *"Gök cisimlerinin devirlerinden çıkan nağmeler, insan ruhunun asıl vatanındaki ilahi armoninin yankısıdır."* — **Fârâbî (Kitâbü'l-Mûsîka'l-Kebîr)**
 >
 > *"Dinle neyden kim hikâyet etmededir; ayrılıklardan şikâyet etmededir..."* — **Mevlânâ Celâleddîn-i Rûmî (Mesnevî)**
 >
@@ -26,7 +28,7 @@
 
 Bu repo; sesin yalnızca işitsel bir duyu uyarısı değil, evrenin temel yapı taşı, maddeye şekil veren kurucu bir enerji formu ve insanlık tarihinin en kadim şifa aracı olduğu gerçeğinden yola çıkılarak geliştirilmiş **kapsamlı bir akustik rezonans ve şifa ekosistemidir**.
 
-Madde dediğimiz şeyin özü titreşimdir; kuantum altı parçacıklardan galaksilere kadar her varlık kendine has bir frekansta salınır. İnsanlık tarihi boyunca bilgelik gelenekleri, şifanın sesle (mantra, kıraat, ilahi, ezgi) mümkün olduğunu keşfetmiştir. Bu proje; **Kur'an-ı Kerim kıraatinin** biyoakustik ve nörolojik rezonansından, **Vedik mantralara**, **Gregoryen ilahilerinden** **Osmanlı darüşşifa müzikterapisi geleneklerine**, **53-TET Arel-Ezgi mikrotonal koma akort sisteminden**, **Chladni & Bessel Sematik (Cymatics)** fiziğine, **İzokronik nabız tonlarına**, **pembe/kahverengi akustik gürültü maskelemesine**, **Binaural Beats** ve **Hans Cousto Kozmik Gezegen Oktavı**'na kadar sesin evrensel şifa haritasını dijital dünyada modeller.
+Madde dediğimiz şeyin özü titreşimdir; kuantum altı parçacıklardan galaksilere kadar her varlık kendine has bir frekansta salınır. Bu proje; **Kur'an-ı Kerim kıraatinin** biyoakustik ve nörolojik rezonansından, **Vedik çakra ve tohum mantralarına (LAM, VAM, RAM, YAM, HAM, OM)**, **Gregoryen ilahilerinden** **Osmanlı darüşşifa müzikterapisi geleneklerine**, **53-TET Arel-Ezgi mikrotonal koma akort sisteminden**, **Chladni & Bessel Sematik (Cymatics)** fiziğine, **İzokronik nabız tonlarına**, **pembe/kahverengi akustik gürültü maskelemesine**, **Binaural Beats**, **Hans Cousto Kozmik Gezegen Oktavı**'na ve **Çok Aşamalı Klinik Seans Protokolleri**'ne kadar sesin evrensel şifa haritasını dijital dünyada modeller.
 
 ---
 
@@ -37,12 +39,16 @@ Titresim/
 ├── data/                               # Yapılandırılmış Açık Veri Setleri (JSON)
 │   ├── solfeggio.json                  # 9 Kutsal Solfeggio Frekansı & Niyetleri
 │   ├── makamlar.json                   # 12 Osmanlı Şifa Makamı (Farabi & İbn-i Sina)
+│   ├── protocols.json                  # 5 Çok Aşamalı Klinik/Terapötik Seans Protokolü
+│   ├── chakras.json                    # 7 Temel Çakra (Solfeggio, Cousto, Bija Mantraları)
 │   ├── traditions.json                 # Kutsal Ses Gelenekleri & Nörobiyolojik Etkileri
 │   ├── brainwaves.json                 # Delta, Teta, Alfa, Beta, Gama Bantları
 │   ├── cosmic_octave.json              # Schumann Rezonansı & Hans Cousto Kozmik Tonları
 │   ├── planetary.json                  # Hans Cousto 12 Gezegen Yörünge Frekansı
 │   └── quotes.json                     # 30+ Kadim Bilgelik, Ayet ve Ses Rezonansı Alıntısı
 ├── docs/                               # Kapsamlı Bilimsel ve Tarihsel Araştırma Metinleri
+│   ├── TERAPOTIK_SES_PROTOKOLLERI_VE_KLINIK_METODOLOJI.md # Klinik Seanslar, EEG Entrainment & Alıntılar
+│   ├── CAKRA_AKUSTIGI_VE_MERIDYEN_FREKANSLARI.md # Cousto Formülü, Solfeggio & Mantralar
 │   ├── KUTSAL_KELAM_VE_REZONANS.md     # Tecvid Kaideleri, Gunne, Nitrik Oksit, Vagus & EEG
 │   ├── OSMANLI_MUZIKTERAPISI.md        # Ahlat-ı Erba'a (4 Mizaç), Edirne Darüşşifası & Makamlar
 │   ├── KADIM_BILGELIK_VE_SES_FELSEFESI.md # Tesla, Rûmî, İbn-i Sînâ, Fârâbî, Pisagor & Kutsal Metinler
@@ -52,10 +58,13 @@ Titresim/
 │   ├── IZOKRONIK_TONLAR_VE_GURULTU_TERAPISI.md # Hoparlör Uyumlu Nabızlar, Pembe/Kahverengi Gürültü
 │   └── SOLFEGGIO_VE_KOZMIK_OKTAV.md    # Guido d'Arezzo İlahisi & Hans Cousto Matematiksel Modeli
 ├── titresim/                           # Python 3 Ses Sentezleme & Hesaplama Çekirdeği
-│   ├── __init__.py                     # Paket Girişi & Genel İhracatlar (v1.3.0)
+│   ├── __init__.py                     # Paket Girişi & Genel İhracatlar (v2.0.0)
 │   ├── __main__.py                     # Modül Olarak Çalıştırma Desteği
-│   ├── cli.py                          # Zengin CLI Komut Satırı Arayüzü
+│   ├── cli.py                          # Zengin CLI Komut Satırı Arayüzü (protocol, chakra, seyir)
 │   └── core/
+│       ├── session.py                  # Çok Aşamalı Seans Motoru (Cross-fading & Protokoller)
+│       ├── chakra.py                   # 7 Çakra ve Meridyen Akustik Rezonans Motoru
+│       ├── seyir.py                    # Geleneksel Makam Seyir & Meditatif Taksim Sentezleyici
 │       ├── frequencies.py              # Solfeggio, Beyin Dalgaları, Kozmik & Gezegen Tonları
 │       ├── makam.py                    # Makam Terapisi Arama Motoru & Dizi Frekans Hesaplayıcı
 │       ├── cymatics.py                 # Kare & Dairesel Chladni/Bessel Plaka Simülatörü & SVG
@@ -66,18 +75,21 @@ Titresim/
 │       ├── traditions.py               # Kutsal Ses Gelenekleri Bilgi Motoru
 │       ├── tuning.py                   # 53-TET Koma, 432 Hz/440 Hz Dönüşümü & Pisagor Akordu
 │       └── wisdom.py                   # Kadim Bilgelik, Alıntılar ve Vecizeler Bilgi Motoru
-├── web/                                # İnteraktif Web Audio & Cymatics Laboratuvarı v1.3
-│   ├── index.html                      # Modern Görsel Arayüz (HTML5 + Glassmorphism)
-│   ├── style.css                       # Koyu & Mistik Tasarım (Glassmorphism + KaTeX stili)
-│   └── app.js                          # Web Audio API + Canlı Sematik + WAV Kaydedici + Alıntılar
-├── tests/                              # Kapsamlı Birim Testleri (42 Test - %100 Başarılı)
-│   ├── test_frequencies.py
-│   ├── test_makam.py
-│   ├── test_cymatics.py
-│   ├── test_circular_cymatics.py
-│   ├── test_generator.py
-│   ├── test_binaural.py
-│   ├── test_isochronic.py
+├── web/                                # İnteraktif Web Audio & Cymatics Laboratuvarı v2.0
+│   ├── index.html                      # Modern Görsel Arayüz (9 İnteraktif Sekme)
+│   ├── style.css                       # Koyu & Mistik Tasarım (Glassmorphism & Canlı Renkler)
+│   └── app.js                          # Web Audio API + Canlı Sematik + Protokoller + Çakra Akustiği
+└── tests/                              # Kapsamlı Birim Testleri (56 Test - %100 Başarılı)
+    ├── test_session.py                 # Protokol & Çok Aşamalı Seans Testleri
+    ├── test_chakra.py                  # Çakra Rezonansı & Gökkuşağı Dizisi Testleri
+    ├── test_seyir.py                   # Makam Seyir Sentezi Testleri
+    ├── test_frequencies.py             # Frekans Testleri
+    ├── test_makam.py                   # Makam Terapisi Testleri
+    ├── test_cymatics.py                # Sematik Plaka Testleri
+    ├── test_circular_cymatics.py       # Dairesel Su Çanağı Testleri
+    ├── test_generator.py               # Dalga Sentezleme & Drone Testleri
+    ├── test_binaural.py                # Binaural Beats Testleri
+    ├── test_isochronic.py              # İzokronik Vuruş Testleri
 │   ├── test_noise.py
 │   ├── test_traditions.py
 │   ├── test_tuning.py
@@ -198,7 +210,40 @@ python -m titresim drone --freq 136.1 --duration 20 -o om_drone.wav
 python -m titresim makam-audio --id nihavend --base 220 --output nihavend.wav
 ```
 
-### 10. Matematiksel Sematik (Cymatics) Mandala Modelleri
+### 10. Meditatif Makam Seyir & Taksim Sentezi
+```bash
+# Rast makamının geleneksel iniş-çıkış seyir ezgisini ney nefesi ve vibratoyla üret
+python -m titresim seyir --makam rast --output rast_seyri.wav
+
+# Nihavend makamında hüzünlü ve asil taksim
+python -m titresim seyir --makam nihavend --output nihavend_taksim.wav
+```
+
+### 11. Çakra Akustiği & Rezonant Frekanslar
+```bash
+# 7 Çakra frekanslarını, tohum mantralarını ve organ etkilerini listele
+python -m titresim chakra --list
+
+# Kalp Çakrası (Anahata - 639 Hz Solfeggio / 136.1 Hz Om) tonunu sentezle
+python -m titresim chakra --id kalp --output kalp_cakra.wav
+
+# Kökten Taç Çakraya (1 -> 7) yükselen tam Gökkuşağı Dengeleme Dizisi sentezle
+python -m titresim chakra --rainbow --output cakra_gokkusagegi.wav
+```
+
+### 12. Çok Aşamalı Klinik Seans Protokolleri
+```bash
+# Yerleşik klinik protokolleri listele
+python -m titresim protocol --list
+
+# Protokol hakkında aşama ve etki detaylarını gör
+python -m titresim protocol --info sleep
+
+# Derin Uyku seansı sentezle (Aşamalar arası yumuşak Equal-Power cross-fade geçişli)
+python -m titresim session --protocol sleep --output derin_uyku_seansi.wav
+```
+
+### 13. Matematiksel Sematik (Cymatics) Mandala Modelleri
 ```bash
 # 432 Hz için terminalde kare Chladni deseni çizdir ve SVG kaydet
 python -m titresim cymatics --freq 432 --svg chladni_432.svg
@@ -207,7 +252,7 @@ python -m titresim cymatics --freq 432 --svg chladni_432.svg
 python -m titresim cymatics --circular --freq 432 --res 25
 ```
 
-### 11. İnteraktif Web Laboratuvarını Başlatma
+### 14. İnteraktif Web Laboratuvarını Başlatma
 ```bash
 python -m titresim serve --port 8000
 ```
@@ -215,16 +260,15 @@ Tarayıcınız otomatik olarak `http://localhost:8000` adresinde açılacaktır.
 
 ---
 
-## 🌐 İnteraktif Web Audio & Cymatics Laboratuvarı v1.2
+## 🌐 İnteraktif Web Audio & Cymatics Laboratuvarı v2.0
 
 `web/` dizininde yer alan laboratuvar tamamen tarayıcı içinde çalışır:
+* **9 Farklı Akustik Sekme:** Solfeggio, Çok Aşamalı Klinik Protokoller, 7 Çakra Akustiği, Osmanlı Makam Terapisi, Binaural Beats, İzokronik Tonlar & Gürültü, Gezegen Frekansları, Kutsal Gelenekler ve Kadim Bilgelik Kütüphanesi.
 * **Canlı Chladni & Dairesel Su Simülasyonu:** 2800 adet kum taneciğinin ses dalgalarının nodal çizgilerine aktığı gerçek zamanlı fizik motoru. Kare plaka ve Dairesel su çanağı modları arasında tek tıkla geçiş!
-* **Web Audio API Osilatörleri:** Solfeggio tonları, 12 Osmanlı makamı, stereo binaural beats, izokronik vuruşlar ve canlı gezegen tonları.
-* **Akustik Gürültü Mikseri:** Pembe (1/f), Kahverengi (1/f²) ve Beyaz gürültüyü canlı olarak seansın arkasına karıştırabilme.
-* **Sürekli Dem (Drone) Modu:** Ney ve Tanpura benzeri 4 katmanlı rezonant dem tonu.
+* **Makam Seyir & Taksim Çalıcı:** Ney tınısı ve yumuşak vibrato ile geleneksel seyir akışını dinleme imkânı.
+* **Gökkuşağı Çakra Dizisi:** 1'den 7'ye yükselen çakra dengeleme meditasyonu.
+* **Klinik Protokol Yürütücüsü:** Gerçek zamanlı aşama takibi ve ilerleme çubuğu ile yönlendirilen seanslar.
 * **Canlı Seans Kaydedici:** Çalınan seansı Web Audio üzerinden doğrudan kaydedip anında WAV/WebM formatında indirebilme.
-* **Meditasyon Seans Zamanlayıcısı:** 5, 10 ve 20 dakikalık geri sayım; seans bitiminde çalan saf 528 Hz Tibet kase çanı.
-* **0.1 Hz Vagus Siniri Nefes Rehberi:** 5.5 saniye nefes alma, 5.5 saniye nefes verme animasyonuyla kalp hızı değişkenliği (HRV) eğitimi.
 
 ---
 
@@ -244,33 +288,23 @@ from titresim import (
     NoiseGenerator,
     PlanetaryFrequencies,
     TuningSystem,
-    WisdomArchive
+    WisdomArchive,
+    TherapySessionEngine,
+    ChakraResonance,
+    MakamSeyirGenerator
 )
 
-# 1. Gezegen Frekansı & Çakra Sorgusu
-sun = PlanetaryFrequencies.find_by_id("sun")
-print(f"{sun.name}: {sun.frequency} Hz - Çakra: {sun.chakra}")
+# 1. Çok Aşamalı Klinik Seans Sentezi
+engine = TherapySessionEngine()
+session_sig = engine.synthesize_protocol("sleep", total_duration_seconds=60.0)
+session_sig.save_wav("derin_uyku_klinik.wav")
 
-# 2. Kadim Bilgelik ve Alıntı Sorgusu
-rumi_quote = WisdomArchive.get_by_author("mevlana")[0]
-print(f"{rumi_quote.author}: {rumi_quote.quote_tr} (Frekans: {rumi_quote.recommended_freq} Hz)")
+# 2. 7 Çakra Gökkuşağı Dengeleme Dizisi
+rainbow_samples = ChakraResonance.generate_rainbow_alignment(duration_per_chakra=3.0)
 
-# 3. 53-TET Koma & 432 Hz Dönüşümü
-freq_432 = TuningSystem.convert_a4(440.0, source_a4=440.0, target_a4=432.0)
-print(f"440 Hz'in 432 Hz Karşılığı: {freq_432} Hz")
-
-# 4. Dairesel Bessel Sematik Deseni Üretimi
-circle_plate = CircularChladniPlate.from_frequency(432.0)
-print(circle_plate.render_ascii(resolution=25))
-
-# 5. Hoparlör Uyumlu İzokronik Nabız Tonu Üretimi
-iso_gen = IsochronicToneGenerator()
-samples = iso_gen.generate(carrier_freq=432.0, pulse_rate_hz=10.0, duration=5.0)
-
-# 6. Pembe Gürültü Katmanlı Binaural Beat WAV Sentezleme
-binaural = BinauralBeatGenerator()
-left, right = binaural.generate(carrier_freq=200, beat_freq=7.83, duration=5.0, pink_noise_level=0.03)
-binaural.save_stereo_wav("schumann_pink.wav", left, right)
+# 3. Ney Tınılı Makam Seyir Sentezi
+seyir_gen = MakamSeyirGenerator()
+rast_melody = seyir_gen.generate_seyir_melody("rast", unit_note_duration=0.8)
 ```
 
 ---
@@ -283,7 +317,7 @@ python -m unittest discover tests
 ```
 Çıktı:
 ```text
-Ran 42 tests in 0.156s
+Ran 56 tests in 0.340s
 OK
 ```
 

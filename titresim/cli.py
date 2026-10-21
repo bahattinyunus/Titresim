@@ -28,6 +28,9 @@ from .core.isochronic import IsochronicToneGenerator
 from .core.traditions import SacredTraditions
 from .core.tuning import TuningSystem
 from .core.wisdom import WisdomArchive
+from .core.session import TherapySessionEngine
+from .core.chakra import ChakraResonance
+from .core.seyir import MakamSeyirGenerator
 
 
 def handle_info(args):
@@ -122,8 +125,32 @@ def handle_info(args):
                 print(f"  💡 Tefekkür: {q.reflection}")
             print(f"  🎵 Frekans: {q.recommended_freq} Hz")
         print()
+
+    elif target in ("chakra", "chakras", "cakra", "cakralar"):
+        print("\n" + "=" * 68)
+        print("        7 TEMEL ÇAKRA VE MERİDYEN AKUSTİK REZONANSI")
+        print("=" * 68)
+        for ch in ChakraResonance.get_all():
+            print(f"🌈 {ch.name} ({ch.note})")
+            print(f"   Konum: {ch.location} | Element: {ch.element}")
+            print(f"   Solfeggio: {ch.solfeggio_freq} Hz | Gezegen (Cousto): {ch.planetary_freq} Hz | Tohum Bija: '{ch.bija_mantra}'")
+            print(f"   Şifa Alanı: {ch.balance_effect}")
+            print(f"   Dengesizlik: {ch.imbalance_symptoms}\n")
+
+    elif target in ("protocol", "protocols", "protokol", "protokoller"):
+        print("\n" + "=" * 68)
+        print("          KLİNİK VE MEDİTATİF SES SEANSI PROTOKOLLERİ")
+        print("=" * 68)
+        for p in TherapySessionEngine.get_all_protocols():
+            print(f"✨ [{p.id}] {p.title}")
+            print(f"   Alt Başlık: {p.subtitle}")
+            print(f"   Hedef Endikasyon: {p.target}")
+            print(f"   Tavsiye Edilen Süre: {p.total_recommended_minutes} dakika | Aşama Sayısı: {len(p.stages)}")
+            for st in p.stages:
+                print(f"     Aşama {st.stage}: {st.name} ({st.duration_percent:.0f}%) -> {st.carrier_freq} Hz (Beat: {st.beat_freq} Hz - {st.band}) + {st.noise_type} gürültü")
+            print()
     else:
-        print(f"Bilinmeyen bilgi hedefi: {args.target}. Seçenekler: solfeggio, makam, brain, cosmic, planetary, traditions, wisdom")
+        print(f"Bilinmeyen bilgi hedefi: {args.target}. Seçenekler: solfeggio, makam, brain, cosmic, planetary, traditions, wisdom, chakra, protocol")
 
 
 def handle_quote(args):
@@ -302,6 +329,98 @@ def handle_cymatics(args):
         print(f"✅ SVG çizimi kaydedildi: {args.svg}")
 
 
+def handle_protocol(args):
+    protocols = TherapySessionEngine.get_all_protocols()
+    if args.id:
+        p = TherapySessionEngine.find_protocol(args.id)
+        if not p:
+            print(f"❌ '{args.id}' kimlikli seans protokolü bulunamadı.")
+            return
+        print("\n" + "=" * 68)
+        print(f"  KLİNİK SEANS PROTOKOLÜ: {p.title.upper()}")
+        print("=" * 68)
+        print(f"• Alt Başlık: {p.subtitle}")
+        print(f"• Hedef Endikasyon: {p.target}")
+        print(f"• Tavsiye Edilen Süre: {p.total_recommended_minutes} Dakika")
+        print("• Aşamalar:")
+        for st in p.stages:
+            print(f"   [{st.stage}] {st.name} ({st.duration_percent:.0f}%)")
+            print(f"       Taşıyıcı: {st.carrier_freq} Hz | Beat: {st.beat_freq} Hz ({st.band})")
+            print(f"       Zemin Gürültüsü: {st.noise_type.capitalize()} (Seviye: {st.noise_volume})")
+            print(f"       Etki: {st.description}")
+        print()
+    else:
+        print("\n" + "=" * 68)
+        print("       KLİNİK VE MEDİTATİF TERAPÖTİK SEANS PROTOKOLLERİ")
+        print("=" * 68)
+        for p in protocols:
+            print(f"✨ [{p.id}] {p.title} ({p.total_recommended_minutes} Dk)")
+            print(f"   Hedef: {p.target}")
+            print(f"   Aşama Sayısı: {len(p.stages)}\n")
+
+
+def handle_session(args):
+    engine = TherapySessionEngine()
+    out_path = args.output or f"session_{args.id}.wav"
+    duration_sec = args.duration * 60.0 if args.minutes else args.duration
+    print(f"🧘 '{args.id}' seansı sentezleniyor (Süre: {duration_sec:.1f} saniye)...")
+    try:
+        prot = engine.export_session_wav(
+            filepath=out_path,
+            protocol_id=args.id,
+            duration_seconds=duration_sec,
+            volume=args.volume
+        )
+        print(f"✅ Seans başarıyla sentezlendi ve kaydedildi: {out_path}")
+        print(f"   Protokol: {prot.title}")
+    except Exception as e:
+        print(f"❌ Hata: {e}")
+
+
+def handle_chakra(args):
+    if args.align:
+        gen = ToneGenerator()
+        print(f"🌈 7 Çakra Gökkuşağı Akordu (Rainbow Alignment) üretiliyor...")
+        samples = ChakraResonance.generate_rainbow_alignment(duration_per_chakra=args.duration)
+        out_path = args.output or "chakra_rainbow_alignment.wav"
+        gen.save_wav(out_path, samples)
+        print(f"✅ Çakra dengeleme WAV dosyası kaydedildi: {out_path}")
+    elif args.id:
+        ch = ChakraResonance.find_by_id(args.id)
+        if not ch:
+            print(f"❌ '{args.id}' çakrası bulunamadı.")
+            return
+        freq = ch.solfeggio_freq if args.mode == "solfeggio" else ch.planetary_freq
+        print(f"✨ {ch.name} ({ch.note}) - {args.mode.capitalize()} Tonu: {freq} Hz üretiliyor...")
+        samples = ChakraResonance.generate_chakra_tone(ch.id, mode=args.mode, duration=args.duration)
+        out_path = args.output or f"chakra_{ch.id}_{args.mode}.wav"
+        gen = ToneGenerator()
+        gen.save_wav(out_path, samples)
+        print(f"✅ Çakra tonu kaydedildi: {out_path}")
+    else:
+        print("\n" + "=" * 68)
+        print("        7 TEMEL ÇAKRA VE MERİDYEN REZONANS CETVELİ")
+        print("=" * 68)
+        for ch in ChakraResonance.get_all():
+            print(f"🌈 [{ch.id}] {ch.name} ({ch.note}) - Tohum Mantra: '{ch.bija_mantra}'")
+            print(f"   Solfeggio: {ch.solfeggio_freq} Hz | Gezegen Tonu: {ch.planetary_freq} Hz")
+            print(f"   Şifa: {ch.balance_effect}\n")
+
+
+def handle_seyir(args):
+    gen = MakamSeyirGenerator()
+    out_path = args.output or f"seyir_{args.makam}.wav"
+    print(f"🎶 {args.makam.upper()} makam seyri ve meditatif taksim ezgisi sentezleniyor...")
+    samples = gen.generate_seyir_melody(
+        makam_id=args.makam,
+        base_freq=args.base,
+        unit_note_duration=args.unit_duration
+    )
+    tone_gen = ToneGenerator()
+    tone_gen.save_wav(out_path, samples)
+    print(f"✅ Meditatif makam seyri kaydedildi: {out_path}")
+
+
 def handle_serve(args):
     web_dir = Path(__file__).resolve().parent.parent / "web"
     os.chdir(web_dir)
@@ -413,6 +532,33 @@ def main():
     p_quo.add_argument("--id", help="Belirli bir alıntı ID'si")
     p_quo.add_argument("--all", action="store_true", help="Tüm bilgelik külliyatını listele")
 
+    # protocol
+    p_pro = subparsers.add_parser("protocol", help="Klinik ve meditatif seans protokollerini listeler veya inceler")
+    p_pro.add_argument("--id", help="Protokol ID (sleep, focus, anxiety, heart, detox)")
+
+    # session
+    p_ses = subparsers.add_parser("session", help="Çok aşamalı terapötik seans WAV dosyası sentezler")
+    p_ses.add_argument("--id", required=True, help="Protokol ID (sleep, focus, anxiety, heart, detox)")
+    p_ses.add_argument("--duration", "-d", type=float, default=60.0, help="Seans süresi (varsayılan 60 saniye)")
+    p_ses.add_argument("--minutes", "-m", action="store_true", help="Süreyi dakika olarak yorumlar")
+    p_ses.add_argument("--volume", "-v", type=float, default=0.5, help="Ses seviyesi")
+    p_ses.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # chakra
+    p_cha = subparsers.add_parser("chakra", help="7 temel çakra rezonans tonu veya gökkuşağı akordu üretir")
+    p_cha.add_argument("--id", help="Çakra ID (muladhara, svadhisthana, manipura, anahata, vishuddha, ajna, sahasrara)")
+    p_cha.add_argument("--mode", choices=["solfeggio", "planetary"], default="solfeggio", help="Frekans modu")
+    p_cha.add_argument("--duration", "-d", type=float, default=8.0, help="Ton süresi")
+    p_cha.add_argument("--align", action="store_true", help="1'den 7'ye tam gökkuşağı çakra dengeleme dizisi üretir")
+    p_cha.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # seyir
+    p_sey = subparsers.add_parser("seyir", help="Geleneksel Osmanlı makam seyri ve meditatif taksim sentezler")
+    p_sey.add_argument("--makam", "-m", default="rast", choices=["rast", "nihavend", "hicaz", "ussak"], help="Makam adı")
+    p_sey.add_argument("--base", "-b", type=float, default=220.0, help="Karar perdesi frekansı (Hz)")
+    p_sey.add_argument("--unit-duration", "-u", type=float, default=0.8, help="Birim nota süresi (sn)")
+    p_sey.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -423,6 +569,14 @@ def main():
         handle_info(args)
     elif args.command == "quote":
         handle_quote(args)
+    elif args.command == "protocol":
+        handle_protocol(args)
+    elif args.command == "session":
+        handle_session(args)
+    elif args.command == "chakra":
+        handle_chakra(args)
+    elif args.command == "seyir":
+        handle_seyir(args)
     elif args.command == "generate":
         handle_generate(args)
     elif args.command == "binaural":

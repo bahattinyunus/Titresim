@@ -1,0 +1,190 @@
+[
+  {
+    "id": "deep_sleep_regeneration",
+    "title": "Derin Uyku & Hücresel Yenilenme Protokolü",
+    "subtitle": "Alfa'dan Delta'ya kademeli nöral yavaşlama ve hücre onarımı",
+    "target": "İnsomnia, uyku kalitesi düşüklüğü, kronik yorgunluk ve hücresel stres",
+    "total_recommended_minutes": 30,
+    "stages": [
+      {
+        "stage": 1,
+        "name": "Zihinsel Sakinleşme & Günün Yükünü Bırakma",
+        "duration_percent": 25,
+        "carrier_freq": 432.0,
+        "beat_freq": 10.0,
+        "band": "Alfa",
+        "noise_type": "pink",
+        "noise_volume": 0.04,
+        "description": "Zihni meşgul eden düşünceleri yavaşlatır, parasempatik sisteme yumuşak geçiş sağlar."
+      },
+      {
+        "stage": 2,
+        "name": "Derin Gevşeme & Alacakaranlık Hali",
+        "duration_percent": 35,
+        "carrier_freq": 285.0,
+        "beat_freq": 5.5,
+        "band": "Teta",
+        "noise_type": "brown",
+        "noise_volume": 0.05,
+        "description": "Kas gerginliğini çözer, solunum ve kalp atışını gece ritmine senkronize eder."
+      },
+      {
+        "stage": 3,
+        "name": "Hücresel Onarım & Yavaş Dalga Uykusu",
+        "duration_percent": 40,
+        "carrier_freq": 174.0,
+        "beat_freq": 1.5,
+        "band": "Delta",
+        "noise_type": "brown",
+        "noise_volume": 0.06,
+        "description": "Büyüme hormonu (HGH) salınımını tetikler, derin rüyasız uykuda doku yenilenmesini destekler."
+      }
+    ]
+  },
+  {
+    "id": "flow_state_focus",
+    "title": "Yüksek Odaklanma & Zihinsel Akış (Flow State)",
+    "subtitle": "Gama dalgası senkronizasyonu ile berrak kavrayış ve dikkat",
+    "target": "Çalışma, derin okuma, problem çözme ve dikkat dağınıklığını giderme",
+    "total_recommended_minutes": 25,
+    "stages": [
+      {
+        "stage": 1,
+        "name": "Zihinsel Isınma & Odak Kilidi",
+        "duration_percent": 20,
+        "carrier_freq": 432.0,
+        "beat_freq": 14.0,
+        "band": "Düşük Beta",
+        "noise_type": "white",
+        "noise_volume": 0.02,
+        "description": "Dış dikkat dağıtıcıları maskeleyerek zihni çalışma masasına sabitler."
+      },
+      {
+        "stage": 2,
+        "name": "Yüksek Bilişsel Entegrasyon",
+        "duration_percent": 60,
+        "carrier_freq": 528.0,
+        "beat_freq": 40.0,
+        "band": "Gama",
+        "noise_type": "pink",
+        "noise_volume": 0.03,
+        "description": "Beyin yarımküreleri arasında 40 Hz senkronizasyon üreterek 'Akış' (Flow) durumunu pekiştirir."
+      },
+      {
+        "stage": 3,
+        "name": "Dengeli Serinleme & Bilgi Sindirme",
+        "duration_percent": 20,
+        "carrier_freq": 432.0,
+        "beat_freq": 10.0,
+        "band": "Alfa",
+        "noise_type": "pink",
+        "noise_volume": 0.02,
+        "description": "Zihinsel yorgunluğu önler, öğrenilen bilgilerin hafızaya yerleşmesini sağlar."
+      }
+    ]
+  },
+  {
+    "id": "darussifa_anxiety_relief",
+    "title": "Osmanlı Darüşşifa Hüzün & Kaygı Şifası",
+    "subtitle": "Nihavend ve Rast makamlarının kalp ve nabız yatıştırıcı terapisi",
+    "target": "Akut kaygı, içsel daralma, panik atak eğilimi ve yüksek tansiyon",
+    "total_recommended_minutes": 20,
+    "stages": [
+      {
+        "stage": 1,
+        "name": "Fecir Dinginliği (Rast Karar Tonu)",
+        "duration_percent": 30,
+        "carrier_freq": 220.0,
+        "beat_freq": 8.0,
+        "band": "Alfa-Teta Eşiği",
+        "noise_type": "pink",
+        "noise_volume": 0.03,
+        "description": "Rast makamının sefa ve ferahlık veren Dügah perdesiyle içsel düğümleri çözer."
+      },
+      {
+        "stage": 2,
+        "name": "Kalp ve Nabız Dengelemesi (Nihavend Rezonansı)",
+        "duration_percent": 45,
+        "carrier_freq": 293.33,
+        "beat_freq": 6.0,
+        "band": "Teta",
+        "noise_type": "pink",
+        "noise_volume": 0.03,
+        "description": "İbn-i Sina'nın tavsiyesiyle hızlı nabzı yatıştırır, göğüs kafesindeki sıkışmayı açar."
+      },
+      {
+        "stage": 3,
+        "name": "Teslimiyet ve İç Huzur (Dem Tonu & Vagus)",
+        "duration_percent": 25,
+        "carrier_freq": 136.1,
+        "beat_freq": 7.83,
+        "band": "Schumann Rezonansı",
+        "noise_type": "brown",
+        "noise_volume": 0.04,
+        "description": "Dünyanın kalp atışı olan 7.83 Hz ile güven, teslimiyet ve sekinet sağlar."
+      }
+    ]
+  },
+  {
+    "id": "heart_coherence_vagus",
+    "title": "Kardiyorespiratuar Kalp Koheransı & Vagus Stimülasyonu",
+    "subtitle": "0.1 Hz ritmik rezonans ve 5.5 saniye nefes döngüsü",
+    "target": "Otonom sinir sistemi dengesizliği, yüksek kortizol ve düşük HRV",
+    "total_recommended_minutes": 15,
+    "stages": [
+      {
+        "stage": 1,
+        "name": "Sempatik Frenleme",
+        "duration_percent": 30,
+        "carrier_freq": 432.0,
+        "beat_freq": 10.0,
+        "band": "Alfa",
+        "noise_type": "pink",
+        "noise_volume": 0.03,
+        "description": "Savaş ya da kaç tepkisini sonlandırarak vagus sinirini uyarır."
+      },
+      {
+        "stage": 2,
+        "name": "0.1 Hz Barorefleks Koheransı",
+        "duration_percent": 70,
+        "carrier_freq": 136.1,
+        "beat_freq": 6.0,
+        "band": "Teta",
+        "noise_type": "pink",
+        "noise_volume": 0.03,
+        "description": "Dakikada tam 5.5 nefes ritmiyle kalp, beyin ve akciğer salınımlarını tek fazda kilitler."
+      }
+    ]
+  },
+  {
+    "id": "sacred_cellular_detox",
+    "title": "Kutsal Rezonans & Hücresel Detoksifikasyon",
+    "subtitle": "528 Hz DNA onarımı ve 741 Hz toksin temizleme bileşimi",
+    "target": "Beden yorgunluğu, hücresel arınma ve elektromanyetik yük temizliği",
+    "total_recommended_minutes": 20,
+    "stages": [
+      {
+        "stage": 1,
+        "name": "741 Hz Sezgi & Toksin Temizliği",
+        "duration_percent": 50,
+        "carrier_freq": 741.0,
+        "beat_freq": 7.83,
+        "band": "Schumann Teta",
+        "noise_type": "pink",
+        "noise_volume": 0.02,
+        "description": "Hücre zarındaki geçirgenliği artırarak metabolik atıkların atılmasını uyarır."
+      },
+      {
+        "stage": 2,
+        "name": "528 Hz Mucize & DNA Yenilenmesi",
+        "duration_percent": 50,
+        "carrier_freq": 528.0,
+        "beat_freq": 10.0,
+        "band": "Alfa",
+        "noise_type": "pink",
+        "noise_volume": 0.03,
+        "description": "Altıgen su kümeleri oluşturarak DNA bağlarının onarım frekansını destekler."
+      }
+    ]
+  }
+]

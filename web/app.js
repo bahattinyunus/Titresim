@@ -1,11 +1,175 @@
 /**
- * Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Laboratuvarı v1.2
+ * Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Laboratuvarı v2.0
  * Web Audio API & Canlı Chladni Cymatics Simülasyon Motoru
  */
 
 // ==========================================
 // 1. DAHİLİ VERİLER (DATASETS)
 // ==========================================
+const CHAKRAS_DATA = [
+  {
+    id: "muladhara",
+    name: "Muladhara (Kök Çakra)",
+    location: "Omurga tabanı, kuyruk sokumu",
+    element: "Toprak (Prithvi)",
+    solfeggio_freq: 396.0,
+    planetary_freq: 194.18,
+    bija_mantra: "LAM",
+    color: "#ef4444",
+    note: "C (Do)",
+    organs: "Bağışıklık sistemi, kemikler, bacaklar, böbrek üstü bezleri",
+    balance_effect: "Korkulardan arınma, dünyada güvende hissetme, güçlü topraklanma.",
+    imbalance_symptoms: "Sürekli kaygı, maddi güvensizlik, bel ağrısı, panik atak."
+  },
+  {
+    id: "svadhisthana",
+    name: "Svadhisthana (Sakral Çakra)",
+    location: "Göbeğin altı, pelvis bölgesi",
+    element: "Su (Apas)",
+    solfeggio_freq: 417.0,
+    planetary_freq: 210.42,
+    bija_mantra: "VAM",
+    color: "#f97316",
+    note: "D (Re)",
+    organs: "Üreme organları, mesane, lenf dolaşımı, böbrekler",
+    balance_effect: "Duygusal akışkanlık, yaratıcılık, yaşama sevinci ve travma çözümü.",
+    imbalance_symptoms: "Duygusal donukluk, suçluluk hissi, yaratıcı tıkanıklık, bağımlılıklar."
+  },
+  {
+    id: "manipura",
+    name: "Manipura (Solar Pleksus)",
+    location: "Mide boşluğu, diyafram altı",
+    element: "Ateş (Agni)",
+    solfeggio_freq: 528.0,
+    planetary_freq: 126.22,
+    bija_mantra: "RAM",
+    color: "#eab308",
+    note: "E (Mi)",
+    organs: "Mide, karaciğer, safra kesesi, pankreas, sindirim sistemi",
+    balance_effect: "Kişisel güç, irade, özgüven, DNA düzeyinde canlılık ve neşe.",
+    imbalance_symptoms: "Özgüven eksikliği, kontrol takıntısı, mide ülseri, sindirim sorunları."
+  },
+  {
+    id: "anahata",
+    name: "Anahata (Kalp Çakrası)",
+    location: "Göğüs kafesi merkezi",
+    element: "Hava (Vayu)",
+    solfeggio_freq: 639.0,
+    planetary_freq: 136.10,
+    bija_mantra: "YAM",
+    color: "#22c55e",
+    note: "F (Fa)",
+    organs: "Kalp, akciğerler, timus bezi, kan dolaşımı",
+    balance_effect: "Koşulsuz sevgi, şefkat, affedicilik, vagal kalp koheransı.",
+    imbalance_symptoms: "Kırgınlık, kıskançlık, yalnızlık hissi, solunum darlığı, çarpıntı."
+  },
+  {
+    id: "vishuddha",
+    name: "Vishuddha (Boğaz Çakrası)",
+    location: "Boğaz çukuru",
+    element: "Eter (Akasha)",
+    solfeggio_freq: 741.0,
+    planetary_freq: 141.27,
+    bija_mantra: "HAM",
+    color: "#06b6d4",
+    note: "G (Sol)",
+    organs: "Boğaz, tiroid, ses telleri, boyun omurları",
+    balance_effect: "Hakikati söyleme, duru ifade, sezgisel uyanış, hücresel detoks.",
+    imbalance_symptoms: "Kendini ifade edememe, yalan söyleme, tiroid bozukluğu, boğaz enfeksiyonları."
+  },
+  {
+    id: "ajna",
+    name: "Ajna (Üçüncü Göz)",
+    location: "İki kaşın ortası",
+    element: "Işık / Saf Akıl",
+    solfeggio_freq: 852.0,
+    planetary_freq: 221.23,
+    bija_mantra: "AUM",
+    color: "#6366f1",
+    note: "A (La)",
+    organs: "Epifiz bezi, beyin yarıküreleri, gözler, sinir sistemi",
+    balance_effect: "Ruhsal basiret, berrak sezgi, derin odak ve tefekkür gücü.",
+    imbalance_symptoms: "Zihinsel bulanıklık, kabuslar, baş ağrısı, gerçeklikten kopukluk."
+  },
+  {
+    id: "sahasrara",
+    name: "Sahasrara (Taç Çakra)",
+    location: "Başın tepe noktası (bıngıldak)",
+    element: "Saf Bilinç / Kozmik Eter",
+    solfeggio_freq: 963.0,
+    planetary_freq: 172.06,
+    bija_mantra: "OM",
+    color: "#a855f7",
+    note: "B (Si)",
+    organs: "Serebral korteks, hipofiz bezi, merkezi sinir sistemi",
+    balance_effect: "Birlik şuuru, aşkın huzur, kozmik aidiyet ve aydınlanma.",
+    imbalance_symptoms: "Yabancılaşma, varoluşsal kriz, derin yalnızlık, manevi anlamsızlık."
+  }
+];
+
+const PROTOCOLS_DATA = [
+  {
+    id: "deep_sleep_regeneration",
+    title: "Derin Uyku & Hücresel Yenilenme Protokolü",
+    subtitle: "Alfa'dan Delta'ya kademeli nöral yavaşlama ve hücre onarımı",
+    target: "İnsomnia, uyku kalitesi düşüklüğü, kronik yorgunluk ve hücresel stres",
+    total_recommended_minutes: 30,
+    stages: [
+      { stage: 1, name: "Zihinsel Sakinleşme & Günün Yükünü Bırakma", duration_percent: 25, carrier_freq: 432.0, beat_freq: 10.0, band: "Alfa", noise_type: "pink", noise_volume: 0.04, description: "Zihni meşgul eden düşünceleri yavaşlatır, parasempatik sisteme yumuşak geçiş sağlar." },
+      { stage: 2, name: "Derin Gevşeme & Alacakaranlık Hali", duration_percent: 35, carrier_freq: 285.0, beat_freq: 5.5, band: "Teta", noise_type: "brown", noise_volume: 0.05, description: "Kas gerginliğini çözer, solunum ve kalp atışını gece ritmine senkronize eder." },
+      { stage: 3, name: "Hücresel Onarım & Yavaş Dalga Uykusu", duration_percent: 40, carrier_freq: 174.0, beat_freq: 1.5, band: "Delta", noise_type: "brown", noise_volume: 0.06, description: "Büyüme hormonu salınımını tetikler, derin rüyasız uykuda doku yenilenmesini destekler." }
+    ]
+  },
+  {
+    id: "flow_state_focus",
+    title: "Yüksek Odaklanma & Zihinsel Akış (Flow State)",
+    subtitle: "Gama dalgası senkronizasyonu ile berrak kavrayış ve dikkat",
+    target: "Çalışma, derin okuma, problem çözme ve dikkat dağınıklığını giderme",
+    total_recommended_minutes: 25,
+    stages: [
+      { stage: 1, name: "Zihinsel Isınma & Odak Kilidi", duration_percent: 20, carrier_freq: 432.0, beat_freq: 14.0, band: "Düşük Beta", noise_type: "white", noise_volume: 0.02, description: "Dış dikkat dağıtıcıları maskeleyerek zihni çalışma masasına sabitler." },
+      { stage: 2, name: "Derin Konsantrasyon & Bilişsel Hız", duration_percent: 50, carrier_freq: 528.0, beat_freq: 20.0, band: "Beta", noise_type: "pink", noise_volume: 0.03, description: "Sol ve sağ beyin küreleri arasında bilgi akışını hızlandırır." },
+      { stage: 3, name: "Gama Akış Doruğu (Insight & Eureka)", duration_percent: 30, carrier_freq: 528.0, beat_freq: 40.0, band: "Gama", noise_type: "pink", noise_volume: 0.02, description: "Karmaşık kavramları sentezleme, yaratıcı kıvılcım ve yüksek farkındalık hali." }
+    ]
+  },
+  {
+    id: "darussifa_anxiety_relief",
+    title: "Darüşşifa Anksiyete & Ruhî Sükun Protokolü",
+    subtitle: "Nihavend & Rast makamları ve Schumann rezonansı ile panik yatıştırma",
+    target: "Panik atak, yaygın anksiyete, kalp çarpıntısı ve zihinsel kuruntu",
+    total_recommended_minutes: 20,
+    stages: [
+      { stage: 1, name: "Nihavend Teskini (Kan Basıncı & Nabız Dengesi)", duration_percent: 30, carrier_freq: 261.63, beat_freq: 7.83, band: "Schumann Teta", noise_type: "pink", noise_volume: 0.03, description: "Yüksek tansiyonu ve hızlı nabzı yatıştırır; darüşşifa hekimlerinin öğle reçetesi." },
+      { stage: 2, name: "Rast Sefa & Göğüs Ferahlığı", duration_percent: 40, carrier_freq: 392.0, beat_freq: 6.0, band: "Teta", noise_type: "pink", noise_volume: 0.03, description: "Korku ve daralma hissini dağıtır, melankoli ve iç sıkıntısını sefaya çevirir." },
+      { stage: 3, name: "Kozmik İtidal & Topraklanma (Om Tınısı)", duration_percent: 30, carrier_freq: 136.1, beat_freq: 4.5, band: "Derin Teta", noise_type: "brown", noise_volume: 0.04, description: "Yerçekimi ve dünya frekansıyla yeniden bağ kurarak emniyet hissini kalıcı kılar." }
+    ]
+  },
+  {
+    id: "heart_coherence_vagus",
+    title: "Kalp Koheransı & Vagal Tonlama (0.1 Hz)",
+    subtitle: "Solunum ve kalp hızı değişkenliği (HRV) senkronizasyonu",
+    target: "Otonom sinir sistemi dengesizliği, tükenmişlik ve duygusal dalgalanmalar",
+    total_recommended_minutes: 15,
+    stages: [
+      { stage: 1, name: "Diyafram Nefesi & Ritim Oturtma", duration_percent: 30, carrier_freq: 528.0, beat_freq: 10.0, band: "Alfa", noise_type: "pink", noise_volume: 0.02, description: "5 saniye nefes alış, 5 saniye veriş temposu için akustik zemin kurar." },
+      { stage: 2, name: "Rezonans Frekansı Kilitlenmesi (0.1 Hz)", duration_percent: 50, carrier_freq: 639.0, beat_freq: 6.0, band: "Teta", noise_type: "pink", noise_volume: 0.03, description: "Baroreseptör refleksini tetikleyerek vagus sinirini güçlendirir." },
+      { stage: 3, name: "Şefkat & Duygusal Denge", duration_percent: 20, carrier_freq: 432.0, beat_freq: 7.83, band: "Schumann", noise_type: "brown", noise_volume: 0.03, description: "Kalp manyetik alanını koherent hale getirir, içsel şefkat alanını genişletir." }
+    ]
+  },
+  {
+    id: "cellular_detox_solfeggio",
+    title: "Hücresel Detoks & Enerji Meridyenleri Temizliği",
+    subtitle: "Solfeggio 741 Hz, 528 Hz ve Karaciğer/Bağışıklık Rezonansı",
+    target: "Bedensel toksin birikimi, halsizlik, lenf durgunluğu ve elektromanyetik sis",
+    total_recommended_minutes: 25,
+    stages: [
+      { stage: 1, name: "Toksin Salımı & Arınma (741 Hz)", duration_percent: 35, carrier_freq: 741.0, beat_freq: 8.0, band: "Alfa", noise_type: "pink", noise_volume: 0.03, description: "Hücre zarından ağır metal ve metabolik atık salımını titreşimle destekler." },
+      { stage: 2, name: "DNA & Matris Onarımı (528 Hz)", duration_percent: 40, carrier_freq: 528.0, beat_freq: 5.0, band: "Teta", noise_type: "brown", noise_volume: 0.03, description: "Su moleküler yapısını altıgen kümelere düzenleyerek hücre içi hidrasyonu artırır." },
+      { stage: 3, name: "Canlılık & Yaşam Gücü Entegrasyonu", duration_percent: 25, carrier_freq: 285.0, beat_freq: 10.0, band: "Alfa", noise_type: "white", noise_volume: 0.02, description: "Doku yenilenmesini hızlandırır, meridyen hatlarını açık ve canlı tutar." }
+    ]
+  }
+];
+
 const SOLFEGGIO_DATA = [
   { freq: 174, name: "Doğal Anestezi & Güven", note: "F", chakra: "Kök (Alt)", desc: "Fiziksel bedendeki ağrı ve gerginliği yatıştırır, organlara rahatlama aşılar." },
   { freq: 285, name: "Hücresel Yenilenme", note: "C#", chakra: "Kök Çakra", desc: "Hasarlı doku ve hücrelerin orijinal frekans koduna dönmesini destekler." },
@@ -853,6 +1017,135 @@ class AudioEngine {
       this.isRecording = false;
     }
   }
+
+  // Meditatif Makam Seyir Sentezleyici (Ney tınısı & yumuşak vibrato)
+  playSeyir(makamId, onNoteChange, onComplete) {
+    this.init();
+    this.stopTone();
+    this.stopBinaural();
+    this.stopIsochronic();
+
+    const makam = MAKAM_DATA.find(m => m.id === makamId) || MAKAM_DATA[0];
+    const baseFreq = makam.ratios ? (makam.root.includes("G") ? 196.0 : 220.0) : 220.0;
+    
+    // Seyir nota akış şablonları
+    const templates = {
+      rast: [0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0],
+      nihavend: [4, 3, 2, 1, 0, 2, 4, 5, 7, 6, 5, 4, 3, 2, 1, 0],
+      hicaz: [0, 1, 2, 3, 4, 5, 6, 7, 5, 4, 3, 2, 1, 0],
+      ussak: [0, 1, 2, 3, 4, 3, 2, 1, 0]
+    };
+    const seq = templates[makamId] || templates.rast;
+
+    let idx = 0;
+    const playNext = () => {
+      if (idx >= seq.length) {
+        if (onComplete) onComplete();
+        return;
+      }
+      const noteIdx = seq[idx];
+      const ratio = makam.ratios[noteIdx] || 1.0;
+      const freq = baseFreq * ratio;
+      const isKarar = (idx === seq.length - 1);
+      const dur = isKarar ? 2400 : 700;
+
+      // Yumuşak ney tonu üret
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
+      const now = this.ctx.currentTime;
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.15);
+      gain.gain.setValueAtTime(0.20, now + (dur / 1000) * 0.7);
+      gain.gain.linearRampToValueAtTime(0.001, now + (dur / 1000));
+
+      osc.connect(gain);
+      gain.connect(this.masterGain);
+      osc.start(now);
+      osc.stop(now + (dur / 1000));
+
+      if (onNoteChange) onNoteChange(freq, noteIdx);
+      if (cymaticsSim) cymaticsSim.setFrequency(freq);
+
+      idx++;
+      setTimeout(playNext, dur + 40);
+    };
+
+    playNext();
+  }
+
+  // Protokol Seans Yürütücüsü
+  startProtocol(protocol, onProgress, onComplete) {
+    this.stopProtocol();
+    this.init();
+
+    this.activeProtocol = protocol;
+    const totalDurationSeconds = 120; // Hızlı ve etkili web demosu için 2 dakika
+    let elapsedSeconds = 0;
+
+    const stages = protocol.stages;
+    let currentStageIndex = 0;
+
+    const applyStage = (sIdx) => {
+      if (sIdx >= stages.length) return;
+      const st = stages[sIdx];
+      this.playBinaural(st.carrierFreq, st.beat_freq);
+      this.playNoise(st.noise_type, st.noise_volume * 1.5);
+      if (cymaticsSim) cymaticsSim.setFrequency(st.carrierFreq);
+    };
+
+    applyStage(0);
+
+    this.protocolTimer = setInterval(() => {
+      elapsedSeconds++;
+      const progressPercent = (elapsedSeconds / totalDurationSeconds) * 100;
+
+      // Mevcut aşamayı hesapla
+      let accumTime = 0;
+      let calculatedStage = 0;
+      for (let i = 0; i < stages.length; i++) {
+        const stageSec = (stages[i].duration_percent / 100) * totalDurationSeconds;
+        accumTime += stageSec;
+        if (elapsedSeconds <= accumTime) {
+          calculatedStage = i;
+          break;
+        }
+      }
+
+      if (calculatedStage !== currentStageIndex) {
+        currentStageIndex = calculatedStage;
+        applyStage(currentStageIndex);
+      }
+
+      const remainingSec = Math.max(0, totalDurationSeconds - elapsedSeconds);
+      if (onProgress) {
+        onProgress({
+          progressPercent,
+          currentStage: stages[currentStageIndex],
+          stageIndex: currentStageIndex + 1,
+          totalStages: stages.length,
+          remainingSeconds: remainingSec
+        });
+      }
+
+      if (elapsedSeconds >= totalDurationSeconds) {
+        this.stopProtocol();
+        if (onComplete) onComplete();
+      }
+    }, 1000);
+  }
+
+  stopProtocol() {
+    if (this.protocolTimer) {
+      clearInterval(this.protocolTimer);
+      this.protocolTimer = null;
+    }
+    this.activeProtocol = null;
+    this.stopBinaural();
+    this.stopNoise();
+  }
 }
 
 const audio = new AudioEngine();
@@ -1178,13 +1471,18 @@ function renderMakamlar() {
         ${makam.effects.map(e => `<li>${e}</li>`).join("")}
       </ul>
       <div class="makam-notes-quote">${makam.quote}</div>
-      <div class="makam-action mt-3">
+      <div class="makam-action mt-3" style="display: flex; gap: 10px; flex-wrap: wrap;">
         <button id="playMakamBtn" class="btn btn-primary">🎶 Makam Dizisini Dinle (Şifa Arpeji)</button>
+        <button id="playMakamSeyirBtn" class="btn btn-outline-gold">🕌 Meditatif Ney Seyri (Taksim)</button>
       </div>
     `;
 
     document.getElementById("playMakamBtn").addEventListener("click", () => {
       audio.playMakamScale(makam);
+    });
+
+    document.getElementById("playMakamSeyirBtn").addEventListener("click", () => {
+      audio.playSeyir(makam.id);
     });
   }
 
@@ -1665,7 +1963,155 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMakamlar();
   renderTraditions();
   renderQuotes("all", "");
+  renderProtocols();
+  renderChakras();
   setupBreathing();
   setupSessionTimer();
   setupWisdomBanner();
 });
+
+// ==========================================
+// 5. TITRESIM v2.0: PROTOKOL VE CAKRA RENDER
+// ==========================================
+function renderProtocols() {
+  const container = document.getElementById("protocolsGrid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const activeBox = document.getElementById("activeProtocolBox");
+  const stopBtn = document.getElementById("stopProtocolBtn");
+  const pBar = document.getElementById("protocolProgressBar");
+  const pStage = document.getElementById("activeProtocolStage");
+  const pTimer = document.getElementById("activeProtocolTimer");
+  const pDesc = document.getElementById("activeProtocolDesc");
+  const pTitle = document.getElementById("activeProtocolTitle");
+
+  if (stopBtn) {
+    stopBtn.onclick = () => {
+      audio.stopProtocol();
+      activeBox.classList.add("hidden");
+    };
+  }
+
+  PROTOCOLS_DATA.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "protocol-card";
+    card.innerHTML = `
+      <div class="protocol-card-header">
+        <div class="protocol-card-title">${p.title}</div>
+        <div class="protocol-card-duration">⏱️ ${p.total_recommended_minutes} Dk (Demo: 2 Dk)</div>
+      </div>
+      <div class="protocol-card-desc">${p.subtitle} • <em>Hedef: ${p.target}</em></div>
+      <div class="protocol-stages-list">
+        ${p.stages.map(s => `<span class="stage-pill">Aşama ${s.stage}: ${s.band} (${s.carrier_freq}Hz / ${s.beat_freq}Hz)</span>`).join("")}
+      </div>
+      <button class="btn btn-primary start-proto-btn">▶️ Protokol Seansını Başlat</button>
+    `;
+
+    card.querySelector(".start-proto-btn").addEventListener("click", () => {
+      activeBox.classList.remove("hidden");
+      pTitle.innerText = `Aktif Seans: ${p.title}`;
+      pBar.style.width = "0%";
+
+      audio.startProtocol(
+        p,
+        (progress) => {
+          pBar.style.width = `${progress.progressPercent}%`;
+          pStage.innerText = `Aşama: ${progress.stageIndex} / ${progress.totalStages} (${progress.currentStage.band})`;
+          const mins = Math.floor(progress.remainingSeconds / 60);
+          const secs = progress.remainingSeconds % 60;
+          pTimer.innerText = `Kalan: ${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+          pDesc.innerText = `"${progress.currentStage.name}": ${progress.currentStage.description}`;
+        },
+        () => {
+          activeBox.classList.add("hidden");
+          alert(`"${p.title}" seansı başarıyla tamamlandı. Şifa ve itidal olsun.`);
+        }
+      );
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function renderChakras() {
+  const container = document.getElementById("chakrasList");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const getMode = () => {
+    const checked = document.querySelector('input[name="chakraMode"]:checked');
+    return checked ? checked.value : "solfeggio";
+  };
+
+  const rainbowBtn = document.getElementById("rainbowAlignmentBtn");
+  if (rainbowBtn) {
+    rainbowBtn.onclick = () => {
+      let cIdx = 0;
+      rainbowBtn.disabled = true;
+      rainbowBtn.innerText = "🌈 Gökkuşağı Dengeleniyor...";
+
+      const playNextChakra = () => {
+        if (cIdx >= CHAKRAS_DATA.length) {
+          rainbowBtn.disabled = false;
+          rainbowBtn.innerText = "🌈 Gökkuşağı Dengeleme Dizisini Başlat (1 → 7)";
+          audio.stopTone();
+          return;
+        }
+        const ch = CHAKRAS_DATA[cIdx];
+        const freq = ch.solfeggio_freq;
+        audio.playTone(freq);
+        if (cymaticsSim) cymaticsSim.setFrequency(freq);
+
+        document.querySelectorAll(".chakra-card").forEach(c => c.classList.remove("playing"));
+        const activeCard = document.querySelector(`[data-chakra-id="${ch.id}"]`);
+        if (activeCard) activeCard.classList.add("playing");
+
+        cIdx++;
+        setTimeout(playNextChakra, 2500);
+      };
+
+      playNextChakra();
+    };
+  }
+
+  CHAKRAS_DATA.forEach(ch => {
+    const card = document.createElement("div");
+    card.className = "chakra-card";
+    card.setAttribute("data-chakra-id", ch.id);
+    card.innerHTML = `
+      <div class="chakra-color-strip" style="background: ${ch.color};"></div>
+      <div class="chakra-card-top">
+        <div class="chakra-title-group">
+          <h3>${ch.name}</h3>
+          <div class="chakra-subtitle">📍 ${ch.location} • Element: ${ch.element}</div>
+        </div>
+        <div class="bija-badge">${ch.bija_mantra}</div>
+      </div>
+      <div class="chakra-meta-row">
+        <span>Solfeggio: <strong class="solf-val">${ch.solfeggio_freq} Hz</strong></span> •
+        <span>Cousto Gezegen: <strong>${ch.planetary_freq} Hz</strong></span> •
+        <span>Nota: <strong>${ch.note}</strong></span> •
+        <span>Organlar: <em>${ch.organs}</em></span>
+      </div>
+      <div class="chakra-effects">
+        ✨ <strong>Denge:</strong> ${ch.balance_effect}
+      </div>
+      <div class="chakra-card-actions">
+        <span class="chakra-freq-label" style="color: ${ch.color};">● ${ch.color} Titreşimi</span>
+        <button class="btn btn-sm btn-outline play-chakra-btn">Titreşimi Dinle</button>
+      </div>
+    `;
+
+    card.querySelector(".play-chakra-btn").addEventListener("click", () => {
+      const mode = getMode();
+      const targetFreq = mode === "solfeggio" ? ch.solfeggio_freq : ch.planetary_freq;
+      document.querySelectorAll(".chakra-card").forEach(c => c.classList.remove("playing"));
+      card.classList.add("playing");
+      audio.playTone(targetFreq);
+      if (cymaticsSim) cymaticsSim.setFrequency(targetFreq);
+    });
+
+    container.appendChild(card);
+  });
+}

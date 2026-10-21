@@ -20,7 +20,7 @@
         <span class="logo-symbol">〰️ ⚛ 🕊️</span>
         <div class="logo-text">
           <h1>TİTREŞİM</h1>
-          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v1.2</p>
+          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.0</p>
         </div>
       </div>
       <div class="header-actions">
@@ -89,6 +89,8 @@
         <!-- Tab Butonları -->
         <div class="tabs-nav">
           <button class="tab-btn active" data-tab="solfeggioTab">🎵 Solfeggio</button>
+          <button class="tab-btn" data-tab="protocolsTab">🧘 Seans Protokolleri</button>
+          <button class="tab-btn" data-tab="chakraTab">🌈 Çakra Akustiği</button>
           <button class="tab-btn" data-tab="makamTab">🕌 Makam Terapisi</button>
           <button class="tab-btn" data-tab="binauralTab">🧠 Binaural Beats</button>
           <button class="tab-btn" data-tab="isochronicTab">⚡ İzokronik & Gürültü</button>
@@ -272,6 +274,56 @@
           </div>
         </div>
 
+        <!-- TAB 8: Klinik Seans Protokolleri -->
+        <div id="protocolsTab" class="tab-content">
+          <div class="section-header">
+            <h2>🧘 Çok Aşamalı Klinik Seans Protokolleri</h2>
+            <p>EEG beyin dalgası sürükleme, vagal tonlama ve çok aşamalı çapraz geçişli seanslar.</p>
+          </div>
+
+          <div class="protocol-active-box card mb-3 hidden" id="activeProtocolBox">
+            <div class="protocol-active-header">
+              <span class="active-pulse-dot"></span>
+              <strong id="activeProtocolTitle">Seans Yürütülüyor...</strong>
+              <button id="stopProtocolBtn" class="btn btn-sm btn-danger">Seansı Durdur</button>
+            </div>
+            <div class="protocol-progress-bar-wrap mt-2">
+              <div class="protocol-progress-bar" id="protocolProgressBar" style="width: 0%;"></div>
+            </div>
+            <div class="protocol-stage-info mt-2">
+              <span id="activeProtocolStage">Aşama: 1 / 4</span> • <span id="activeProtocolTimer">Kalan: 00:00</span>
+            </div>
+            <div id="activeProtocolDesc" class="protocol-stage-desc mt-1"></div>
+          </div>
+
+          <div class="protocols-grid" id="protocolsGrid">
+            <!-- JS dinamik kartlar -->
+          </div>
+        </div>
+
+        <!-- TAB 9: Çakra Akustiği ve Meridyen Rezonansı -->
+        <div id="chakraTab" class="tab-content">
+          <div class="section-header">
+            <h2>🌈 7 Çakra Akustiği ve Biyo-Rezonans</h2>
+            <p>Solfeggio tınıları, Hans Cousto gezegen frekansları ve Bija tohum mantraları.</p>
+          </div>
+
+          <div class="chakra-global-actions card mb-3">
+            <div class="chakra-action-row">
+              <div>
+                <strong>Rezonans Modu:</strong>
+                <label class="radio-inline"><input type="radio" name="chakraMode" value="solfeggio" checked> Solfeggio Ölçeği</label>
+                <label class="radio-inline"><input type="radio" name="chakraMode" value="planetary"> Cousto Gezegen Tonu</label>
+              </div>
+              <button id="rainbowAlignmentBtn" class="btn btn-gradient-rainbow">🌈 Gökkuşağı Dengeleme Dizisini Başlat (1 → 7)</button>
+            </div>
+          </div>
+
+          <div class="chakras-list" id="chakrasList">
+            <!-- JS dinamik kartlar -->
+          </div>
+        </div>
+
       </div>
 
       <!-- SAĞ: Canlı Sematik (Cymatics) & Chladni Simülatörü -->
@@ -331,7 +383,7 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v1.2</strong></p>
+      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.0</strong></p>
       <p>Açık Kaynak Kodlu • MIT Lisansı • Kadim Bilgelik ve Modern Akustiğin Birleşimi</p>
     </div>
   </footer>

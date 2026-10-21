@@ -8,7 +8,7 @@ izokronik tonlar (isochronic), akustik gürültü terapisi (pembe, kahverengi, b
 53-TET mikrotonal koma akort sistemi ve iki kanallı binaural ses sentezleme motoru.
 """
 
-__version__ = "1.3.0"
+__version__ = "2.0.0"
 __author__ = "Bahattin Yunus Çetin"
 __license__ = "MIT"
 
@@ -32,6 +32,9 @@ from .core.isochronic import IsochronicToneGenerator
 from .core.traditions import SacredTraditions, SacredTradition
 from .core.tuning import TuningSystem, MicrotonalInterval
 from .core.wisdom import WisdomArchive, WisdomQuote
+from .core.session import TherapySessionEngine, TherapyProtocol, TherapyStage
+from .core.chakra import ChakraResonance, ChakraAcoustics
+from .core.seyir import MakamSeyirGenerator
 
 __all__ = [
     "Solfeggio",
@@ -59,4 +62,10 @@ __all__ = [
     "MicrotonalInterval",
     "WisdomArchive",
     "WisdomQuote",
+    "TherapySessionEngine",
+    "TherapyProtocol",
+    "TherapyStage",
+    "ChakraResonance",
+    "ChakraAcoustics",
+    "MakamSeyirGenerator",
 ]

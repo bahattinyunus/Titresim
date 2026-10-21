@@ -27,16 +27,20 @@ class WisdomQuote:
 
 
 def _normalize_text(text: str) -> str:
-    """Türkçe ve şapkalı karakterleri (â, î, û vb.) basit harflere dönüştürür."""
+    """Türkçe ve şapkalı karakterleri (â, î, û vb.) basit harflere dönüştürür ve tireleri temizler."""
     replacements = {
         'â': 'a', 'î': 'i', 'û': 'u', 'Â': 'a', 'Î': 'i', 'Û': 'u',
         'ı': 'i', 'İ': 'i', 'ğ': 'g', 'Ğ': 'g', 'ü': 'u', 'Ü': 'u',
         'ş': 's', 'Ş': 's', 'ö': 'o', 'Ö': 'o', 'ç': 'c', 'Ç': 'c',
+        '-': ' ',
     }
     res = text
     for k, v in replacements.items():
         res = res.replace(k, v)
-    return res.lower()
+    # Birden fazla boşluğu teke indir
+    import re
+    res = re.sub(r'\s+', ' ', res)
+    return res.lower().strip()
 
 
 class WisdomArchive:
@@ -47,7 +51,8 @@ class WisdomArchive:
         "islam_tibbi": "Osmanlı ve İslam Müzikterapisi & Tıbbı",
         "antik_felsefe": "Antik Felsefe ve Pisagoryen Gelenek",
         "bilim_ve_fizik": "Modern Fizik, Rezonans ve Akustik",
-        "mistik_akustik": "Mistik Akustik ve Biyo-rezonans"
+        "mistik_akustik": "Mistik Akustik ve Biyo-rezonans",
+        "kutsal_metin": "Kutsal Metinler, Vahiy ve İlahi Kelam"
     }
 
     @classmethod
@@ -88,7 +93,13 @@ class WisdomArchive:
     @classmethod
     def get_by_author(cls, author_query: str) -> List[WisdomQuote]:
         aq = _normalize_text(author_query.strip())
-        return [q for q in cls.get_all() if aq in _normalize_text(q.author)]
+        tokens = [t for t in aq.split() if len(t) > 1]
+        results = []
+        for q in cls.get_all():
+            norm_author = _normalize_text(q.author)
+            if aq in norm_author or (tokens and all(token in norm_author for token in tokens)):
+                results.append(q)
+        return results
 
     @classmethod
     def search(cls, query: str) -> List[WisdomQuote]:

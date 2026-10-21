@@ -45,7 +45,7 @@ Titresim/
 │   ├── brainwaves.json                 # Delta, Teta, Alfa, Beta, Gama Bantları
 │   ├── cosmic_octave.json              # Schumann Rezonansı & Hans Cousto Kozmik Tonları
 │   ├── planetary.json                  # Hans Cousto 12 Gezegen Yörünge Frekansı
-│   └── quotes.json                     # 80+ Kadim Bilgelik, Ayet ve Ses Rezonansı Alıntısı
+│   └── quotes.json                     # 130+ Kadim Bilgelik, Ayet ve Ses Rezonansı Alıntısı
 ├── docs/                               # Kapsamlı Bilimsel ve Tarihsel Araştırma Metinleri
 │   ├── TERAPOTIK_SES_PROTOKOLLERI_VE_KLINIK_METODOLOJI.md # Klinik Seanslar, EEG Entrainment & Alıntılar
 │   ├── CAKRA_AKUSTIGI_VE_MERIDYEN_FREKANSLARI.md # Cousto Formülü, Solfeggio & Mantralar
@@ -161,7 +161,7 @@ python -m titresim quote --author "ibn sina"
 # Metin içinde anahtar kelime ara (örn: frekans, ney, nabız)
 python -m titresim quote --search frekans
 
-# Tüm 80+ bilgelik külliyatını listele
+# Tüm 130+ bilgelik külliyatını listele
 python -m titresim quote --all
 ```
 

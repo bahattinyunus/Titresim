@@ -5,7 +5,7 @@ from titresim.core.wisdom import WisdomArchive, WisdomQuote
 class TestWisdomArchive(unittest.TestCase):
     def test_get_all(self):
         quotes = WisdomArchive.get_all()
-        self.assertGreaterEqual(len(quotes), 80)
+        self.assertGreaterEqual(len(quotes), 130)
         for q in quotes:
             self.assertIsInstance(q, WisdomQuote)
             self.assertTrue(q.author)
@@ -18,19 +18,22 @@ class TestWisdomArchive(unittest.TestCase):
         self.assertEqual(q.author, "Nikola Tesla")
         self.assertIn("titreşim", q.quote_tr.lower())
 
-        arabi = WisdomArchive.find_by_id("ibn_arabi_kun")
-        self.assertIsNotNone(arabi)
-        self.assertIn("Kün", arabi.quote_tr)
+        kindi = WisdomArchive.find_by_id("kindi_ud_dort_unsur")
+        self.assertIsNotNone(kindi)
+        self.assertIn("Zîr", kindi.quote_tr)
 
     def test_get_by_category(self):
         tasavvuf_quotes = WisdomArchive.get_by_category("tasavvuf")
-        self.assertGreaterEqual(len(tasavvuf_quotes), 10)
+        self.assertGreaterEqual(len(tasavvuf_quotes), 15)
 
         fizik_quotes = WisdomArchive.get_by_category("bilim_ve_fizik")
-        self.assertGreaterEqual(len(fizik_quotes), 10)
+        self.assertGreaterEqual(len(fizik_quotes), 15)
 
         kutsal_quotes = WisdomArchive.get_by_category("kutsal_metin")
-        self.assertGreaterEqual(len(kutsal_quotes), 5)
+        self.assertGreaterEqual(len(kutsal_quotes), 10)
+
+        islam_tibbi_quotes = WisdomArchive.get_by_category("islam_tibbi")
+        self.assertGreaterEqual(len(islam_tibbi_quotes), 10)
 
     def test_get_by_author(self):
         # Case and diacritics insensitive (mevlana -> Mevlânâ)
@@ -40,18 +43,18 @@ class TestWisdomArchive(unittest.TestCase):
         ibn_sina = WisdomArchive.get_by_author("ibn sina")
         self.assertGreaterEqual(len(ibn_sina), 2)
 
-        arabi = WisdomArchive.get_by_author("arabi")
-        self.assertGreaterEqual(len(arabi), 2)
+        kindi = WisdomArchive.get_by_author("kindi")
+        self.assertGreaterEqual(len(kindi), 1)
 
-        farabi = WisdomArchive.get_by_author("farabi")
-        self.assertGreaterEqual(len(farabi), 2)
+        hildegard = WisdomArchive.get_by_author("hildegard")
+        self.assertGreaterEqual(len(hildegard), 1)
 
     def test_search(self):
         results = WisdomArchive.search("frekans")
-        self.assertGreaterEqual(len(results), 5)
+        self.assertGreaterEqual(len(results), 8)
 
         nefes_results = WisdomArchive.search("nefes")
-        self.assertGreaterEqual(len(nefes_results), 5)
+        self.assertGreaterEqual(len(nefes_results), 8)
 
     def test_get_random(self):
         q = WisdomArchive.get_random()

@@ -15,6 +15,10 @@
 
 ## 2. Chladni Plakası Dalga Mekaniği
 
+<p align="center">
+  <img src="../assets/cymatics_chladni_patterns.svg" alt="Sematik ve Chladni Modal Rezonans Desenleri" width="100%">
+</p>
+
 Kare veya dairesel bir elastik plaka belirli bir frekansta uyarıldığında, plaka üzerinde durağan dalgalar (standing waves) oluşur. Plakanın bazı bölgeleri şiddetle salınırken, bazı çizgisel bölgelerinde genlik sıfıra yakındır. Bu bölgelere **Düğüm Çizgileri (Nodal Lines)** denir.
 
 Titreşen plaka üzerindeki kum taneleri, şiddetli salınım bölgelerinden kaçarak sıfır titreşimli nodal çizgilere yığılır.

@@ -57,6 +57,10 @@ Bu ton, antik Hindistan'da kutsal **"OM" (Pranava)** hecesine, Doğu mistisizmin
 
 ## 4. 7 Çakra Akustik Rezonans Tablosu
 
+<p align="center">
+  <img src="../assets/chakra_acoustic_spectrum.svg" alt="7 Çakra Akustik ve Biyo-Rezonans Spektrumu" width="100%">
+</p>
+
 | # | Çakra Adı | Sanskrit | Konum & Endokrin Bez | Solfeggio | Cousto (Gezegen) | Tohum (Bija) | Renk & Nota | Terapötik Denge Etkisi |
 | :-: | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
 | **1** | **Kök Çakra** | *Muladhara* | Kuyruk sokumu / Böbreküstü | **396 Hz** | 194.18 Hz (Dünya Günü) | **LAM** | Kırmızı (Do) | Korkulardan arınma, topraklanma, varoluş güveni. |

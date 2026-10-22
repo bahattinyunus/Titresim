@@ -32,6 +32,10 @@ Makamlar, bu hıltların ifrat ve tefrit (aşırılık ve eksiklik) durumların�
 
 ## 3. Klasik Makamların Şifa Cetveli
 
+<p align="center">
+  <img src="../assets/makam_therapy_darussifa.svg" alt="Osmanlı Darüşşifası Şifa Makamları Çarkı" width="75%">
+</p>
+
 | Makam | İcra Vakti | Element & Burç | Şifa Olduğu Organlar & Hastalıklar | Ruhsal Tesiri |
 | :--- | :--- | :--- | :--- | :--- |
 | **Rast** | Gece sonu & Seher | Ateş / Koç | Baş, beyin, gözler, felç (inme), kas seğirmeleri | Sefa, iç huzuru, neşe ve dirilik verir |

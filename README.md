@@ -1,6 +1,10 @@
 # 〰️ Titreşim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi
 
 <p align="center">
+  <img src="assets/banner.jpg" alt="Titreşim Banner" width="100%" style="border-radius: 8px;">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Version-2.0.0-f59e0b?style=for-the-badge" alt="Version 2.0.0">
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/License-MIT-amber?style=for-the-badge" alt="License MIT">
@@ -36,6 +40,14 @@ Madde dediğimiz şeyin özü titreşimdir; kuantum altı parçacıklardan galak
 
 ```
 Titresim/
+├── assets/                             # Yüksek Çözünürlüklü Vektörel ve Sinematik Görseller
+│   ├── banner.jpg                      # 16:9 Fotogerçekçi Sinematik Ses & Sematik Bannerı
+│   ├── titresim_banner.svg             # Vektörel Logo & Tipografik Başlık Görseli
+│   ├── cymatics_chladni_patterns.svg   # 6 Modal Chladni ve Sematik Desenleri İnfografiği
+│   ├── chakra_acoustic_spectrum.svg    # 7 Çakra Solfeggio, Cousto ve Bija Spektrumu
+│   ├── brainwave_entrainment_spectrum.svg # EEG Beyin Dalgaları & Binaural Beat Mekanizması
+│   ├── makam_therapy_darussifa.svg     # Osmanlı Darüşşifası 12 Şifa Makamı Dairesel Çarkı
+│   └── heart_coherence_01hz.svg        # 0.1 Hz Kalp Hızı Değişkenliği & Vagal Tonlama
 ├── data/                               # Yapılandırılmış Açık Veri Setleri (JSON)
 │   ├── solfeggio.json                  # 9 Kutsal Solfeggio Frekansı & Niyetleri
 │   ├── makamlar.json                   # 12 Osmanlı Şifa Makamı (Farabi & İbn-i Sina)
@@ -178,6 +190,10 @@ python -m titresim generate --freq 528 --duration 5 --output dna_528hz.wav
 ```
 
 ### 5. Stereo Binaural Beat & Pembe Gürültülü Beyin Dalgası Sentezi
+<p align="center">
+  <img src="assets/brainwave_entrainment_spectrum.svg" alt="EEG Beyin Dalgaları & Binaural Sürükleme" width="100%">
+</p>
+
 ```bash
 # 200 Hz taşıyıcı ton ve 7.83 Hz Schumann rezonansı beat'i, yumuşak pembe gürültü zeminli
 python -m titresim binaural --carrier 200 --beat 7.83 --noise 0.04 --duration 10 -o schumann.wav
@@ -211,6 +227,10 @@ python -m titresim makam-audio --id nihavend --base 220 --output nihavend.wav
 ```
 
 ### 10. Meditatif Makam Seyir & Taksim Sentezi
+<p align="center">
+  <img src="assets/makam_therapy_darussifa.svg" alt="Osmanlı Darüşşifası Şifa Makamları Çarkı" width="75%">
+</p>
+
 ```bash
 # Rast makamının geleneksel iniş-çıkış seyir ezgisini ney nefesi ve vibratoyla üret
 python -m titresim seyir --makam rast --output rast_seyri.wav
@@ -220,6 +240,10 @@ python -m titresim seyir --makam nihavend --output nihavend_taksim.wav
 ```
 
 ### 11. Çakra Akustiği & Rezonant Frekanslar
+<p align="center">
+  <img src="assets/chakra_acoustic_spectrum.svg" alt="7 Çakra Akustik ve Biyo-Rezonans Spektrumu" width="100%">
+</p>
+
 ```bash
 # 7 Çakra frekanslarını, tohum mantralarını ve organ etkilerini listele
 python -m titresim chakra --list
@@ -232,6 +256,10 @@ python -m titresim chakra --rainbow --output cakra_gokkusagegi.wav
 ```
 
 ### 12. Çok Aşamalı Klinik Seans Protokolleri
+<p align="center">
+  <img src="assets/heart_coherence_01hz.svg" alt="0.1 Hz Kalp Hızı Değişkenliği ve Vagal Tonlama" width="100%">
+</p>
+
 ```bash
 # Yerleşik klinik protokolleri listele
 python -m titresim protocol --list
@@ -244,6 +272,10 @@ python -m titresim session --protocol sleep --output derin_uyku_seansi.wav
 ```
 
 ### 13. Matematiksel Sematik (Cymatics) Mandala Modelleri
+<p align="center">
+  <img src="assets/cymatics_chladni_patterns.svg" alt="Sematik ve Chladni Modal Rezonans Desenleri" width="100%">
+</p>
+
 ```bash
 # 432 Hz için terminalde kare Chladni deseni çizdir ve SVG kaydet
 python -m titresim cymatics --freq 432 --svg chladni_432.svg

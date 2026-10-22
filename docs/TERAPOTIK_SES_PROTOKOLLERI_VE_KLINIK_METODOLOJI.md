@@ -28,6 +28,14 @@ Klinik ses terapisinin temel gayesi; otonom sinir sisteminde sempatik (savaş ya
    Stres Redüksiyonu, Derin Uyku, Odaklanma & Hücresel Onarım
 ```
 
+<p align="center">
+  <img src="../assets/heart_coherence_01hz.svg" alt="0.1 Hz Kalp Hızı Değişkenliği ve Vagal Senkronizasyon" width="100%">
+</p>
+
+<p align="center">
+  <img src="../assets/brainwave_entrainment_spectrum.svg" alt="EEG Beyin Dalgaları & Binaural Sürükleme" width="100%">
+</p>
+
 ---
 
 ## 2. Tarihsel ve Bilimsel Literatürden Alıntılar

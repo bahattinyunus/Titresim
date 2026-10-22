@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="45%" r="70%">
+    <stop offset="0%" stop-color="#0f172a" />
+    <stop offset="50%" stop-color="#090d16" />
+    <stop offset="100%" stop-color="#020408" />
+  </radialGradient>
+  <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3" />
+    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+  </radialGradient>
+  <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+    <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+  </radialGradient>
+  <linearGradient id="textGold" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#fbbf24" />
+    <stop offset="50%" stop-color="#fef08a" />
+    <stop offset="100%" stop-color="#f59e0b" />
+  </linearGradient>
+</defs>
+<rect width="1200" height="480" fill="url(#bgGrad)" />
+<circle cx="600" cy="220" r="280" fill="url(#goldGlow)" />
+<circle cx="300" cy="240" r="220" fill="url(#cyanGlow)" />
+<circle cx="900" cy="240" r="220" fill="url(#cyanGlow)" />
+<polyline points="0,230.0 10,233.7 20,237.4 30,240.9 40,244.1 50,247.0 60,249.6 70,251.7 80,253.3 90,254.4 100,254.9 110,254.9 120,254.3 130,253.2 140,251.6 150,249.5 160,246.9 170,243.9 180,240.7 190,237.2 200,233.5 210,229.8 220,226.1 230,222.4 240,218.9 250,215.7 260,212.8 270,210.3 280,208.2 290,206.6 300,205.6 310,205.0 320,205.1 330,205.7 340,206.9 350,208.5 360,210.7 370,213.3 380,216.2 390,219.5 400,223.0 410,226.7 420,230.4 430,234.2 440,237.8 450,241.3 460,244.5 470,247.3 480,249.8 490,251.9 500,253.4 510,254.5 520,255.0 530,254.9 540,254.2 550,253.1 560,251.4 570,249.2 580,246.6 590,243.6 600,240.3 610,236.8 620,233.1 630,229.4 640,225.6 650,222.0 660,218.6 670,215.4 680,212.5 690,210.0 700,208.0 710,206.5 720,205.5 730,205.0 740,205.1 750,205.8 760,207.0 770,208.7 780,211.0 790,213.6 800,216.6 810,219.9 820,223.4 830,227.1 840,230.8 850,234.6 860,238.2 870,241.6 880,244.8 890,247.6 900,250.1 910,252.1 920,253.6 930,254.6 940,255.0 950,254.8 960,254.1 970,252.9 980,251.1 990,248.9 1000,246.3 1010,243.2 1020,239.9 1030,236.4 1040,232.7 1050,228.9 1060,225.2 1070,221.6 1080,218.2 1090,215.0 1100,212.2 1110,209.8 1120,207.8 1130,206.3 1140,205.4 1150,205.0 1160,205.2 1170,205.9 1180,207.2 1190,209.0 1200,211.2" fill="none" stroke="#06b6d4" stroke-opacity="0.25" stroke-width="1.8" />
+<polyline points="0,270.8 10,272.6 20,272.9 30,271.6 40,268.8 50,264.6 60,259.2 70,252.9 80,246.0 90,238.7 100,231.6 110,224.8 120,218.8 130,213.8 140,210.0 150,207.7 160,207.0 170,207.9 180,210.3 190,214.1 200,219.2 210,225.3 220,232.1 230,239.2 240,246.5 250,253.4 260,259.6 270,264.9 280,269.1 290,271.8 300,273.0 310,272.5 320,270.6 330,267.1 340,262.4 350,256.5 360,249.9 370,242.8 380,235.6 390,228.5 400,222.0 410,216.4 420,212.0 430,208.8 440,207.2 450,207.2 460,208.7 470,211.8 480,216.2 490,221.7 500,228.2 510,235.2 520,242.4 530,249.6 540,256.2 550,262.1 560,266.9 570,270.4 580,272.5 590,273.0 600,271.9 610,269.2 620,265.2 630,259.9 640,253.7 650,246.8 660,239.6 670,232.4 680,225.6 690,219.5 700,214.3 710,210.4 720,207.9 730,207.0 740,207.7 750,209.9 760,213.6 770,218.5 780,224.5 790,231.2 800,238.4 810,245.6 820,252.6 830,258.9 840,264.4 850,268.6 860,271.5 870,272.9 880,272.7 890,270.9 900,267.6 910,263.0 920,257.3 930,250.7 940,243.7 950,236.4 960,229.3 970,222.8 980,217.1 990,212.4 1000,209.1 1010,207.3 1020,207.1 1030,208.5 1040,211.3 1050,215.6 1060,221.0 1070,227.4 1080,234.3 1090,241.6 1100,248.7 1110,255.5 1120,261.4 1130,266.4 1140,270.1 1150,272.3 1160,273.0 1170,272.1 1180,269.6 1190,265.7 1200,260.6" fill="none" stroke="#f59e0b" stroke-opacity="0.30" stroke-width="1.8" />
+<polyline points="0,277.7 10,273.9 20,269.7 30,265.3 40,260.6 50,255.8 60,250.9 70,246.0 80,241.1 90,236.4 100,231.9 110,227.6 120,223.6 130,220.1 140,216.9 150,214.3 160,212.1 170,210.5 180,209.5 190,209.0 200,209.2 210,209.9 220,211.2 230,213.0 240,215.4 250,218.3 260,221.7 270,225.4 280,229.5 290,233.9 300,238.5 310,243.3 320,248.2 330,253.1 340,258.0 350,262.8 360,267.3 370,271.7 380,275.7 390,279.3 400,282.5 410,285.3 420,287.5 430,289.2 440,290.4 450,290.9 460,290.9 470,290.3 480,289.1 490,287.3 500,285.0 510,282.2 520,279.0 530,275.3 540,271.2 550,266.9 560,262.3 570,257.5 580,252.7 590,247.7 600,242.9 610,238.1 620,233.5 630,229.1 640,225.0 650,221.3 660,218.0 670,215.2 680,212.8 690,211.0 700,209.8 710,209.1 720,209.0 730,209.6 740,210.6 750,212.3 760,214.5 770,217.2 780,220.4 790,224.0 800,228.0 810,232.3 820,236.9 830,241.6 840,246.5 850,251.4 860,256.3 870,261.1 880,265.7 890,270.1 900,274.3 910,278.1 920,281.4 930,284.4 940,286.8 950,288.7 960,290.0 970,290.8 980,291.0 990,290.6 1000,289.6 1010,288.0 1020,285.9 1030,283.3 1040,280.2 1050,276.7 1060,272.7 1070,268.5 1080,264.0 1090,259.3 1100,254.4 1110,249.5 1120,244.6 1130,239.8 1140,235.1 1150,230.6 1160,226.4 1170,222.6 1180,219.1 1190,216.1 1200,213.6" fill="none" stroke="#6366f1" stroke-opacity="0.20" stroke-width="1.8" />
+<polyline points="0,213.3 10,202.0 20,193.3 30,187.8 40,186.0 50,188.0 60,193.7 70,202.6 80,214.0 90,227.0 100,240.7 110,253.9 120,265.7 130,275.1 140,281.3 150,283.9 160,282.8 170,277.9 180,269.6 190,258.7 200,245.9 210,232.3 220,218.9 230,206.7 240,196.8 250,189.8 260,186.3 270,186.7 280,190.8 290,198.3 300,208.7 310,221.2 320,234.7 330,248.2 340,260.8 350,271.3 360,279.0 370,283.2 380,283.7 390,280.5 400,273.6 410,263.8 420,251.7 430,238.3 440,224.7 450,211.9 460,200.8 470,192.4 480,187.4 490,186.0 500,188.5 510,194.6 520,203.8 530,215.5 540,228.7 550,242.3 560,255.4 570,267.0 580,276.0 590,281.8 600,284.0 610,282.4 620,277.0 630,268.4 640,257.2 650,244.3 660,230.7 670,217.3 680,205.4 690,195.8 700,189.2 710,186.2 720,187.0 730,191.5 740,199.4 750,210.1 760,222.7 770,236.3 780,249.8 790,262.1 800,272.4 810,279.7 820,283.5 830,283.5 840,279.8 850,272.6 860,262.4 870,250.1 880,236.7 890,223.1 900,210.4 910,199.7 920,191.7 930,187.0 940,186.1 950,189.1 960,195.5 970,205.1 980,217.0 990,230.3 1000,244.0 1010,256.9 1020,268.2 1030,276.9 1040,282.3 1050,284.0 1060,281.9 1070,276.2 1080,267.2 1090,255.8 1100,242.7 1110,229.0 1120,215.8 1130,204.1 1140,194.8 1150,188.6 1160,186.1 1170,187.3 1180,192.3 1190,200.6 1200,211.5" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.8" />
+<circle cx="600" cy="220" r="40" fill="none" stroke="#f59e0b" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="4,6" />
+<circle cx="600" cy="220" r="75" fill="none" stroke="#f59e0b" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="4,6" />
+<circle cx="600" cy="220" r="110" fill="none" stroke="#f59e0b" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="4,6" />
+<circle cx="600" cy="220" r="145" fill="none" stroke="#f59e0b" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="4,6" />
+<circle cx="600" cy="220" r="180" fill="none" stroke="#f59e0b" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="4,6" />
+<path d="M 600 220 Q 657.9555495773441 235.52914270615125 715.0 220.0" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 642.4264068711929 262.42640687119285 699.5929214352104 277.5" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 615.5291427061512 277.9555495773441 657.5 319.5929214352104" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 584.4708572938488 277.9555495773441 600.0 335.0" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 557.5735931288071 262.42640687119285 542.5 319.5929214352104" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 542.0444504226559 235.52914270615125 500.4070785647896 277.50000000000006" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 542.0444504226559 204.47085729384875 485.0 220.0" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 557.5735931288071 177.57359312880715 500.4070785647895 162.50000000000003" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 584.4708572938487 162.04445042265593 542.5 120.40707856478957" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 615.5291427061512 162.0444504226559 600.0 105.0" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 642.4264068711929 177.5735931288071 657.4999999999999 120.40707856478951" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<path d="M 600 220 Q 657.9555495773441 204.4708572938487 699.5929214352104 162.49999999999994" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" />
+<text x="600" y="200" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-size="54" font-weight="700" letter-spacing="14" fill="url(#textGold)">TİTREŞİM</text>
+<text x="600" y="240" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="4" fill="#67e8f9">EVRENSEL SES, KUTSAL KELÂM &amp; FREKANS TERAPİSİ LABORATUVARI v2.0</text>
+<rect x="106" y="372" width="130" height="42" rx="6" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
+<text x="171" y="390" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fde68a">432 Hz</text>
+<text x="171" y="406" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94a3b8">Doğal Akort & Pi</text>
+<rect x="277" y="372" width="130" height="42" rx="6" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
+<text x="342" y="390" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fde68a">528 Hz</text>
+<text x="342" y="406" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94a3b8">DNA & Solfeggio</text>
+<rect x="449" y="372" width="130" height="42" rx="6" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
+<text x="514" y="390" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fde68a">7.83 Hz</text>
+<text x="514" y="406" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94a3b8">Schumann Rezonansı</text>
+<rect x="620" y="372" width="130" height="42" rx="6" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
+<text x="685" y="390" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fde68a">0.10 Hz</text>
+<text x="685" y="406" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94a3b8">Kalp Koheransı</text>
+<rect x="792" y="372" width="130" height="42" rx="6" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
+<text x="857" y="390" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fde68a">12 Makam</text>
+<text x="857" y="406" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94a3b8">Darüşşifa Tıbbı</text>
+<rect x="963" y="372" width="130" height="42" rx="6" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
+<text x="1028" y="390" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fde68a">7 Çakra</text>
+<text x="1028" y="406" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94a3b8">Kozmik Oktav</text>
+<text x="600" y="455" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#cbd5e1">"Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün." — Nikola Tesla</text>
+</svg>

@@ -5,10 +5,12 @@ Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Kütüphanesi
 Kadim şifa gelenekleri, Osmanlı darüşşifa müzikterapisi, kutsal metin kıraat rezonansı,
 Solfeggio frekansları, Hans Cousto Gezegen Tonları, Chladni sematik (kare & dairesel),
 izokronik tonlar (isochronic), akustik gürültü terapisi (pembe, kahverengi, beyaz),
-53-TET mikrotonal koma akort sistemi ve iki kanallı binaural ses sentezleme motoru.
+53-TET mikrotonal koma akort sistemi, iki kanallı binaural ses sentezleme motoru,
+7 Çakra biyo-rezonansı, Makam Seyir taksim sentezleyicisi, Organ Rezonansı,
+Kutsal Kelâm fonetik formant motoru ve Biyogeribildirim solunum rehberi.
 """
 
-__version__ = "2.0.0"
+__version__ = "2.1.0"
 __author__ = "Bahattin Yunus Çetin"
 __license__ = "MIT"
 
@@ -35,6 +37,9 @@ from .core.wisdom import WisdomArchive, WisdomQuote
 from .core.session import TherapySessionEngine, TherapyProtocol, TherapyStage
 from .core.chakra import ChakraResonance, ChakraAcoustics
 from .core.seyir import MakamSeyirGenerator
+from .core.organs import OrganResonance, OrganInfo
+from .core.phonetics import SacredPhonetics, SacredChant
+from .core.breath import CoherenceBreathGuide, BreathPattern
 
 __all__ = [
     "Solfeggio",
@@ -68,4 +73,10 @@ __all__ = [
     "ChakraResonance",
     "ChakraAcoustics",
     "MakamSeyirGenerator",
+    "OrganResonance",
+    "OrganInfo",
+    "SacredPhonetics",
+    "SacredChant",
+    "CoherenceBreathGuide",
+    "BreathPattern",
 ]

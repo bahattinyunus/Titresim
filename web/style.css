@@ -1356,3 +1356,183 @@ body {
   color: #38bdf8;
 }
 
+/* ==========================================
+   TITRESIM v2.1: ORGAN, NEFES & VOKAL STİLLERİ
+   ========================================== */
+.organs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.organ-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+.organ-card:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+}
+.organ-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.organ-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+.organ-freq-badge {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.organ-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.organ-effects {
+  font-size: 12px;
+  color: #67e8f9;
+  margin-bottom: 12px;
+}
+
+/* Nefes Eğitmeni ve Dairesi */
+.breath-trainer-box {
+  padding: 30px 20px;
+  background: rgba(15, 23, 42, 0.8);
+}
+.breath-modes-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.breath-mode-btn {
+  padding: 8px 14px;
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.breath-mode-btn.active {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: var(--accent-cyan);
+  color: #67e8f9;
+  font-weight: 600;
+}
+.breath-circle-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+}
+.breath-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.35) 0%, rgba(99, 102, 241, 0.1) 70%);
+  border: 2px solid #06b6d4;
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s linear, background 0.5s ease;
+}
+.breath-circle.inhale {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(6, 182, 212, 0.2) 70%);
+  border-color: #10b981;
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.6);
+}
+.breath-circle.hold {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, rgba(234, 179, 8, 0.15) 70%);
+  border-color: #f59e0b;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+}
+.breath-circle.exhale {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.35) 0%, rgba(139, 92, 246, 0.1) 70%);
+  border-color: #6366f1;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+}
+#breathCircleText {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+#breathCircleTimer {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fde68a;
+  margin-top: 4px;
+}
+
+/* Vokal ve Formant Kartları */
+.vocal-chants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.chant-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+.chant-card:hover {
+  border-color: var(--accent-gold);
+}
+.chant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.chant-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+.formants-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+.formant-pill {
+  font-family: monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+  color: #38bdf8;
+}
+.chant-no-effect {
+  font-size: 12px;
+  color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.08);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+}
+.text-center { text-align: center; }
+

@@ -31,6 +31,9 @@ from .core.wisdom import WisdomArchive
 from .core.session import TherapySessionEngine
 from .core.chakra import ChakraResonance
 from .core.seyir import MakamSeyirGenerator
+from .core.organs import OrganResonance
+from .core.phonetics import SacredPhonetics
+from .core.breath import CoherenceBreathGuide
 
 
 def handle_info(args):
@@ -421,6 +424,94 @@ def handle_seyir(args):
     print(f"✅ Meditatif makam seyri kaydedildi: {out_path}")
 
 
+def handle_organ(args):
+    if args.list:
+        print("\n" + "=" * 65)
+        print("     İNSAN BEDENİ VE ORGAN REZONANS FREKANSLARI")
+        print("=" * 65)
+        for org in OrganResonance.get_all():
+            print(f"🫀 {org.name} | {org.frequency} Hz")
+            print(f"   Kategori: {org.category.upper()} | Çakra: {org.associated_chakra}")
+            print(f"   Açıklama: {org.description}")
+            print(f"   Şifa Tesiri: {org.effects}\n")
+        return
+
+    if args.scan:
+        out_path = args.output or "organ_tam_beden_taramasi.wav"
+        print(f"🧬 Tüm organ sistemlerini tarayan akustik frekans banyosu sentezleniyor...")
+        samples = OrganResonance.generate_full_body_scan(duration_per_organ=args.duration_per_organ)
+        tone_gen = ToneGenerator()
+        tone_gen.save_wav(out_path, samples)
+        print(f"✅ Tam beden organ tarama seansı kaydedildi: {out_path}")
+        return
+
+    if args.id:
+        org = OrganResonance.find_by_id(args.id)
+        if not org:
+            print(f"❌ Organ bulunamadı: {args.id}")
+            return
+        out_path = args.output or f"organ_{org.id}.wav"
+        print(f"🫀 {org.name} ({org.frequency} Hz) rezonans tonu sentezleniyor...")
+        samples = OrganResonance.generate_organ_tone(org.id, duration=args.duration)
+        tone_gen = ToneGenerator()
+        tone_gen.save_wav(out_path, samples)
+        print(f"✅ Organ şifa tonu kaydedildi: {out_path}")
+    else:
+        print("Lütfen bir seçenek belirtin: --list, --id <organ_adi> veya --scan")
+
+
+def handle_vocal(args):
+    if args.list:
+        print("\n" + "=" * 65)
+        print("   KUTSAL KELÂM, VOKAL FORMANT VE GUNNE REZONANSLARI")
+        print("=" * 65)
+        for c in SacredPhonetics.get_all():
+            print(f"🕊️ {c.name} | Temel: {c.base_pitch_hz} Hz | Formantlar: {c.formants}")
+            print(f"   Gelenek: {c.tradition} | Mahreç: {c.mahref}")
+            print(f"   Nitrik Oksit & Biyo-etki: {c.nitric_oxide_effect}\n")
+        return
+
+    if args.id:
+        c = SacredPhonetics.find_by_id(args.id)
+        if not c:
+            print(f"❌ Kutsal kelâm bulunamadı: {args.id}")
+            return
+        out_path = args.output or f"vocal_{c.id}.wav"
+        print(f"🕊️ {c.name} vokal formant rezonansı sentezleniyor...")
+        samples = SacredPhonetics.synthesize_chant(c.id, duration=args.duration, base_pitch=args.pitch)
+        tone_gen = ToneGenerator()
+        tone_gen.save_wav(out_path, samples)
+        print(f"✅ Vokal formant sesi kaydedildi: {out_path}")
+    else:
+        print("Lütfen bir seçenek belirtin: --list veya --id <hu|hayy|allah|ghunnah|aum>")
+
+
+def handle_breath(args):
+    if getattr(args, "list", False):
+        print("\n" + "=" * 65)
+        print("   KLİNİK VE MEDİTATİF SOLUNUM / KOHERANS MODELLERİ")
+        print("=" * 65)
+        for p in CoherenceBreathGuide.PATTERNS.values():
+            print(f"🌬️ {p.name} ({p.id.upper()}) | Döngü: {p.total_cycle_sec:.1f}sn")
+            print(f"   Aşamalar: Nefes Al: {p.inhale_sec}s | Tut: {p.hold_in_sec}s | Nefes Ver: {p.exhale_sec}s | Bekle: {p.hold_out_sec}s")
+            print(f"   Etki: {p.clinical_effect}")
+            print(f"   Açıklama: {p.description}\n")
+        return
+
+    pattern = CoherenceBreathGuide.get_pattern(args.pattern)
+    out_path = args.output or f"nefes_{pattern.id}.wav"
+    print(f"🌬️ {pattern.name} akustik rehber seansı sentezleniyor...")
+    print(f"   Detay: {pattern.description} ({pattern.clinical_effect})")
+    samples = CoherenceBreathGuide.generate_guided_session(
+        pattern_id=pattern.id,
+        total_duration_sec=args.duration,
+        base_freq=args.base
+    )
+    tone_gen = ToneGenerator()
+    tone_gen.save_wav(out_path, samples)
+    print(f"✅ Solunum rehberi seansı kaydedildi: {out_path}")
+
+
 def handle_serve(args):
     web_dir = Path(__file__).resolve().parent.parent / "web"
     os.chdir(web_dir)
@@ -559,6 +650,31 @@ def main():
     p_sey.add_argument("--unit-duration", "-u", type=float, default=0.8, help="Birim nota süresi (sn)")
     p_sey.add_argument("--output", "-o", help="Çıktı WAV dosyası")
 
+    # organ
+    p_org = subparsers.add_parser("organ", help="İnsan organ ve dokularının biyofiziksel rezonans frekanslarını sentezler")
+    p_org.add_argument("--list", "-l", action="store_true", help="Organ frekanslarını listele")
+    p_org.add_argument("--id", help="Organ ID (heart, brain, liver, kidneys, lungs, stomach, pineal, thyroid, bones, thymus)")
+    p_org.add_argument("--duration", "-d", type=float, default=6.0, help="Ton süresi (saniye)")
+    p_org.add_argument("--scan", action="store_true", help="Tüm organları baştan ayağa tarayan tam akustik banyo")
+    p_org.add_argument("--duration-per-organ", type=float, default=3.0, help="Organ başına tarama süresi")
+    p_org.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # vocal
+    p_voc = subparsers.add_parser("vocal", help="Kutsal kelâm ve tecvid gunne vokal formant rezonansı üretir")
+    p_voc.add_argument("--list", "-l", action="store_true", help="Kutsal kelâm ve formantları listele")
+    p_voc.add_argument("--id", help="Kelâm ID (hu, hayy, hakk, allah, ghunnah, aum, shalom, amen)")
+    p_voc.add_argument("--pitch", "-p", type=float, help="Özel temel taşıyıcı frekans (Hz)")
+    p_voc.add_argument("--duration", "-d", type=float, default=5.0, help="Formant tını süresi (sn)")
+    p_voc.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # breath
+    p_brt = subparsers.add_parser("breath", help="Akustik biyogeribildirim solunum ve koherans rehberi üretir")
+    p_brt.add_argument("--list", "-l", action="store_true", help="Solunum modellerini ve sürelerini listele")
+    p_brt.add_argument("--pattern", "-p", default="coherence", choices=["coherence", "box", "4-7-8", "relax"], help="Nefes tekniği")
+    p_brt.add_argument("--duration", "-d", type=float, default=60.0, help="Toplam seans süresi (saniye)")
+    p_brt.add_argument("--base", "-b", type=float, default=216.0, help="Taban taşıyıcı frekans (Hz)")
+    p_brt.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -577,6 +693,12 @@ def main():
         handle_chakra(args)
     elif args.command == "seyir":
         handle_seyir(args)
+    elif args.command == "organ":
+        handle_organ(args)
+    elif args.command == "vocal":
+        handle_vocal(args)
+    elif args.command == "breath":
+        handle_breath(args)
     elif args.command == "generate":
         handle_generate(args)
     elif args.command == "binaural":

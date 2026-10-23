@@ -1,0 +1,122 @@
+[
+  {
+    "id": "heart",
+    "name": "Kalp & Kardiyovasküler Sistem",
+    "frequency": 136.10,
+    "alternative_freqs": [528.0, 10.5, 639.0],
+    "category": "dolasim",
+    "element": "Hava / Yangın",
+    "associated_chakra": "Anahata (Kalp Çakrası)",
+    "description": "Kalp kası ritmi, koroner dolaşım ve kan basıncı dengesi. 0.1 Hz vagal kilitlenme ve 136.1 Hz OM tonu ile rezonansa girer.",
+    "effects": "Tansiyon dengesi, kardiyak ritim düzeni, duygusal ferahlık ve göğüs sıkışmasının giderilmesi.",
+    "healing_protocol": "136.1 Hz taşıyıcı ton üzerinde 0.10 Hz izokronik modülasyon ile günde 15 dakika."
+  },
+  {
+    "id": "brain",
+    "name": "Beyin & Serebral Korteks",
+    "frequency": 727.0,
+    "alternative_freqs": [7.83, 10.0, 40.0],
+    "category": "sinir_sistemi",
+    "element": "Eter / Işık",
+    "associated_chakra": "Ajna & Sahasrara",
+    "description": "Nöronal sinaps iletimi, beyin omurilik sıvısı (BOS) sirkülasyonu ve hemisferik senkronizasyon.",
+    "effects": "Zihinsel berraklık, hafıza kuvvetlenmesi, baş ağrısı ve migren yatışması, nöroplastisite.",
+    "healing_protocol": "727 Hz Rife tonu ve 7.83 Hz Schumann teta dalgası zeminli akustik banyo."
+  },
+  {
+    "id": "liver",
+    "name": "Karaciğer & Safra Dolaşımı",
+    "frequency": 317.83,
+    "alternative_freqs": [528.0, 741.0],
+    "category": "sindirim_detoks",
+    "element": "Ağaç / Ateş (Ahlat-ı Erba'a: Safra)",
+    "associated_chakra": "Manipura (Solar Pleksus)",
+    "description": "Vücudun ana kimya fabrikası, toksin filtreleme, enzim sentezi ve safra salgısı.",
+    "effects": "Toksin arınması, safra akışkanlığı, kronik yorgunluk ve öfke halinin teskini.",
+    "healing_protocol": "317.83 Hz ve 741 Hz temizleyici harmonikleriyle yemeklerden 1 saat sonra 12 dakika."
+  },
+  {
+    "id": "kidneys",
+    "name": "Böbrekler & Boşaltım Sistemi",
+    "frequency": 319.88,
+    "alternative_freqs": [54.0, 210.42],
+    "category": "bosaltim_su",
+    "element": "Su (Ahlat-ı Erba'a: Balgam)",
+    "associated_chakra": "Svadhisthana (Sakral Çakra)",
+    "description": "Sıvı ve elektrolit dengesi, kan filtrasyonu, böbreküstü bezleri kortizol regülasyonu.",
+    "effects": "Ödem atımı, böbrek kumu ve sancılarının yatışması, yaşama enerjisinin (Jing) korunması.",
+    "healing_protocol": "319.88 Hz rezonans tonu ile bol su tüketilerek dinlenen akşam seansı."
+  },
+  {
+    "id": "lungs",
+    "name": "Akciğerler & Solunum Yolları",
+    "frequency": 220.0,
+    "alternative_freqs": [432.0, 741.0],
+    "category": "solunum",
+    "element": "Metal / Hava",
+    "associated_chakra": "Anahata & Vishuddha",
+    "description": "Oksijen-karbondioksit difüzyonu, bronşiyol esnekliği ve göğüs kafesi genişlemesi.",
+    "effects": "Derin nefes kapasitesi, astım ve nefes darlığı teskini, hüzün ve kederin dağıtılması.",
+    "healing_protocol": "220 Hz Rast tonu ve diyafram nefesi rehberliği eşliğinde 10 dakika."
+  },
+  {
+    "id": "stomach",
+    "name": "Mide & Bağırsaklar (İkinci Beyin)",
+    "frequency": 110.0,
+    "alternative_freqs": [528.0, 126.22],
+    "category": "sindirim_detoks",
+    "element": "Toprak / Ateş",
+    "associated_chakra": "Manipura (Solar Pleksus)",
+    "description": "Mide asidi dengesi, enterik sinir sistemi, serotonin üretimi ve bağırsak mikrobiyotası.",
+    "effects": "Gastrit ve reflü yatışması, hazımsızlık giderimi, anksiyete kaynaklı karın krampları çözümü.",
+    "healing_protocol": "110 Hz derin bas tonu ile karın bölgesine odaklanarak dinleme."
+  },
+  {
+    "id": "pineal_gland",
+    "name": "Epifiz Bezi (Pineal / Üçüncü Göz)",
+    "frequency": 963.0,
+    "alternative_freqs": [852.0, 221.23],
+    "category": "endokrin",
+    "element": "Işık / Saf Bilinç",
+    "associated_chakra": "Ajna & Sahasrara",
+    "description": "Melatonin ve DMT sentezi, sirkadiyen biyolojik saat ve manevi algı merkezi.",
+    "effects": "Kireçlenmiş epifizin titreşimle uyarılması, derin rüya farkındalığı ve sirkadiyen uyum.",
+    "healing_protocol": "963 Hz Solfeggio tonu ile karanlık ve sessiz ortamda gece meditasyonu."
+  },
+  {
+    "id": "thyroid",
+    "name": "Tiroid & Paratiroid Bezleri",
+    "frequency": 741.0,
+    "alternative_freqs": [141.27, 293.33],
+    "category": "endokrin",
+    "element": "Eter / Ses",
+    "associated_chakra": "Vishuddha (Boğaz Çakrası)",
+    "description": "Metabolizma hızı, T3/T4 hormon dengesi, kalsiyum regülasyonu ve vokal kordlar.",
+    "effects": "Metabolik canlanma, boğaz tıkanıklığı hissinin dağılması ve ses berraklığı.",
+    "healing_protocol": "741 Hz Solfeggio ve boğaz formantı rezonansı ile sabah seansı."
+  },
+  {
+    "id": "bones_spine",
+    "name": "Kemikler, Omurga & Eklemler",
+    "frequency": 194.18,
+    "alternative_freqs": [396.0, 174.0],
+    "category": "iskelet_kas",
+    "element": "Toprak (Prithvi)",
+    "associated_chakra": "Muladhara (Kök Çakra)",
+    "description": "Piezoelektrik kemik matriksi, kemik iliği hücresel üretimi ve omurga dikliği.",
+    "effects": "Bel ve boyun ağrılarının yatışması, kemik yoğunluğu desteği, güçlü topraklanma.",
+    "healing_protocol": "194.18 Hz (Dünya Günü) tonu ve 174 Hz fiziksel anestezi frekansı kombinasyonu."
+  },
+  {
+    "id": "thymus",
+    "name": "Timus Bezi (Bağışıklık & Şefkat)",
+    "frequency": 639.0,
+    "alternative_freqs": [528.0, 352.0],
+    "category": "bagisiklik_endokrin",
+    "element": "Hava (Vayu)",
+    "associated_chakra": "Anahata (Kalp Çakrası)",
+    "description": "T-lenfositlerinin olgunlaşması, hücresel bağışıklık ve sevgi/şefkat duygusunun nöral merkezi.",
+    "effects": "Bağışıklık sisteminin uyarılması, timus vurusu (thymus tap) etkisi, kalp açılımı.",
+    "healing_protocol": "639 Hz ve göğüs üzerine hafif mekanik vuruşlarla eşzamanlı dinleme."
+  }
+]

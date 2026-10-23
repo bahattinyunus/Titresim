@@ -1,0 +1,90 @@
+[
+  {
+    "id": "hu",
+    "name": "HÛ (İlahi Öz ve Mutlak Gayb)",
+    "tradition": "Tasavvuf / İrfan Geleneği",
+    "formants": [300, 800, 2400],
+    "base_pitch_hz": 136.1,
+    "mahref": "Cevf & Boğaz Kökü (Aksâ-i Halk)",
+    "description": "Nefes verişin en saf hali. Dudakların yuvarlanmasıyla boğazın en derininden çıkan 'H' sesi ve derin 'U' uzatması.",
+    "effects": "Egonun çözünmesi, kalp koheransı, parasempatik derin gevşeme ve zihinsel sükût.",
+    "nitric_oxide_effect": "Vagus sinirinin göğüs dalını uyarır; diyaframı tamamen boşaltarak kan basıncını düşürür."
+  },
+  {
+    "id": "hayy",
+    "name": "HAYY (Ezeli ve Ebedi Canlılık)",
+    "tradition": "Tasavvuf / İrfan Geleneği",
+    "formants": [270, 2200, 2800],
+    "base_pitch_hz": 220.0,
+    "mahref": "Boğaz Ortası (Vast-ı Halk) ve Dil Ortası (Cim/Şın/Ye)",
+    "description": "Nefes alışın ve dirilişin sesi. 'Ha' harfinin boğazı yırtarcasına açılması ve 'Y' harfinin damağa yükselmesi.",
+    "effects": "Hücresel canlanma, enerji kanallarının (Nadi/Meridyen) açılması, melankoli ve uyuşukluğun dağılması.",
+    "nitric_oxide_effect": "Boğaz ve laringeal mukozayı uyararak sempatik/parasempatik dengeyi hızla kurar."
+  },
+  {
+    "id": "hakk",
+    "name": "HAKK (Mutlak Gerçeklik ve Adalet)",
+    "tradition": "Tasavvuf / İrfan Geleneği",
+    "formants": [350, 1100, 2600],
+    "base_pitch_hz": 196.0,
+    "mahref": "Boğaz Kökü ve Dil Kökü (Kaf Harfi patlaması)",
+    "description": "Kaf (Qaf) harfinin küçük dile vurarak patlamasıyla oluşan tok ve kararlı akustik rezonans.",
+    "effects": "Zihinsel kararlılık, irade kuvveti, şüphe ve vesveselerin kökten kesilmesi.",
+    "nitric_oxide_effect": "Kraniyal kemiklerde kemik iletimli (bone conduction) mikro-şok dalgası oluşturur."
+  },
+  {
+    "id": "allah",
+    "name": "ALLAH (Lafzatullah / İsmi Celâl)",
+    "tradition": "İslam Vahiy Geleneği",
+    "formants": [750, 1200, 2500],
+    "base_pitch_hz": 216.0,
+    "mahref": "Boğaz Kökü (Hemze), Dil Yanı (Kalın Lâm) ve Boğaz (He)",
+    "description": "Elif'ten Lâm'a ve Lâm'dan He'ye akan tam göğüs ve kalp rezonatörü. Açık vokal ile başlayan ve kalbe inen ses.",
+    "effects": "Tüm endokrin ve sinir sisteminin bir anda senkronize olması; mutlak emniyet ve aşk hali.",
+    "nitric_oxide_effect": "Tüm torasik kaviteyi titreştirerek kalp hızı değişkenliğinde (HRV) anında koherans sağlar."
+  },
+  {
+    "id": "ghunnah_noon",
+    "name": "GUNNE (Nazal Tını & Nûn/Mîm İdgamı)",
+    "tradition": "Kur'ân-ı Kerîm Tecvid İlmi",
+    "formants": [250, 1800, 2600],
+    "base_pitch_hz": 174.0,
+    "mahref": "Hayşûm (Geniz ve Paranazal Sinüs Boşluğu)",
+    "description": "Tecvidde iki hareke miktarı genizden gelen yumuşak çınlama sesi. Sesin burun kemiklerinde titreştirilmesi.",
+    "effects": "Paranazal sinüslerde 15 kat artan Nitrik Oksit (NO) sentezi, kranial rahatlama, bronkodilatasyon.",
+    "nitric_oxide_effect": "Dr. Weitzberg ve Lundberg araştırmaları: Nazal tını (humming/gunne) sinüslerdeki Nitrik Oksit (NO) üretimini 15 ila 20 kat artırır."
+  },
+  {
+    "id": "aum_om",
+    "name": "AUM / OM (Pranava Kozmik Hecesi)",
+    "tradition": "Vedik ve Upanişad Geleneği",
+    "formants": [300, 850, 2300],
+    "base_pitch_hz": 136.1,
+    "mahref": "Boğazdan Dudaklara (A -> U -> M Üçlemesi)",
+    "description": "Uyanıklık (A), rüya (U) ve derin uyku (M) hallerini birleştiren tam beden rezonans hecesi.",
+    "effects": "Epifiz uyarımı, limbik sistem sakinleşmesi, zihinsel gürültünün susturulması.",
+    "nitric_oxide_effect": "Dudakların kapanmasıyla 'M' sesinde sinüs rezonansı ve serebral kan akışında artış."
+  },
+  {
+    "id": "shalom_selam",
+    "name": "ŞALOM / SELÂM (Esenlik ve Barış)",
+    "tradition": "Samî / İbrahîmî Gelenek",
+    "formants": [400, 1600, 2500],
+    "base_pitch_hz": 432.0,
+    "mahref": "Dil Ucu (Ş/S) ve Dudaklar (M)",
+    "description": "Dudakların kapanışıyla sükûnete eren evrensel esenlik ve selâmet frekansı.",
+    "effects": "Sosyal bağ kurma, amigdala korku refleksinin baskılanması, affedicilik.",
+    "nitric_oxide_effect": "Yumuşak fısıltı ve dudak kapanışı ile vagal fren uyarımı."
+  },
+  {
+    "id": "amen_amin",
+    "name": "ÂMÎN / AMEN (Öyle Olsun ve Kabul Buyur)",
+    "tradition": "Evrensel Dua Geleneği",
+    "formants": [650, 1300, 2400],
+    "base_pitch_hz": 528.0,
+    "mahref": "Açık Boğazdan (A) Nazal Dudaklara (M/N)",
+    "description": "Duanın mührü. Açık bir yakarışla başlayıp teslimiyetle genizde yankılanan kapanış.",
+    "effects": "Niyetin kilitlenmesi, nöral tamamlama ve rahatlama hissi.",
+    "nitric_oxide_effect": "Akciğer alveollerinde relaksasyon ve derin soluk verme."
+  }
+]

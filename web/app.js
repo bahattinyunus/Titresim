@@ -6,6 +6,284 @@
 // ==========================================
 // 1. DAHİLİ VERİLER (DATASETS)
 // ==========================================
+const ORGANS_DATA = [
+  {
+    "id": "heart",
+    "name": "Kalp & Kardiyovasküler Sistem",
+    "frequency": 136.1,
+    "alternative_freqs": [
+      528.0,
+      10.5,
+      639.0
+    ],
+    "category": "dolasim",
+    "element": "Hava / Yangın",
+    "associated_chakra": "Anahata (Kalp Çakrası)",
+    "description": "Kalp kası ritmi, koroner dolaşım ve kan basıncı dengesi. 0.1 Hz vagal kilitlenme ve 136.1 Hz OM tonu ile rezonansa girer.",
+    "effects": "Tansiyon dengesi, kardiyak ritim düzeni, duygusal ferahlık ve göğüs sıkışmasının giderilmesi.",
+    "healing_protocol": "136.1 Hz taşıyıcı ton üzerinde 0.10 Hz izokronik modülasyon ile günde 15 dakika."
+  },
+  {
+    "id": "brain",
+    "name": "Beyin & Serebral Korteks",
+    "frequency": 727.0,
+    "alternative_freqs": [
+      7.83,
+      10.0,
+      40.0
+    ],
+    "category": "sinir_sistemi",
+    "element": "Eter / Işık",
+    "associated_chakra": "Ajna & Sahasrara",
+    "description": "Nöronal sinaps iletimi, beyin omurilik sıvısı (BOS) sirkülasyonu ve hemisferik senkronizasyon.",
+    "effects": "Zihinsel berraklık, hafıza kuvvetlenmesi, baş ağrısı ve migren yatışması, nöroplastisite.",
+    "healing_protocol": "727 Hz Rife tonu ve 7.83 Hz Schumann teta dalgası zeminli akustik banyo."
+  },
+  {
+    "id": "liver",
+    "name": "Karaciğer & Safra Dolaşımı",
+    "frequency": 317.83,
+    "alternative_freqs": [
+      528.0,
+      741.0
+    ],
+    "category": "sindirim_detoks",
+    "element": "Ağaç / Ateş (Ahlat-ı Erba'a: Safra)",
+    "associated_chakra": "Manipura (Solar Pleksus)",
+    "description": "Vücudun ana kimya fabrikası, toksin filtreleme, enzim sentezi ve safra salgısı.",
+    "effects": "Toksin arınması, safra akışkanlığı, kronik yorgunluk ve öfke halinin teskini.",
+    "healing_protocol": "317.83 Hz ve 741 Hz temizleyici harmonikleriyle yemeklerden 1 saat sonra 12 dakika."
+  },
+  {
+    "id": "kidneys",
+    "name": "Böbrekler & Boşaltım Sistemi",
+    "frequency": 319.88,
+    "alternative_freqs": [
+      54.0,
+      210.42
+    ],
+    "category": "bosaltim_su",
+    "element": "Su (Ahlat-ı Erba'a: Balgam)",
+    "associated_chakra": "Svadhisthana (Sakral Çakra)",
+    "description": "Sıvı ve elektrolit dengesi, kan filtrasyonu, böbreküstü bezleri kortizol regülasyonu.",
+    "effects": "Ödem atımı, böbrek kumu ve sancılarının yatışması, yaşama enerjisinin (Jing) korunması.",
+    "healing_protocol": "319.88 Hz rezonans tonu ile bol su tüketilerek dinlenen akşam seansı."
+  },
+  {
+    "id": "lungs",
+    "name": "Akciğerler & Solunum Yolları",
+    "frequency": 220.0,
+    "alternative_freqs": [
+      432.0,
+      741.0
+    ],
+    "category": "solunum",
+    "element": "Metal / Hava",
+    "associated_chakra": "Anahata & Vishuddha",
+    "description": "Oksijen-karbondioksit difüzyonu, bronşiyol esnekliği ve göğüs kafesi genişlemesi.",
+    "effects": "Derin nefes kapasitesi, astım ve nefes darlığı teskini, hüzün ve kederin dağıtılması.",
+    "healing_protocol": "220 Hz Rast tonu ve diyafram nefesi rehberliği eşliğinde 10 dakika."
+  },
+  {
+    "id": "stomach",
+    "name": "Mide & Bağırsaklar (İkinci Beyin)",
+    "frequency": 110.0,
+    "alternative_freqs": [
+      528.0,
+      126.22
+    ],
+    "category": "sindirim_detoks",
+    "element": "Toprak / Ateş",
+    "associated_chakra": "Manipura (Solar Pleksus)",
+    "description": "Mide asidi dengesi, enterik sinir sistemi, serotonin üretimi ve bağırsak mikrobiyotası.",
+    "effects": "Gastrit ve reflü yatışması, hazımsızlık giderimi, anksiyete kaynaklı karın krampları çözümü.",
+    "healing_protocol": "110 Hz derin bas tonu ile karın bölgesine odaklanarak dinleme."
+  },
+  {
+    "id": "pineal_gland",
+    "name": "Epifiz Bezi (Pineal / Üçüncü Göz)",
+    "frequency": 963.0,
+    "alternative_freqs": [
+      852.0,
+      221.23
+    ],
+    "category": "endokrin",
+    "element": "Işık / Saf Bilinç",
+    "associated_chakra": "Ajna & Sahasrara",
+    "description": "Melatonin ve DMT sentezi, sirkadiyen biyolojik saat ve manevi algı merkezi.",
+    "effects": "Kireçlenmiş epifizin titreşimle uyarılması, derin rüya farkındalığı ve sirkadiyen uyum.",
+    "healing_protocol": "963 Hz Solfeggio tonu ile karanlık ve sessiz ortamda gece meditasyonu."
+  },
+  {
+    "id": "thyroid",
+    "name": "Tiroid & Paratiroid Bezleri",
+    "frequency": 741.0,
+    "alternative_freqs": [
+      141.27,
+      293.33
+    ],
+    "category": "endokrin",
+    "element": "Eter / Ses",
+    "associated_chakra": "Vishuddha (Boğaz Çakrası)",
+    "description": "Metabolizma hızı, T3/T4 hormon dengesi, kalsiyum regülasyonu ve vokal kordlar.",
+    "effects": "Metabolik canlanma, boğaz tıkanıklığı hissinin dağılması ve ses berraklığı.",
+    "healing_protocol": "741 Hz Solfeggio ve boğaz formantı rezonansı ile sabah seansı."
+  },
+  {
+    "id": "bones_spine",
+    "name": "Kemikler, Omurga & Eklemler",
+    "frequency": 194.18,
+    "alternative_freqs": [
+      396.0,
+      174.0
+    ],
+    "category": "iskelet_kas",
+    "element": "Toprak (Prithvi)",
+    "associated_chakra": "Muladhara (Kök Çakra)",
+    "description": "Piezoelektrik kemik matriksi, kemik iliği hücresel üretimi ve omurga dikliği.",
+    "effects": "Bel ve boyun ağrılarının yatışması, kemik yoğunluğu desteği, güçlü topraklanma.",
+    "healing_protocol": "194.18 Hz (Dünya Günü) tonu ve 174 Hz fiziksel anestezi frekansı kombinasyonu."
+  },
+  {
+    "id": "thymus",
+    "name": "Timus Bezi (Bağışıklık & Şefkat)",
+    "frequency": 639.0,
+    "alternative_freqs": [
+      528.0,
+      352.0
+    ],
+    "category": "bagisiklik_endokrin",
+    "element": "Hava (Vayu)",
+    "associated_chakra": "Anahata (Kalp Çakrası)",
+    "description": "T-lenfositlerinin olgunlaşması, hücresel bağışıklık ve sevgi/şefkat duygusunun nöral merkezi.",
+    "effects": "Bağışıklık sisteminin uyarılması, timus vurusu (thymus tap) etkisi, kalp açılımı.",
+    "healing_protocol": "639 Hz ve göğüs üzerine hafif mekanik vuruşlarla eşzamanlı dinleme."
+  }
+];
+
+const PHONETICS_DATA = [
+  {
+    "id": "hu",
+    "name": "HÛ (İlahi Öz ve Mutlak Gayb)",
+    "tradition": "Tasavvuf / İrfan Geleneği",
+    "formants": [
+      300,
+      800,
+      2400
+    ],
+    "base_pitch_hz": 136.1,
+    "mahref": "Cevf & Boğaz Kökü (Aksâ-i Halk)",
+    "description": "Nefes verişin en saf hali. Dudakların yuvarlanmasıyla boğazın en derininden çıkan 'H' sesi ve derin 'U' uzatması.",
+    "effects": "Egonun çözünmesi, kalp koheransı, parasempatik derin gevşeme ve zihinsel sükût.",
+    "nitric_oxide_effect": "Vagus sinirinin göğüs dalını uyarır; diyaframı tamamen boşaltarak kan basıncını düşürür."
+  },
+  {
+    "id": "hayy",
+    "name": "HAYY (Ezeli ve Ebedi Canlılık)",
+    "tradition": "Tasavvuf / İrfan Geleneği",
+    "formants": [
+      270,
+      2200,
+      2800
+    ],
+    "base_pitch_hz": 220.0,
+    "mahref": "Boğaz Ortası (Vast-ı Halk) ve Dil Ortası (Cim/Şın/Ye)",
+    "description": "Nefes alışın ve dirilişin sesi. 'Ha' harfinin boğazı yırtarcasına açılması ve 'Y' harfinin damağa yükselmesi.",
+    "effects": "Hücresel canlanma, enerji kanallarının (Nadi/Meridyen) açılması, melankoli ve uyuşukluğun dağılması.",
+    "nitric_oxide_effect": "Boğaz ve laringeal mukozayı uyararak sempatik/parasempatik dengeyi hızla kurar."
+  },
+  {
+    "id": "hakk",
+    "name": "HAKK (Mutlak Gerçeklik ve Adalet)",
+    "tradition": "Tasavvuf / İrfan Geleneği",
+    "formants": [
+      350,
+      1100,
+      2600
+    ],
+    "base_pitch_hz": 196.0,
+    "mahref": "Boğaz Kökü ve Dil Kökü (Kaf Harfi patlaması)",
+    "description": "Kaf (Qaf) harfinin küçük dile vurarak patlamasıyla oluşan tok ve kararlı akustik rezonans.",
+    "effects": "Zihinsel kararlılık, irade kuvveti, şüphe ve vesveselerin kökten kesilmesi.",
+    "nitric_oxide_effect": "Kraniyal kemiklerde kemik iletimli (bone conduction) mikro-şok dalgası oluşturur."
+  },
+  {
+    "id": "allah",
+    "name": "ALLAH (Lafzatullah / İsmi Celâl)",
+    "tradition": "İslam Vahiy Geleneği",
+    "formants": [
+      750,
+      1200,
+      2500
+    ],
+    "base_pitch_hz": 216.0,
+    "mahref": "Boğaz Kökü (Hemze), Dil Yanı (Kalın Lâm) ve Boğaz (He)",
+    "description": "Elif'ten Lâm'a ve Lâm'dan He'ye akan tam göğüs ve kalp rezonatörü. Açık vokal ile başlayan ve kalbe inen ses.",
+    "effects": "Tüm endokrin ve sinir sisteminin bir anda senkronize olması; mutlak emniyet ve aşk hali.",
+    "nitric_oxide_effect": "Tüm torasik kaviteyi titreştirerek kalp hızı değişkenliğinde (HRV) anında koherans sağlar."
+  },
+  {
+    "id": "ghunnah_noon",
+    "name": "GUNNE (Nazal Tını & Nûn/Mîm İdgamı)",
+    "tradition": "Kur'ân-ı Kerîm Tecvid İlmi",
+    "formants": [
+      250,
+      1800,
+      2600
+    ],
+    "base_pitch_hz": 174.0,
+    "mahref": "Hayşûm (Geniz ve Paranazal Sinüs Boşluğu)",
+    "description": "Tecvidde iki hareke miktarı genizden gelen yumuşak çınlama sesi. Sesin burun kemiklerinde titreştirilmesi.",
+    "effects": "Paranazal sinüslerde 15 kat artan Nitrik Oksit (NO) sentezi, kranial rahatlama, bronkodilatasyon.",
+    "nitric_oxide_effect": "Dr. Weitzberg ve Lundberg araştırmaları: Nazal tını (humming/gunne) sinüslerdeki Nitrik Oksit (NO) üretimini 15 ila 20 kat artırır."
+  },
+  {
+    "id": "aum_om",
+    "name": "AUM / OM (Pranava Kozmik Hecesi)",
+    "tradition": "Vedik ve Upanişad Geleneği",
+    "formants": [
+      300,
+      850,
+      2300
+    ],
+    "base_pitch_hz": 136.1,
+    "mahref": "Boğazdan Dudaklara (A -> U -> M Üçlemesi)",
+    "description": "Uyanıklık (A), rüya (U) ve derin uyku (M) hallerini birleştiren tam beden rezonans hecesi.",
+    "effects": "Epifiz uyarımı, limbik sistem sakinleşmesi, zihinsel gürültünün susturulması.",
+    "nitric_oxide_effect": "Dudakların kapanmasıyla 'M' sesinde sinüs rezonansı ve serebral kan akışında artış."
+  },
+  {
+    "id": "shalom_selam",
+    "name": "ŞALOM / SELÂM (Esenlik ve Barış)",
+    "tradition": "Samî / İbrahîmî Gelenek",
+    "formants": [
+      400,
+      1600,
+      2500
+    ],
+    "base_pitch_hz": 432.0,
+    "mahref": "Dil Ucu (Ş/S) ve Dudaklar (M)",
+    "description": "Dudakların kapanışıyla sükûnete eren evrensel esenlik ve selâmet frekansı.",
+    "effects": "Sosyal bağ kurma, amigdala korku refleksinin baskılanması, affedicilik.",
+    "nitric_oxide_effect": "Yumuşak fısıltı ve dudak kapanışı ile vagal fren uyarımı."
+  },
+  {
+    "id": "amen_amin",
+    "name": "ÂMÎN / AMEN (Öyle Olsun ve Kabul Buyur)",
+    "tradition": "Evrensel Dua Geleneği",
+    "formants": [
+      650,
+      1300,
+      2400
+    ],
+    "base_pitch_hz": 528.0,
+    "mahref": "Açık Boğazdan (A) Nazal Dudaklara (M/N)",
+    "description": "Duanın mührü. Açık bir yakarışla başlayıp teslimiyetle genizde yankılanan kapanış.",
+    "effects": "Niyetin kilitlenmesi, nöral tamamlama ve rahatlama hissi.",
+    "nitric_oxide_effect": "Akciğer alveollerinde relaksasyon ve derin soluk verme."
+  }
+];
+
 const CHAKRAS_DATA = [
   {
     id: "muladhara",
@@ -3085,6 +3363,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderQuotes("all", "");
   renderProtocols();
   renderChakras();
+  renderOrgans();
+  setupBreathGuide();
+  renderPhonetics();
   setupBreathing();
   setupSessionTimer();
   setupWisdomBanner();
@@ -3230,6 +3511,215 @@ function renderChakras() {
       card.classList.add("playing");
       audio.playTone(targetFreq);
       if (cymaticsSim) cymaticsSim.setFrequency(targetFreq);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+// ==========================================
+// 6. TITRESIM v2.1: ORGAN, NEFES & VOKAL RENDER
+// ==========================================
+function renderOrgans() {
+  const container = document.getElementById("organsGrid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const scanBtn = document.getElementById("fullBodyScanBtn");
+  if (scanBtn) {
+    scanBtn.onclick = () => {
+      scanBtn.disabled = true;
+      scanBtn.innerText = "🧬 Tüm Beden Taranıyor (10 Organ)...";
+      let oIdx = 0;
+
+      const playNextOrgan = () => {
+        if (oIdx >= ORGANS_DATA.length) {
+          scanBtn.disabled = false;
+          scanBtn.innerText = "Tam Beden Organ Taraması Başlat (10 Organ)";
+          audio.stopTone();
+          return;
+        }
+        const org = ORGANS_DATA[oIdx];
+        audio.playTone(org.frequency);
+        if (cymaticsSim) cymaticsSim.setFrequency(org.frequency);
+
+        document.querySelectorAll(".organ-card").forEach(c => c.classList.remove("playing"));
+        const activeCard = document.querySelector(`[data-organ-id="${org.id}"]`);
+        if (activeCard) activeCard.classList.add("playing");
+
+        oIdx++;
+        setTimeout(playNextOrgan, 3000);
+      };
+
+      playNextOrgan();
+    };
+  }
+
+  ORGANS_DATA.forEach(org => {
+    const card = document.createElement("div");
+    card.className = "organ-card";
+    card.setAttribute("data-organ-id", org.id);
+    card.innerHTML = `
+      <div class="organ-header">
+        <span class="organ-title">${org.name}</span>
+        <span class="organ-freq-badge">${org.frequency} Hz</span>
+      </div>
+      <div class="organ-desc">${org.description}</div>
+      <div class="organ-effects">✨ <strong>Şifa:</strong> ${org.effects} • <em>Çakra: ${org.associated_chakra}</em></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; color: #94a3b8;">Protokol: ${org.healing_protocol}</span>
+        <button class="btn btn-sm btn-outline play-organ-btn">Frekansı Çal</button>
+      </div>
+    `;
+
+    card.querySelector(".play-organ-btn").addEventListener("click", () => {
+      document.querySelectorAll(".organ-card").forEach(c => c.classList.remove("playing"));
+      card.classList.add("playing");
+      audio.playTone(org.frequency);
+      if (cymaticsSim) cymaticsSim.setFrequency(org.frequency);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+const BREATH_PATTERNS = {
+  coherence: { title: "0.10 Hz Kardiyak Koherans Nefesi", desc: "5.5s Alış, 5.5s Veriş ile vagal fren uyarımı ve maksimum HRV.", inhale: 5.5, holdIn: 0, exhale: 5.5, holdOut: 0 },
+  box: { title: "Kutu Nefesi (Box Breathing)", desc: "4s Alış, 4s Tutuş, 4s Veriş, 4s Boş Tutuş ile panik bastırma.", inhale: 4.0, holdIn: 4.0, exhale: 4.0, holdOut: 4.0 },
+  "4-7-8": { title: "4-7-8 Dr. Weil Uyku Nefesi", desc: "4s Burundan Alış, 7s Tutuş, 8s Ağızdan Veriş ile derin uyku.", inhale: 4.0, holdIn: 7.0, exhale: 8.0, holdOut: 0 },
+  relax: { title: "Yumuşak Gevşeme Nefesi (1:1.5)", desc: "4s Alış, 6s Yavaş Veriş ile kas gevşemesi ve tansiyon düşüşü.", inhale: 4.0, holdIn: 0, exhale: 6.0, holdOut: 0 }
+};
+
+let activeBreathPattern = "coherence";
+let breathTimer = null;
+let breathTimeLeft = 0;
+
+function setupBreathGuide() {
+  const pTitle = document.getElementById("breathPatternTitle");
+  const pDesc = document.getElementById("breathPatternDesc");
+  const cText = document.getElementById("breathCircleText");
+  const cTimer = document.getElementById("breathCircleTimer");
+  const circle = document.getElementById("breathCircle");
+  const startBtn = document.getElementById("startBreathBtn");
+  const stopBtn = document.getElementById("stopBreathBtn");
+
+  document.querySelectorAll(".breath-mode-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".breath-mode-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeBreathPattern = btn.getAttribute("data-pattern");
+      const p = BREATH_PATTERNS[activeBreathPattern];
+      if (pTitle) pTitle.innerText = p.title;
+      if (pDesc) pDesc.innerText = p.desc;
+      stopBreathingSession();
+    });
+  });
+
+  function stopBreathingSession() {
+    if (breathTimer) {
+      clearInterval(breathTimer);
+      breathTimer = null;
+    }
+    if (circle) {
+      circle.style.transform = "scale(1.0)";
+      circle.className = "breath-circle";
+    }
+    if (cText) cText.innerText = "HAZIR";
+    if (cTimer) cTimer.innerText = "0.0s";
+    if (startBtn) startBtn.classList.remove("hidden");
+    if (stopBtn) stopBtn.classList.add("hidden");
+    audio.stopTone();
+  }
+
+  if (stopBtn) stopBtn.onclick = stopBreathingSession;
+
+  if (startBtn) {
+    startBtn.onclick = () => {
+      startBtn.classList.add("hidden");
+      stopBtn.classList.remove("hidden");
+
+      const p = BREATH_PATTERNS[activeBreathPattern];
+      let currentPhase = "inhale"; // inhale, holdIn, exhale, holdOut
+      let phaseTime = p.inhale;
+
+      audio.playTone(216.0);
+
+      const runPhase = () => {
+        circle.className = `breath-circle ${currentPhase}`;
+        if (currentPhase === "inhale") {
+          cText.innerText = "NEFES AL";
+          circle.style.transform = "scale(1.35)";
+          audio.playTone(260.0);
+        } else if (currentPhase === "holdIn") {
+          cText.innerText = "NEFESİ TUT";
+          audio.playTone(280.0);
+        } else if (currentPhase === "exhale") {
+          cText.innerText = "NEFES VER";
+          circle.style.transform = "scale(0.85)";
+          audio.playTone(200.0);
+        } else if (currentPhase === "holdOut") {
+          cText.innerText = "DİNLEN / TUT";
+          audio.playTone(180.0);
+        }
+      };
+
+      runPhase();
+      let stepCountdown = phaseTime;
+
+      breathTimer = setInterval(() => {
+        stepCountdown -= 0.1;
+        cTimer.innerText = `${Math.max(0, stepCountdown).toFixed(1)}s`;
+
+        if (stepCountdown <= 0) {
+          // Sıradaki faza geç
+          if (currentPhase === "inhale") {
+            if (p.holdIn > 0) { currentPhase = "holdIn"; phaseTime = p.holdIn; }
+            else { currentPhase = "exhale"; phaseTime = p.exhale; }
+          } else if (currentPhase === "holdIn") {
+            currentPhase = "exhale"; phaseTime = p.exhale;
+          } else if (currentPhase === "exhale") {
+            if (p.holdOut > 0) { currentPhase = "holdOut"; phaseTime = p.holdOut; }
+            else { currentPhase = "inhale"; phaseTime = p.inhale; }
+          } else if (currentPhase === "holdOut") {
+            currentPhase = "inhale"; phaseTime = p.inhale;
+          }
+          stepCountdown = phaseTime;
+          runPhase();
+        }
+      }, 100);
+    };
+  }
+}
+
+function renderPhonetics() {
+  const container = document.getElementById("vocalChantsList");
+  if (!container) return;
+  container.innerHTML = "";
+
+  PHONETICS_DATA.forEach(chant => {
+    const card = document.createElement("div");
+    card.className = "chant-card";
+    card.innerHTML = `
+      <div class="chant-header">
+        <span class="chant-title">${chant.name}</span>
+        <span class="organ-freq-badge">${chant.base_pitch_hz} Hz</span>
+      </div>
+      <div style="font-size: 12px; color: #fde68a;">Gelenek: ${chant.tradition} • Mahreç: ${chant.mahref}</div>
+      <div class="organ-desc mt-1">${chant.description}</div>
+      <div class="formants-row">
+        ${chant.formants.map((f, i) => `<span class="formant-pill">F${i+1}: ${f} Hz</span>`).join("")}
+      </div>
+      <div class="chant-no-effect">🧪 <strong>Biyoakustik Etki:</strong> ${chant.nitric_oxide_effect}</div>
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn btn-sm btn-outline-gold play-chant-btn">🕊️ Vokal Formantını Dinle</button>
+      </div>
+    `;
+
+    card.querySelector(".play-chant-btn").addEventListener("click", () => {
+      document.querySelectorAll(".chant-card").forEach(c => c.classList.remove("playing"));
+      card.classList.add("playing");
+      audio.playTone(chant.base_pitch_hz);
+      if (cymaticsSim) cymaticsSim.setFrequency(chant.base_pitch_hz);
     });
 
     container.appendChild(card);

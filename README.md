@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.0.0-f59e0b?style=for-the-badge" alt="Version 2.0.0">
+  <img src="https://img.shields.io/badge/Version-2.1.0-f59e0b?style=for-the-badge" alt="Version 2.1.0">
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/License-MIT-amber?style=for-the-badge" alt="License MIT">
-  <img src="https://img.shields.io/badge/Web%20Audio-Interactive%20Studio%20v2.0-38bdf8?style=for-the-badge&logo=html5&logoColor=white" alt="Web Studio">
-  <img src="https://img.shields.io/badge/Tests-56%20Passed-10b981?style=for-the-badge" alt="Tests">
+  <img src="https://img.shields.io/badge/Web%20Audio-Interactive%20Studio%20v2.1-38bdf8?style=for-the-badge&logo=html5&logoColor=white" alt="Web Studio">
+  <img src="https://img.shields.io/badge/Tests-70%20Passed-10b981?style=for-the-badge" alt="Tests">
 </p>
 
 > *"Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün."* — **Nikola Tesla**
@@ -53,12 +53,16 @@ Titresim/
 │   ├── makamlar.json                   # 12 Osmanlı Şifa Makamı (Farabi & İbn-i Sina)
 │   ├── protocols.json                  # 5 Çok Aşamalı Klinik/Terapötik Seans Protokolü
 │   ├── chakras.json                    # 7 Temel Çakra (Solfeggio, Cousto, Bija Mantraları)
+│   ├── organs.json                     # 10 İnsan Organı Biyofiziksel Rezonans Frekansı
+│   ├── phonetics.json                  # Kutsal Kelâm, Gunne ve Fonetik Formantlar
 │   ├── traditions.json                 # Kutsal Ses Gelenekleri & Nörobiyolojik Etkileri
 │   ├── brainwaves.json                 # Delta, Teta, Alfa, Beta, Gama Bantları
 │   ├── cosmic_octave.json              # Schumann Rezonansı & Hans Cousto Kozmik Tonları
 │   ├── planetary.json                  # Hans Cousto 12 Gezegen Yörünge Frekansı
 │   └── quotes.json                     # 130+ Kadim Bilgelik, Ayet ve Ses Rezonansı Alıntısı
 ├── docs/                               # Kapsamlı Bilimsel ve Tarihsel Araştırma Metinleri
+│   ├── ORGAN_REZONANSI_VE_BIYOFIZIKSEL_FREKANSLAR.md # Organ Frekansları, Rife & Biyofizik
+│   ├── FONETIK_FORMANTLAR_VE_KUTSAL_KELAM_AKUSTIGI.md # Gunne, Nitrik Oksit, Mahreç & Vokal
 │   ├── TERAPOTIK_SES_PROTOKOLLERI_VE_KLINIK_METODOLOJI.md # Klinik Seanslar, EEG Entrainment & Alıntılar
 │   ├── CAKRA_AKUSTIGI_VE_MERIDYEN_FREKANSLARI.md # Cousto Formülü, Solfeggio & Mantralar
 │   ├── KUTSAL_KELAM_VE_REZONANS.md     # Tecvid Kaideleri, Gunne, Nitrik Oksit, Vagus & EEG
@@ -70,10 +74,13 @@ Titresim/
 │   ├── IZOKRONIK_TONLAR_VE_GURULTU_TERAPISI.md # Hoparlör Uyumlu Nabızlar, Pembe/Kahverengi Gürültü
 │   └── SOLFEGGIO_VE_KOZMIK_OKTAV.md    # Guido d'Arezzo İlahisi & Hans Cousto Matematiksel Modeli
 ├── titresim/                           # Python 3 Ses Sentezleme & Hesaplama Çekirdeği
-│   ├── __init__.py                     # Paket Girişi & Genel İhracatlar (v2.0.0)
+│   ├── __init__.py                     # Paket Girişi & Genel İhracatlar (v2.1.0)
 │   ├── __main__.py                     # Modül Olarak Çalıştırma Desteği
-│   ├── cli.py                          # Zengin CLI Komut Satırı Arayüzü (protocol, chakra, seyir)
+│   ├── cli.py                          # Zengin CLI (protocol, chakra, seyir, organ, vocal, breath)
 │   └── core/
+│       ├── organs.py                   # 10 Organ Biyo-Rezonans & Tam Beden Tarama Motoru
+│       ├── phonetics.py                # Kutsal Kelâm & Fonetik Formant Sentezleyici
+│       ├── breath.py                   # Biyogeribildirim & Solunum Rehberi (Coherence / Box)
 │       ├── session.py                  # Çok Aşamalı Seans Motoru (Cross-fading & Protokoller)
 │       ├── chakra.py                   # 7 Çakra ve Meridyen Akustik Rezonans Motoru
 │       ├── seyir.py                    # Geleneksel Makam Seyir & Meditatif Taksim Sentezleyici
@@ -87,11 +94,14 @@ Titresim/
 │       ├── traditions.py               # Kutsal Ses Gelenekleri Bilgi Motoru
 │       ├── tuning.py                   # 53-TET Koma, 432 Hz/440 Hz Dönüşümü & Pisagor Akordu
 │       └── wisdom.py                   # Kadim Bilgelik, Alıntılar ve Vecizeler Bilgi Motoru
-├── web/                                # İnteraktif Web Audio & Cymatics Laboratuvarı v2.0
-│   ├── index.html                      # Modern Görsel Arayüz (9 İnteraktif Sekme)
+├── web/                                # İnteraktif Web Audio & Cymatics Laboratuvarı v2.1
+│   ├── index.html                      # Modern Görsel Arayüz (12 İnteraktif Sekme)
 │   ├── style.css                       # Koyu & Mistik Tasarım (Glassmorphism & Canlı Renkler)
-│   └── app.js                          # Web Audio API + Canlı Sematik + Protokoller + Çakra Akustiği
-└── tests/                              # Kapsamlı Birim Testleri (56 Test - %100 Başarılı)
+│   └── app.js                          # Web Audio API + Organ Rezonansı + Nefes Eğitmeni + Formantlar
+└── tests/                              # Kapsamlı Birim Testleri (70 Test - %100 Başarılı)
+    ├── test_organs.py                  # Organ Biyofiziksel Rezonans Testleri
+    ├── test_phonetics.py               # Kutsal Kelâm & Formant Testleri
+    ├── test_breath.py                  # Solunum Rehberi & Koherans Testleri
     ├── test_session.py                 # Protokol & Çok Aşamalı Seans Testleri
     ├── test_chakra.py                  # Çakra Rezonansı & Gökkuşağı Dizisi Testleri
     ├── test_seyir.py                   # Makam Seyir Sentezi Testleri
@@ -102,10 +112,10 @@ Titresim/
     ├── test_generator.py               # Dalga Sentezleme & Drone Testleri
     ├── test_binaural.py                # Binaural Beats Testleri
     ├── test_isochronic.py              # İzokronik Vuruş Testleri
-│   ├── test_noise.py
-│   ├── test_traditions.py
-│   ├── test_tuning.py
-│   └── test_wisdom.py
+    ├── test_noise.py                   # Akustik Gürültü Testleri
+    ├── test_traditions.py              # Kutsal Gelenekler Testleri
+    ├── test_tuning.py                  # Akort & Koma Testleri
+    └── test_wisdom.py                  # Kadim Bilgelik & Alıntılar Testleri
 ├── pyproject.toml                      # Modern Python Paketleme Yapılandırması
 ├── LICENSE                             # MIT Açık Kaynak Lisansı
 └── README.md                           # Ana Dokümantasyon
@@ -284,7 +294,45 @@ python -m titresim cymatics --freq 432 --svg chladni_432.svg
 python -m titresim cymatics --circular --freq 432 --res 25
 ```
 
-### 14. İnteraktif Web Laboratuvarını Başlatma
+### 14. Biyofiziksel Organ ve Doku Rezonansı (Vibroakustik)
+```bash
+# Biyofiziksel organ frekanslarını ve hücresel etkilerini listele
+python -m titresim organ --list
+
+# Kalp (136.1 Hz) veya Karaciğer (317.83 Hz) rezonans tonunu sentezle
+python -m titresim organ --target kalp --duration 10 -o kalp_rezonans.wav
+python -m titresim organ --target karaciger --duration 10 -o karaciger_rezonans.wav
+
+# Baştan ayağa tüm organları tarayan 10 aşamalı tam beden vibroakustik seansı
+python -m titresim organ --scan --duration-per-organ 6 -o tam_beden_organ_tarama.wav
+```
+
+### 15. Fonetik Formantlar & Kutsal Kelam Akustiği
+```bash
+# Tecvid (Gunne), Sufi Zikir (Hu, Hayy, Hakk) ve mantrik formantları listele
+python -m titresim vocal --list
+
+# İbnü'l-Cezerî ve Karolinska Enstitüsü onaylı 15x Nitrik Oksit artıran Gunne (Geniz m/n) tonu
+python -m titresim vocal --chant gunne --duration 10 -o gunne_nitrik_oksit.wav
+
+# F1, F2, F3 formant filtreli Hu ve Hayy nefes zikri sentezle
+python -m titresim vocal --chant hu --duration 8 -o hu_zikir.wav
+python -m titresim vocal --chant hayy --duration 8 -o hayy_zikir.wav
+```
+
+### 16. Rezonans Solunum & 0.1 Hz Kalp Koheransı Rehberi
+```bash
+# Klinik solunum kalıplarını (Koherans 0.1 Hz, Kutu, 4-7-8, Sakinleşme) listele
+python -m titresim breath --list
+
+# Vagal tonu artıran 0.1 Hz (5sn Al, 5sn Ver) Glissando sesli koherans nefes rehberi
+python -m titresim breath --pattern coherence --cycles 6 -o nefes_koherans_01hz.wav
+
+# Parasempatik sistem aktivasyonu için 4-7-8 Uykulu Solunum seansı
+python -m titresim breath --pattern 478 --cycles 4 -o nefes_478.wav
+```
+
+### 17. İnteraktif Web Laboratuvarını Başlatma
 ```bash
 python -m titresim serve --port 8000
 ```
@@ -292,11 +340,13 @@ Tarayıcınız otomatik olarak `http://localhost:8000` adresinde açılacaktır.
 
 ---
 
-## 🌐 İnteraktif Web Audio & Cymatics Laboratuvarı v2.0
+## 🌐 İnteraktif Web Audio & Cymatics Laboratuvarı v2.1
 
 `web/` dizininde yer alan laboratuvar tamamen tarayıcı içinde çalışır:
-* **9 Farklı Akustik Sekme:** Solfeggio, Çok Aşamalı Klinik Protokoller, 7 Çakra Akustiği, Osmanlı Makam Terapisi, Binaural Beats, İzokronik Tonlar & Gürültü, Gezegen Frekansları, Kutsal Gelenekler ve Kadim Bilgelik Kütüphanesi.
+* **12 Kapsamlı Akustik Sekme:** Solfeggio, Çok Aşamalı Klinik Protokoller, 7 Çakra Akustiği, Osmanlı Makam Terapisi, Binaural Beats, İzokronik Tonlar & Gürültü, Gezegen Frekansları, Kutsal Gelenekler, Kadim Bilgelik Kütüphanesi, **Organ Rezonansı (Vibroakustik)**, **Nefes & Kalp Koheransı (0.1 Hz Görsel/İşitsel Rehber)** ve **Kutsal Zikir & Gunne Formantları**.
 * **Canlı Chladni & Dairesel Su Simülasyonu:** 2800 adet kum taneciğinin ses dalgalarının nodal çizgilerine aktığı gerçek zamanlı fizik motoru. Kare plaka ve Dairesel su çanağı modları arasında tek tıkla geçiş!
+* **Nefes & Kalp Koheransı Rehberi:** 0.1 Hz rezonans solunumu için yumuşak genişleyip daralan ritmik halka ve çift osilatörlü glissando frekans yükselişi.
+* **Akustik Vokal Traktı & Formantlar:** Çift bant geçiren $F_1, F_2$ filtreleme ile insan gırtlağı ve geniz rezonansını (Gunne) tarayıcıda canlı canlandırma.
 * **Makam Seyir & Taksim Çalıcı:** Ney tınısı ve yumuşak vibrato ile geleneksel seyir akışını dinleme imkânı.
 * **Gökkuşağı Çakra Dizisi:** 1'den 7'ye yükselen çakra dengeleme meditasyonu.
 * **Klinik Protokol Yürütücüsü:** Gerçek zamanlı aşama takibi ve ilerleme çubuğu ile yönlendirilen seanslar.
@@ -323,10 +373,26 @@ from titresim import (
     WisdomArchive,
     TherapySessionEngine,
     ChakraResonance,
-    MakamSeyirGenerator
+    MakamSeyirGenerator,
+    OrganResonance,
+    SacredPhonetics,
+    CoherenceBreathGuide,
 )
 
-# 1. Çok Aşamalı Klinik Seans Sentezi
+# 1. Biyofiziksel Organ Rezonansı
+organ_eng = OrganResonance()
+heart = organ_eng.get("kalp")
+heart_signal = organ_eng.generate_tone("kalp", duration=10.0)
+
+# 2. 0.1 Hz Rezonans Kalp Koheransı Solunumu
+breath_eng = CoherenceBreathGuide()
+breath_signal = breath_eng.generate_session("coherence", cycles=6)
+
+# 3. Kutsal Fonetik Formant Sentezi (Hu / Gunne)
+vocal_eng = SacredPhonetics()
+gunne_signal = vocal_eng.synthesize("gunne", duration=8.0)
+
+# 4. Çok Aşamalı Klinik Seans Sentezi
 engine = TherapySessionEngine()
 session_sig = engine.synthesize_protocol("sleep", total_duration_seconds=60.0)
 session_sig.save_wav("derin_uyku_klinik.wav")

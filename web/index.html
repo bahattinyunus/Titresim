@@ -20,7 +20,7 @@
         <span class="logo-symbol">〰️ ⚛ 🕊️</span>
         <div class="logo-text">
           <h1>TİTREŞİM</h1>
-          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.0</p>
+          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.1</p>
         </div>
       </div>
       <div class="header-actions">
@@ -91,6 +91,9 @@
           <button class="tab-btn active" data-tab="solfeggioTab">🎵 Solfeggio</button>
           <button class="tab-btn" data-tab="protocolsTab">🧘 Seans Protokolleri</button>
           <button class="tab-btn" data-tab="chakraTab">🌈 Çakra Akustiği</button>
+          <button class="tab-btn" data-tab="organsTab">🫀 Organ Rezonansı</button>
+          <button class="tab-btn" data-tab="breathTab">🌬️ Nefes & Koherans</button>
+          <button class="tab-btn" data-tab="vocalTab">🕊️ Kutsal Zikir & Gunne</button>
           <button class="tab-btn" data-tab="makamTab">🕌 Makam Terapisi</button>
           <button class="tab-btn" data-tab="binauralTab">🧠 Binaural Beats</button>
           <button class="tab-btn" data-tab="isochronicTab">⚡ İzokronik & Gürültü</button>
@@ -325,6 +328,72 @@
           </div>
         </div>
 
+        <!-- TAB 10: Organ Rezonansı ve Biyofiziksel Frekanslar -->
+        <div id="organsTab" class="tab-content">
+          <div class="section-header">
+            <h2>🫀 İnsan Organ Rezonansı ve Biyofiziksel Frekanslar</h2>
+            <p>Kalp, beyin, karaciğer, böbrekler ve endokrin bezlerinin doğal hücresel rezonans tonları.</p>
+          </div>
+
+          <div class="card mb-3 organ-action-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <span>🧬 <strong>Bütüncül Denge:</strong> Tüm organları baştan ayağa akustik frekansla tarayın.</span>
+              <button id="fullBodyScanBtn" class="btn btn-primary">Tam Beden Organ Taraması Başlat (10 Organ)</button>
+            </div>
+          </div>
+
+          <div class="organs-grid" id="organsGrid">
+            <!-- JS dinamik organ kartları -->
+          </div>
+        </div>
+
+        <!-- TAB 11: Nefes ve Koherans Rehberi -->
+        <div id="breathTab" class="tab-content">
+          <div class="section-header">
+            <h2>🌬️ Terapötik Solunum & 0.1 Hz Biyogeribildirim Rehberi</h2>
+            <p>Kalp hızı değişkenliği (HRV), vagal tonus ve derin gevşeme için interaktif sesli nefes egzersizi.</p>
+          </div>
+
+          <div class="breath-trainer-box card">
+            <div class="breath-modes-nav">
+              <button class="breath-mode-btn active" data-pattern="coherence">0.1 Hz Kalp Koheransı</button>
+              <button class="breath-mode-btn" data-pattern="box">Kutu Nefesi (Box)</button>
+              <button class="breath-mode-btn" data-pattern="4-7-8">4-7-8 Uyku Nefesi</button>
+              <button class="breath-mode-btn" data-pattern="relax">Gevşeme (1:1.5)</button>
+            </div>
+
+            <!-- Görsel Nefes Balonu -->
+            <div class="breath-circle-wrap mt-3">
+              <div class="breath-circle" id="breathCircle">
+                <span id="breathCircleText">NEFES AL</span>
+                <span id="breathCircleTimer">5.5s</span>
+              </div>
+            </div>
+
+            <div class="breath-status-info mt-3 text-center">
+              <strong id="breathPatternTitle">0.10 Hz Kardiyak Koherans Nefesi</strong>
+              <p id="breathPatternDesc" class="mt-1" style="font-size: 13px; color: #94a3b8;">5.5 saniye alış, 5.5 saniye veriş ile vagal fren uyarımı.</p>
+            </div>
+
+            <div class="breath-actions mt-3 text-center">
+              <button id="startBreathBtn" class="btn btn-primary">▶️ Nefes Rehberini Başlat</button>
+              <button id="stopBreathBtn" class="btn btn-danger hidden">Durdur</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 12: Kutsal Kelâm ve Fonetik Formantlar -->
+        <div id="vocalTab" class="tab-content">
+          <div class="section-header">
+            <h2>🕊️ Kutsal Zikir & Gunne Fonetik Formantları</h2>
+            <p>Tecvid gunnesi (15x Nitrik Oksit sentezi), boğaz ve göğüs rezonans kavitelerinin akustik analizi.</p>
+          </div>
+
+          <div class="vocal-chants-list" id="vocalChantsList">
+            <!-- JS dinamik formant kartları -->
+          </div>
+        </div>
+
       </div>
 
       <!-- SAĞ: Canlı Sematik (Cymatics) & Chladni Simülatörü -->
@@ -384,7 +453,7 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.0</strong></p>
+      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.1</strong></p>
       <p>Açık Kaynak Kodlu • MIT Lisansı • Kadim Bilgelik ve Modern Akustiğin Birleşimi</p>
     </div>
   </footer>

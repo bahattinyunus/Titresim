@@ -10,7 +10,7 @@ izokronik tonlar (isochronic), akustik gürültü terapisi (pembe, kahverengi, b
 Kutsal Kelâm fonetik formant motoru ve Biyogeribildirim solunum rehberi.
 """
 
-__version__ = "2.1.0"
+__version__ = "2.2.0"
 __author__ = "Bahattin Yunus Çetin"
 __license__ = "MIT"
 
@@ -40,6 +40,8 @@ from .core.seyir import MakamSeyirGenerator
 from .core.organs import OrganResonance, OrganInfo
 from .core.phonetics import SacredPhonetics, SacredChant
 from .core.breath import CoherenceBreathGuide, BreathPattern
+from .core.biofield import BiofieldAcoustics, TuningFork, TeslaTriad
+from .core.architecture import AcousticArchitecture, SacredSpace
 
 __all__ = [
     "Solfeggio",
@@ -79,4 +81,9 @@ __all__ = [
     "SacredChant",
     "CoherenceBreathGuide",
     "BreathPattern",
+    "BiofieldAcoustics",
+    "TuningFork",
+    "TeslaTriad",
+    "AcousticArchitecture",
+    "SacredSpace",
 ]

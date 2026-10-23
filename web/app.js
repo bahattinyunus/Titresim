@@ -6,6 +6,311 @@
 // ==========================================
 // 1. DAHİLİ VERİLER (DATASETS)
 // ==========================================
+const ARCHITECTURE_DATA = [
+  {
+    "id": "suleymaniye",
+    "name": "Mimar Sinan Süleymaniye Camii Ana Kubbesi",
+    "architect": "Koca Mimar Sinan (1557)",
+    "volume_m3": 140000.0,
+    "rt60_sec": 4.2,
+    "resonators_count": 64,
+    "resonator_type": "Kubbe içi açık ağızlı pişmiş toprak Helmholtz akustik küpleri",
+    "resonator_frequency_hz": 250.0,
+    "description": "Mimar Sinan, kubbe içerisine ağızları aşağıya bakan 64 adet boş küp yerleştirerek bas frekansların uğultu yapmasını engellemiş, hatip ve müezzinin sesinin berrak ve eşit yayılmasını sağlamıştır.",
+    "acoustic_signature": {
+      "predelay_ms": 45.0,
+      "decay_time_sec": 4.2,
+      "damping": 0.35,
+      "early_diffusion": 0.88
+    }
+  },
+  {
+    "id": "selimiye",
+    "name": "Mimar Sinan Selimiye Camii Kubbe & Hünkâr Mahfili",
+    "architect": "Koca Mimar Sinan (1575)",
+    "volume_m3": 115000.0,
+    "rt60_sec": 3.8,
+    "resonators_count": 48,
+    "resonator_type": "Sekizgen filayak kemerleri ve akustik küp yerleşimi",
+    "resonator_frequency_hz": 220.0,
+    "description": "Sinan'ın 'Ustalık Eserim' dediği Selimiye; sekizgen payelerle taşınan 31.25m çapındaki kubbesiyle dünya mimarlık tarihinin en berrak difüzyon ve konuşma anlaşılırlığı oranına (STI) sahiptir.",
+    "acoustic_signature": {
+      "predelay_ms": 38.0,
+      "decay_time_sec": 3.8,
+      "damping": 0.3,
+      "early_diffusion": 0.92
+    }
+  },
+  {
+    "id": "hypogeum",
+    "name": "Ħal Saflieni Hypogeum - Kâhin Odası (Oracle Chamber)",
+    "architect": "Neolitik Megalitik Mimarlar (MÖ 3600)",
+    "volume_m3": 180.0,
+    "rt60_sec": 2.6,
+    "resonators_count": 1,
+    "resonator_type": "Kireçtaşı kayaya oyulmuş akustik niş ve oval rezonant oda",
+    "resonator_frequency_hz": 110.0,
+    "description": "UCLA ve uluslararası araştırmacıların keşfettiği 110 Hz ve 111 Hz rezonans odası. Buradaki frekans beyinde sağ hemisfer ve prefrontal korteksi aktive ederek trans, derin huşu ve duygusal katarsis üretir.",
+    "acoustic_signature": {
+      "predelay_ms": 15.0,
+      "decay_time_sec": 2.6,
+      "damping": 0.15,
+      "early_diffusion": 0.7
+    }
+  },
+  {
+    "id": "kings_chamber",
+    "name": "Giza Büyük Piramit - Kral Odası (King's Chamber)",
+    "architect": "Antik Mısır Kadim İnisiyeleri (MÖ ~2560)",
+    "volume_m3": 260.0,
+    "rt60_sec": 5.1,
+    "resonators_count": 1,
+    "resonator_type": "Monolitik Aswan pembe granit blokları ve içi oyuk granit sanduka",
+    "resonator_frequency_hz": 117.0,
+    "description": "Granit sandukanın vurulduğunda 432 Hz'e uyumlu 'A' tonunda ve 117 Hz odasal duran dalga rezonansında inlemesi. Ses, piramit kütlesinde piezoelektrik akustik mikro-akımlar yaratır.",
+    "acoustic_signature": {
+      "predelay_ms": 25.0,
+      "decay_time_sec": 5.1,
+      "damping": 0.1,
+      "early_diffusion": 0.75
+    }
+  },
+  {
+    "id": "chartres",
+    "name": "Chartres Gotik Katedrali (Notre-Dame de Chartres)",
+    "architect": "Gotik Taş Ustaları & Tapınak Şövalyeleri (1220)",
+    "volume_m3": 110000.0,
+    "rt60_sec": 7.5,
+    "resonators_count": 0,
+    "resonator_type": "Kaburgalı gotik tonozlar ve taş labirent akustiği",
+    "resonator_frequency_hz": 136.1,
+    "description": "Gregoryen ilahilerinin tek sesli (monofonik) doğasına mükemmel eşlik eden 7.5 saniyelik ilahi yankılanma. Her bir ton havada asılı kalarak harmonik bir ses kubbesi meydana getirir.",
+    "acoustic_signature": {
+      "predelay_ms": 60.0,
+      "decay_time_sec": 7.5,
+      "damping": 0.4,
+      "early_diffusion": 0.95
+    }
+  }
+];
+
+const BIOFIELD_DATA = {
+  "tuning_forks": [
+    {
+      "id": "otto128",
+      "name": "Otto 128 Hz Osteofonik Diyapazon",
+      "frequency": 128.0,
+      "category": "osteophonic",
+      "damping_factor": 0.35,
+      "target_tissue": "Kemik dokusu, omurga, eklemler ve sinir uçları",
+      "biofield_layer": "Eterik Beden & Fiziksel Hücre Matriksi",
+      "clinical_effects": "Kemik iletimi (bone conduction) ile hücrelerde anında Nitrik Oksit (NO) salınımı, kas spazmı çözümü, lenfatik drenaj ve parasempatik aktivasyon.",
+      "strike_harmonics": [
+        353.3,
+        691.2
+      ]
+    },
+    {
+      "id": "otto64",
+      "name": "Otto 64 Hz Sakral & Omurga Diyapazonu",
+      "frequency": 64.0,
+      "category": "osteophonic",
+      "damping_factor": 0.25,
+      "target_tissue": "Kuyruk sokumu, sakrum, alt bel omurları",
+      "biofield_layer": "Kök Çakra & Fiziksel Topraklanma",
+      "clinical_effects": "İnfrasonik sınıra yakın derin mekanik titreşim, omurga kilitlenmelerini açma ve sakroiliak eklem rahatlaması.",
+      "strike_harmonics": [
+        176.6,
+        345.6
+      ]
+    },
+    {
+      "id": "otto32",
+      "name": "Otto 32 Hz Kraniyal & Dolaşım Diyapazonu",
+      "frequency": 32.0,
+      "category": "osteophonic",
+      "damping_factor": 0.2,
+      "target_tissue": "Kraniosakral sistem, cilt reseptörleri, lenf nodları",
+      "biofield_layer": "Hücresel Sıvı & Lenfatik Alan",
+      "clinical_effects": "Deri altı mekanoreseptörleri (Pacinian korpüskülleri) uyarımı, lenfatik akışın hızlandırılması.",
+      "strike_harmonics": [
+        88.3,
+        172.8
+      ]
+    },
+    {
+      "id": "ohm136",
+      "name": "Ohm 136.1 Hz Kozmik Topraklanma Diyapazonu",
+      "frequency": 136.1,
+      "category": "biofield",
+      "damping_factor": 0.45,
+      "target_tissue": "Kalp alanı, göğüs kafesi, solar pleksus",
+      "biofield_layer": "Duygusal Beden & Kalp Manyetik Alanı",
+      "clinical_effects": "Hans Cousto Dünya Yılı frekansı; derin sükunet, biyomanyetik alanın merkezlenmesi ve anksiyete yatışması.",
+      "strike_harmonics": [
+        375.6,
+        734.9
+      ]
+    },
+    {
+      "id": "mi528",
+      "name": "Solfeggio 528 Hz Dönüşüm & DNA Onarım Diyapazonu",
+      "frequency": 528.0,
+      "category": "solfeggio",
+      "damping_factor": 0.55,
+      "target_tissue": "Hücresel su molekülleri, epigenetik alan, timus",
+      "biofield_layer": "Zihinsel ve Astral Beden",
+      "clinical_effects": "Su klasterlerini hekzagonal yapıya dönüştürme, hücresel canlılık, sevgi ve onarım frekansı.",
+      "strike_harmonics": [
+        1457.3,
+        2851.2
+      ]
+    },
+    {
+      "id": "verdi432",
+      "name": "Doğal Akort 432 Hz Pisagor Diyapazonu",
+      "frequency": 432.0,
+      "category": "harmonic",
+      "damping_factor": 0.5,
+      "target_tissue": "Merkezi sinir sistemi, işitme korteksi, kardiyak ritim",
+      "biofield_layer": "Eterik ve Kozmik Biyorezonans",
+      "clinical_effects": "Verdi A4 doğal akordu; altın oran harmonikleri, suyun akışkanlığını destekleme ve zihinsel dinginlik.",
+      "strike_harmonics": [
+        1192.3,
+        2332.8
+      ]
+    },
+    {
+      "id": "angel4096",
+      "name": "Kristal Melek Diyapazonu 4096 Hz (Angel Tuner Jacob's Ladder)",
+      "frequency": 4096.0,
+      "category": "crystal",
+      "damping_factor": 0.85,
+      "target_tissue": "Epifiz bezi, sinapslar, eterik aura çeperi",
+      "biofield_layer": "Kozmik & Ruhsal Aura Alanı",
+      "clinical_effects": "Kristal berraklığında yüksek harmonik zil sesi; aura alanındaki statik elektromanyetik kirliliği dağıtma.",
+      "strike_harmonics": [
+        11305.0,
+        22118.4
+      ]
+    },
+    {
+      "id": "genesis531",
+      "name": "Fibonacci Genesis 531.44 Hz Altın Oran Diyapazonu",
+      "frequency": 531.44,
+      "category": "fibonacci",
+      "damping_factor": 0.52,
+      "target_tissue": "Biyolojik fraktal büyüme alanları, mikrotübüller",
+      "biofield_layer": "Morfojenetik Rezonans Alanı",
+      "clinical_effects": "Phi oranlı fraktal spiral harmonikler, doku rejenerasyonu için morfik rezonans.",
+      "strike_harmonics": [
+        1466.8,
+        2869.8
+      ]
+    }
+  ],
+  "tesla_369_vortex": {
+    "description": "Nikola Tesla'nın 3-6-9 Kozmik Anahtarı ve Solfeggio 9'lu Matrisinin Dijital Kök İndirgemesi (Digital Root / Vortex Mathematics)",
+    "triads": [
+      {
+        "root": 3,
+        "name": "3'lü Yaratım & Temel Maddeselleşme Triadı",
+        "frequencies": [
+          174.0,
+          417.0,
+          741.0
+        ],
+        "digital_roots": [
+          3,
+          3,
+          3
+        ],
+        "effects": "Ağrı dindirme (174Hz), Değişimi kolaylaştırma (417Hz) ve Hücresel sezgi/arındırma (741Hz). Maddi ve eterik temizlenme üçgeni."
+      },
+      {
+        "root": 6,
+        "name": "6'lı Denge, Sevgi & Hücresel Dönüşüm Triadı",
+        "frequencies": [
+          285.0,
+          528.0,
+          852.0
+        ],
+        "digital_roots": [
+          6,
+          6,
+          6
+        ],
+        "effects": "Doku gençleştirme (285Hz), DNA dönüşümü ve mucize (528Hz), Ruhsal düzene dönüş (852Hz). Kalp ve zihin dengesi."
+      },
+      {
+        "root": 9,
+        "name": "9'lu Mutlak Birlik, Kurtuluş & İlahi Taç Triadı",
+        "frequencies": [
+          396.0,
+          639.0,
+          963.0
+        ],
+        "digital_roots": [
+          9,
+          9,
+          9
+        ],
+        "effects": "Korku ve suçluluktan kurtuluş (396Hz), Kalp ve ilişkiler bağı (639Hz), Saf kozmik ışık ve epifiz (963Hz). Birlik ve vahdet portalı."
+      }
+    ]
+  },
+  "fibonacci_series": {
+    "phi": 1.618033988749895,
+    "ratios": [
+      {
+        "ratio": "1/1",
+        "value": 1.0,
+        "name": "Unison (Birlik)"
+      },
+      {
+        "ratio": "2/1",
+        "value": 2.0,
+        "name": "Saf Oktav"
+      },
+      {
+        "ratio": "3/2",
+        "value": 1.5,
+        "name": "Pisagor Beşlisi (Tam Beşli)"
+      },
+      {
+        "ratio": "5/3",
+        "value": 1.6667,
+        "name": "Büyük Altılı (Doğal İlahi Altılı)"
+      },
+      {
+        "ratio": "8/5",
+        "value": 1.6,
+        "name": "Küçük Altılı (Altın Orana En Yakın Rasyonel)"
+      },
+      {
+        "ratio": "13/8",
+        "value": 1.625,
+        "name": "Fibonacci Yakınsaması 1"
+      },
+      {
+        "ratio": "21/13",
+        "value": 1.61538,
+        "name": "Fibonacci Yakınsaması 2"
+      },
+      {
+        "ratio": "34/21",
+        "value": 1.61905,
+        "name": "Fibonacci Yakınsaması 3"
+      },
+      {
+        "ratio": "55/34",
+        "value": 1.61765,
+        "name": "Altın Oran Mükemmel Yakınsama"
+      }
+    ]
+  }
+};
+
 const ORGANS_DATA = [
   {
     "id": "heart",
@@ -3366,6 +3671,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOrgans();
   setupBreathGuide();
   renderPhonetics();
+  renderArchitecture();
+  renderBiofield();
   setupBreathing();
   setupSessionTimer();
   setupWisdomBanner();
@@ -3724,4 +4031,97 @@ function renderPhonetics() {
 
     container.appendChild(card);
   });
+}
+
+// ==========================================
+// 7. TITRESIM v2.2: KUTSAL MİMARİ & BİYOALAN
+// ==========================================
+function renderArchitecture() {
+  const container = document.getElementById("architectureGrid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  ARCHITECTURE_DATA.forEach(sp => {
+    const card = document.createElement("div");
+    card.className = "architecture-card";
+    card.innerHTML = `
+      <div class="arch-header">
+        <span class="arch-title">${sp.name}</span>
+        <span class="arch-badge">RT60: ${sp.rt60_sec}s</span>
+      </div>
+      <div class="arch-meta">Mimar: ${sp.architect} • Hacim: ${Number(sp.volume_m3).toLocaleString()} m³</div>
+      <div class="arch-res-info">
+        🏺 <strong>Akustik Rezonatör:</strong> ${sp.resonators_count > 0 ? `${sp.resonators_count} adet ${sp.resonator_type} (${sp.resonator_frequency_hz} Hz)` : `${sp.resonator_type} (${sp.resonator_frequency_hz} Hz)`}
+      </div>
+      <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px; line-height: 1.5;">${sp.description}</p>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn btn-sm btn-outline-cyan play-arch-freq-btn">Mekân Frekansını Çal (${sp.resonator_frequency_hz} Hz)</button>
+      </div>
+    `;
+
+    card.querySelector(".play-arch-freq-btn").addEventListener("click", () => {
+      audio.playTone(sp.resonator_frequency_hz);
+      if (cymaticsSim) cymaticsSim.setFrequency(sp.resonator_frequency_hz);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function renderBiofield() {
+  const container = document.getElementById("forksGrid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const forks = BIOFIELD_DATA.tuning_forks || [];
+  forks.forEach(fork => {
+    const card = document.createElement("div");
+    card.className = "fork-card";
+    card.innerHTML = `
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <strong style="color: #f1f5f9; font-size: 14px;">${fork.name}</strong>
+          <span class="fork-freq">${fork.frequency} Hz</span>
+        </div>
+        <div style="font-size: 11px; color: #eab308; margin-top: 2px;">${fork.biofield_layer}</div>
+        <div class="fork-desc">${fork.clinical_effects}</div>
+      </div>
+      <div>
+        <div style="font-size: 11px; color: #64748b; margin-bottom: 8px;">Doku: ${fork.target_tissue}</div>
+        <button class="btn btn-sm btn-outline strike-fork-btn" style="width: 100%;">🔱 Tokmakla Vur (Strike)</button>
+      </div>
+    `;
+
+    card.querySelector(".strike-fork-btn").addEventListener("click", () => {
+      card.classList.add("playing");
+      audio.playTone(fork.frequency);
+      if (cymaticsSim) cymaticsSim.setFrequency(fork.frequency);
+      setTimeout(() => card.classList.remove("playing"), 3000);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function playTeslaVortex(root) {
+  const triads = (BIOFIELD_DATA.tesla_369_vortex && BIOFIELD_DATA.tesla_369_vortex.triads) || [];
+  const triad = triads.find(t => t.root === root) || triads[2];
+  if (!triad) return;
+
+  // 3 frekansı sırayla veya akor şeklinde deneyimle
+  audio.playTone(triad.frequencies[1]); // Merkez frekansı çal
+  if (cymaticsSim) cymaticsSim.setFrequency(triad.frequencies[1]);
+
+  alert(`⚡ Tesla Triad ${root} (${triad.name}) Aktif!
+Frekanslar: ${triad.frequencies.join(" Hz, ")} Hz
+Etki: ${triad.effects}`);
+}
+
+function playFibonacciScale() {
+  const phi = 1.61803398875;
+  const base = 432.0;
+  audio.playTone(base);
+  if (cymaticsSim) cymaticsSim.setFrequency(base);
+  alert(`🌀 Fibonacci Altın Oran (Phi: ${phi}) Akordu Başlatıldı!
+Taban: ${base} Hz (Verdi A4). Fraktal spiralleşen biyo-harmonikler.`);
 }

@@ -20,7 +20,7 @@
         <span class="logo-symbol">〰️ ⚛ 🕊️</span>
         <div class="logo-text">
           <h1>TİTREŞİM</h1>
-          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.1</p>
+          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.2</p>
         </div>
       </div>
       <div class="header-actions">
@@ -94,6 +94,8 @@
           <button class="tab-btn" data-tab="organsTab">🫀 Organ Rezonansı</button>
           <button class="tab-btn" data-tab="breathTab">🌬️ Nefes & Koherans</button>
           <button class="tab-btn" data-tab="vocalTab">🕊️ Kutsal Zikir & Gunne</button>
+          <button class="tab-btn" data-tab="architectureTab">🏛️ Kutsal Mimari & Sinan</button>
+          <button class="tab-btn" data-tab="biofieldTab">🔱 Diyapazon & Tesla 3-6-9</button>
           <button class="tab-btn" data-tab="makamTab">🕌 Makam Terapisi</button>
           <button class="tab-btn" data-tab="binauralTab">🧠 Binaural Beats</button>
           <button class="tab-btn" data-tab="isochronicTab">⚡ İzokronik & Gürültü</button>
@@ -394,6 +396,44 @@
           </div>
         </div>
 
+        <!-- TAB 13: Kutsal Mimari ve Sinan Akustiği -->
+        <div id="architectureTab" class="tab-content">
+          <div class="section-header">
+            <h2>🏛️ Kutsal Mimari, Mimar Sinan & Boşluk Rezonatörleri</h2>
+            <p>Süleymaniye kubbe küpleri (Helmholtz rezonatörleri), Ħal Saflieni 110 Hz Kâhin Odası ve kadim akustik mekanlar.</p>
+          </div>
+
+          <div class="architecture-grid" id="architectureGrid">
+            <!-- JS dinamik mimari kartları -->
+          </div>
+        </div>
+
+        <!-- TAB 14: Biyoalan Diyapazon ve Tesla 3-6-9 -->
+        <div id="biofieldTab" class="tab-content">
+          <div class="section-header">
+            <h2>🔱 Biyoalan Diyapazon & Nikola Tesla 3-6-9 Vorteksi</h2>
+            <p>Fiziksel diyapazon (tuning fork) vuruş simülasyonu, 3-6-9 holografik ses alanı ve Fibonacci Altın Oran akordu.</p>
+          </div>
+
+          <div class="card mb-3">
+            <h3>⚡ Nikola Tesla 3-6-9 Vorteks Holografik Ses Alanı</h3>
+            <p style="font-size: 13px; color: #94a3b8;">
+              Tesla'nın kozmik 3-6-9 matrisi: Solfeggio frekanslarının dijital kök indirgemesiyle 3 fazlı (120°) dönen akustik girdap.
+            </p>
+            <div class="tesla-triad-row mt-2" id="teslaTriadButtons">
+              <button class="btn btn-outline-gold" onclick="playTeslaVortex(3)">⚡ Triad 3: Maddeselleşme & Arınma (174 - 417 - 741 Hz)</button>
+              <button class="btn btn-outline-cyan" onclick="playTeslaVortex(6)">🌀 Triad 6: Kalp, Denge & DNA (285 - 528 - 852 Hz)</button>
+              <button class="btn btn-primary" onclick="playTeslaVortex(9)">👑 Triad 9: Birlik & Taç (396 - 639 - 963 Hz)</button>
+              <button class="btn btn-outline" onclick="playFibonacciScale()">✨ Fibonacci Altın Oran (Phi) Akordu</button>
+            </div>
+          </div>
+
+          <h3 class="mt-3">🔱 Fiziksel Diyapazon (Tuning Fork) Seti</h3>
+          <div class="forks-grid mt-2" id="forksGrid">
+            <!-- JS dinamik diyapazon kartları -->
+          </div>
+        </div>
+
       </div>
 
       <!-- SAĞ: Canlı Sematik (Cymatics) & Chladni Simülatörü -->
@@ -453,7 +493,7 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.1</strong></p>
+      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.2</strong></p>
       <p>Açık Kaynak Kodlu • MIT Lisansı • Kadim Bilgelik ve Modern Akustiğin Birleşimi</p>
     </div>
   </footer>

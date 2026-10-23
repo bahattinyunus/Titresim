@@ -1,0 +1,89 @@
+{
+  "sacred_spaces": [
+    {
+      "id": "suleymaniye",
+      "name": "Mimar Sinan Süleymaniye Camii Ana Kubbesi",
+      "architect": "Koca Mimar Sinan (1557)",
+      "volume_m3": 140000.0,
+      "rt60_sec": 4.2,
+      "resonators_count": 64,
+      "resonator_type": "Kubbe içi açık ağızlı pişmiş toprak Helmholtz akustik küpleri",
+      "resonator_frequency_hz": 250.0,
+      "description": "Mimar Sinan, kubbe içerisine ağızları aşağıya bakan 64 adet boş küp yerleştirerek bas frekansların uğultu yapmasını engellemiş, hatip ve müezzinin sesinin berrak ve eşit yayılmasını sağlamıştır.",
+      "acoustic_signature": {
+        "predelay_ms": 45.0,
+        "decay_time_sec": 4.2,
+        "damping": 0.35,
+        "early_diffusion": 0.88
+      }
+    },
+    {
+      "id": "selimiye",
+      "name": "Mimar Sinan Selimiye Camii Kubbe & Hünkâr Mahfili",
+      "architect": "Koca Mimar Sinan (1575)",
+      "volume_m3": 115000.0,
+      "rt60_sec": 3.8,
+      "resonators_count": 48,
+      "resonator_type": "Sekizgen filayak kemerleri ve akustik küp yerleşimi",
+      "resonator_frequency_hz": 220.0,
+      "description": "Sinan'ın 'Ustalık Eserim' dediği Selimiye; sekizgen payelerle taşınan 31.25m çapındaki kubbesiyle dünya mimarlık tarihinin en berrak difüzyon ve konuşma anlaşılırlığı oranına (STI) sahiptir.",
+      "acoustic_signature": {
+        "predelay_ms": 38.0,
+        "decay_time_sec": 3.8,
+        "damping": 0.30,
+        "early_diffusion": 0.92
+      }
+    },
+    {
+      "id": "hypogeum",
+      "name": "Ħal Saflieni Hypogeum - Kâhin Odası (Oracle Chamber)",
+      "architect": "Neolitik Megalitik Mimarlar (MÖ 3600)",
+      "volume_m3": 180.0,
+      "rt60_sec": 2.6,
+      "resonators_count": 1,
+      "resonator_type": "Kireçtaşı kayaya oyulmuş akustik niş ve oval rezonant oda",
+      "resonator_frequency_hz": 110.0,
+      "description": "UCLA ve uluslararası araştırmacıların keşfettiği 110 Hz ve 111 Hz rezonans odası. Buradaki frekans beyinde sağ hemisfer ve prefrontal korteksi aktive ederek trans, derin huşu ve duygusal katarsis üretir.",
+      "acoustic_signature": {
+        "predelay_ms": 15.0,
+        "decay_time_sec": 2.6,
+        "damping": 0.15,
+        "early_diffusion": 0.70
+      }
+    },
+    {
+      "id": "kings_chamber",
+      "name": "Giza Büyük Piramit - Kral Odası (King's Chamber)",
+      "architect": "Antik Mısır Kadim İnisiyeleri (MÖ ~2560)",
+      "volume_m3": 260.0,
+      "rt60_sec": 5.1,
+      "resonators_count": 1,
+      "resonator_type": "Monolitik Aswan pembe granit blokları ve içi oyuk granit sanduka",
+      "resonator_frequency_hz": 117.0,
+      "description": "Granit sandukanın vurulduğunda 432 Hz'e uyumlu 'A' tonunda ve 117 Hz odasal duran dalga rezonansında inlemesi. Ses, piramit kütlesinde piezoelektrik akustik mikro-akımlar yaratır.",
+      "acoustic_signature": {
+        "predelay_ms": 25.0,
+        "decay_time_sec": 5.1,
+        "damping": 0.10,
+        "early_diffusion": 0.75
+      }
+    },
+    {
+      "id": "chartres",
+      "name": "Chartres Gotik Katedrali (Notre-Dame de Chartres)",
+      "architect": "Gotik Taş Ustaları & Tapınak Şövalyeleri (1220)",
+      "volume_m3": 110000.0,
+      "rt60_sec": 7.5,
+      "resonators_count": 0,
+      "resonator_type": "Kaburgalı gotik tonozlar ve taş labirent akustiği",
+      "resonator_frequency_hz": 136.1,
+      "description": "Gregoryen ilahilerinin tek sesli (monofonik) doğasına mükemmel eşlik eden 7.5 saniyelik ilahi yankılanma. Her bir ton havada asılı kalarak harmonik bir ses kubbesi meydana getirir.",
+      "acoustic_signature": {
+        "predelay_ms": 60.0,
+        "decay_time_sec": 7.5,
+        "damping": 0.40,
+        "early_diffusion": 0.95
+      }
+    }
+  ]
+}

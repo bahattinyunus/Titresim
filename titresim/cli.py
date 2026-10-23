@@ -34,6 +34,8 @@ from .core.seyir import MakamSeyirGenerator
 from .core.organs import OrganResonance
 from .core.phonetics import SacredPhonetics
 from .core.breath import CoherenceBreathGuide
+from .core.biofield import BiofieldAcoustics
+from .core.architecture import AcousticArchitecture
 
 
 def handle_info(args):
@@ -512,6 +514,104 @@ def handle_breath(args):
     print(f"✅ Solunum rehberi seansı kaydedildi: {out_path}")
 
 
+def handle_fork(args):
+    if getattr(args, "list", False) or not args.id:
+        print("\n" + "=" * 65)
+        print("   BİYOALAN VE FİZİKSEL DİYAPAZON (TUNING FORK) SETİ")
+        print("=" * 65)
+        for f in BiofieldAcoustics.list_forks():
+            print(f"🔱 {f.name} ({f.id.upper()}) | {f.frequency} Hz | Kat: {f.category}")
+            print(f"   Hedef Doku: {f.target_tissue} | Katman: {f.biofield_layer}")
+            print(f"   Klinik Tesir: {f.clinical_effects}")
+            print(f"   Vuruş Harmonikleri: {f.strike_harmonics}\n")
+        return
+
+    fork = BiofieldAcoustics.get_fork(args.id)
+    if not fork:
+        print(f"❌ Diyapazon bulunamadı: {args.id}")
+        return
+    out_path = args.output or f"diyapazon_{fork.id}.wav"
+    print(f"🔱 {fork.name} ({fork.frequency} Hz) vuruş simülasyonu yapılıyor...")
+    samples = BiofieldAcoustics.strike_fork(
+        fork_id=fork.id,
+        duration=args.duration,
+        strike_intensity=args.intensity
+    )
+    tone_gen = ToneGenerator()
+    tone_gen.save_wav(out_path, samples)
+    print(f"✅ Diyapazon vuruş sesi kaydedildi: {out_path}")
+
+
+def handle_tesla(args):
+    if getattr(args, "list", False):
+        print("\n" + "=" * 65)
+        print("   NIKOLA TESLA 3-6-9 VORTEKS MATRİSİ VE DİJİTAL KÖK TRİADLARI")
+        print("=" * 65)
+        for tr in BiofieldAcoustics.list_tesla_triads():
+            print(f"⚡ Tesla {tr.root}'lü Triad: {tr.name}")
+            print(f"   Frekanslar: {tr.frequencies} Hz | Dijital Kökler: {tr.digital_roots}")
+            print(f"   Kozmik/Klinik Tesir: {tr.effects}\n")
+        return
+
+    if args.phi:
+        out_path = args.output or "fibonacci_phi_akordu.wav"
+        print(f"🌀 Fibonacci Altın Oran (Phi = 1.618) harmonik dizisi sentezleniyor (Taban: {args.base} Hz)...")
+        samples = BiofieldAcoustics.generate_fibonacci_sequence(
+            base_freq=args.base,
+            duration=args.duration
+        )
+        tone_gen = ToneGenerator()
+        tone_gen.save_wav(out_path, samples)
+        print(f"✅ Fibonacci akort sesi kaydedildi: {out_path}")
+        return
+
+    triad_root = args.triad if args.triad in (3, 6, 9) else 9
+    out_path = args.output or f"tesla_triad_{triad_root}_vorteks.wav"
+    tr = BiofieldAcoustics.get_tesla_triad(triad_root)
+    name = tr.name if tr else f"Tesla {triad_root}"
+    print(f"⚡ {name} 3 fazlı holografik vorteks ses alanı sentezleniyor...")
+    samples = BiofieldAcoustics.synthesize_tesla_vortex(
+        triad_root=triad_root,
+        duration=args.duration
+    )
+    tone_gen = ToneGenerator()
+    tone_gen.save_wav(out_path, samples)
+    print(f"✅ Tesla vorteks ses alanı kaydedildi: {out_path}")
+
+
+def handle_space(args):
+    if getattr(args, "list", False) or (not args.id and not args.impulse):
+        print("\n" + "=" * 65)
+        print("   KUTSAL MEKÂN AKUSTİĞİ VE MİMAR SİNAN REZONATÖRLERİ")
+        print("=" * 65)
+        for s in AcousticArchitecture.list_spaces():
+            print(f"🏛️ {s.name} ({s.id.upper()}) | Mimar: {s.architect}")
+            print(f"   Hacim: {s.volume_m3:,.0f} m³ | RT60 Yankılanma: {s.rt60_sec} sn")
+            print(f"   Rezonatör: {s.resonators_count} adet {s.resonator_type} ({s.resonator_frequency_hz} Hz)")
+            print(f"   Akustik Karakter: {s.description}\n")
+        return
+
+    space = AcousticArchitecture.get_space(args.id or "suleymaniye")
+    if not space:
+        print(f"❌ Kutsal mekân bulunamadı: {args.id}")
+        return
+
+    if args.impulse:
+        out_path = args.output or f"akustik_durtu_{space.id}.wav"
+        print(f"🏛️ {space.name} akustik dürtü yanıtı (Impulse Response) sentezleniyor...")
+        samples = AcousticArchitecture.generate_impulse_response(space.id, duration=args.duration)
+        tone_gen = ToneGenerator()
+        tone_gen.save_wav(out_path, samples)
+        print(f"✅ Akustik dürtü yanıtı kaydedildi: {out_path}")
+    else:
+        print(f"\n🏛️ {space.name}")
+        print(f"   Mimar: {space.architect}")
+        print(f"   Hacim: {space.volume_m3:,.0f} m³ | Çınlama (RT60): {space.rt60_sec} saniye")
+        print(f"   Akustik Küpler: {space.resonators_count} adet ({space.resonator_frequency_hz} Hz)")
+        print(f"   Predelay: {space.predelay_ms} ms | Damping: {space.damping}")
+        print(f"   Detay: {space.description}\n")
+
+
 def handle_serve(args):
     web_dir = Path(__file__).resolve().parent.parent / "web"
     os.chdir(web_dir)
@@ -675,6 +775,31 @@ def main():
     p_brt.add_argument("--base", "-b", type=float, default=216.0, help="Taban taşıyıcı frekans (Hz)")
     p_brt.add_argument("--output", "-o", help="Çıktı WAV dosyası")
 
+    # fork
+    p_frk = subparsers.add_parser("fork", help="Biyoalan fiziksel diyapazon (tuning fork) vuruş simülasyonu")
+    p_frk.add_argument("--list", "-l", action="store_true", help="Diyapazon setini listele")
+    p_frk.add_argument("--id", help="Diyapazon ID (otto128, otto64, otto32, ohm136, mi528, verdi432, angel4096, genesis531)")
+    p_frk.add_argument("--duration", "-d", type=float, default=8.0, help="Tınlama süresi (saniye)")
+    p_frk.add_argument("--intensity", type=float, default=0.8, help="Vuruş şiddeti (0.1 - 1.0)")
+    p_frk.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # tesla
+    p_tsl = subparsers.add_parser("tesla", help="Nikola Tesla 3-6-9 vorteks ses alanı ve Fibonacci akordu")
+    p_tsl.add_argument("--list", "-l", action="store_true", help="Tesla 3-6-9 triadlarını listele")
+    p_tsl.add_argument("--triad", "-t", type=int, choices=[3, 6, 9], default=9, help="Tesla triad kökü (3, 6 veya 9)")
+    p_tsl.add_argument("--phi", action="store_true", help="Fibonacci Altın Oran (Phi) harmonik akort dizisi üret")
+    p_tsl.add_argument("--base", "-b", type=float, default=432.0, help="Fibonacci taban frekansı (Hz)")
+    p_tsl.add_argument("--duration", "-d", type=float, default=10.0, help="Süre (saniye)")
+    p_tsl.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # space
+    p_spc = subparsers.add_parser("space", help="Kutsal mimari, Mimar Sinan akustik küpleri ve yankılanma")
+    p_spc.add_argument("--list", "-l", action="store_true", help="Kutsal mekânları listele")
+    p_spc.add_argument("--id", help="Mekân ID (suleymaniye, selimiye, hypogeum, kings_chamber, chartres)")
+    p_spc.add_argument("--impulse", action="store_true", help="Mekânın akustik dürtü yanıtını (IR) üret")
+    p_spc.add_argument("--duration", "-d", type=float, default=4.0, help="Dürtü süresi (saniye)")
+    p_spc.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -699,6 +824,12 @@ def main():
         handle_vocal(args)
     elif args.command == "breath":
         handle_breath(args)
+    elif args.command == "fork":
+        handle_fork(args)
+    elif args.command == "tesla":
+        handle_tesla(args)
+    elif args.command == "space":
+        handle_space(args)
     elif args.command == "generate":
         handle_generate(args)
     elif args.command == "binaural":

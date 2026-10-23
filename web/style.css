@@ -1536,3 +1536,94 @@ body {
 }
 .text-center { text-align: center; }
 
+/* Kutsal Mimari ve Mekan Kartları */
+.architecture-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.architecture-card {
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  transition: all 0.3s ease;
+}
+.architecture-card:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.1);
+}
+.arch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.arch-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+.arch-badge {
+  font-family: monospace;
+  font-size: 11px;
+  padding: 3px 8px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 4px;
+}
+.arch-meta {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+.arch-res-info {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 3px solid #f59e0b;
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 12px;
+  color: #fde68a;
+  margin-bottom: 12px;
+}
+
+/* Diyapazon ve Tesla Kartları */
+.tesla-triad-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.forks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.fork-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+.fork-card:hover {
+  border-color: #eab308;
+  transform: translateY(-2px);
+}
+.fork-freq {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #eab308;
+}
+.fork-desc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 8px 0 12px 0;
+  line-height: 1.4;
+}
+
+

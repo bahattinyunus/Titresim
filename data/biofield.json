@@ -1,0 +1,132 @@
+{
+  "tuning_forks": [
+    {
+      "id": "otto128",
+      "name": "Otto 128 Hz Osteofonik Diyapazon",
+      "frequency": 128.0,
+      "category": "osteophonic",
+      "damping_factor": 0.35,
+      "target_tissue": "Kemik dokusu, omurga, eklemler ve sinir uçları",
+      "biofield_layer": "Eterik Beden & Fiziksel Hücre Matriksi",
+      "clinical_effects": "Kemik iletimi (bone conduction) ile hücrelerde anında Nitrik Oksit (NO) salınımı, kas spazmı çözümü, lenfatik drenaj ve parasempatik aktivasyon.",
+      "strike_harmonics": [353.3, 691.2]
+    },
+    {
+      "id": "otto64",
+      "name": "Otto 64 Hz Sakral & Omurga Diyapazonu",
+      "frequency": 64.0,
+      "category": "osteophonic",
+      "damping_factor": 0.25,
+      "target_tissue": "Kuyruk sokumu, sakrum, alt bel omurları",
+      "biofield_layer": "Kök Çakra & Fiziksel Topraklanma",
+      "clinical_effects": "İnfrasonik sınıra yakın derin mekanik titreşim, omurga kilitlenmelerini açma ve sakroiliak eklem rahatlaması.",
+      "strike_harmonics": [176.6, 345.6]
+    },
+    {
+      "id": "otto32",
+      "name": "Otto 32 Hz Kraniyal & Dolaşım Diyapazonu",
+      "frequency": 32.0,
+      "category": "osteophonic",
+      "damping_factor": 0.20,
+      "target_tissue": "Kraniosakral sistem, cilt reseptörleri, lenf nodları",
+      "biofield_layer": "Hücresel Sıvı & Lenfatik Alan",
+      "clinical_effects": "Deri altı mekanoreseptörleri (Pacinian korpüskülleri) uyarımı, lenfatik akışın hızlandırılması.",
+      "strike_harmonics": [88.3, 172.8]
+    },
+    {
+      "id": "ohm136",
+      "name": "Ohm 136.1 Hz Kozmik Topraklanma Diyapazonu",
+      "frequency": 136.1,
+      "category": "biofield",
+      "damping_factor": 0.45,
+      "target_tissue": "Kalp alanı, göğüs kafesi, solar pleksus",
+      "biofield_layer": "Duygusal Beden & Kalp Manyetik Alanı",
+      "clinical_effects": "Hans Cousto Dünya Yılı frekansı; derin sükunet, biyomanyetik alanın merkezlenmesi ve anksiyete yatışması.",
+      "strike_harmonics": [375.6, 734.9]
+    },
+    {
+      "id": "mi528",
+      "name": "Solfeggio 528 Hz Dönüşüm & DNA Onarım Diyapazonu",
+      "frequency": 528.0,
+      "category": "solfeggio",
+      "damping_factor": 0.55,
+      "target_tissue": "Hücresel su molekülleri, epigenetik alan, timus",
+      "biofield_layer": "Zihinsel ve Astral Beden",
+      "clinical_effects": "Su klasterlerini hekzagonal yapıya dönüştürme, hücresel canlılık, sevgi ve onarım frekansı.",
+      "strike_harmonics": [1457.3, 2851.2]
+    },
+    {
+      "id": "verdi432",
+      "name": "Doğal Akort 432 Hz Pisagor Diyapazonu",
+      "frequency": 432.0,
+      "category": "harmonic",
+      "damping_factor": 0.50,
+      "target_tissue": "Merkezi sinir sistemi, işitme korteksi, kardiyak ritim",
+      "biofield_layer": "Eterik ve Kozmik Biyorezonans",
+      "clinical_effects": "Verdi A4 doğal akordu; altın oran harmonikleri, suyun akışkanlığını destekleme ve zihinsel dinginlik.",
+      "strike_harmonics": [1192.3, 2332.8]
+    },
+    {
+      "id": "angel4096",
+      "name": "Kristal Melek Diyapazonu 4096 Hz (Angel Tuner Jacob's Ladder)",
+      "frequency": 4096.0,
+      "category": "crystal",
+      "damping_factor": 0.85,
+      "target_tissue": "Epifiz bezi, sinapslar, eterik aura çeperi",
+      "biofield_layer": "Kozmik & Ruhsal Aura Alanı",
+      "clinical_effects": "Kristal berraklığında yüksek harmonik zil sesi; aura alanındaki statik elektromanyetik kirliliği dağıtma.",
+      "strike_harmonics": [11305.0, 22118.4]
+    },
+    {
+      "id": "genesis531",
+      "name": "Fibonacci Genesis 531.44 Hz Altın Oran Diyapazonu",
+      "frequency": 531.44,
+      "category": "fibonacci",
+      "damping_factor": 0.52,
+      "target_tissue": "Biyolojik fraktal büyüme alanları, mikrotübüller",
+      "biofield_layer": "Morfojenetik Rezonans Alanı",
+      "clinical_effects": "Phi oranlı fraktal spiral harmonikler, doku rejenerasyonu için morfik rezonans.",
+      "strike_harmonics": [1466.8, 2869.8]
+    }
+  ],
+  "tesla_369_vortex": {
+    "description": "Nikola Tesla'nın 3-6-9 Kozmik Anahtarı ve Solfeggio 9'lu Matrisinin Dijital Kök İndirgemesi (Digital Root / Vortex Mathematics)",
+    "triads": [
+      {
+        "root": 3,
+        "name": "3'lü Yaratım & Temel Maddeselleşme Triadı",
+        "frequencies": [174.0, 417.0, 741.0],
+        "digital_roots": [3, 3, 3],
+        "effects": "Ağrı dindirme (174Hz), Değişimi kolaylaştırma (417Hz) ve Hücresel sezgi/arındırma (741Hz). Maddi ve eterik temizlenme üçgeni."
+      },
+      {
+        "root": 6,
+        "name": "6'lı Denge, Sevgi & Hücresel Dönüşüm Triadı",
+        "frequencies": [285.0, 528.0, 852.0],
+        "digital_roots": [6, 6, 6],
+        "effects": "Doku gençleştirme (285Hz), DNA dönüşümü ve mucize (528Hz), Ruhsal düzene dönüş (852Hz). Kalp ve zihin dengesi."
+      },
+      {
+        "root": 9,
+        "name": "9'lu Mutlak Birlik, Kurtuluş & İlahi Taç Triadı",
+        "frequencies": [396.0, 639.0, 963.0],
+        "digital_roots": [9, 9, 9],
+        "effects": "Korku ve suçluluktan kurtuluş (396Hz), Kalp ve ilişkiler bağı (639Hz), Saf kozmik ışık ve epifiz (963Hz). Birlik ve vahdet portalı."
+      }
+    ]
+  },
+  "fibonacci_series": {
+    "phi": 1.618033988749895,
+    "ratios": [
+      {"ratio": "1/1", "value": 1.0, "name": "Unison (Birlik)"},
+      {"ratio": "2/1", "value": 2.0, "name": "Saf Oktav"},
+      {"ratio": "3/2", "value": 1.5, "name": "Pisagor Beşlisi (Tam Beşli)"},
+      {"ratio": "5/3", "value": 1.6667, "name": "Büyük Altılı (Doğal İlahi Altılı)"},
+      {"ratio": "8/5", "value": 1.6, "name": "Küçük Altılı (Altın Orana En Yakın Rasyonel)"},
+      {"ratio": "13/8", "value": 1.625, "name": "Fibonacci Yakınsaması 1"},
+      {"ratio": "21/13", "value": 1.61538, "name": "Fibonacci Yakınsaması 2"},
+      {"ratio": "34/21", "value": 1.61905, "name": "Fibonacci Yakınsaması 3"},
+      {"ratio": "55/34", "value": 1.61765, "name": "Altın Oran Mükemmel Yakınsama"}
+    ]
+  }
+}

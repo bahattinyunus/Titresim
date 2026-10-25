@@ -71,7 +71,8 @@ class AcousticArchitecture:
     def get_space(cls, space_id: str) -> Optional[SacredSpace]:
         norm = space_id.lower().replace("-", "").replace("_", "")
         for s in cls.list_spaces():
-            if s.id.lower() == norm or norm in s.id.lower():
+            s_norm = s.id.lower().replace("-", "").replace("_", "")
+            if s_norm == norm or norm in s_norm:
                 return s
         return None
 

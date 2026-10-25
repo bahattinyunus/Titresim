@@ -6,6 +6,272 @@
 // ==========================================
 // 1. DAHİLİ VERİLER (DATASETS)
 // ==========================================
+const BOWLS_DATA = [
+  {
+    "id": "full_moon_om",
+    "name": "Dolunay Kalp Çanağı (Full Moon Heart Bowl)",
+    "fundamental_hz": 136.1,
+    "beating_hz": 1.5,
+    "modal_ratios": [
+      1.0,
+      2.71,
+      5.42,
+      8.95
+    ],
+    "damping": 0.12,
+    "chakra": "Anahata (Kalp Çakrası)",
+    "alloy": "7 Kutsal Gezegen Metali (Altın, Gümüş, Cıva, Bakır, Demir, Kalay, Kurşun)",
+    "faraday_droplet_pattern": "12 yapraklı nilüfer çiçeği dairesel Faraday su sıçramaları",
+    "traditional_use": "Himalaya manastırlarında dolunay gecesi dökülen kutsal çanak. Kalp koheransı, derin meditasyon ve duygusal şifa için kullanılır.",
+    "healing_effects": "0.1 Hz vagal ton senkronizasyonu, göğüs kafesinde derin vibroakustik rezonans, stres hormonlarının baskılanması."
+  },
+  {
+    "id": "tibetan_root",
+    "name": "Kadim Topraklanma Kök Çanağı (Tibetan Root Jambati)",
+    "fundamental_hz": 194.18,
+    "beating_hz": 2.1,
+    "modal_ratios": [
+      1.0,
+      2.68,
+      5.35,
+      8.8
+    ],
+    "damping": 0.1,
+    "chakra": "Muladhara (Kök Çakra)",
+    "alloy": "Bronz ve Yüksek Bakır/Demir Alaşımı",
+    "faraday_droplet_pattern": "Kare ve 4 köşeli simetrik su mandalası",
+    "traditional_use": "Ağır dövme Jambati tipi geniş tabanlı çanak. Omurga tabanında topraklanma ve fiziksel canlılık hissi üretir.",
+    "healing_effects": "Kemik yoğunluğu desteği, sinir sistemi stabilizasyonu, topraklanma ve yorgunluğun giderilmesi."
+  },
+  {
+    "id": "sacral_moon",
+    "name": "Sinodik Ay Sakral Çanağı (Water & Flow Bowl)",
+    "fundamental_hz": 210.42,
+    "beating_hz": 1.8,
+    "modal_ratios": [
+      1.0,
+      2.73,
+      5.48,
+      9.02
+    ],
+    "damping": 0.14,
+    "chakra": "Svadhisthana (Sakral Çakra)",
+    "alloy": "Gümüş ve Kalay Ağırlıklı Himalaya Alaşımı",
+    "faraday_droplet_pattern": "Dairesel eşmerkezli dalgalar ve hekzagonal mikro damlacıklar",
+    "traditional_use": "Beden sıvılarının (kan, lenf, BOS) ritmini düzenlemek için suyla doldurularak seslendirilen çanak.",
+    "healing_effects": "Lenfatik drenaj, pelvik bölge gevşemesi, yaratıcılık ve duygusal akışkanlık artışı."
+  },
+  {
+    "id": "solar_sun",
+    "name": "Güneş Manipura Güç Çanağı (Solar Plexus Thadobati)",
+    "fundamental_hz": 126.22,
+    "beating_hz": 2.4,
+    "modal_ratios": [
+      1.0,
+      2.65,
+      5.3,
+      8.75
+    ],
+    "damping": 0.11,
+    "chakra": "Manipura (Solar Pleksus)",
+    "alloy": "Altın ve Pirinç Reflektif Alaşımı",
+    "faraday_droplet_pattern": "10 köşeli parlak rezonans yıldızı",
+    "traditional_use": "Mide, sindirim ve irade merkezini canlandırmak için karın üzerine yerleştirilerek çalınır.",
+    "healing_effects": "Enterik sinir sistemi regülasyonu, metabolik canlanma, özgüven ve yaşam enerjisi (Prana/Chi)."
+  },
+  {
+    "id": "throat_mercury",
+    "name": "Merkür Hakikat Boğaz Çanağı (Throat Clarity Bowl)",
+    "fundamental_hz": 141.27,
+    "beating_hz": 2.8,
+    "modal_ratios": [
+      1.0,
+      2.75,
+      5.52,
+      9.15
+    ],
+    "damping": 0.16,
+    "chakra": "Vishuddha (Boğaz Çakrası)",
+    "alloy": "Cıva (Hidrargirum amalgamatı) ve Çan Bronzu",
+    "faraday_droplet_pattern": "16 yapraklı ince akustik saçılma",
+    "traditional_use": "Konuşma, ses telleri ve kendini doğru ifade etme kabiliyetini açığa çıkarmak için kullanılır.",
+    "healing_effects": "Tiroid metabolizma dengesi, vokal kord gevşemesi, boğaz tıkanıklığı hissinin dağılması."
+  },
+  {
+    "id": "third_eye_venus",
+    "name": "Venüs Sezgi Üçüncü Göz Çanağı (Intuition Mani Bowl)",
+    "fundamental_hz": 221.23,
+    "beating_hz": 1.9,
+    "modal_ratios": [
+      1.0,
+      2.7,
+      5.4,
+      8.9
+    ],
+    "damping": 0.13,
+    "chakra": "Ajna (Üçüncü Göz)",
+    "alloy": "Bakır ve Gümüş Rezonant Alaşımı",
+    "faraday_droplet_pattern": "2 kanatlı epifiz mandalası",
+    "traditional_use": "Meditasyonda üçüncü göz hizasında tutularak alfa-teta beyin dalgalarını tetiklemek için çalınır.",
+    "healing_effects": "Epifiz bezi aktivasyonu, berrak rüyalar, zihinsel odaklanma ve sezgisel uyanış."
+  },
+  {
+    "id": "crown_platonic",
+    "name": "Eflâtun Kozmik Yıl Taç Çanağı (Crown Enlightenment Bowl)",
+    "fundamental_hz": 172.06,
+    "beating_hz": 1.2,
+    "modal_ratios": [
+      1.0,
+      2.72,
+      5.45,
+      9.05
+    ],
+    "damping": 0.15,
+    "chakra": "Sahasrara (Taç Çakra)",
+    "alloy": "Saf Elektrüm (Altın-Gümüş Alaşımı)",
+    "faraday_droplet_pattern": "1000 yapraklı mikro-damlacık sisi",
+    "traditional_use": "Birlik bilinci, derin sükunet ve tefekkür seanslarının kapanış ritüeli.",
+    "healing_effects": "Beyin yarımküreleri senkronizasyonu (Hemi-sync), kozmik birlik hissi ve derin zihinsel sükunet."
+  },
+  {
+    "id": "himalayan_wind_gong",
+    "name": "Büyük Himalaya Rüzgâr Gongu (Himalayan Wind Tam-Tam Gong)",
+    "fundamental_hz": 64.0,
+    "beating_hz": 0.8,
+    "modal_ratios": [
+      1.0,
+      1.85,
+      2.92,
+      4.41,
+      6.78,
+      9.85
+    ],
+    "damping": 0.08,
+    "chakra": "Tüm Beden & Biyoalan",
+    "alloy": "Dövme Nikel-Gümüş ve Kalaylı Bronz",
+    "faraday_droplet_pattern": "Geniş kaotik dalga patlaması ve holografik ses sisi",
+    "traditional_use": "Ses banyosu (Sound Bath) seanslarında derin hücresel masaj ve psikoakustik katarsis için vurulur.",
+    "healing_effects": "Hücresel düzeyde mikromasaj, zihinsel monologun anında susması (shattering the ego), derin Teta/Delta transı."
+  }
+];
+
+const WATER_DATA = {
+  "water_memory_science": {
+    "title": "Suyun Hafızası, Dördüncü Faz (EZ Suyu) ve Sesle Hekzagonal Yapılanma",
+    "theories": [
+      {
+        "name": "Dördüncü Faz Dışlama Bölgesi (EZ Water / H3O2)",
+        "pioneer": "Dr. Gerald Pollack (Washington Üniversitesi Biyomühendislik Bölümü)",
+        "formula": "H3O2-",
+        "description": "Katı, sıvı ve gaz fazlarının ötesinde; hidrofilik yüzeylerde ve ses dalgalarının etkisiyle oluşan negatif yüklü, yüksek viskoziteli, hekzagonal sıvı kristal jel tabakası. Biyolojik hücre içi suyun %90'ı bu formdadır.",
+        "uv_absorption_nm": 270.0,
+        "electric_charge_mv": -150.0
+      },
+      {
+        "name": "Kuantum Elektrodinamik Koherans Alanları (QED Water Domains)",
+        "pioneer": "Prof. Dr. Emilio Del Giudice & Giuliano Preparata (Milano Üniversitesi / INFN)",
+        "formula": "Coherence Domain (CD)",
+        "description": "Suyun molekülleri rastgele çarpışan bağımsız parçacıklar değildir. Belirli frekanslarda yaklaşık 100 nanometre çapında kolektif salınım yapan 'Koherans Alanları' (Coherence Domains) oluştururlar. Ses bu alanların faz kilitlenmesini sağlar.",
+        "coherence_diameter_nm": 100.0,
+        "oscillation_freq_ghz": 1.2
+      },
+      {
+        "name": "Sematik Su Kristalizasyonu (Water Crystal Morphogenesis)",
+        "pioneer": "Dr. Masaru Emoto (IHM Araştırma Enstitüsü, Tokyo)",
+        "formula": "H2O + Akustik / Semantik Rezonans",
+        "description": "Su dondurulmadan önce belirli ses, müzik ve niyet frekanslarına maruz bırakıldığında; pozitif, ahenkli ve sebatkâr frekanslar kusursuz 6 köşeli hekzagonal kristaller meydana getirir.",
+        "optimal_temperature_c": -5.0
+      }
+    ]
+  },
+  "acoustic_water_frequencies": [
+    {
+      "id": "dna_hexagonal_528",
+      "name": "528 Hz Hekzagonal Su Klasteri İndüksiyonu",
+      "frequency_hz": 528.0,
+      "effect_category": "hexagonal_structuring",
+      "coherence_rating": 0.98,
+      "molecular_effect": "Su moleküllerindeki hidrojen bağlarını 60 derecelik açıyla hizalayarak 6'lı halka (ring) klasterlerini maksimuma çıkarır.",
+      "faraday_wave_symmetry": "6-Katlı (Hekzagonal) kusursuz kar tanesi sematik dalgası",
+      "biological_benefit": "Hücresel hidrasyon hızında %35 artış, mitokondriyal ATP sentezi desteği."
+    },
+    {
+      "id": "verdi_matrix_432",
+      "name": "432 Hz Doğal Matriks & Akışkanlık Rezonansı",
+      "frequency_hz": 432.0,
+      "effect_category": "natural_viscosity",
+      "coherence_rating": 0.95,
+      "molecular_effect": "Suyun yüzey gerilimini optimize ederek hücre zarı aquaporin kanallarından su geçişini kolaylaştırır.",
+      "faraday_wave_symmetry": "8-Katlı Altın Oran fraktal dalga saçılımı",
+      "biological_benefit": "Detoksifikasyon kapasitesinde artış, hücreler arası sıvıda asit-baz tamponlaması."
+    },
+    {
+      "id": "schumann_hydration_783",
+      "name": "7.83 Hz İyon Taşıma & Topraklanmış Su",
+      "frequency_hz": 7.83,
+      "effect_category": "ion_transport",
+      "coherence_rating": 0.92,
+      "molecular_effect": "Kalsiyum ve magnezyum minerallerinin su molekülleriyle organik klatrat oluşturmasını sağlar.",
+      "faraday_wave_symmetry": "Geniş ritmik nefes alan dairesel soliton dalgaları",
+      "biological_benefit": "Elektrolit dengesi, hücre içi osmotik basınç regülasyonu."
+    },
+    {
+      "id": "om_intracellular_136",
+      "name": "136.1 Hz Hücre İçi Jel Matriks Dengelemesi",
+      "frequency_hz": 136.1,
+      "effect_category": "ez_gel_expansion",
+      "coherence_rating": 0.94,
+      "molecular_effect": "Protoplazma jel suyunun (EZ su) tabaka kalınlığını genişletir, hücresel negatif potansiyeli korur.",
+      "faraday_wave_symmetry": "12-Yapraklı nilüfer dairesel rezonansı",
+      "biological_benefit": "Sitoplazma viskozitesinin korunması, hücresel yaşlanmanın yavaşlatılması."
+    },
+    {
+      "id": "cavitation_cleanse_741",
+      "name": "741 Hz Akustik Mikro-Kavitasyon & Toksin Arınması",
+      "frequency_hz": 741.0,
+      "effect_category": "micro_cavitation",
+      "coherence_rating": 0.91,
+      "molecular_effect": "Ağır metal ve toksik molekül kümelerinin etrafındaki su bağlarını kırarak serbest bırakır ve atılımını hızlandırır.",
+      "faraday_wave_symmetry": "Keskin çizgili radyal temizlik spirali",
+      "biological_benefit": "İntersellüler alan temizliği, lenf akışının uyarılması."
+    }
+  ],
+  "emoto_crystal_gallery": [
+    {
+      "id": "love_gratitude",
+      "name": "Sevgi ve Şükran (Love & Gratitude)",
+      "frequency_equivalent": 528.0,
+      "crystal_structure": "Muazzam parlaklıkta, çift katmanlı kusursuz hekzagonal pırlanta kar tanesi.",
+      "coherence_score": 1.0,
+      "scientific_note": "En yüksek koherans ve simetri derecesi; tüm su moleküllerinin dipol momentleri birbirini güçlendirecek şekilde kilitlenmiştir."
+    },
+    {
+      "id": "bach_air",
+      "name": "J.S. Bach - Air on the G String",
+      "frequency_equivalent": 432.0,
+      "crystal_structure": "Kolları narin geometrik süslemelerle bezeli fraktal altıgen çiçek.",
+      "coherence_score": 0.96,
+      "scientific_note": "Barok armoni oranları suyun mikro-kristalizasyonunda kusursuz fraktal ölçeklenebilirlik meydana getirir."
+    },
+    {
+      "id": "sacred_fountain",
+      "name": "Lourdes / Zemzem Kutsal Kaynak Suyu",
+      "frequency_equivalent": 136.1,
+      "crystal_structure": "Işık saçan yıldız biçimli taç kristali, merkezinde prizmatik derinlik.",
+      "coherence_score": 0.98,
+      "scientific_note": "Doğal minerallerin hekzagonal su klatratları ile mükemmel entegrasyonu."
+    },
+    {
+      "id": "heavy_metal_rage",
+      "name": "Öfke, Nefret ve Kaotik Parçalanma",
+      "frequency_equivalent": 0.0,
+      "crystal_structure": "Merkezsiz, amorf, asimetrik, kırılmış ve kararmış bulanık su lekesi.",
+      "coherence_score": 0.15,
+      "scientific_note": "Hidrojen bağlarının rasgele kırıldığı, entropinin maksimuma çıktığı koheranssız yapı."
+    }
+  ]
+};
+
 const ARCHITECTURE_DATA = [
   {
     "id": "suleymaniye",
@@ -3673,6 +3939,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPhonetics();
   renderArchitecture();
   renderBiofield();
+  renderBowls();
+  renderWater();
   setupBreathing();
   setupSessionTimer();
   setupWisdomBanner();
@@ -4124,4 +4392,115 @@ function playFibonacciScale() {
   if (cymaticsSim) cymaticsSim.setFrequency(base);
   alert(`🌀 Fibonacci Altın Oran (Phi: ${phi}) Akordu Başlatıldı!
 Taban: ${base} Hz (Verdi A4). Fraktal spiralleşen biyo-harmonikler.`);
+}
+
+// ==========================================
+// 8. TITRESIM v2.3: TİBET ÇANAKLARI & SU HAFIZASI
+// ==========================================
+function renderBowls() {
+  const container = document.getElementById("bowlsGrid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  BOWLS_DATA.forEach(bowl => {
+    const card = document.createElement("div");
+    card.className = "bowl-card";
+    card.innerHTML = `
+      <div class="bowl-header">
+        <span class="bowl-title">${bowl.name}</span>
+        <span class="bowl-freq-badge">${bowl.fundamental_hz} Hz (Nabız: ${bowl.beating_hz} Hz)</span>
+      </div>
+      <div class="bowl-alloy">👑 <strong>Çakra:</strong> ${bowl.chakra} • <strong>Alaşım:</strong> ${bowl.alloy}</div>
+      <div class="bowl-faraday">🌊 <strong>Faraday Deseni:</strong> ${bowl.faraday_droplet_pattern}</div>
+      <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 8px;">${bowl.traditional_use}</p>
+      <div style="font-size: 12px; color: #a7f3d0; margin-bottom: 12px;">✨ <strong>Şifa:</strong> ${bowl.healing_effects}</div>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn btn-sm btn-outline-gold strike-bowl-btn">🔔 Tokmak Vuruşu (Struck)</button>
+        <button class="btn btn-sm btn-outline-cyan sing-bowl-btn">🌀 Dönen Sürtünme (Singing Rim)</button>
+      </div>
+    `;
+
+    card.querySelector(".strike-bowl-btn").addEventListener("click", () => {
+      card.classList.add("playing");
+      audio.playTone(bowl.fundamental_hz);
+      if (cymaticsSim) cymaticsSim.setFrequency(bowl.fundamental_hz);
+      setTimeout(() => card.classList.remove("playing"), 3000);
+    });
+
+    card.querySelector(".sing-bowl-btn").addEventListener("click", () => {
+      card.classList.add("playing");
+      audio.playTone(bowl.fundamental_hz);
+      if (cymaticsSim) cymaticsSim.setFrequency(bowl.fundamental_hz);
+      setTimeout(() => card.classList.remove("playing"), 5000);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function renderWater() {
+  const container = document.getElementById("waterGrid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const freqs = WATER_DATA.acoustic_water_frequencies || [];
+  freqs.forEach(wf => {
+    const card = document.createElement("div");
+    card.className = "water-card";
+    card.innerHTML = `
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <strong style="color: #f1f5f9; font-size: 14px;">${wf.name}</strong>
+          <span class="water-freq">${wf.frequency_hz} Hz</span>
+        </div>
+        <div style="margin: 4px 0;"><span class="water-coherence-badge">Koherans: %${(wf.coherence_rating * 100).toFixed(0)}</span></div>
+        <div style="font-size: 12px; color: #94a3b8; margin: 6px 0;">${wf.molecular_effect}</div>
+        <div style="font-size: 11px; color: #38bdf8; margin-bottom: 8px;">❄️ ${wf.faraday_wave_symmetry}</div>
+      </div>
+      <div>
+        <div style="font-size: 11px; color: #6ee7b7; margin-bottom: 10px;">🧬 ${wf.biological_benefit}</div>
+        <button class="btn btn-sm btn-outline-cyan play-water-freq-btn" style="width: 100%;">💧 Hekzagonal Suyu Yapılandır</button>
+      </div>
+    `;
+
+    card.querySelector(".play-water-freq-btn").addEventListener("click", () => {
+      card.classList.add("playing");
+      audio.playTone(wf.frequency_hz);
+      if (cymaticsSim) cymaticsSim.setFrequency(wf.frequency_hz);
+      setTimeout(() => card.classList.remove("playing"), 4000);
+    });
+
+    container.appendChild(card);
+  });
+
+  // Koherans Hesaplayıcı Event
+  const calcBtn = document.getElementById("calcWaterCoherenceBtn");
+  const inputEl = document.getElementById("waterFreqInput");
+  const resultEl = document.getElementById("waterCoherenceResult");
+
+  if (calcBtn && inputEl && resultEl) {
+    calcBtn.onclick = () => {
+      const f = parseFloat(inputEl.value) || 528.0;
+      // Koherans hesapla
+      const keyFreqs = [7.83, 136.1, 432.0, 528.0, 741.0, 963.0];
+      let maxProx = 0.0;
+      keyFreqs.forEach(kf => {
+        let ratio = f / kf;
+        while (ratio >= 2.0) ratio /= 2.0;
+        while (ratio < 1.0 && ratio > 0.0) ratio *= 2.0;
+        const d1 = Math.abs(ratio - 1.0);
+        const d5 = Math.abs(ratio - 1.5);
+        const dPhi = Math.abs(ratio - 1.618);
+        const minD = Math.min(d1, d5, dPhi);
+        const prox = Math.exp(-minD * 4.0);
+        if (prox > maxProx) maxProx = prox;
+      });
+      const score = Math.min(1.0, Math.max(0.1, 0.5 + 0.48 * maxProx));
+      const pct = (score * 100).toFixed(1);
+
+      resultEl.innerText = `Koherans: %${pct} (${score > 0.85 ? "Altıgen Mükemmel H3O2" : "Orta Düzey Yapılanma"})`;
+      audio.playTone(f);
+      if (cymaticsSim) cymaticsSim.setFrequency(f);
+    };
+  }
 }

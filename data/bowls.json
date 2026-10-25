@@ -1,0 +1,108 @@
+{
+  "singing_bowls": [
+    {
+      "id": "full_moon_om",
+      "name": "Dolunay Kalp Çanağı (Full Moon Heart Bowl)",
+      "fundamental_hz": 136.1,
+      "beating_hz": 1.5,
+      "modal_ratios": [1.0, 2.71, 5.42, 8.95],
+      "damping": 0.12,
+      "chakra": "Anahata (Kalp Çakrası)",
+      "alloy": "7 Kutsal Gezegen Metali (Altın, Gümüş, Cıva, Bakır, Demir, Kalay, Kurşun)",
+      "faraday_droplet_pattern": "12 yapraklı nilüfer çiçeği dairesel Faraday su sıçramaları",
+      "traditional_use": "Himalaya manastırlarında dolunay gecesi dökülen kutsal çanak. Kalp koheransı, derin meditasyon ve duygusal şifa için kullanılır.",
+      "healing_effects": "0.1 Hz vagal ton senkronizasyonu, göğüs kafesinde derin vibroakustik rezonans, stres hormonlarının baskılanması."
+    },
+    {
+      "id": "tibetan_root",
+      "name": "Kadim Topraklanma Kök Çanağı (Tibetan Root Jambati)",
+      "fundamental_hz": 194.18,
+      "beating_hz": 2.1,
+      "modal_ratios": [1.0, 2.68, 5.35, 8.8],
+      "damping": 0.10,
+      "chakra": "Muladhara (Kök Çakra)",
+      "alloy": "Bronz ve Yüksek Bakır/Demir Alaşımı",
+      "faraday_droplet_pattern": "Kare ve 4 köşeli simetrik su mandalası",
+      "traditional_use": "Ağır dövme Jambati tipi geniş tabanlı çanak. Omurga tabanında topraklanma ve fiziksel canlılık hissi üretir.",
+      "healing_effects": "Kemik yoğunluğu desteği, sinir sistemi stabilizasyonu, topraklanma ve yorgunluğun giderilmesi."
+    },
+    {
+      "id": "sacral_moon",
+      "name": "Sinodik Ay Sakral Çanağı (Water & Flow Bowl)",
+      "fundamental_hz": 210.42,
+      "beating_hz": 1.8,
+      "modal_ratios": [1.0, 2.73, 5.48, 9.02],
+      "damping": 0.14,
+      "chakra": "Svadhisthana (Sakral Çakra)",
+      "alloy": "Gümüş ve Kalay Ağırlıklı Himalaya Alaşımı",
+      "faraday_droplet_pattern": "Dairesel eşmerkezli dalgalar ve hekzagonal mikro damlacıklar",
+      "traditional_use": "Beden sıvılarının (kan, lenf, BOS) ritmini düzenlemek için suyla doldurularak seslendirilen çanak.",
+      "healing_effects": "Lenfatik drenaj, pelvik bölge gevşemesi, yaratıcılık ve duygusal akışkanlık artışı."
+    },
+    {
+      "id": "solar_sun",
+      "name": "Güneş Manipura Güç Çanağı (Solar Plexus Thadobati)",
+      "fundamental_hz": 126.22,
+      "beating_hz": 2.4,
+      "modal_ratios": [1.0, 2.65, 5.30, 8.75],
+      "damping": 0.11,
+      "chakra": "Manipura (Solar Pleksus)",
+      "alloy": "Altın ve Pirinç Reflektif Alaşımı",
+      "faraday_droplet_pattern": "10 köşeli parlak rezonans yıldızı",
+      "traditional_use": "Mide, sindirim ve irade merkezini canlandırmak için karın üzerine yerleştirilerek çalınır.",
+      "healing_effects": "Enterik sinir sistemi regülasyonu, metabolik canlanma, özgüven ve yaşam enerjisi (Prana/Chi)."
+    },
+    {
+      "id": "throat_mercury",
+      "name": "Merkür Hakikat Boğaz Çanağı (Throat Clarity Bowl)",
+      "fundamental_hz": 141.27,
+      "beating_hz": 2.8,
+      "modal_ratios": [1.0, 2.75, 5.52, 9.15],
+      "damping": 0.16,
+      "chakra": "Vishuddha (Boğaz Çakrası)",
+      "alloy": "Cıva (Hidrargirum amalgamatı) ve Çan Bronzu",
+      "faraday_droplet_pattern": "16 yapraklı ince akustik saçılma",
+      "traditional_use": "Konuşma, ses telleri ve kendini doğru ifade etme kabiliyetini açığa çıkarmak için kullanılır.",
+      "healing_effects": "Tiroid metabolizma dengesi, vokal kord gevşemesi, boğaz tıkanıklığı hissinin dağılması."
+    },
+    {
+      "id": "third_eye_venus",
+      "name": "Venüs Sezgi Üçüncü Göz Çanağı (Intuition Mani Bowl)",
+      "fundamental_hz": 221.23,
+      "beating_hz": 1.9,
+      "modal_ratios": [1.0, 2.70, 5.40, 8.90],
+      "damping": 0.13,
+      "chakra": "Ajna (Üçüncü Göz)",
+      "alloy": "Bakır ve Gümüş Rezonant Alaşımı",
+      "faraday_droplet_pattern": "2 kanatlı epifiz mandalası",
+      "traditional_use": "Meditasyonda üçüncü göz hizasında tutularak alfa-teta beyin dalgalarını tetiklemek için çalınır.",
+      "healing_effects": "Epifiz bezi aktivasyonu, berrak rüyalar, zihinsel odaklanma ve sezgisel uyanış."
+    },
+    {
+      "id": "crown_platonic",
+      "name": "Eflâtun Kozmik Yıl Taç Çanağı (Crown Enlightenment Bowl)",
+      "fundamental_hz": 172.06,
+      "beating_hz": 1.2,
+      "modal_ratios": [1.0, 2.72, 5.45, 9.05],
+      "damping": 0.15,
+      "chakra": "Sahasrara (Taç Çakra)",
+      "alloy": "Saf Elektrüm (Altın-Gümüş Alaşımı)",
+      "faraday_droplet_pattern": "1000 yapraklı mikro-damlacık sisi",
+      "traditional_use": "Birlik bilinci, derin sükunet ve tefekkür seanslarının kapanış ritüeli.",
+      "healing_effects": "Beyin yarımküreleri senkronizasyonu (Hemi-sync), kozmik birlik hissi ve derin zihinsel sükunet."
+    },
+    {
+      "id": "himalayan_wind_gong",
+      "name": "Büyük Himalaya Rüzgâr Gongu (Himalayan Wind Tam-Tam Gong)",
+      "fundamental_hz": 64.0,
+      "beating_hz": 0.8,
+      "modal_ratios": [1.0, 1.85, 2.92, 4.41, 6.78, 9.85],
+      "damping": 0.08,
+      "chakra": "Tüm Beden & Biyoalan",
+      "alloy": "Dövme Nikel-Gümüş ve Kalaylı Bronz",
+      "faraday_droplet_pattern": "Geniş kaotik dalga patlaması ve holografik ses sisi",
+      "traditional_use": "Ses banyosu (Sound Bath) seanslarında derin hücresel masaj ve psikoakustik katarsis için vurulur.",
+      "healing_effects": "Hücresel düzeyde mikromasaj, zihinsel monologun anında susması (shattering the ego), derin Teta/Delta transı."
+    }
+  ]
+}

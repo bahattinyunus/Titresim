@@ -20,7 +20,7 @@
         <span class="logo-symbol">〰️ ⚛ 🕊️</span>
         <div class="logo-text">
           <h1>TİTREŞİM</h1>
-          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.2</p>
+          <p class="subtitle">Evrensel Ses, Kutsal Kelâm & Frekans Laboratuvarı v2.3</p>
         </div>
       </div>
       <div class="header-actions">
@@ -96,6 +96,8 @@
           <button class="tab-btn" data-tab="vocalTab">🕊️ Kutsal Zikir & Gunne</button>
           <button class="tab-btn" data-tab="architectureTab">🏛️ Kutsal Mimari & Sinan</button>
           <button class="tab-btn" data-tab="biofieldTab">🔱 Diyapazon & Tesla 3-6-9</button>
+          <button class="tab-btn" data-tab="bowlsTab">🥣 Tibet Çanakları & Gong</button>
+          <button class="tab-btn" data-tab="waterTab">💧 Suyun Hafızası & EZ Suyu</button>
           <button class="tab-btn" data-tab="makamTab">🕌 Makam Terapisi</button>
           <button class="tab-btn" data-tab="binauralTab">🧠 Binaural Beats</button>
           <button class="tab-btn" data-tab="isochronicTab">⚡ İzokronik & Gürültü</button>
@@ -434,6 +436,43 @@
           </div>
         </div>
 
+        <!-- TAB 15: Tibet Ses Çanakları ve Gonglar -->
+        <div id="bowlsTab" class="tab-content">
+          <div class="section-header">
+            <h2>🥣 Himalaya ve Tibet Ses Çanakları & Gong Fiziği</h2>
+            <p>Dairesel asimetriden doğan çift mod ayrışması (1-2 Hz nabız), Faraday su sıçramaları ve 7 gezegen metali simyası.</p>
+          </div>
+
+          <div class="bowls-grid" id="bowlsGrid">
+            <!-- JS dinamik çanak kartları -->
+          </div>
+        </div>
+
+        <!-- TAB 16: Suyun Hafızası ve EZ Suyu -->
+        <div id="waterTab" class="tab-content">
+          <div class="section-header">
+            <h2>💧 Suyun Hafızası, Dördüncü Faz (EZ Suyu) & Kavitasyon</h2>
+            <p>Gerald Pollack H3O2- jel matriksi, QED koherans alanları ve Dr. Masaru Emoto hekzagonal kristalizasyonu.</p>
+          </div>
+
+          <div class="card mb-3">
+            <h3>🔬 Gerçek Zamanlı Hekzagonal Su Koheransı Hesaplayıcı</h3>
+            <p style="font-size: 13px; color: #94a3b8;">
+              İstediğiniz ses frekansının su moleküllerini 6 köşeli halka (ring) klasterine dönüştürme potansiyelini test edin.
+            </p>
+            <div style="display: flex; gap: 10px; margin-top: 10px; align-items: center;">
+              <input type="number" id="waterFreqInput" class="form-control" style="max-width: 160px;" value="528" step="1">
+              <button class="btn btn-outline-cyan" id="calcWaterCoherenceBtn">Koheransı Hesapla</button>
+              <span id="waterCoherenceResult" style="font-size: 14px; font-weight: 700; color: #38bdf8;">Koherans: %98.0 (Altıgen Mükemmel)</span>
+            </div>
+          </div>
+
+          <h3 class="mt-3">✨ Hekzagonal Yapılandırma Frekansları & Emoto Kristalleri</h3>
+          <div class="water-grid mt-2" id="waterGrid">
+            <!-- JS dinamik su frekans kartları -->
+          </div>
+        </div>
+
       </div>
 
       <!-- SAĞ: Canlı Sematik (Cymatics) & Chladni Simülatörü -->
@@ -493,7 +532,7 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.2</strong></p>
+      <p><strong>Titresim: Evrensel Ses, Kutsal Kelâm ve Frekans Terapisi Projesi v2.3</strong></p>
       <p>Açık Kaynak Kodlu • MIT Lisansı • Kadim Bilgelik ve Modern Akustiğin Birleşimi</p>
     </div>
   </footer>

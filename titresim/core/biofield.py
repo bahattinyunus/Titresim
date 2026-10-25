@@ -72,7 +72,8 @@ class BiofieldAcoustics:
     def get_fork(cls, fork_id: str) -> Optional[TuningFork]:
         fork_id_norm = fork_id.lower().replace("-", "").replace("_", "")
         for f in cls.list_forks():
-            if f.id.lower() == fork_id_norm or fork_id_norm in f.id.lower():
+            f_norm = f.id.lower().replace("-", "").replace("_", "")
+            if f_norm == fork_id_norm or fork_id_norm in f_norm:
                 return f
         return None
 

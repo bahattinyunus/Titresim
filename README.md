@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.2.0-f59e0b?style=for-the-badge" alt="Version 2.2.0">
+  <img src="https://img.shields.io/badge/Version-2.3.0-f59e0b?style=for-the-badge" alt="Version 2.3.0">
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/License-MIT-amber?style=for-the-badge" alt="License MIT">
-  <img src="https://img.shields.io/badge/Web%20Audio-Interactive%20Studio%20v2.2-38bdf8?style=for-the-badge&logo=html5&logoColor=white" alt="Web Studio">
-  <img src="https://img.shields.io/badge/Tests-82%20Passed-10b981?style=for-the-badge" alt="Tests">
+  <img src="https://img.shields.io/badge/Web%20Audio-Interactive%20Studio%20v2.3-38bdf8?style=for-the-badge&logo=html5&logoColor=white" alt="Web Studio">
+  <img src="https://img.shields.io/badge/Tests-91%20Passed-10b981?style=for-the-badge" alt="Tests">
 </p>
 
 > *"Evrenin sırrını bulmak istiyorsanız; enerji, frekans ve titreşim cinsinden düşünün."* — **Nikola Tesla**
@@ -57,12 +57,16 @@ Titresim/
 │   ├── phonetics.json                  # Kutsal Kelâm, Gunne ve Fonetik Formantlar
 │   ├── biofield.json                   # Biyoalan Diyapazonları & Tesla 3-6-9 Vorteksi
 │   ├── architecture.json               # Mimar Sinan & Kutsal Mekân Akustik Verileri
+│   ├── bowls.json                      # Tibet Ses Çanakları, Gonglar & Faraday Desenleri
+│   ├── water.json                      # Suyun Hafızası, EZ Suyu (H3O2) & Emoto Kristalleri
 │   ├── traditions.json                 # Kutsal Ses Gelenekleri & Nörobiyolojik Etkileri
 │   ├── brainwaves.json                 # Delta, Teta, Alfa, Beta, Gama Bantları
 │   ├── cosmic_octave.json              # Schumann Rezonansı & Hans Cousto Kozmik Tonları
 │   ├── planetary.json                  # Hans Cousto 12 Gezegen Yörünge Frekansı
 │   └── quotes.json                     # 130+ Kadim Bilgelik, Ayet ve Ses Rezonansı Alıntısı
 ├── docs/                               # Kapsamlı Bilimsel ve Tarihsel Araştırma Metinleri
+│   ├── TIBET_CANAKLARI_VE_GONG_AKUSTIK_FIZIGI.md # 7 Metal Simyası, Çift Mod Nabzı & Faraday
+│   ├── SUYUN_HAFIZASI_VE_SESLE_YAPILANMA_FIZIGI.md # EZ Suyu H3O2, Pollack, Del Giudice & Emoto
 │   ├── MIMAR_SINAN_VE_KUTSAL_MIMARI_AKUSTIGI.md # Süleymaniye Küpleri, 110Hz Hypogeum & Reverb
 │   ├── TESLA_369_VE_FIZIKSEL_DIYAPAZON_TERAPISI.md # Tesla Vorteksi, McKusick Biyoalan & Diyapazon
 │   ├── ORGAN_REZONANSI_VE_BIYOFIZIKSEL_FREKANSLAR.md # Organ Frekansları, Rife & Biyofizik
@@ -78,10 +82,12 @@ Titresim/
 │   ├── IZOKRONIK_TONLAR_VE_GURULTU_TERAPISI.md # Hoparlör Uyumlu Nabızlar, Pembe/Kahverengi Gürültü
 │   └── SOLFEGGIO_VE_KOZMIK_OKTAV.md    # Guido d'Arezzo İlahisi & Hans Cousto Matematiksel Modeli
 ├── titresim/                           # Python 3 Ses Sentezleme & Hesaplama Çekirdeği
-│   ├── __init__.py                     # Paket Girişi & Genel İhracatlar (v2.2.0)
+│   ├── __init__.py                     # Paket Girişi & Genel İhracatlar (v2.3.0)
 │   ├── __main__.py                     # Modül Olarak Çalıştırma Desteği
-│   ├── cli.py                          # Zengin CLI (fork, tesla, space, organ, vocal, breath)
+│   ├── cli.py                          # Zengin CLI (bowl, water, fork, tesla, space, organ, vocal)
 │   └── core/
+│       ├── bowls.py                    # Tibet Ses Çanakları & Gong Modal Akustik Motoru
+│       ├── water.py                    # Suyun Hafızası, EZ Suyu Hekzagonal Yapılanma & Kavitasyon
 │       ├── biofield.py                 # Biyoalan, Diyapazon Fiziği & Tesla 3-6-9 Vorteks Motoru
 │       ├── architecture.py             # Kutsal Mekân Akustiği & Schroeder Reverb Simülatörü
 │       ├── organs.py                   # 10 Organ Biyo-Rezonans & Tam Beden Tarama Motoru
@@ -100,11 +106,13 @@ Titresim/
 │       ├── traditions.py               # Kutsal Ses Gelenekleri Bilgi Motoru
 │       ├── tuning.py                   # 53-TET Koma, 432 Hz/440 Hz Dönüşümü & Pisagor Akordu
 │       └── wisdom.py                   # Kadim Bilgelik, Alıntılar ve Vecizeler Bilgi Motoru
-├── web/                                # İnteraktif Web Audio & Cymatics Laboratuvarı v2.2
-│   ├── index.html                      # Modern Görsel Arayüz (14 İnteraktif Sekme)
+├── web/                                # İnteraktif Web Audio & Cymatics Laboratuvarı v2.3
+│   ├── index.html                      # Modern Görsel Arayüz (16 İnteraktif Sekme)
 │   ├── style.css                       # Koyu & Mistik Tasarım (Glassmorphism & Canlı Renkler)
-│   └── app.js                          # Web Audio API + Organ + Nefes + Mimari + Diyapazon
-└── tests/                              # Kapsamlı Birim Testleri (82 Test - %100 Başarılı)
+│   └── app.js                          # Web Audio API + Çanaklar + EZ Suyu + Organ + Mimari
+└── tests/                              # Kapsamlı Birim Testleri (91 Test - %100 Başarılı)
+    ├── test_bowls.py                   # Tibet Ses Çanakları & Gong Modal Akustik Testleri
+    ├── test_water.py                   # Suyun Hafızası & EZ Suyu Koherans Testleri
     ├── test_biofield.py                # Biyoalan, Diyapazon & Tesla 3-6-9 Testleri
     ├── test_architecture.py            # Kutsal Mimari & Helmholtz Reverb Testleri
     ├── test_organs.py                  # Organ Biyofiziksel Rezonans Testleri
@@ -376,7 +384,31 @@ python -m titresim space --id suleymaniye --impulse --duration 5 -o suleymaniye_
 python -m titresim space --id hypogeum
 ```
 
-### 20. İnteraktif Web Laboratuvarını Başlatma
+### 20. Tibet & Himalaya Ses Çanakları ve Gong Fiziği
+```bash
+# Himalaya ve Tibet ses çanaklarını (Jambati, Thadobati, Dolunay, Rüzgâr Gongu) listele
+python -m titresim bowl --list
+
+# Dolunay Kalp Çanağı (136.1 Hz OM) tokmak vuruşu sentezle
+python -m titresim bowl --id full_moon_om --mode struck --duration 10 -o dolunay_canak.wav
+
+# Kadim Kök Çanağı dönen tokmak sürtünmesi (Singing Rim Faraday dalgası) sentezle
+python -m titresim bowl --id tibetan_root --mode singing --duration 12 -o kok_canak_singing.wav
+```
+
+### 21. Suyun Hafızası, Hekzagonal EZ Suyu (H3O2) & Akustik Kavitasyon
+```bash
+# Yapılandırıcı su frekanslarını (528 Hz, 432 Hz, 7.83 Hz) ve Dr. Emoto kristallerini listele
+python -m titresim water --list
+
+# Herhangi bir ses frekansının su moleküler koherans endeksini hesapla
+python -m titresim water --coherence 528.0
+
+# 528 Hz Hekzagonal EZ su yapılandırma tonunu mikro-kavitasyon baloncuklarıyla sentezle
+python -m titresim water --id dna_hexagonal_528 --duration 12 -o hekzagonal_su_528.wav
+```
+
+### 22. İnteraktif Web Laboratuvarını Başlatma
 ```bash
 python -m titresim serve --port 8000
 ```
@@ -384,11 +416,13 @@ Tarayıcınız otomatik olarak `http://localhost:8000` adresinde açılacaktır.
 
 ---
 
-## 🌐 İnteraktif Web Audio & Cymatics Laboratuvarı v2.2
+## 🌐 İnteraktif Web Audio & Cymatics Laboratuvarı v2.3
 
 `web/` dizininde yer alan laboratuvar tamamen tarayıcı içinde çalışır:
-* **14 Kapsamlı Akustik Sekme:** Solfeggio, Çok Aşamalı Klinik Protokoller, 7 Çakra Akustiği, Osmanlı Makam Terapisi, Binaural Beats, İzokronik Tonlar & Gürültü, Gezegen Frekansları, Kutsal Gelenekler, Kadim Bilgelik Kütüphanesi, **Organ Rezonansı (Vibroakustik)**, **Nefes & Kalp Koheransı (0.1 Hz Görsel/İşitsel Rehber)**, **Kutsal Zikir & Gunne Formantları**, **Kutsal Mimari & Sinan Akustiği** ve **Biyoalan Diyapazon & Tesla 3-6-9 Vorteksi**.
+* **16 Kapsamlı Akustik Sekme:** Solfeggio, Çok Aşamalı Klinik Protokoller, 7 Çakra Akustiği, Osmanlı Makam Terapisi, Binaural Beats, İzokronik Tonlar & Gürültü, Gezegen Frekansları, Kutsal Gelenekler, Kadim Bilgelik Kütüphanesi, **Organ Rezonansı (Vibroakustik)**, **Nefes & Kalp Koheransı (0.1 Hz Görsel/İşitsel Rehber)**, **Kutsal Zikir & Gunne Formantları**, **Kutsal Mimari & Sinan Akustiği**, **Biyoalan Diyapazon & Tesla 3-6-9 Vorteksi**, **Tibet Ses Çanakları & Gong Fiziği** ve **Suyun Hafızası & EZ Suyu (H3O2) Simülatörü**.
 * **Canlı Chladni & Dairesel Su Simülasyonu:** 2800 adet kum taneciğinin ses dalgalarının nodal çizgilerine aktığı gerçek zamanlı fizik motoru. Kare plaka ve Dairesel su çanağı modları arasında tek tıkla geçiş!
+* **Tibet Çanakları & Gong Simülatörü:** Çift mod ayrışmasından doğan 1.5 Hz akustik nabız (beating) ve Faraday su damlacığı sıçrama modelleri.
+* **Canlı Su Koheransı Hesaplayıcı:** İstenilen herhangi bir frekansın H3O2- jel matriksi oluşturma potansiyelini anlık hesaplayan interaktif araç.
 * **Mimar Sinan & Mekân Rezonatörleri:** Süleymaniye kubbe küpleri (Helmholtz rezonatörleri) ve Ħal Saflieni 110 Hz odasının rezonans frekanslarını canlı dinleme.
 * **Fiziksel Diyapazon Vurucu:** Çatal vuruşunun geçici inharmonik metalik şokunu ve ardından gelen $e^{-t/\tau}$ saf sönümlü tınlamasını fiziksel simüle etme.
 * **Tesla 3-6-9 Dönen Holografik Ses Alanı:** 120 derecelik faz ayrımıyla dönen 3'lü, 6'lı ve 9'lu Solfeggio vorteks ses motoru.
@@ -423,31 +457,41 @@ from titresim import (
     CoherenceBreathGuide,
     BiofieldAcoustics,
     AcousticArchitecture,
+    SingingBowlAcoustics,
+    WaterAcoustics,
 )
 
-# 1. Biyoalan & Fiziksel Diyapazon Modellemesi
+# 1. Tibet Ses Çanağı Tokmak Vuruşu & Dönen Sürtünme Sentezi
+struck_bowl = SingingBowlAcoustics.synthesize_struck_bowl("full_moon_om", duration=10.0)
+singing_rim = SingingBowlAcoustics.synthesize_singing_rim("tibetan_root", duration=12.0)
+
+# 2. Hekzagonal EZ Su Yapılandırma Tonu (528 Hz / Akustik Kavitasyonlu)
+water_tone = WaterAcoustics.synthesize_water_structuring_tone("dna_hexagonal_528", duration=10.0)
+coherence_score = WaterAcoustics.calculate_coherence_index(528.0)  # 0.98 (%98)
+
+# 3. Biyoalan & Fiziksel Diyapazon Modellemesi
 fork_samples = BiofieldAcoustics.strike_fork("otto128", duration=8.0)
 
-# 2. Nikola Tesla 3-6-9 Dönen Holografik Vorteks Ses Alanı
+# 4. Nikola Tesla 3-6-9 Dönen Holografik Vorteks Ses Alanı
 tesla_vortex = BiofieldAcoustics.synthesize_tesla_vortex(triad_root=9, duration=10.0)
 
-# 3. Kutsal Mekân Akustiği & Mimar Sinan Kubbe Rezonatörü Reverb
+# 5. Kutsal Mekân Akustiği & Mimar Sinan Kubbe Rezonatörü Reverb
 suleymaniye_ir = AcousticArchitecture.generate_impulse_response("suleymaniye", duration=4.0)
 
-# 4. Biyofiziksel Organ Rezonansı
+# 6. Biyofiziksel Organ Rezonansı
 organ_eng = OrganResonance()
 heart = organ_eng.get("kalp")
 heart_signal = organ_eng.generate_tone("kalp", duration=10.0)
 
-# 5. 0.1 Hz Rezonans Kalp Koheransı Solunumu
+# 7. 0.1 Hz Rezonans Kalp Koheransı Solunumu
 breath_eng = CoherenceBreathGuide()
 breath_signal = breath_eng.generate_session("coherence", cycles=6)
 
-# 6. Kutsal Fonetik Formant Sentezi (Hu / Gunne)
+# 8. Kutsal Fonetik Formant Sentezi (Hu / Gunne)
 vocal_eng = SacredPhonetics()
 gunne_signal = vocal_eng.synthesize("gunne", duration=8.0)
 
-# 7. Çok Aşamalı Klinik Seans Sentezi
+# 9. Çok Aşamalı Klinik Seans Sentezi
 engine = TherapySessionEngine()
 session_sig = engine.synthesize_protocol("sleep", total_duration_seconds=60.0)
 session_sig.save_wav("derin_uyku_klinik.wav")
@@ -463,7 +507,7 @@ python -m unittest discover tests
 ```
 Çıktı:
 ```text
-Ran 82 tests in 0.740s
+Ran 91 tests in 0.762s
 OK
 ```
 
@@ -472,20 +516,22 @@ OK
 ## 📚 Kapsamlı Dokümantasyon Arşivi
 
 Detaylı bilimsel ve tarihi araştırmalar için `docs/` dizinindeki kaynak metinleri inceleyebilirsiniz:
-1. [**Kutsal Mimari Akustiği, Mimar Sinan ve Boşluk Rezonatörleri**](docs/MIMAR_SINAN_VE_KUTSAL_MIMARI_AKUSTIGI.md) — Süleymaniye 64 Helmholtz küpü, Ħal Saflieni 110 Hz Kâhin Odası, Giza Kral Odası ve Schroeder yankılanma modelleri.
-2. [**Nikola Tesla 3-6-9 Vorteksi ve Biyoalan Diyapazon Terapisi**](docs/TESLA_369_VE_FIZIKSEL_DIYAPAZON_TERAPISI.md) — Solfeggio dijital kök indirgemesi, McKusick biyoalanı, Otto 128Hz kemik iletimi ve Fibonacci Altın Oran akordu.
-3. [**Organ Rezonansı ve Biyofiziksel Doku Frekansları**](docs/ORGAN_REZONANSI_VE_BIYOFIZIKSEL_FREKANSLAR.md) — Kalp, karaciğer, epifiz bezi, kemikler ve Rife / İbn-i Sînâ / Einstein frekans tıbbı.
-4. [**Fonetik Formantlar, Tecvid Gunnesi ve Kutsal Kelâm Akustiği**](docs/FONETIK_FORMANTLAR_VE_KUTSAL_KELAM_AKUSTIGI.md) — Karolinska Enstitüsü 15-20x Nitrik Oksit araştırması, İbnü’l-Cezerî, İbn Arabî ve Mevlânâ.
-5. [**Terapötik Ses Protokolleri ve Klinik Metodoloji**](docs/TERAPOTIK_SES_PROTOKOLLERI_VE_KLINIK_METODOLOJI.md) — EEG Entrainment, sirkadiyen ritimler ve çok aşamalı seans tasarımı.
-6. [**Çakra Akustiği ve Meridyen Frekansları**](docs/CAKRA_AKUSTIGI_VE_MERIDYEN_FREKANSLARI.md) — Hans Cousto gezegen oktavı, Solfeggio ve Bija tohum mantraları.
-7. [**Kadim Bilgelik, Kutsal Kelâm ve Ses Felsefesi Külliyatı**](docs/KADIM_BILGELIK_VE_SES_FELSEFESI.md) — Tesla, Mevlânâ, İbn-i Sînâ, Fârâbî, Pisagor, Einstein, Kepler, Chladni ve kutsal metinlerin analizleri.
-8. [**Kutsal Kelâm, Kıraat Rezonansı ve Zikir Akustiği**](docs/KUTSAL_KELAM_VE_REZONANS.md) — Tecvid, Gunne ve Nitrik Oksit, Vagus ve Kalp Koheransı, Kur'an tilavetinin EEG etkileri.
-9. [**Osmanlı Darüşşifalarında Müzikterapi ve Makam Şifası**](docs/OSMANLI_MUZIKTERAPISI.md) — Farabi, İbn-i Sina, Evliya Çelebi, 4 Mizaç ve 12 klasik makam cetveli.
-10. [**53-TET Mikrotonal Koma ve Perde Akustiği**](docs/MIKROTONAL_KOMA_VE_53_KOMALI_SISTEM.md) — Arel-Ezgi-Uzdilek koma cetveli, Pisagor koması ve darüşşifalardaki mikrotonal şifa.
-11. [**Sematik (Cymatics), Rezonans ve Kutsal Geometri**](docs/SEMATIK_VE_KUTSAL_GEOMETRI.md) — Kare ve dairesel Chladni plaka matematiği, Bessel fonksiyonları ve bedendeki suyun ses ile yapılaşması.
-12. [**İzokronik Tonlar ve Spektral Gürültü Terapisi**](docs/IZOKRONIK_TONLAR_VE_GURULTU_TERAPISI.md) — Hoparlör uyumlu izokronik nabızlar ve Pembe (1/f) / Kahverengi (1/f²) gürültü maskelemesi.
-13. [**Beyin Dalgaları, Binaural Beats ve Vagus Siniri**](docs/BEYIN_DALGALARI_VE_BINAURAL.md) — Delta/Teta/Alfa/Beta/Gama spektrumu ve 0.1 Hz kardiyorespiratuar koherans.
-14. [**Solfeggio Frekansları ve Hans Cousto Kozmik Oktavı**](docs/SOLFEGGIO_VE_KOZMIK_OKTAV.md) — Guido d'Arezzo ilahisi, 9 Solfeggio tonu, gezegen periyotları ve 432 Hz Verdi akordu.
+1. [**Tibet Ses Çanakları, Himalaya Gongları ve Modal Akustik Fiziği**](docs/TIBET_CANAKLARI_VE_GONG_AKUSTIK_FIZIGI.md) — 7 Gezegen metali simyası, dairesel asimetriden doğan çift mod nabzı (1-2 Hz beating), Faraday dalgaları ve su kaynatma (water leaping).
+2. [**Suyun Hafızası, Dördüncü Faz (EZ Suyu) ve Sesle Hekzagonal Yapılanma**](docs/SUYUN_HAFIZASI_VE_SESLE_YAPILANMA_FIZIGI.md) — Gerald Pollack H3O2- sıvı kristal jeli, Del Giudice QED koherans alanları, Emoto kristalleri ve akustik kavitasyon.
+3. [**Kutsal Mimari Akustiği, Mimar Sinan ve Boşluk Rezonatörleri**](docs/MIMAR_SINAN_VE_KUTSAL_MIMARI_AKUSTIGI.md) — Süleymaniye 64 Helmholtz küpü, Ħal Saflieni 110 Hz Kâhin Odası, Giza Kral Odası ve Schroeder yankılanma modelleri.
+4. [**Nikola Tesla 3-6-9 Vorteksi ve Biyoalan Diyapazon Terapisi**](docs/TESLA_369_VE_FIZIKSEL_DIYAPAZON_TERAPISI.md) — Solfeggio dijital kök indirgemesi, McKusick biyoalanı, Otto 128Hz kemik iletimi ve Fibonacci Altın Oran akordu.
+5. [**Organ Rezonansı ve Biyofiziksel Doku Frekansları**](docs/ORGAN_REZONANSI_VE_BIYOFIZIKSEL_FREKANSLAR.md) — Kalp, karaciğer, epifiz bezi, kemikler ve Rife / İbn-i Sînâ / Einstein frekans tıbbı.
+6. [**Fonetik Formantlar, Tecvid Gunnesi ve Kutsal Kelâm Akustiği**](docs/FONETIK_FORMANTLAR_VE_KUTSAL_KELAM_AKUSTIGI.md) — Karolinska Enstitüsü 15-20x Nitrik Oksit araştırması, İbnü’l-Cezerî, İbn Arabî ve Mevlânâ.
+7. [**Terapötik Ses Protokolleri ve Klinik Metodoloji**](docs/TERAPOTIK_SES_PROTOKOLLERI_VE_KLINIK_METODOLOJI.md) — EEG Entrainment, sirkadiyen ritimler ve çok aşamalı seans tasarımı.
+8. [**Çakra Akustiği ve Meridyen Frekansları**](docs/CAKRA_AKUSTIGI_VE_MERIDYEN_FREKANSLARI.md) — Hans Cousto gezegen oktavı, Solfeggio ve Bija tohum mantraları.
+9. [**Kadim Bilgelik, Kutsal Kelâm ve Ses Felsefesi Külliyatı**](docs/KADIM_BILGELIK_VE_SES_FELSEFESI.md) — Tesla, Mevlânâ, İbn-i Sînâ, Fârâbî, Pisagor, Einstein, Kepler, Chladni ve kutsal metinlerin analizleri.
+10. [**Kutsal Kelâm, Kıraat Rezonansı ve Zikir Akustiği**](docs/KUTSAL_KELAM_VE_REZONANS.md) — Tecvid, Gunne ve Nitrik Oksit, Vagus ve Kalp Koheransı, Kur'an tilavetinin EEG etkileri.
+11. [**Osmanlı Darüşşifalarında Müzikterapi ve Makam Şifası**](docs/OSMANLI_MUZIKTERAPISI.md) — Farabi, İbn-i Sina, Evliya Çelebi, 4 Mizaç ve 12 klasik makam cetveli.
+12. [**53-TET Mikrotonal Koma ve Perde Akustiği**](docs/MIKROTONAL_KOMA_VE_53_KOMALI_SISTEM.md) — Arel-Ezgi-Uzdilek koma cetveli, Pisagor koması ve darüşşifalardaki mikrotonal şifa.
+13. [**Sematik (Cymatics), Rezonans ve Kutsal Geometri**](docs/SEMATIK_VE_KUTSAL_GEOMETRI.md) — Kare ve dairesel Chladni plaka matematiği, Bessel fonksiyonları ve bedendeki suyun ses ile yapılaşması.
+14. [**İzokronik Tonlar ve Spektral Gürültü Terapisi**](docs/IZOKRONIK_TONLAR_VE_GURULTU_TERAPISI.md) — Hoparlör uyumlu izokronik nabızlar ve Pembe (1/f) / Kahverengi (1/f²) gürültü maskelemesi.
+15. [**Beyin Dalgaları, Binaural Beats ve Vagus Siniri**](docs/BEYIN_DALGALARI_VE_BINAURAL.md) — Delta/Teta/Alfa/Beta/Gama spektrumu ve 0.1 Hz kardiyorespiratuar koherans.
+16. [**Solfeggio Frekansları ve Hans Cousto Kozmik Oktavı**](docs/SOLFEGGIO_VE_KOZMIK_OKTAV.md) — Guido d'Arezzo ilahisi, 9 Solfeggio tonu, gezegen periyotları ve 432 Hz Verdi akordu.
 
 ---
 

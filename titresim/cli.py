@@ -36,6 +36,8 @@ from .core.phonetics import SacredPhonetics
 from .core.breath import CoherenceBreathGuide
 from .core.biofield import BiofieldAcoustics
 from .core.architecture import AcousticArchitecture
+from .core.bowls import SingingBowlAcoustics
+from .core.water import WaterAcoustics
 
 
 def handle_info(args):
@@ -612,6 +614,93 @@ def handle_space(args):
         print(f"   Detay: {space.description}\n")
 
 
+def handle_bowl(args):
+    if getattr(args, "list", False) or not args.id:
+        print("\n" + "=" * 65)
+        print("   HİMALAYA VE TİBET SES ÇANAKLARI (SINGING BOWLS & GONGS)")
+        print("=" * 65)
+        for b in SingingBowlAcoustics.list_bowls():
+            print(f"🥣 {b.name} ({b.id.upper()}) | Temel: {b.fundamental_hz} Hz | Nabız: {b.beating_hz} Hz")
+            print(f"   Çakra: {b.chakra} | Alaşım: {b.alloy}")
+            print(f"   Faraday Deseni: {b.faraday_droplet_pattern}")
+            print(f"   Şifa & Tesir: {b.healing_effects}\n")
+        return
+
+    bowl = SingingBowlAcoustics.get_bowl(args.id)
+    if not bowl:
+        print(f"❌ Ses çanağı bulunamadı: {args.id}")
+        return
+
+    mode = args.mode.lower() if getattr(args, "mode", None) else "struck"
+    out_path = args.output or f"canak_{bowl.id}_{mode}.wav"
+
+    if mode == "singing":
+        print(f"🥣 {bowl.name} dönen tokmak (Singing / Rubbed Rim) modu sentezleniyor...")
+        samples = SingingBowlAcoustics.synthesize_singing_rim(
+            bowl_id=bowl.id,
+            duration=args.duration,
+            rub_speed_hz=args.speed
+        )
+    else:
+        print(f"🥣 {bowl.name} tokmak vuruşu (Struck Mode) sentezleniyor...")
+        samples = SingingBowlAcoustics.synthesize_struck_bowl(
+            bowl_id=bowl.id,
+            duration=args.duration,
+            strike_force=args.force
+        )
+
+    tone_gen = ToneGenerator()
+    tone_gen.save_wav(out_path, samples)
+    print(f"✅ Çanak ses dalgası kaydedildi: {out_path}")
+
+
+def handle_water(args):
+    if getattr(args, "list", False):
+        print("\n" + "=" * 65)
+        print("   SUYUN HAFIZASI VE HEKZAGONAL EZ SUYU (H3O2) AKUSTİĞİ")
+        print("=" * 65)
+        print("\n--- 🔬 Bilimsel Teoriler ---")
+        for th in WaterAcoustics.list_theories():
+            print(f"💧 {th.name} | Öncü: {th.pioneer}")
+            print(f"   Model: {th.formula} | Detay: {th.description}\n")
+
+        print("--- 🎵 Hekzagonal Yapılandırma Frekansları ---")
+        for wf in WaterAcoustics.list_frequencies():
+            print(f"✨ {wf.name} ({wf.id}) | {wf.frequency_hz} Hz | Koherans: {wf.coherence_rating * 100:.0f}%")
+            print(f"   Faraday Simetrisi: {wf.faraday_wave_symmetry}")
+            print(f"   Biyolojik Fayda: {wf.biological_benefit}\n")
+
+        print("--- ❄️ Dr. Masaru Emoto Su Kristalleri ---")
+        for cr in WaterAcoustics.list_crystals():
+            print(f"❄️ {cr.name} | Koherans Skoru: {cr.coherence_score}")
+            print(f"   Kristal Formu: {cr.crystal_structure}\n")
+        return
+
+    if getattr(args, "coherence", None) is not None:
+        idx = WaterAcoustics.calculate_coherence_index(args.coherence)
+        print(f"\n💧 {args.coherence:.2f} Hz için Hekzagonal Su Koherans Endeksi: {idx * 100:.1f}%")
+        if idx > 0.85:
+            print("   🌟 Yüksek Derecede Yapılandırıcı Rezonans (Altın Oran / Solfeggio / Schumann Uyumlu).")
+        else:
+            print("   ℹ️ Orta Dereceli Akustik Etkileşim.")
+        return
+
+    target = args.id or (args.freq if getattr(args, "freq", None) else "dna_hexagonal_528")
+    wf = WaterAcoustics.get_frequency(str(target))
+    name = wf.name if wf else f"{target} Hz"
+    out_path = args.output or f"su_yapilandirma_{target}.wav"
+
+    print(f"💧 {name} akustik hekzagonal su yapılandırma tonu sentezleniyor...")
+    samples = WaterAcoustics.synthesize_water_structuring_tone(
+        target=target,
+        duration=args.duration,
+        add_vortex_cavitation=not args.no_cavitation
+    )
+    tone_gen = ToneGenerator()
+    tone_gen.save_wav(out_path, samples)
+    print(f"✅ Hekzagonal su ses dalgası kaydedildi: {out_path}")
+
+
 def handle_serve(args):
     web_dir = Path(__file__).resolve().parent.parent / "web"
     os.chdir(web_dir)
@@ -800,6 +889,26 @@ def main():
     p_spc.add_argument("--duration", "-d", type=float, default=4.0, help="Dürtü süresi (saniye)")
     p_spc.add_argument("--output", "-o", help="Çıktı WAV dosyası")
 
+    # bowl
+    p_bwl = subparsers.add_parser("bowl", help="Tibet ses çanakları ve Himalaya gong modal akustik sentezi")
+    p_bwl.add_argument("--list", "-l", action="store_true", help="Ses çanakları ve gongları listele")
+    p_bwl.add_argument("--id", help="Çanak ID (full_moon_om, tibetan_root, sacral_moon, solar_sun, throat_mercury, third_eye_venus, crown_platonic, himalayan_wind_gong)")
+    p_bwl.add_argument("--mode", "-m", choices=["struck", "singing"], default="struck", help="Seslendirme modu (struck: tokmak vuruşu, singing: dönen sürtünme)")
+    p_bwl.add_argument("--duration", "-d", type=float, default=10.0, help="Süre (saniye)")
+    p_bwl.add_argument("--force", type=float, default=0.8, help="Tokmak vuruş şiddeti (0.1 - 1.0)")
+    p_bwl.add_argument("--speed", type=float, default=1.6, help="Dönen tokmak sürtünme hızı (Hz)")
+    p_bwl.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
+    # water
+    p_wtr = subparsers.add_parser("water", help="Suyun hafızası, hekzagonal EZ suyu (H3O2) ve ses kavitasyonu")
+    p_wtr.add_argument("--list", "-l", action="store_true", help="Yapılandırıcı su frekansları ve teorilerini listele")
+    p_wtr.add_argument("--id", help="Frekans ID (dna_hexagonal_528, verdi_matrix_432, schumann_hydration_783, om_intracellular_136, cavitation_cleanse_741)")
+    p_wtr.add_argument("--freq", "-f", type=float, help="Özel su frekansı (Hz)")
+    p_wtr.add_argument("--coherence", "-c", type=float, help="Belirli bir frekansın su koherans endeksini hesapla")
+    p_wtr.add_argument("--duration", "-d", type=float, default=10.0, help="Süre (saniye)")
+    p_wtr.add_argument("--no-cavitation", action="store_true", help="Mikro-kavitasyon baloncuklarını kapat")
+    p_wtr.add_argument("--output", "-o", help="Çıktı WAV dosyası")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -830,6 +939,10 @@ def main():
         handle_tesla(args)
     elif args.command == "space":
         handle_space(args)
+    elif args.command == "bowl":
+        handle_bowl(args)
+    elif args.command == "water":
+        handle_water(args)
     elif args.command == "generate":
         handle_generate(args)
     elif args.command == "binaural":
